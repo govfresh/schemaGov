@@ -24,6 +24,9 @@ model and defines a schema.org projection for discovery.
 | Procurement | *projection only* | Open Contracting Data Standard |
 | Discovery | `DataCatalog`, `Dataset` | DCAT / DCAT-AP |
 | Alerts | *projection only* | Common Alerting Protocol (OASIS) |
+| Permits | `GovernmentPermit` | BLDS, national equivalents |
+| Elections | *projection only* | NIST SP 1500-100, VIP |
+| Services | `GovernmentService`, `PeopleAudience` | Open Referral / HSDS |
 
 ## Two rules that shape everything
 
@@ -85,8 +88,8 @@ adapt or fork the vocabulary with no attribution obligation and no licence revie
 
 ## Status
 
-All nine profiles are specified, implemented, and validating: `_core`, `org`, `code`,
-`meetings`, `requests`, `budget`, `procurement`, `catalog` and `alerts` — see [SPEC.md §5](SPEC.md#5-domain-profiles).
+Every profile listed above is specified, implemented, and validating, and each has been
+converted from at least one real government publisher — see [SPEC.md §5](SPEC.md#5-domain-profiles).
 
 The `lf-ui` theme layer in `public/assets/lf-ui/` is vendored from `lukefretwell/lf-ui` and is
 expected to move to a GovFresh-owned package; when it does, only that folder changes.

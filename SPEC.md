@@ -199,7 +199,7 @@ forty-field requirement.
 
 ## 5. Domain profiles
 
-All nine profiles are specified, implemented, and validating.
+Every profile in the table above is specified, implemented, and validating.
 
 | Profile | schema.org type | Source standard | Status |
 |---|---|---|---|
