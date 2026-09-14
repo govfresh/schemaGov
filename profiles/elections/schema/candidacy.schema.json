@@ -5,8 +5,14 @@
   "description": "One person standing in one contest, and how they fared. A candidacy rather than a candidate: the same person may stand in several contests, and their party affiliation and result belong to the standing, not to them.",
   "type": "object",
   "properties": {
-    "@id": {"type": "string", "format": "iri"},
-    "@type": {"const": "Candidacy"},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This candidacy's own dereferenceable identifier."
+    },
+    "@type": {
+      "const": "Candidacy"
+    },
     "candidate": {
       "$ref": "../_core/reference.schema.json",
       "description": "The Person standing. A reference, so a candidate who later takes office is the same entity as the officeholder in the org profile."
@@ -15,16 +21,44 @@
       "$ref": "../_core/reference.schema.json",
       "description": "The PoliticalParty they stood for, where they stood for one. schema:PoliticalParty is a real type. Absent means independent."
     },
-    "ballotName": {"type": "string", "description": "The name as printed on the ballot, which is often not the person's full legal name."},
-    "ballotOrder": {"type": "integer", "minimum": 1},
-    "voteCount": {"type": "integer", "minimum": 0},
+    "ballotName": {
+      "type": "string",
+      "description": "The name as printed on the ballot, which is often not the person's full legal name."
+    },
+    "ballotOrder": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "voteCount": {
+      "type": "integer",
+      "minimum": 0
+    },
     "candidacyResult": {
       "type": "string",
-      "enum": ["elected", "notElected", "withdrawn", "disqualified", "tied"]
+      "description": "termCode from the `CandidacyResult` code list.",
+      "enum": [
+        "elected",
+        "notElected",
+        "withdrawn",
+        "disqualified",
+        "tied"
+      ]
     },
-    "incumbent": {"type": "boolean", "description": "Whether they held the post going into the contest."},
-    "identifier": {"type": "array", "items": {"$ref": "../_core/identifier.schema.json"}}
+    "incumbent": {
+      "type": "boolean",
+      "description": "Whether they held the post going into the contest."
+    },
+    "identifier": {
+      "type": "array",
+      "description": "Any scheme-qualified identifiers for this candidacy beyond its `@id`.",
+      "items": {
+        "$ref": "../_core/identifier.schema.json"
+      }
+    }
   },
-  "required": ["@type", "candidate"],
+  "required": [
+    "@type",
+    "candidate"
+  ],
   "additionalProperties": true
 }

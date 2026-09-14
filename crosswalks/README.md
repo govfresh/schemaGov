@@ -10,7 +10,7 @@ standard onto the gov-schema representation, in both directions where possible.
 | `../profiles/org/crosswalk.md` | Popolo `Post`, W3C ORG | posts, succession, vacancy | drafted |
 | `dcat.md` | DCAT / DCAT-AP (W3C) | discovery and data catalogues | drafted |
 | `cap.md` | Common Alerting Protocol 1.2 (OASIS) | public warnings | drafted |
-| `w3c-org.md` | W3C Organization Ontology | organizations | planned |
+| W3C ORG | W3C Organization Ontology | organizations | covered inside [`popolo.md`](popolo.md) |
 | `akoma-ntoso.md` | OASIS LegalDocML / ELI | legislation and codes | drafted |
 | `open311.md` | Open311 GeoReport v2 | service requests | drafted |
 | `fiscal-data-package.md` | Fiscal Data Package, COFOG, GFSM 2014 | budgets | drafted |

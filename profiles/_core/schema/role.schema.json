@@ -2,14 +2,19 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/_core/role.schema.json",
   "title": "OrganizationRole",
-  "description": "One person holding one office in one body for one span of time - the equivalent of a Popolo Membership. This is the join between Person and Organization, and the reason the model can answer 'who was mayor in 2019' rather than only 'who is mayor'. Follows the schema.org Role idiom: the Role sits in the property slot, and the property name repeats inside it to carry the actual value.",
+  "description": "One person holding one office in one body for one span of time - the equivalent of a Popolo Membership.",
+  "standards": [
+    "popolo"
+  ],
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This role's own dereferenceable identifier."
     },
     "@type": {
+      "description": "Always `OrganizationRole` (or the `EmployeeRole`/`Role` schema.org supertypes, where more specific). This is the join between `Person` and `Organization`, and the reason the model can answer 'who was mayor in 2019' rather than only 'who is mayor'. Follows the schema.org Role idiom: the Role sits in the property slot, and the property name repeats inside it to carry the actual value.",
       "enum": [
         "OrganizationRole",
         "EmployeeRole",
@@ -22,19 +27,20 @@
     },
     "member": {
       "$ref": "reference.schema.json",
-      "description": "The Person holding the office. Repeating the outer property name here is the schema.org Role idiom, not a mistake."
+      "description": "The `Person` holding the office. Repeating the outer property name here is the schema.org Role idiom, not a mistake."
     },
     "memberOf": {
       "$ref": "reference.schema.json",
-      "description": "The Organization, when the Role is published standalone rather than nested under one."
+      "description": "The `Organization`, when the Role is published standalone rather than nested under one."
     },
     "post": {
       "$ref": "reference.schema.json",
-      "description": "The Post this tenure fills, when the org profile is in use. Grouping Roles by Post is what turns a list of officeholders into a succession."
+      "description": "The `Post` this tenure fills, when the org profile is in use. Grouping Roles by `Post` is what turns a list of officeholders into a succession."
     },
     "startDate": {
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "description": "When this tenure began."
     },
     "endDate": {
       "type": "string",
@@ -45,15 +51,17 @@
       "type": "array",
       "items": {
         "$ref": "identifier.schema.json"
-      }
+      },
+      "description": "Any scheme-qualified identifiers for this role beyond its `@id`."
     },
     "representsJurisdiction": {
       "$ref": "reference.schema.json",
-      "description": "For seats tied to a district or ward rather than the whole area - a Jurisdiction of level submunicipal or subregional."
+      "description": "For seats tied to a district or ward rather than the whole area - a `Jurisdiction` of level submunicipal or subregional."
     },
     "sourceDataset": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
     }
   },
   "required": [

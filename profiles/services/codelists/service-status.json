@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/ServiceStatus",
   "@type": "DefinedTermSet",
   "name": "Service status",
-  "description": "Whether a service is currently available, from HSDS. Defunct is distinguished from temporarily closed because a resident needs to know whether coming back later is worth it, and inactive from both because a service can exist on paper while not being delivered.",
+  "description": "Whether a service is available right now, following HSDS. 'Defunct' is kept apart from 'temporarily closed', since people need to know if it's worth checking back. 'Inactive' is kept apart from both - a service can exist on paper without being delivered.",
   "url": "https://docs.openreferral.org/en/latest/hsds/",
   "hasDefinedTerm": [
     {
@@ -11,28 +11,28 @@
       "@id": "gs:svcstatus/active",
       "termCode": "active",
       "name": "Active",
-      "description": "Currently delivered."
+      "description": "Being delivered right now."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:svcstatus/temporarilyClosed",
       "termCode": "temporarilyClosed",
       "name": "Temporarily closed",
-      "description": "Not currently delivered, but expected to resume."
+      "description": "Not being delivered right now, but expected to start again."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:svcstatus/inactive",
       "termCode": "inactive",
       "name": "Inactive",
-      "description": "Exists but is not being delivered, with no stated resumption."
+      "description": "Still exists, but isn't being delivered, with no date to start again."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:svcstatus/defunct",
       "termCode": "defunct",
       "name": "Defunct",
-      "description": "Discontinued. Retained rather than deleted so that references to it keep resolving."
+      "description": "Discontinued for good. Kept on record instead of deleted, so links to it keep working."
     }
   ]
 }

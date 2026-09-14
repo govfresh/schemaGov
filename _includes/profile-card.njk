@@ -1,0 +1,17 @@
+{#- Renders one profile `b` as a card: title, description, schema/code-list
+    count, status badge. A single shared partial so /profiles/, the
+    homepage's Domain coverage grid, and each standard's "Profiles" list
+    can't drift from each other. The title is a styled <p>, not a real
+    heading — a heading here would get swept up by withToc's h2/h3 scan
+    wherever this card is embedded inside TOC-scanned content (as on a
+    standard's page), stripping the stretched-link out of it entirely. -#}
+<div class="col-md-6">
+  <div class="card h-100">
+    <div class="card-body">
+      <p class="h5"><a href="/profiles/{{ b.slug }}/" class="stretched-link">{{ b.name }}</a></p>
+      <p class="mb-2 small">{{ b.description | safe }}</p>
+      <p class="mb-2 small text-body-secondary">{{ b.schemas | length }} schema{{ "s" if b.schemas | length != 1 }}, {{ b.codelists | length }} code list{{ "s" if b.codelists | length != 1 }}</p>
+      <span class="badge text-bg-success">implemented</span>
+    </div>
+  </div>
+</div>

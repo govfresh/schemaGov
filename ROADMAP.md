@@ -26,7 +26,7 @@ claim against the level it asserts, and rejects unknown levels.
 **Depends on:** `_core` · **Standard:** DCAT / DCAT-AP (W3C) · **schema.org:** `DataCatalog`, `Dataset`, `DataDownload`
 
 The highest-leverage gap, and not a domain at all: **nothing currently tells a consumer where
-a government's gov-schema data lives.** Seven profiles, no way to find any of them.
+a government's gov-schema data lives.** Every profile published, and no way to find any of them.
 
 A well-known discovery document plus a DCAT-aligned catalogue fixes that and generalises the
 `Directory` pattern already proven in `org`. Google Dataset Search consumes schema.org
@@ -99,7 +99,11 @@ judgments), inspections (narrow, no international standard). Low reuse, high cos
 
 ---
 
-## Open question — geospatial data
+## Geospatial data — SETTLED
+
+Decided and implemented; see [GEOSPATIAL.md](GEOSPATIAL.md) for the design note and
+[the boundary work](profiles/_core/schema/boundary.schema.json). The evidence and options are
+kept below for the record.
 
 **A design note with a recommendation is now written up in [GEOSPATIAL.md](GEOSPATIAL.md)**, covering the three decisions (inline vs referenced, CRS declaration, whether `_core` gains a boundary concept), the evidence from `catalog`, `alerts` and `_core`, and what implementing it would change. Three questions are left open for decision there; the substantive one is whether historical boundaries are repeated on a jurisdiction or held as separate citable entities.
 
@@ -146,7 +150,11 @@ identifiers are already handled in `_core` via GeoNames, ISO 3166-2, OCD-IDs, an
 
 ---
 
-## Open question — scope of `requests`, and where emergency belongs
+## Scope of `requests`, and where emergency belongs — SETTLED
+
+Resolved when `alerts` was built: alerts are outbound, requests inbound, and they stay
+separate profiles linked by `ServiceRequest.relatedAlert`. Update history, duplicate
+references and the alert cross-reference are all implemented. The reasoning is kept below.
 
 **Is `requests` just 311?** The profile is deliberately named `requests`, not `311`, because
 the concept is not called 311 outside North America — FixMyStreet, Melde-Portal, and national
@@ -418,7 +426,7 @@ See [examples/pilot-govuk-services/README.md](examples/pilot-govuk-services/READ
 
 ## The honest risk
 
-Seven profiles with one fictional example city is a demo, not an adopted standard. Profiles
+A profile set with one fictional example city is a demo, not an adopted standard. Profiles
 eight through fifteen without a single real publisher would be building breadth on an untested
 foundation.
 
@@ -429,7 +437,10 @@ What drives adoption is not more domains:
   `procurement`
 - **A real pilot publisher, ideally non-US** — the fastest way to find where the international
   assumptions break
-- **Validation as a service** — paste a URL, get a conformance report
+- **Validation as a service** — a design note with a recommendation is written up in
+  [VALIDATOR.md](VALIDATOR.md). Note that "paste a URL" is measurably not achievable
+  on static hosting: only three of six publishers this project already converts send
+  CORS headers a browser would accept.
 - **The SHACL and conformance work in section 0**
 
 If one thing: `catalog` plus one adapter, because together they make the existing seven

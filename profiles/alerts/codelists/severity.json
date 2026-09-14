@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/Severity",
   "@type": "DefinedTermSet",
   "name": "Severity",
-  "description": "The intensity of the threat to life or property, from OASIS CAP 1.2.",
+  "description": "How serious the threat to life or property is, using the same codes as CAP 1.2 (OASIS).",
   "url": "http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html",
   "hasDefinedTerm": [
     {
@@ -11,35 +11,35 @@
       "@id": "gs:severity/extreme",
       "termCode": "extreme",
       "name": "Extreme",
-      "description": "Extraordinary threat to life or property."
+      "description": "An extraordinary threat to life or property."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:severity/severe",
       "termCode": "severe",
       "name": "Severe",
-      "description": "Significant threat to life or property."
+      "description": "A significant threat to life or property."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:severity/moderate",
       "termCode": "moderate",
       "name": "Moderate",
-      "description": "Possible threat to life or property."
+      "description": "A possible threat to life or property."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:severity/minor",
       "termCode": "minor",
       "name": "Minor",
-      "description": "Minimal to no known threat to life or property."
+      "description": "Little to no known threat to life or property."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:severity/unknown",
       "termCode": "unknown",
       "name": "Unknown",
-      "description": "Severity not known."
+      "description": "Not known."
     }
   ]
 }

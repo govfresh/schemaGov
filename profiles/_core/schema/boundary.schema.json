@@ -2,18 +2,18 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/_core/boundary.schema.json",
   "title": "Boundary",
-  "description": "The extent of a governed area over a period of time. A separate, citable entity rather than a field on the jurisdiction, because boundaries change and the change matters: wards are redrawn, municipalities annex and merge, electoral districts are reapportioned. A 2022 contest was fought on the 2022 boundary, and a budget line or permit attributed to an area is anchored to the boundary in force at the time. Attaching a single current geometry to a jurisdiction silently rewrites history.",
+  "description": "The extent of a governed area over a period of time.",
   "type": "object",
   "properties": {
     "@context": {},
-    "@id": {"type": "string", "format": "iri"},
-    "@type": {"const": "Boundary"},
-    "name": {"type": "string"},
+    "@id": {"type": "string", "format": "iri", "description": "This boundary's own dereferenceable identifier."},
+    "@type": {"const": "Boundary", "description": "Always `Boundary` - a separate, citable entity rather than a field on the jurisdiction, because boundaries change and the change matters: wards are redrawn, municipalities annex and merge, electoral districts are reapportioned. A 2022 contest was fought on the 2022 boundary, and a budget line or permit attributed to an area is anchored to the boundary in force at the time. Attaching a single current geometry to a `Jurisdiction` silently rewrites history."},
+    "name": {"type": "string", "description": "A human-readable label for this boundary, e.g. 'Ward 3 (2022)'."},
     "boundaryOf": {
       "$ref": "reference.schema.json",
-      "description": "The Jurisdiction this is the extent of."
+      "description": "The `Jurisdiction` this is the extent of."
     },
-    "geometry": {"$ref": "geometry.schema.json"},
+    "geometry": {"$ref": "geometry.schema.json", "description": "The `Geometry` describing this boundary's shape."},
     "validFrom": {"type": "string", "format": "date", "description": "When this extent took effect."},
     "validUntil": {
       "type": "string", "format": "date",
@@ -23,9 +23,9 @@
       "type": "boolean",
       "description": "Whether this is the legally definitive extent, as opposed to a published rendering of it."
     },
-    "supersedes": {"$ref": "reference.schema.json", "description": "The Boundary this replaced."},
-    "identifier": {"type": "array", "items": {"$ref": "identifier.schema.json"}},
-    "sourceDataset": {"type": "string", "format": "iri"}
+    "supersedes": {"$ref": "reference.schema.json", "description": "The `Boundary` this replaced."},
+    "identifier": {"type": "array", "items": {"$ref": "identifier.schema.json"}, "description": "Any scheme-qualified identifiers for this boundary beyond its `@id`."},
+    "sourceDataset": {"type": "string", "format": "iri", "description": "The `Dataset` this record was published as part of."}
   },
   "required": ["@id", "@type", "boundaryOf", "geometry", "validFrom"],
   "additionalProperties": true

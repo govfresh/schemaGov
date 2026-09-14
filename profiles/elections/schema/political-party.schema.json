@@ -6,17 +6,60 @@
   "type": "object",
   "properties": {
     "@context": {},
-    "@id": {"type": "string", "format": "iri"},
-    "@type": {"const": "PoliticalParty"},
-    "name": {"type": "string"},
-    "alternateName": {"type": "array", "items": {"type": "string"}},
-    "description": {"type": "string"},
-    "url": {"type": "string", "format": "iri"},
-    "identifier": {"type": "array", "items": {"$ref": "../_core/identifier.schema.json"}},
-    "areaServed": {"$ref": "../_core/reference.schema.json"},
-    "foundingDate": {"type": "string", "format": "date"},
-    "dissolutionDate": {"type": "string", "format": "date"}
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This party's own dereferenceable identifier."
+    },
+    "@type": {
+      "const": "PoliticalParty"
+    },
+    "name": {
+      "type": "string",
+      "description": "The party's official name."
+    },
+    "alternateName": {
+      "type": "array",
+      "description": "Other names or abbreviations this party is known by.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "A plain-language description of the party."
+    },
+    "url": {
+      "type": "string",
+      "format": "iri",
+      "description": "The party's official page, when one exists."
+    },
+    "identifier": {
+      "type": "array",
+      "description": "Any scheme-qualified identifiers for this party beyond its `@id`.",
+      "items": {
+        "$ref": "../_core/identifier.schema.json"
+      }
+    },
+    "areaServed": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `Jurisdiction` this party contests elections in, where it's specific to one."
+    },
+    "foundingDate": {
+      "type": "string",
+      "format": "date",
+      "description": "When this party was founded."
+    },
+    "dissolutionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Present means the party no longer exists."
+    }
   },
-  "required": ["@id", "@type", "name"],
+  "required": [
+    "@id",
+    "@type",
+    "name"
+  ],
   "additionalProperties": true
 }

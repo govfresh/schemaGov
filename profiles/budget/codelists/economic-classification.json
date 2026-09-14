@@ -3,23 +3,113 @@
   "@id": "https://schema.govfresh.com/v1/EconomicClassification",
   "@type": "DefinedTermSet",
   "name": "GFSM economic classification",
-  "description": "IMF Government Finance Statistics Manual 2014, main categories. Where COFOG says what the money is for, this says what kind of transaction it is - salaries, goods, interest, capital. Publishers may use full GFSM subcodes as the value; only the main categories are enumerated here.",
+  "description": "The IMF's Government Finance Statistics Manual, main categories only. COFOG says what the money is for. This says what kind of transaction it is - salaries, goods, interest, capital. Publishers can still use fuller GFSM subcodes as the value.",
   "url": "https://www.imf.org/external/pubs/ft/gfs/manual/2014/gfsfinal.pdf",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:gfsm/11","termCode":"11","name":"Taxes","description":"Revenue."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/12","termCode":"12","name":"Social contributions","description":"Revenue."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/13","termCode":"13","name":"Grants received","description":"Revenue, including intergovernmental transfers."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/14","termCode":"14","name":"Other revenue","description":"Fees, fines, sales of goods and services, property income."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/21","termCode":"21","name":"Compensation of employees","description":"Expense. Wages, salaries and social contributions paid."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/22","termCode":"22","name":"Use of goods and services","description":"Expense."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/23","termCode":"23","name":"Consumption of fixed capital","description":"Expense. Depreciation."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/24","termCode":"24","name":"Interest","description":"Expense. Debt service."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/25","termCode":"25","name":"Subsidies","description":"Expense."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/26","termCode":"26","name":"Grants paid","description":"Expense, including transfers to other governments."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/27","termCode":"27","name":"Social benefits","description":"Expense."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/28","termCode":"28","name":"Other expense","description":"Expense."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/31","termCode":"31","name":"Nonfinancial assets","description":"Capital acquisition and disposal."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/32","termCode":"32","name":"Financial assets","description":"Financing."},
-    {"@type":"DefinedTerm","@id":"gs:gfsm/33","termCode":"33","name":"Liabilities","description":"Financing, including borrowing and repayment."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/11",
+      "termCode": "11",
+      "name": "Taxes",
+      "description": "Taxes."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/12",
+      "termCode": "12",
+      "name": "Social contributions",
+      "description": "Social contributions."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/13",
+      "termCode": "13",
+      "name": "Grants received",
+      "description": "Grants, including money from other governments."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/14",
+      "termCode": "14",
+      "name": "Other revenue",
+      "description": "Fees, fines, sales of goods and services, and income from property."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/21",
+      "termCode": "21",
+      "name": "Compensation of employees",
+      "description": "Wages, salaries, and social contributions paid to employees."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/22",
+      "termCode": "22",
+      "name": "Use of goods and services",
+      "description": "Goods and services bought."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/23",
+      "termCode": "23",
+      "name": "Consumption of fixed capital",
+      "description": "Depreciation."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/24",
+      "termCode": "24",
+      "name": "Interest",
+      "description": "Interest paid on debt."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/25",
+      "termCode": "25",
+      "name": "Subsidies",
+      "description": "Subsidies paid."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/26",
+      "termCode": "26",
+      "name": "Grants paid",
+      "description": "Grants paid, including to other governments."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/27",
+      "termCode": "27",
+      "name": "Social benefits",
+      "description": "Social benefits paid."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/28",
+      "termCode": "28",
+      "name": "Other expense",
+      "description": "Other expenses."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/31",
+      "termCode": "31",
+      "name": "Nonfinancial assets",
+      "description": "Buying or selling fixed assets, like buildings or equipment."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/32",
+      "termCode": "32",
+      "name": "Financial assets",
+      "description": "Buying or selling financial assets, like shares or loans made."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:gfsm/33",
+      "termCode": "33",
+      "name": "Liabilities",
+      "description": "Borrowing and repaying debt."
+    }
   ]
 }

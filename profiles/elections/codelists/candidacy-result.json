@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/CandidacyResult",
   "@type": "DefinedTermSet",
   "name": "Candidacy result",
-  "description": "How a candidacy ended. Withdrawn and disqualified are distinguished from simply losing, because a candidate who never faced the voters is not the same as one who did and lost - and conflating them distorts every share calculated from the result.",
+  "description": "How a candidacy ended. Withdrawn and disqualified are kept apart from just losing. A candidate who never faced voters isn't the same as one who lost. Mixing them up throws off every result calculated afterward.",
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",
@@ -17,28 +17,28 @@
       "@id": "gs:candresult/notElected",
       "termCode": "notElected",
       "name": "Not elected",
-      "description": "Stood and did not win."
+      "description": "Ran and did not win."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:candresult/withdrawn",
       "termCode": "withdrawn",
       "name": "Withdrawn",
-      "description": "Stood down before polling."
+      "description": "Dropped out before the election."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:candresult/disqualified",
       "termCode": "disqualified",
       "name": "Disqualified",
-      "description": "Removed from the ballot by the administering body."
+      "description": "Removed from the ballot by the body running the election."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:candresult/tied",
       "termCode": "tied",
       "name": "Tied",
-      "description": "Equal highest vote; the outcome turns on the jurisdiction's tie-breaking rule."
+      "description": "Tied for the highest vote count. What happens next depends on local tie-breaking rules."
     }
   ]
 }

@@ -1,25 +1,27 @@
 ---
 layout: layouts/base.njk
 title: Specification
-description: The normative gov-schema profile specification.
+description: The full technical rules that define how gov-schema data must be structured.
 ---
-<div class="container py-5">
-  <div class="row">
-    <div class="col-lg-3">
-      <nav class="gs-sidebar d-none d-lg-block" aria-label="Sections">
-        <p class="text-uppercase small fw-semibold text-body-secondary">Sections</p>
-        <ul class="nav flex-column small">
-          {% for h in docs.specHeadings %}
-          <li class="nav-item"><a class="nav-link px-0 py-1" href="#{{ h.slug }}">{{ h.text }}</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
-    </div>
-    <div class="col-lg-9">
-      <h1 class="mb-4">Specification</h1>
-      <div class="gs-spec">
-        {{ docs.spec | safe }}
+{% set toc = docs.spec | withToc %}
+<div class="container hero-xs">
+  <div class="toc-layout row gap-4">
+    <div class="col">
+      <div class="hero-divider pb-3 mb-4">
+        {% include "page-header.njk" %}
+
+        <p class="icon-line mt-3 mb-1"><i class="fa-solid fa-tag"></i> Version: {{ site.version }}</p>
+        <p class="icon-line mb-1 text-break"><i class="fa-solid fa-globe"></i> Namespace: {{ site.namespace }}</p>
+        <p class="icon-line mb-1"><i class="fa-solid fa-code"></i> Prefix: {{ site.prefix }}</p>
+        <p class="icon-line mb-0"><i class="fa-solid fa-scale-balanced"></i> Licence: <a href="{{ site.repo }}/blob/main/LICENSE">{{ site.licenseName }}</a> for the vocabulary and schemas, <a href="{{ site.repo }}/blob/main/LICENSE-CODE">MIT</a> for the tooling</p>
       </div>
+      <div class="post">
+        {{ toc.html | safe }}
+      </div>
+    </div>
+    <div class="toc-sidebar col-auto">
+      {{ toc.toc | safe }}
     </div>
   </div>
 </div>
+<script src="/assets/lf-ui/toc-active.js" defer></script>

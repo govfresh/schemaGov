@@ -3,42 +3,42 @@
   "@id": "https://schema.govfresh.com/v1/ElectionType",
   "@type": "DefinedTermSet",
   "name": "Election type",
-  "description": "What kind of electoral event this is. Includes referendums and recalls, which are elections in every practical sense - they are administered the same way and reported in the same form - even though no office is filled.",
+  "description": "What kind of election this is. Includes referendums and recalls — they're run and reported the same way as elections, even though no one is being elected to an office.",
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",
       "@id": "gs:electtype/general",
       "termCode": "general",
       "name": "General",
-      "description": "The scheduled election at which offices fall due."
+      "description": "The regular election where offices are due to be filled."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electtype/primary",
       "termCode": "primary",
       "name": "Primary",
-      "description": "A contest to select a party's candidates."
+      "description": "An election to pick a party's candidates."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electtype/runoff",
       "termCode": "runoff",
       "name": "Runoff",
-      "description": "A second round following an inconclusive first."
+      "description": "A second round after the first round didn't produce a clear winner."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electtype/special",
       "termCode": "special",
       "name": "Special",
-      "description": "An unscheduled election, typically to fill a vacancy."
+      "description": "An election called outside the normal schedule, usually to fill a vacancy."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electtype/byElection",
       "termCode": "byElection",
       "name": "By-election",
-      "description": "An election for a single seat vacated mid-term. The Commonwealth term for a special election."
+      "description": "An election for a single vacant seat, held partway through a term. The term used in Commonwealth countries for a special election."
     },
     {
       "@type": "DefinedTerm",
@@ -59,7 +59,7 @@
       "@id": "gs:electtype/indirect",
       "termCode": "indirect",
       "name": "Indirect",
-      "description": "Selection by an electoral college or sitting body."
+      "description": "Chosen by an electoral college or a sitting body instead of by voters directly."
     }
   ]
 }

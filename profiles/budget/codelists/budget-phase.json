@@ -3,11 +3,35 @@
   "@id": "https://schema.govfresh.com/v1/BudgetPhase",
   "@type": "DefinedTermSet",
   "name": "Budget phase",
-  "description": "Where in the budget cycle a figure comes from, as defined by the Fiscal Data Package. This is the field publishers most often omit and the one that matters most: a proposed figure and an executed figure for the same line are different numbers describing different things, and comparing them without knowing which is which produces nonsense.",
+  "description": "Where a figure sits in the budget cycle, as the Fiscal Data Package defines it. Publishers skip this field more than any other. But it matters most: a proposed figure and an executed figure for the same line are different numbers. Comparing them without knowing which is which gives you nonsense.",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:phase/proposed","termCode":"proposed","name":"Proposed","description":"As put forward by the executive, before the legislature has acted."},
-    {"@type":"DefinedTerm","@id":"gs:phase/approved","termCode":"approved","name":"Approved","description":"As adopted by the legislature. The legally binding appropriation."},
-    {"@type":"DefinedTerm","@id":"gs:phase/adjusted","termCode":"adjusted","name":"Adjusted","description":"Approved, then amended in-year by supplementary appropriation or transfer."},
-    {"@type":"DefinedTerm","@id":"gs:phase/executed","termCode":"executed","name":"Executed","description":"What was actually spent or received. Typically final only after audit."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:phase/proposed",
+      "termCode": "proposed",
+      "name": "Proposed",
+      "description": "Put forward by the executive, before the legislature has acted."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:phase/approved",
+      "termCode": "approved",
+      "name": "Approved",
+      "description": "Adopted by the legislature. The legally binding budget."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:phase/adjusted",
+      "termCode": "adjusted",
+      "name": "Adjusted",
+      "description": "Approved, then changed during the year through a supplemental appropriation or transfer."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:phase/executed",
+      "termCode": "executed",
+      "name": "Executed",
+      "description": "What was actually spent or received. Usually final only after an audit."
+    }
   ]
 }

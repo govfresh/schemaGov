@@ -3,15 +3,20 @@
   "$id": "https://schema.govfresh.com/v1/alerts/alert.schema.json",
   "title": "Alert",
   "description": "A public warning or notice issued by a government: an emergency, an evacuation, a boil-water notice, a road closure. Modelled on the Common Alerting Protocol (OASIS CAP 1.2), the international standard behind IPAWS in the US, EU-Alert, and national warning systems worldwide. schema.org has SpecialAnnouncement, but every one of its properties is COVID-shaped - quarantineGuidelines, gettingTestedInfo, travelBans - and it carries no severity, urgency, certainty, or expiry, so it is used only as a discovery projection, never as the model. Alerts are outbound (government to public); service requests are inbound. The two are deliberately separate profiles.",
+  "standards": [
+    "cap"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This alert's own dereferenceable identifier."
     },
     "@type": {
-      "const": "Alert"
+      "const": "Alert",
+      "description": "Always `Alert`."
     },
     "alertIdentifier": {
       "type": "string",
@@ -50,6 +55,7 @@
     },
     "scope": {
       "type": "string",
+      "description": "termCode from the `AlertScope` code list.",
       "enum": [
         "public",
         "restricted",
@@ -75,7 +81,8 @@
       "description": "CAP incidents: groups alerts about the same event."
     },
     "note": {
-      "type": "string"
+      "type": "string",
+      "description": "CAP note: free-text context that doesn't fit another field."
     },
     "alertInfo": {
       "type": "array",
@@ -274,7 +281,8 @@
     },
     "sourceDataset": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
     }
   },
   "required": [

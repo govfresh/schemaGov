@@ -2,43 +2,100 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/org/post.schema.json",
   "title": "Post",
-  "description": "An office that exists independently of whoever holds it - 'Mayor of Example City', 'Councilmember, District 2'. This is the distinction _core cannot express: a Role binds a person to a body for a span of time, but when nobody holds the office there is no Role, and the office still exists. A Post is what a vacancy is a vacancy of, and what a succession is a succession through. Equivalent to Popolo Post. schema.org has no such concept, so gs:Post is minted as a subclass of schema:Role.",
+  "description": "An office that exists independently of whoever holds it, e.g. 'Mayor of Example City' or 'Councilmember, District 2'.",
+  "standards": [
+    "popolo"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
-    "@id": {"type": "string", "format": "iri"},
-    "@type": {"const": "Post"},
-    "roleName": {"type": "string", "description": "The office title as the body names it locally."},
-    "description": {"type": "string"},
-    "identifier": {"type": "array", "items": {"$ref": "../_core/identifier.schema.json"}},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This post's own dereferenceable identifier."
+    },
+    "@type": {
+      "const": "Post",
+      "description": "Always `Post`. A `Role` binds a person to a body for a span of time, but when nobody holds the office there is no `Role` - a `Post` is what a vacancy is a vacancy of, and what a succession runs through. Equivalent to Popolo `Post`; schema.org has no such concept, so `gs:Post` is minted as a subclass of `schema:Role`."
+    },
+    "roleName": {
+      "type": "string",
+      "description": "The office title as the body names it locally."
+    },
+    "description": {
+      "type": "string",
+      "description": "A plain-language description of the office's responsibilities."
+    },
+    "identifier": {
+      "type": "array",
+      "items": {
+        "$ref": "../_core/identifier.schema.json"
+      },
+      "description": "Any scheme-qualified identifiers for this post beyond its `@id`."
+    },
     "memberOf": {
       "$ref": "../_core/reference.schema.json",
-      "description": "The GovernmentOrganization the office sits in. Required - an office with no body cannot be placed."
+      "description": "The `GovernmentOrganization` the office sits in. Required - an office with no body cannot be placed."
     },
-    "namedPosition": {"type": "string", "description": "A named seat, e.g. 'Seat B'. Real schema.org Role property."},
-    "numberedPosition": {"type": "number", "description": "A numbered seat. Real schema.org Role property."},
+    "namedPosition": {
+      "type": "string",
+      "description": "A named seat, e.g. 'Seat B'. Real schema.org `Role` property."
+    },
+    "numberedPosition": {
+      "type": "number",
+      "description": "A numbered seat. Real schema.org `Role` property."
+    },
     "representsJurisdiction": {
       "$ref": "../_core/reference.schema.json",
-      "description": "For seats tied to a ward or district rather than the whole area."
+      "description": "For seats tied to a ward or district rather than the whole area - a `Jurisdiction` of level submunicipal or subregional."
     },
     "roleClassification": {
       "type": "string",
-      "description": "How the office is filled. termCode from the RoleClassification code list.",
-      "enum": ["elected", "appointed", "employed", "exOfficio", "volunteer", "hereditary"]
+      "description": "How the office is filled. termCode from the `RoleClassification` code list.",
+      "enum": [
+        "elected",
+        "appointed",
+        "employed",
+        "exOfficio",
+        "volunteer",
+        "hereditary"
+      ]
     },
     "termDuration": {
       "type": "string",
       "description": "Nominal length of one term, as an ISO 8601 duration, e.g. 'P4Y'. Nominal, not actual: a specific tenure's real dates live on the Role."
     },
-    "maximumTermCount": {"type": "integer", "description": "Term limit, where one applies."},
-    "startDate": {"type": "string", "format": "date", "description": "When the office was created."},
-    "endDate": {"type": "string", "format": "date", "description": "When the office was abolished. Present means it no longer exists."},
+    "maximumTermCount": {
+      "type": "integer",
+      "description": "Term limit, where one applies."
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "When the office was created."
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "description": "When the office was abolished. Present means it no longer exists."
+    },
     "vacantSince": {
-      "type": "string", "format": "date",
+      "type": "string",
+      "format": "date",
       "description": "Set when the office is currently unfilled. A vacancy is publishable information, not an absence of data - omitting it is indistinguishable from not having collected it."
     },
-    "sourceDataset": {"type": "string", "format": "iri"}
+    "sourceDataset": {
+      "type": "string",
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
+    }
   },
-  "required": ["@id", "@type", "roleName", "memberOf", "roleClassification"],
+  "required": [
+    "@id",
+    "@type",
+    "roleName",
+    "memberOf",
+    "roleClassification"
+  ],
   "additionalProperties": true
 }

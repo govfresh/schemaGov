@@ -8,16 +8,20 @@
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This manifest's own dereferenceable identifier."
     },
     "@type": {
-      "const": "PublisherManifest"
+      "const": "PublisherManifest",
+      "description": "Always `PublisherManifest`."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The publisher's name, for display."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language description of what this publisher makes available."
     },
     "publisher": {
       "$ref": "../_core/reference.schema.json",
@@ -106,17 +110,20 @@
       "description": "The publisher's DataCatalog, where one exists."
     },
     "contactPoint": {
-      "type": "object"
+      "type": "object",
+      "description": "How to reach the publisher with questions about this data."
     },
     "inLanguage": {
       "type": "array",
+      "description": "The language(s) this publisher's gov-schema data is published in.",
       "items": {
         "type": "string"
       }
     },
     "license": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The default licence for the data this manifest points to, where one applies across all of it."
     },
     "dateModified": {
       "type": "string",
@@ -127,7 +134,8 @@
         {
           "format": "date-time"
         }
-      ]
+      ],
+      "description": "When this manifest last changed."
     }
   },
   "required": [

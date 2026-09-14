@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/AwardStatus",
   "@type": "DefinedTermSet",
   "name": "Award status",
-  "description": "The state of a decision to award a contract, from OCDS.",
+  "description": "The state of a decision to award a contract, following OCDS.",
   "url": "https://standard.open-contracting.org",
   "hasDefinedTerm": [
     {
@@ -11,7 +11,7 @@
       "@id": "gs:awardstatus/pending",
       "termCode": "pending",
       "name": "Pending",
-      "description": "Decided but not yet in force."
+      "description": "Decided, but not yet in force."
     },
     {
       "@type": "DefinedTerm",
@@ -25,14 +25,14 @@
       "@id": "gs:awardstatus/cancelled",
       "termCode": "cancelled",
       "name": "Cancelled",
-      "description": "Withdrawn after being made."
+      "description": "Pulled back after being made."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:awardstatus/unsuccessful",
       "termCode": "unsuccessful",
       "name": "Unsuccessful",
-      "description": "A bid that was not awarded. Publishing these, not only the winner, is what makes a competition auditable."
+      "description": "A bid that didn't win. Publishing these, not just the winner, is what lets people check that a competition was fair."
     }
   ]
 }

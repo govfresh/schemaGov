@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/Certainty",
   "@type": "DefinedTermSet",
   "name": "Certainty",
-  "description": "Confidence that the event will occur or has occurred, from OASIS CAP 1.2. Published alongside severity so that a low-confidence extreme warning is distinguishable from an observed one.",
+  "description": "How sure the sender is that the event will happen, or already did. Shown next to severity, so people can tell a shaky guess apart from something confirmed.",
   "url": "http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html",
   "hasDefinedTerm": [
     {
@@ -11,35 +11,35 @@
       "@id": "gs:certainty/observed",
       "termCode": "observed",
       "name": "Observed",
-      "description": "Determined to have occurred or to be ongoing."
+      "description": "Confirmed to be happening or to have happened."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:certainty/likely",
       "termCode": "likely",
       "name": "Likely",
-      "description": "Probability greater than about 50%."
+      "description": "More likely than not."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:certainty/possible",
       "termCode": "possible",
       "name": "Possible",
-      "description": "Possible but not likely."
+      "description": "Could happen, but isn't likely."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:certainty/unlikely",
       "termCode": "unlikely",
       "name": "Unlikely",
-      "description": "Not expected to occur."
+      "description": "Not expected to happen."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:certainty/unknown",
       "termCode": "unknown",
       "name": "Unknown",
-      "description": "Certainty not known."
+      "description": "Not known."
     }
   ]
 }

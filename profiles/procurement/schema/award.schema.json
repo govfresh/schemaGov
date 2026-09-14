@@ -3,25 +3,89 @@
   "$id": "https://schema.govfresh.com/v1/procurement/award.schema.json",
   "title": "Award",
   "description": "The decision to give the contract to a supplier. Mirrors the OCDS award block. Suppliers are referenced, never named in free text: a supplier name as a string cannot be joined across contracts, and that is precisely how repeat awards to connected parties stay invisible.",
+  "standards": [
+    "ocds"
+  ],
   "type": "object",
   "properties": {
-    "@type": {"const": "Award"},
-    "@id": {"type": "string", "format": "iri"},
-    "awardId": {"type": "string", "description": "Identifier for this award within the process. Contracts reference it."},
-    "title": {"type": "string"},
-    "description": {"type": "string"},
-    "status": {"type": "string", "enum": ["pending", "active", "cancelled", "unsuccessful"]},
-    "date": {"type": "string", "anyOf": [{"format": "date"}, {"format": "date-time"}]},
-    "value": {"$ref": "../budget/amount.schema.json"},
+    "@type": {
+      "const": "Award",
+      "description": "Always `Award`."
+    },
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This award's own dereferenceable identifier."
+    },
+    "awardId": {
+      "type": "string",
+      "description": "Identifier for this award within the process. Contracts reference it."
+    },
+    "title": {
+      "type": "string",
+      "description": "A short label for the award."
+    },
+    "description": {
+      "type": "string",
+      "description": "A plain-language summary of what was awarded."
+    },
+    "status": {
+      "type": "string",
+      "description": "termCode from the `AwardStatus` code list.",
+      "enum": [
+        "pending",
+        "active",
+        "cancelled",
+        "unsuccessful"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "anyOf": [
+        {
+          "format": "date"
+        },
+        {
+          "format": "date-time"
+        }
+      ],
+      "description": "When the award was made."
+    },
+    "value": {
+      "$ref": "../budget/amount.schema.json",
+      "description": "The `Amount` awarded."
+    },
     "supplier": {
       "type": "array",
-      "items": {"$ref": "../_core/reference.schema.json"},
+      "items": {
+        "$ref": "../_core/reference.schema.json"
+      },
       "description": "References to Party entities. Required."
     },
-    "contractPeriodStart": {"type": "string", "format": "date"},
-    "contractPeriodEnd": {"type": "string", "format": "date"},
-    "document": {"type": "array", "items": {"type": "string", "format": "iri"}}
+    "contractPeriodStart": {
+      "type": "string",
+      "format": "date",
+      "description": "When the resulting contract is expected to begin."
+    },
+    "contractPeriodEnd": {
+      "type": "string",
+      "format": "date",
+      "description": "When the resulting contract is expected to end."
+    },
+    "document": {
+      "type": "array",
+      "description": "Links to supporting documents, e.g. the award notice.",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      }
+    }
   },
-  "required": ["@type", "awardId", "status", "supplier"],
+  "required": [
+    "@type",
+    "awardId",
+    "status",
+    "supplier"
+  ],
   "additionalProperties": true
 }

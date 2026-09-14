@@ -3,43 +3,56 @@
   "$id": "https://schema.govfresh.com/v1/catalog/dataset.schema.json",
   "title": "Dataset",
   "description": "One published dataset, aligned with DCAT and expressed as a schema.org Dataset. Every gov-schema profile a publisher serves should also appear here as a dataset, so that a consumer arriving through an open-data portal finds the structured data rather than only a CSV of it.",
+  "standards": [
+    "dcat"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This dataset's own dereferenceable identifier."
     },
     "@type": {
-      "const": "Dataset"
+      "const": "Dataset",
+      "description": "Always `Dataset`, a real schema.org type."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The dataset's title."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language description of what this dataset contains."
     },
     "url": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "Where this dataset's canonical human-readable page lives."
     },
     "identifier": {
       "type": "array",
+      "description": "Any scheme-qualified identifiers for this dataset beyond its `@id`.",
       "items": {
         "$ref": "../_core/identifier.schema.json"
       }
     },
     "publisher": {
-      "$ref": "../_core/reference.schema.json"
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `GovernmentOrganization` publishing this dataset."
     },
     "creator": {
-      "$ref": "../_core/reference.schema.json"
+      "$ref": "../_core/reference.schema.json",
+      "description": "Who produced the data, when different from the publisher."
     },
     "includedInDataCatalog": {
-      "$ref": "../_core/reference.schema.json"
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `Catalog` this dataset is listed in."
     },
     "keywords": {
       "type": "array",
+      "description": "Search terms someone looking for this dataset might use.",
       "items": {
         "type": "string"
       }
@@ -81,7 +94,8 @@
       "description": "DCAT dct:accessRights. 'restricted' means the metadata is public but the data is not."
     },
     "spatialCoverage": {
-      "$ref": "../_core/reference.schema.json"
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `Jurisdiction` or area this dataset covers."
     },
     "temporalCoverage": {
       "type": "string",
@@ -89,7 +103,8 @@
     },
     "datePublished": {
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "description": "When this dataset was first published."
     },
     "dateModified": {
       "type": "string",
@@ -100,14 +115,17 @@
         {
           "format": "date-time"
         }
-      ]
+      ],
+      "description": "When this dataset last changed."
     },
     "license": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The licence this dataset is published under."
     },
     "inLanguage": {
       "type": "array",
+      "description": "The language(s) this dataset is published in.",
       "items": {
         "type": "string"
       }
@@ -195,14 +213,16 @@
       "description": "EU High Value Dataset category URI. A legal classification under the Open Data Directive, not a subject theme."
     },
     "highValueDataset": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Whether this dataset is designated a High Value Dataset under the EU Open Data Directive. See `hvdCategory` for which category."
     },
     "spatialReferenceSystem": {
       "type": "string",
       "description": "EPSG code of the dataset's coordinate reference system, e.g. 'epsg:2157'. GeoJSON mandates WGS84 but national grids are in daily use, so an international profile cannot assume it."
     },
     "provenanceStatement": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language note on where the data comes from and how it's produced, where that isn't obvious from the publisher alone."
     }
   },
   "required": [

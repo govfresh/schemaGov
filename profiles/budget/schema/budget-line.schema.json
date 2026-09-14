@@ -3,45 +3,113 @@
   "$id": "https://schema.govfresh.com/v1/budget/budget-line.schema.json",
   "title": "BudgetLine",
   "description": "One allocated amount within a budget, classified along the dimensions the Fiscal Data Package defines. A line is either money in or money out - direction is required, because a bare amount cannot be interpreted without it. Lines nest through isPartOf/hasPart, so a published budget can be traversed from a department total down to an individual programme without assuming a fixed depth.",
+  "standards": [
+    "fiscal-data-package",
+    "cofog",
+    "gfsm-2014"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
-    "@id": {"type": "string", "format": "iri"},
-    "@type": {"const": "BudgetLine"},
-    "name": {"type": "string"},
-    "description": {"type": "string"},
-    "identifier": {"type": "array", "items": {"$ref": "../_core/identifier.schema.json"}},
-    "budget": {"$ref": "../_core/reference.schema.json", "description": "The Budget this line belongs to."},
-    "amount": {"$ref": "amount.schema.json"},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This budget line's own dereferenceable identifier."
+    },
+    "@type": {
+      "const": "BudgetLine",
+      "description": "Always `BudgetLine`."
+    },
+    "name": {
+      "type": "string",
+      "description": "The line's label as the budget document itself names it."
+    },
+    "description": {
+      "type": "string",
+      "description": "A plain-language note on what this line covers, when the name alone isn't enough."
+    },
+    "identifier": {
+      "type": "array",
+      "description": "Any scheme-qualified identifiers for this line beyond its `@id`.",
+      "items": {
+        "$ref": "../_core/identifier.schema.json"
+      }
+    },
+    "budget": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The Budget this line belongs to."
+    },
+    "amount": {
+      "$ref": "amount.schema.json",
+      "description": "The `Amount` allocated or spent on this line."
+    },
     "budgetPhase": {
       "type": "string",
       "description": "Overrides the budget's phase where a single document carries several, which is common in a document showing proposed against executed.",
-      "enum": ["proposed", "approved", "adjusted", "executed"]
+      "enum": [
+        "proposed",
+        "approved",
+        "adjusted",
+        "executed"
+      ]
     },
     "direction": {
       "type": "string",
-      "description": "Money in, money out, or a financing movement. Required: without it an amount is uninterpretable.",
-      "enum": ["revenue", "expenditure", "financing"]
+      "description": "Money in, money out, or a financing movement. termCode from the `BudgetDirection` code list. Required: without it an amount is uninterpretable.",
+      "enum": [
+        "revenue",
+        "expenditure",
+        "financing"
+      ]
     },
     "functionalClassification": {
       "type": "string",
-      "description": "What the money is for, as a COFOG division code (UN Classification of the Functions of Government). The dimension that makes budgets comparable across countries."
+      "description": "What the money is for. termCode from the `COFOG` code list (UN Classification of the Functions of Government) - the dimension that makes budgets comparable across countries."
     },
     "economicClassification": {
       "type": "string",
-      "description": "What kind of transaction it is, as a GFSM 2014 code (IMF Government Finance Statistics Manual)."
+      "description": "What kind of transaction it is. termCode from the `EconomicClassification` code list (IMF Government Finance Statistics Manual 2014)."
     },
     "administrativeClassification": {
       "$ref": "../_core/reference.schema.json",
       "description": "Which body spends it - a GovernmentOrganization reference, not a free-text department name."
     },
-    "programClassification": {"type": "string", "description": "The publisher's own programme or activity code."},
-    "fundSource": {"type": "string", "description": "The fund or financing source, where the publisher tracks them."},
-    "position": {"type": "integer"},
-    "isPartOf": {"$ref": "../_core/reference.schema.json", "description": "The parent line."},
-    "hasPart": {"type": "array", "items": {"$ref": "../_core/reference.schema.json"}},
-    "sourceDataset": {"type": "string", "format": "iri"}
+    "programClassification": {
+      "type": "string",
+      "description": "The publisher's own programme or activity code."
+    },
+    "fundSource": {
+      "type": "string",
+      "description": "The fund or financing source, where the publisher tracks them."
+    },
+    "position": {
+      "type": "integer",
+      "description": "Ordering among sibling lines."
+    },
+    "isPartOf": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The parent line."
+    },
+    "hasPart": {
+      "type": "array",
+      "description": "The lines nested directly under this one, e.g. a department total's individual programmes.",
+      "items": {
+        "$ref": "../_core/reference.schema.json"
+      }
+    },
+    "sourceDataset": {
+      "type": "string",
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
+    }
   },
-  "required": ["@id", "@type", "name", "budget", "amount", "direction"],
+  "required": [
+    "@id",
+    "@type",
+    "name",
+    "budget",
+    "amount",
+    "direction"
+  ],
   "additionalProperties": true
 }

@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/AlertScope",
   "@type": "DefinedTermSet",
   "name": "Alert scope",
-  "description": "Who an alert is intended to reach, from OASIS CAP 1.2. Publishing a restricted or private alert to an open endpoint defeats the distinction, so scope is required.",
+  "description": "Who the alert is meant to reach, using the same codes as CAP 1.2 (OASIS). This field is required because sending a restricted or private alert to a public endpoint defeats the whole point of marking it that way.",
   "url": "http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html",
   "hasDefinedTerm": [
     {
@@ -11,21 +11,21 @@
       "@id": "gs:scope/public",
       "termCode": "public",
       "name": "Public",
-      "description": "For general dissemination to unrestricted audiences."
+      "description": "Anyone can see it."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:scope/restricted",
       "termCode": "restricted",
       "name": "Restricted",
-      "description": "For dissemination only to users sharing a known operational requirement."
+      "description": "Only people who share a specific, known need can see it."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:scope/private",
       "termCode": "private",
       "name": "Private",
-      "description": "For dissemination only to specified addressees."
+      "description": "Only the people it's addressed to can see it."
     }
   ]
 }

@@ -2,49 +2,62 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/_core/organization.schema.json",
   "title": "GovernmentOrganization",
-  "description": "A body that exercises public authority: a government, a department, a council, a committee, an agency. This is where people, budgets, decisions, and legislation attach. It points at the territory it governs with areaServed; it is not itself a place.",
+  "description": "A body that exercises public authority: a government, a department, a council, a committee, an agency.",
+  "standards": [
+    "w3c-org",
+    "popolo"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This organization's own dereferenceable identifier."
     },
     "@type": {
-      "const": "GovernmentOrganization"
+      "const": "GovernmentOrganization",
+      "description": "Always `GovernmentOrganization`. This is where people, budgets, decisions, and legislation attach. It points at the territory it governs with `areaServed`; it is not itself a place."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The organization's official name."
     },
     "alternateName": {
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "description": "Other names this organization is known by."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language description of the organization."
     },
     "url": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "Where more information about this organization can be found."
     },
     "identifier": {
       "type": "array",
       "items": {
         "$ref": "identifier.schema.json"
       },
-      "minItems": 1
+      "minItems": 1,
+      "description": "At least one scheme-qualified identifier for this organization."
     },
     "sameAs": {
       "type": "array",
       "items": {
         "type": "string",
         "format": "iri"
-      }
+      },
+      "description": "Links to authoritative external records for this organization."
     },
     "organizationClassification": {
       "type": "string",
+      "description": "termCode from the `OrganizationClassification` code list.",
       "enum": [
         "legislature",
         "executive",
@@ -59,6 +72,7 @@
     },
     "governmentLevel": {
       "type": "string",
+      "description": "termCode from the `GovernmentLevel` code list.",
       "enum": [
         "supranational",
         "national",
@@ -72,10 +86,11 @@
     },
     "areaServed": {
       "$ref": "reference.schema.json",
-      "description": "The Jurisdiction this body governs. Optional at Core conformance, because an organization referenced from another profile (a buyer in a procurement record, an issuing body on a permit) is legitimately known by identity without its territory being restated. Required at Standard conformance for organizations a publisher describes in their own org chart."
+      "description": "The `Jurisdiction` this body governs. Optional at Core conformance, because an organization referenced from another profile (a buyer in a procurement record, an issuing body on a permit) is legitimately known by identity without its territory being restated. Required at Standard conformance for organizations a publisher describes in their own org chart."
     },
     "parentOrganization": {
-      "$ref": "reference.schema.json"
+      "$ref": "reference.schema.json",
+      "description": "The body this organization reports to or operates under."
     },
     "subOrganization": {
       "type": "array",
@@ -89,31 +104,34 @@
       "items": {
         "$ref": "reference.schema.json"
       },
-      "description": "Operating units. Use subOrganization for bodies with their own constitution, department for units of this body's administration."
+      "description": "Operating units. Use `subOrganization` for bodies with their own constitution, `department` for units of this body's administration."
     },
     "member": {
       "type": "array",
       "items": {
         "$ref": "role.schema.json"
       },
-      "description": "Officeholders, as Roles. A bare Person here loses the term of office, so always wrap in a Role."
+      "description": "Officeholders, as `Role`s. A bare `Person` here loses the term of office, so always wrap in a `Role`."
     },
     "contactPoint": {
       "type": "array",
       "items": {
         "type": "object"
-      }
+      },
+      "description": "Ways to contact this organization."
     },
     "address": {
-      "type": "object"
+      "type": "object",
+      "description": "schema.org `PostalAddress`."
     },
     "location": {
       "$ref": "reference.schema.json",
-      "description": "The Facility this body occupies. The organization points at the place; the place never points back with an organization property."
+      "description": "The `Facility` this body occupies. The organization points at the place; the place never points back with an organization property."
     },
     "foundingDate": {
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "description": "When this organization was established."
     },
     "dissolutionDate": {
       "type": "string",
@@ -128,11 +146,13 @@
       "description": "BCP 47 tags for the languages this body conducts business in. Consumers use this to pick among multilingual name and document variants."
     },
     "timeZone": {
-      "type": "string"
+      "type": "string",
+      "description": "IANA time zone this organization operates in, e.g. `Europe/Lisbon`."
     },
     "sourceDataset": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
     }
   },
   "required": [

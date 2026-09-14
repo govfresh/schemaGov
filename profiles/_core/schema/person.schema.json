@@ -2,31 +2,104 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/_core/person.schema.json",
   "title": "Person",
-  "description": "A human being who holds or held a public role. A Person record carries identity only - never the office, the term, or the body. Those live on the Role, so that one person can hold several offices over time without duplicate Person records.",
+  "description": "A human being who holds or held a public role.",
+  "standards": [
+    "popolo"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
-    "@id": {"type": "string", "format": "iri"},
-    "@type": {"const": "Person"},
-    "name": {"type": "string", "description": "Full name as the person presents it."},
-    "givenName": {"type": "string"},
-    "familyName": {"type": "string"},
-    "additionalName": {"type": "string"},
-    "honorificPrefix": {"type": "string"},
-    "honorificSuffix": {"type": "string"},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This person's own dereferenceable identifier."
+    },
+    "@type": {
+      "const": "Person",
+      "description": "Always `Person`. A `Person` record carries identity only - never the office, the term, or the body. Those live on the `Role`, so that one person can hold several offices over time without duplicate `Person` records."
+    },
+    "name": {
+      "type": "string",
+      "description": "Full name as the person presents it."
+    },
+    "givenName": {
+      "type": "string",
+      "description": "Given (first) name, where the naming culture decomposes this way."
+    },
+    "familyName": {
+      "type": "string",
+      "description": "Family (last) name, where the naming culture decomposes this way."
+    },
+    "additionalName": {
+      "type": "string",
+      "description": "A middle name or patronymic, where applicable."
+    },
+    "honorificPrefix": {
+      "type": "string",
+      "description": "A title preceding the name, e.g. 'Dr.', 'The Honorable'."
+    },
+    "honorificSuffix": {
+      "type": "string",
+      "description": "A title following the name, e.g. 'Jr.', 'Esq.'."
+    },
     "alternateName": {
-      "type": "array", "items": {"type": "string"},
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "description": "Transliterations and other-script forms. Do not assume given/family decomposition applies to every naming culture; name is the authoritative field and the decomposed parts are optional."
     },
-    "identifier": {"type": "array", "items": {"$ref": "identifier.schema.json"}},
-    "sameAs": {"type": "array", "items": {"type": "string", "format": "iri"}},
-    "image": {"type": "string", "format": "iri"},
-    "url": {"type": "string", "format": "iri"},
-    "email": {"type": "string", "format": "email", "description": "Official contact only. Do not publish personal contact details."},
-    "telephone": {"type": "string", "description": "Official contact only."},
-    "knowsLanguage": {"type": "array", "items": {"type": "string"}},
-    "sourceDataset": {"type": "string", "format": "iri"}
+    "identifier": {
+      "type": "array",
+      "items": {
+        "$ref": "identifier.schema.json"
+      },
+      "description": "Any scheme-qualified identifiers for this person beyond their `@id`."
+    },
+    "sameAs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      },
+      "description": "Links to authoritative external records for this person."
+    },
+    "image": {
+      "type": "string",
+      "format": "iri",
+      "description": "A photo of this person."
+    },
+    "url": {
+      "type": "string",
+      "format": "iri",
+      "description": "This person's official page, when one exists."
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Official contact only. Do not publish personal contact details."
+    },
+    "telephone": {
+      "type": "string",
+      "description": "Official contact only."
+    },
+    "knowsLanguage": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Languages this person conducts official business in."
+    },
+    "sourceDataset": {
+      "type": "string",
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
+    }
   },
-  "required": ["@id", "@type", "name"],
+  "required": [
+    "@id",
+    "@type",
+    "name"
+  ],
   "additionalProperties": true
 }

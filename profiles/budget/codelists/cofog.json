@@ -3,18 +3,78 @@
   "@id": "https://schema.govfresh.com/v1/COFOG",
   "@type": "DefinedTermSet",
   "name": "COFOG functional classification",
-  "description": "United Nations Classification of the Functions of Government, divisions (first level). This is what makes budgets comparable across countries: administrative structures differ everywhere, but 'how much goes to health' is answerable anywhere. COFOG has three levels; only the ten divisions are enumerated here, and publishers may use full group and class codes such as 07.3 or 07.3.1 as the value.",
+  "description": "The United Nations' Classification of the Functions of Government, first-level divisions only. It's what makes budgets comparable across countries: every country organizes its government differently, but 'how much goes to health' means the same thing everywhere. COFOG has three levels; only the ten divisions are listed here, so publishers can still use fuller codes like 07.3 or 07.3.1 as the actual value.",
   "url": "https://unstats.un.org/unsd/classifications/Family/Detail/4",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:cofog/01","termCode":"01","name":"General public services","description":"Executive and legislative organs, financial and fiscal affairs, external affairs, public debt transactions."},
-    {"@type":"DefinedTerm","@id":"gs:cofog/02","termCode":"02","name":"Defence"},
-    {"@type":"DefinedTerm","@id":"gs:cofog/03","termCode":"03","name":"Public order and safety","description":"Police, fire protection, law courts, prisons."},
-    {"@type":"DefinedTerm","@id":"gs:cofog/04","termCode":"04","name":"Economic affairs","description":"Transport, agriculture, fuel and energy, communication, general economic and labour affairs."},
-    {"@type":"DefinedTerm","@id":"gs:cofog/05","termCode":"05","name":"Environmental protection","description":"Waste and wastewater management, pollution abatement, biodiversity."},
-    {"@type":"DefinedTerm","@id":"gs:cofog/06","termCode":"06","name":"Housing and community amenities","description":"Housing development, community development, water supply, street lighting."},
-    {"@type":"DefinedTerm","@id":"gs:cofog/07","termCode":"07","name":"Health"},
-    {"@type":"DefinedTerm","@id":"gs:cofog/08","termCode":"08","name":"Recreation, culture and religion","description":"Recreational and sporting services, cultural services, broadcasting."},
-    {"@type":"DefinedTerm","@id":"gs:cofog/09","termCode":"09","name":"Education"},
-    {"@type":"DefinedTerm","@id":"gs:cofog/10","termCode":"10","name":"Social protection","description":"Sickness and disability, old age, family and children, unemployment, housing support."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:cofog/01",
+      "termCode": "01",
+      "name": "General public services",
+      "description": "Running the government itself: executive and legislative bodies, financial and fiscal affairs, foreign affairs, and public debt."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:cofog/02",
+      "termCode": "02",
+      "name": "Defence",
+      "description": "Defence."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:cofog/03",
+      "termCode": "03",
+      "name": "Public order and safety",
+      "description": "Police, fire protection, courts, and prisons."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:cofog/04",
+      "termCode": "04",
+      "name": "Economic affairs",
+      "description": "Transport, agriculture, fuel and energy, communication, and general economic and labor affairs."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:cofog/05",
+      "termCode": "05",
+      "name": "Environmental protection",
+      "description": "Waste and wastewater management, pollution control, and biodiversity."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:cofog/06",
+      "termCode": "06",
+      "name": "Housing and community amenities",
+      "description": "Housing development, community development, water supply, and street lighting."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:cofog/07",
+      "termCode": "07",
+      "name": "Health",
+      "description": "Health."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:cofog/08",
+      "termCode": "08",
+      "name": "Recreation, culture and religion",
+      "description": "Recreation, sports, culture, and broadcasting."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:cofog/09",
+      "termCode": "09",
+      "name": "Education",
+      "description": "Education."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:cofog/10",
+      "termCode": "10",
+      "name": "Social protection",
+      "description": "Sickness and disability, old age, family and children, unemployment, and housing support."
+    }
   ]
 }

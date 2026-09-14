@@ -3,20 +3,92 @@
   "@id": "https://schema.govfresh.com/v1/AlertCategory",
   "@type": "DefinedTermSet",
   "name": "Alert category",
-  "description": "Subject categories for public warnings, taken unchanged from OASIS CAP 1.2. Adopted rather than invented because alerting systems worldwide already route and filter on these codes, and a warning that does not route is a warning nobody receives.",
+  "description": "The subject of a public warning. These codes come from CAP 1.2 (OASIS), the standard most alert systems already use. Using the same codes means a warning actually reaches people, instead of getting lost because it used a system nobody else recognizes.",
   "url": "http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:alertcat/geo","termCode":"geo","name":"Geophysical","description":"Earthquake, landslide, tsunami, volcanic activity."},
-    {"@type":"DefinedTerm","@id":"gs:alertcat/met","termCode":"met","name":"Meteorological","description":"Storm, flood, extreme heat or cold, wildfire weather."},
-    {"@type":"DefinedTerm","@id":"gs:alertcat/safety","termCode":"safety","name":"General emergency and public safety"},
-    {"@type":"DefinedTerm","@id":"gs:alertcat/security","termCode":"security","name":"Law enforcement, military, homeland and local security"},
-    {"@type":"DefinedTerm","@id":"gs:alertcat/rescue","termCode":"rescue","name":"Rescue and recovery"},
-    {"@type":"DefinedTerm","@id":"gs:alertcat/fire","termCode":"fire","name":"Fire suppression and rescue"},
-    {"@type":"DefinedTerm","@id":"gs:alertcat/health","termCode":"health","name":"Medical and public health","description":"Where SpecialAnnouncement's pandemic properties would apply."},
-    {"@type":"DefinedTerm","@id":"gs:alertcat/env","termCode":"env","name":"Pollution and environmental","description":"Includes boil-water notices and air quality warnings."},
-    {"@type":"DefinedTerm","@id":"gs:alertcat/transport","termCode":"transport","name":"Public and private transportation","description":"Road closures, transit disruption."},
-    {"@type":"DefinedTerm","@id":"gs:alertcat/infra","termCode":"infra","name":"Utility, telecommunication and other non-transport infrastructure","description":"Water main breaks, power outages."},
-    {"@type":"DefinedTerm","@id":"gs:alertcat/cbrne","termCode":"cbrne","name":"Chemical, biological, radiological, nuclear or high-yield explosive threat"},
-    {"@type":"DefinedTerm","@id":"gs:alertcat/other","termCode":"other","name":"Other"}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:alertcat/geo",
+      "termCode": "geo",
+      "name": "Geophysical",
+      "description": "Earthquake, landslide, tsunami, or volcanic activity."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:alertcat/met",
+      "termCode": "met",
+      "name": "Meteorological",
+      "description": "Storm, flood, extreme heat or cold, or wildfire weather."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:alertcat/safety",
+      "termCode": "safety",
+      "name": "General emergency and public safety",
+      "description": "A general safety hazard."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:alertcat/security",
+      "termCode": "security",
+      "name": "Law enforcement, military, homeland and local security",
+      "description": "A security threat."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:alertcat/rescue",
+      "termCode": "rescue",
+      "name": "Rescue and recovery",
+      "description": "A search-and-rescue situation."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:alertcat/fire",
+      "termCode": "fire",
+      "name": "Fire suppression and rescue",
+      "description": "A fire."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:alertcat/health",
+      "termCode": "health",
+      "name": "Medical and public health",
+      "description": "A public health emergency, like the ones schema.org's SpecialAnnouncement was built for."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:alertcat/env",
+      "termCode": "env",
+      "name": "Pollution and environmental",
+      "description": "Includes boil-water notices and air quality warnings."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:alertcat/transport",
+      "termCode": "transport",
+      "name": "Public and private transportation",
+      "description": "Road closures or transit disruption."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:alertcat/infra",
+      "termCode": "infra",
+      "name": "Utility, telecommunication and other non-transport infrastructure",
+      "description": "Water main breaks or power outages."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:alertcat/cbrne",
+      "termCode": "cbrne",
+      "name": "Chemical, biological, radiological, nuclear or high-yield explosive threat",
+      "description": "A chemical, biological, radiological, nuclear, or explosive hazard."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:alertcat/other",
+      "termCode": "other",
+      "name": "Other",
+      "description": "Anything that doesn't fit the other categories."
+    }
   ]
 }

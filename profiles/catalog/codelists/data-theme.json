@@ -3,22 +3,106 @@
   "@id": "https://schema.govfresh.com/v1/DataTheme",
   "@type": "DefinedTermSet",
   "name": "Data theme",
-  "description": "Subject categories for published datasets, taken unchanged from the EU data-theme vocabulary that DCAT-AP uses. Adopted rather than invented because national open-data portals across Europe already tag with these codes, and a new set of themes would only fragment what is already aligned.",
+  "description": "The subject of a published dataset, using codes from the EU's data-theme vocabulary. DCAT-AP uses the same codes, and so do open-data portals across Europe. Using them keeps everything lined up.",
   "url": "https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/data-theme",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:theme/AGRI","termCode":"AGRI","name":"Agriculture, fisheries, forestry and food"},
-    {"@type":"DefinedTerm","@id":"gs:theme/ECON","termCode":"ECON","name":"Economy and finance","description":"Includes budgets and public spending."},
-    {"@type":"DefinedTerm","@id":"gs:theme/EDUC","termCode":"EDUC","name":"Education, culture and sport"},
-    {"@type":"DefinedTerm","@id":"gs:theme/ENER","termCode":"ENER","name":"Energy"},
-    {"@type":"DefinedTerm","@id":"gs:theme/ENVI","termCode":"ENVI","name":"Environment"},
-    {"@type":"DefinedTerm","@id":"gs:theme/GOVE","termCode":"GOVE","name":"Government and public sector","description":"Organizational structure, meetings, legislation, procurement."},
-    {"@type":"DefinedTerm","@id":"gs:theme/HEAL","termCode":"HEAL","name":"Health"},
-    {"@type":"DefinedTerm","@id":"gs:theme/INTR","termCode":"INTR","name":"International issues"},
-    {"@type":"DefinedTerm","@id":"gs:theme/JUST","termCode":"JUST","name":"Justice, legal system and public safety"},
-    {"@type":"DefinedTerm","@id":"gs:theme/OP_DATPRO","termCode":"OP_DATPRO","name":"Provisional data"},
-    {"@type":"DefinedTerm","@id":"gs:theme/REGI","termCode":"REGI","name":"Regions and cities"},
-    {"@type":"DefinedTerm","@id":"gs:theme/SOCI","termCode":"SOCI","name":"Population and society"},
-    {"@type":"DefinedTerm","@id":"gs:theme/TECH","termCode":"TECH","name":"Science and technology"},
-    {"@type":"DefinedTerm","@id":"gs:theme/TRAN","termCode":"TRAN","name":"Transport"}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/AGRI",
+      "termCode": "AGRI",
+      "name": "Agriculture, fisheries, forestry and food",
+      "description": "Agriculture, fisheries, forestry, and food."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/ECON",
+      "termCode": "ECON",
+      "name": "Economy and finance",
+      "description": "Economy and finance, including budgets and public spending."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/EDUC",
+      "termCode": "EDUC",
+      "name": "Education, culture and sport",
+      "description": "Education, culture, and sport."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/ENER",
+      "termCode": "ENER",
+      "name": "Energy",
+      "description": "Energy."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/ENVI",
+      "termCode": "ENVI",
+      "name": "Environment",
+      "description": "Environment."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/GOVE",
+      "termCode": "GOVE",
+      "name": "Government and public sector",
+      "description": "Government and public sector, including organizational structure, meetings, legislation, and procurement."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/HEAL",
+      "termCode": "HEAL",
+      "name": "Health",
+      "description": "Health."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/INTR",
+      "termCode": "INTR",
+      "name": "International issues",
+      "description": "International issues."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/JUST",
+      "termCode": "JUST",
+      "name": "Justice, legal system and public safety",
+      "description": "Justice, legal system, and public safety."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/OP_DATPRO",
+      "termCode": "OP_DATPRO",
+      "name": "Provisional data",
+      "description": "Provisional data — categories still being defined."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/REGI",
+      "termCode": "REGI",
+      "name": "Regions and cities",
+      "description": "Regions and cities."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/SOCI",
+      "termCode": "SOCI",
+      "name": "Population and society",
+      "description": "Population and society."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/TECH",
+      "termCode": "TECH",
+      "name": "Science and technology",
+      "description": "Science and technology."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:theme/TRAN",
+      "termCode": "TRAN",
+      "name": "Transport",
+      "description": "Transport."
+    }
   ]
 }

@@ -3,13 +3,49 @@
   "@id": "https://schema.govfresh.com/v1/ServiceRequestStatus",
   "@type": "DefinedTermSet",
   "name": "Service request status",
-  "description": "Open311 GeoReport v2 defines only open and closed, which loses the distinction residents most want: whether anyone has actually picked the request up. These terms refine that while staying mappable - anything other than closed, rejected, or duplicate maps to Open311 open.",
+  "description": "Open311 GeoReport v2 only defines open and closed. That hides what residents most want to know: has anyone started on this yet? These terms add that detail, and still map back to Open311 - anything but closed, rejected, or duplicate maps to open.",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:reqstatus/open","termCode":"open","name":"Open","description":"Received, not yet being worked on. Maps to Open311 open."},
-    {"@type":"DefinedTerm","@id":"gs:reqstatus/inProgress","termCode":"inProgress","name":"In progress","description":"Assigned and being worked on. Maps to Open311 open."},
-    {"@type":"DefinedTerm","@id":"gs:reqstatus/onHold","termCode":"onHold","name":"On hold","description":"Acknowledged but blocked, for example awaiting a contractor or a season. Maps to Open311 open."},
-    {"@type":"DefinedTerm","@id":"gs:reqstatus/closed","termCode":"closed","name":"Closed","description":"Work completed. Maps to Open311 closed."},
-    {"@type":"DefinedTerm","@id":"gs:reqstatus/rejected","termCode":"rejected","name":"Rejected","description":"Closed without action, for example outside the authority's remit. Maps to Open311 closed, but publishing the distinction is what stops a resident re-reporting the same thing."},
-    {"@type":"DefinedTerm","@id":"gs:reqstatus/duplicate","termCode":"duplicate","name":"Duplicate","description":"Closed as already reported. Maps to Open311 closed."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:reqstatus/open",
+      "termCode": "open",
+      "name": "Open",
+      "description": "Received, not yet being worked on. Maps to Open311 open."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:reqstatus/inProgress",
+      "termCode": "inProgress",
+      "name": "In progress",
+      "description": "Assigned and being worked on. Maps to Open311 open."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:reqstatus/onHold",
+      "termCode": "onHold",
+      "name": "On hold",
+      "description": "Acknowledged, but stuck — for example, waiting on a contractor or a season. Maps to Open311 open."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:reqstatus/closed",
+      "termCode": "closed",
+      "name": "Closed",
+      "description": "The work is finished. Maps to Open311 closed."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:reqstatus/rejected",
+      "termCode": "rejected",
+      "name": "Rejected",
+      "description": "Closed with no action, for example because it's outside the authority's job. Maps to Open311 closed — but keeping this separate stops a resident from reporting the same thing again."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:reqstatus/duplicate",
+      "termCode": "duplicate",
+      "name": "Duplicate",
+      "description": "Closed because it was already reported. Maps to Open311 closed."
+    }
   ]
 }

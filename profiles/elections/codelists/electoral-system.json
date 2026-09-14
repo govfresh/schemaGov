@@ -3,77 +3,77 @@
   "@id": "https://schema.govfresh.com/v1/ElectoralSystem",
   "@type": "DefinedTermSet",
   "name": "Electoral system",
-  "description": "How votes translate into outcomes. Required on every contest, because a result cannot be interpreted without it: 40% of the vote wins outright under first-past-the-post, triggers a runoff under a two-round system, and yields a proportion of seats under a party list. This is the field that lets the profile travel - one that assumed a single system would only work in the country it was written in.",
+  "description": "How votes turn into results. Required on every contest, since a result means nothing without it. 40% wins outright under first-past-the-post, forces a runoff under a two-round system, and earns only a share of seats under a party list. Naming the system lets this profile work in any country.",
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",
       "@id": "gs:electsys/fptp",
       "termCode": "fptp",
       "name": "First past the post",
-      "description": "Single seat, most votes wins, no majority required."
+      "description": "One seat. Most votes wins. No majority needed."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electsys/blockVote",
       "termCode": "blockVote",
       "name": "Block vote",
-      "description": "Several seats, voters cast as many votes as there are seats, highest totals win."
+      "description": "Several seats. Each voter gets as many votes as there are seats. The highest totals win."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electsys/twoRound",
       "termCode": "twoRound",
       "name": "Two-round",
-      "description": "A second round between leading candidates if no one reaches the threshold in the first."
+      "description": "A second round between the leading candidates if no one clears the threshold in the first round."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electsys/partyList",
       "termCode": "partyList",
       "name": "Party-list proportional",
-      "description": "Seats allocated to parties in proportion to their vote share."
+      "description": "Seats go to parties in proportion to their share of the vote."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electsys/stv",
       "termCode": "stv",
       "name": "Single transferable vote",
-      "description": "Multi-seat, ranked, with surplus and eliminated votes transferred."
+      "description": "Several seats, ranked ballots. Extra and eliminated votes transfer to other candidates."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electsys/mmp",
       "termCode": "mmp",
       "name": "Mixed-member proportional",
-      "description": "Constituency seats plus list seats allocated to make the total proportional."
+      "description": "Some seats come from constituencies, and list seats top up the total to make it proportional."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electsys/parallel",
       "termCode": "parallel",
       "name": "Parallel or mixed",
-      "description": "Constituency and list seats allocated independently, without compensation."
+      "description": "Constituency seats and list seats are counted separately, with no top-up between them."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electsys/rankedChoice",
       "termCode": "rankedChoice",
       "name": "Ranked choice (instant runoff)",
-      "description": "Single seat, ranked, lowest eliminated and transferred until a majority."
+      "description": "One seat, ranked ballots. The last-place candidate is eliminated and their votes transfer until someone has a majority."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electsys/approval",
       "termCode": "approval",
       "name": "Approval",
-      "description": "Voters approve any number of candidates; most approvals wins."
+      "description": "Voters can approve as many candidates as they like. Most approvals wins."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:electsys/indirect",
       "termCode": "indirect",
       "name": "Indirect",
-      "description": "Chosen by an electoral college or a sitting body rather than directly by voters."
+      "description": "Chosen by an electoral college or a sitting body instead of directly by voters."
     }
   ]
 }

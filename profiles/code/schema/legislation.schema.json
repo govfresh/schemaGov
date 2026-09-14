@@ -2,32 +2,42 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/code/legislation.schema.json",
   "title": "Legislation",
-  "description": "A law, ordinance, resolution, or a numbered part of a code. This is the abstract work, not a file of it - the text itself lives in one or more LegislationObjects. schema.org's legislation vocabulary derives from the European Legislation Identifier, so almost everything needed here already exists and this profile mints only a codification level. Structural markup inside the text (clauses, provisos, amendment instructions) is out of scope by design: that is what Akoma Ntoso is for, linked through encoding.",
+  "description": "A law, ordinance, resolution, or a numbered part of a code.",
+  "standards": [
+    "eli",
+    "akoma-ntoso"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The law's own dereferenceable identifier."
     },
     "@type": {
-      "const": "Legislation"
+      "const": "Legislation",
+      "description": "Always `Legislation` - the abstract work, not a file of it; the text itself lives in one or more `LegislationObject`s (see `encoding`). schema.org's legislation vocabulary derives from the European Legislation Identifier, so almost everything needed here already exists."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The law's short title, e.g. 'Noise Control Ordinance'."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language summary of what the law does."
     },
     "url": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "Where this `Legislation`'s canonical human-readable page lives."
     },
     "identifier": {
       "type": "array",
       "items": {
         "$ref": "../_core/identifier.schema.json"
-      }
+      },
+      "description": "Any additional scheme-qualified identifiers beyond `legislationIdentifier`."
     },
     "legislationIdentifier": {
       "type": "string",
@@ -35,7 +45,7 @@
     },
     "legislationType": {
       "type": "string",
-      "description": "termCode from the LegislationType code list."
+      "description": "termCode from the `LegislationType` code list."
     },
     "codificationLevel": {
       "type": "string",
@@ -57,21 +67,23 @@
     },
     "position": {
       "type": "integer",
-      "description": "Ordering among siblings. Real schema.org CreativeWork property."
+      "description": "Ordering among siblings. Real schema.org `CreativeWork` property."
     },
     "legislationJurisdiction": {
-      "$ref": "../_core/reference.schema.json"
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `Jurisdiction` this law applies within."
     },
     "legislationPassedBy": {
       "$ref": "../_core/reference.schema.json",
-      "description": "The GovernmentOrganization that adopted it."
+      "description": "The `GovernmentOrganization` that adopted it."
     },
     "legislationResponsible": {
-      "$ref": "../_core/reference.schema.json"
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `GovernmentOrganization` that administers or enforces it, when different from the body that passed it."
     },
     "enactedAt": {
       "$ref": "../_core/reference.schema.json",
-      "description": "The Meeting at which it was adopted. This is the join to the meetings profile, and the reason the two are built together."
+      "description": "The `Meeting` at which it was adopted. This is the join to the meetings profile, and the reason the two are built together."
     },
     "legislationDate": {
       "type": "string",
@@ -99,20 +111,24 @@
     },
     "datePublished": {
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "description": "When this `Legislation` was first published."
     },
     "dateModified": {
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "description": "When this record was last updated - not when the law itself changed; see `legislationDateVersion` for that."
     },
     "temporalCoverage": {
-      "type": "string"
+      "type": "string",
+      "description": "The period the law applies to, when it isn't open-ended."
     },
     "inLanguage": {
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "description": "The language(s) the text is authoritative in."
     },
     "isPartOf": {
       "$ref": "../_core/reference.schema.json",
@@ -122,61 +138,69 @@
       "type": "array",
       "items": {
         "$ref": "../_core/reference.schema.json"
-      }
+      },
+      "description": "The next tier down: a chapter's sections, a title's chapters."
     },
     "legislationAmends": {
       "type": "array",
       "items": {
         "$ref": "../_core/reference.schema.json"
-      }
+      },
+      "description": "The `Legislation` this amends, if any."
     },
     "legislationRepeals": {
       "type": "array",
       "items": {
         "$ref": "../_core/reference.schema.json"
-      }
+      },
+      "description": "The `Legislation` this repeals, if any."
     },
     "legislationChanges": {
       "type": "array",
       "items": {
         "$ref": "../_core/reference.schema.json"
-      }
+      },
+      "description": "The general effect this has on another `Legislation`, when `legislationAmends`/`legislationRepeals` aren't specific enough."
     },
     "legislationConsolidates": {
       "type": "array",
       "items": {
         "$ref": "../_core/reference.schema.json"
-      }
+      },
+      "description": "The prior versions this consolidated text supersedes."
     },
     "legislationCorrects": {
       "type": "array",
       "items": {
         "$ref": "../_core/reference.schema.json"
-      }
+      },
+      "description": "The `Legislation` this issues a correction to."
     },
     "legislationCommences": {
       "type": "array",
       "items": {
         "$ref": "../_core/reference.schema.json"
-      }
+      },
+      "description": "The `Legislation` this brings into force."
     },
     "encoding": {
       "type": "array",
       "items": {
         "$ref": "legislation-object.schema.json"
       },
-      "description": "The actual files. Attach the Akoma Ntoso XML here."
+      "description": "The actual files. Attach the Akoma Ntoso XML here. Structural markup inside the text (clauses, provisos, amendment instructions) is out of scope by design - that's what Akoma Ntoso is for."
     },
     "keywords": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "Subject keywords. Not schema:about, which ranges over Thing and is for references to entities - free-text strings there expand as relative IRIs."
+      "description": "Subject keywords. Not `schema:about`, which ranges over `Thing` and is for references to entities - free-text strings there expand as relative IRIs."
     },
     "sourceDataset": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
     }
   },
   "required": [

@@ -3,56 +3,56 @@
   "@id": "https://schema.govfresh.com/v1/WorkType",
   "@type": "DefinedTermSet",
   "name": "Work type",
-  "description": "The nature of construction works a permit covers. Distinguishing new build from alteration is what makes permit data usable as a housing-supply indicator rather than only as a compliance record.",
+  "description": "The kind of construction a permit covers. Telling a new build apart from an alteration turns permit data into a real measure of housing supply, not just a compliance record.",
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",
       "@id": "gs:worktype/newBuild",
       "termCode": "newBuild",
       "name": "New build",
-      "description": "Construction of a new structure."
+      "description": "Building a new structure."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:worktype/extension",
       "termCode": "extension",
       "name": "Extension",
-      "description": "Enlargement of an existing structure."
+      "description": "Making an existing structure bigger."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:worktype/alteration",
       "termCode": "alteration",
       "name": "Alteration",
-      "description": "Internal or external modification without enlargement."
+      "description": "Changing a structure, inside or out, without making it bigger."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:worktype/changeOfUse",
       "termCode": "changeOfUse",
       "name": "Change of use",
-      "description": "A change in how a structure is used, without physical works."
+      "description": "Changing how a structure is used, without any physical work."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:worktype/demolition",
       "termCode": "demolition",
       "name": "Demolition",
-      "description": "Removal of a structure."
+      "description": "Tearing a structure down."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:worktype/repair",
       "termCode": "repair",
       "name": "Repair",
-      "description": "Restoration to previous condition."
+      "description": "Restoring a structure to its earlier condition."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:worktype/temporary",
       "termCode": "temporary",
       "name": "Temporary",
-      "description": "Works or structures with a limited permitted life."
+      "description": "Work or structures meant to last only a limited time."
     }
   ]
 }

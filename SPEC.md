@@ -1,8 +1,5 @@
 # gov-schema specification
 
-**Version** 1.0.0-draft · **Namespace** `https://schema.govfresh.com/v1/` · **Prefix** `gs:`
-**Licence** [CC0 1.0](LICENSE) for the vocabulary and schemas, [MIT](LICENSE-CODE) for the tooling
-
 gov-schema is a **profile**, not a new standard. It describes government entities —
 organizations, legislation, meetings, service requests, budgets, contracts — by combining
 schema.org with the domain standards that already won in each area, and it mints new terms
@@ -12,7 +9,6 @@ The status of every term is explicit: a document that uses only schema.org vocab
 readable by any schema.org consumer, and the `gs:` terms it adds are each declared as a
 subclass or subproperty of a schema.org term, so nothing is lost by ignoring them.
 
----
 
 ## 1. Design rules
 
@@ -43,7 +39,7 @@ City (Place)  ←──  areaServed  ──  GovernmentOrganization  ──  loc
 Beware the schema.org types that look right here but are dual-typed through `LocalBusiness`,
 which subclasses **both** `Organization` and `Place`: `GovernmentOffice`, `PoliceStation`,
 `FireStation`, and `Library` all collapse this distinction by construction. Use
-`GovernmentBuilding` and its Place-only subtypes instead; see `profiles/_core/README.md`.
+`GovernmentBuilding` and its Place-only subtypes instead; see the [Core profile](/profiles/core/).
 
 ### 1.2 Reference, never inline
 
@@ -73,7 +69,7 @@ deliberately **not** minted:
 | Amendment and repeal history | `schema:legislationAmends` / `legislationRepeals` / `legislationConsolidates` / `legislationChanges` |
 | Recurring meeting pattern | `schema:eventSchedule` → `Schedule` (`byDay`, `byMonthWeek`, `repeatFrequency`) |
 
-schema.org's legislation vocabulary derives from the European Legislation Identifier (ELI)
+schema.org's legislation vocabulary derives from the [European Legislation Identifier (ELI)](/standards/eli/)
 and carries 21 `legislation*` properties. Most of what a municipal code needs is already
 there.
 
@@ -85,7 +81,7 @@ countries. gov-schema takes that standard as the **source model** and defines a 
 **projection** for discovery and general-purpose consumers.
 
 Forcing a budget into `MonetaryGrant` yields something neither a search engine nor a budget
-analyst can use. Publishing the Fiscal Data Package and a schema.org `Dataset` description
+analyst can use. Publishing the [Fiscal Data Package](/standards/fiscal-data-package/) and a schema.org `Dataset` description
 of it serves both.
 
 ### 1.5 No national assumption
@@ -105,7 +101,6 @@ An entity that ceases to exist gets `dissolutionDate` (organizations) or `endDat
 It is never removed, because published documents cite it by `@id` and those citations must
 keep resolving.
 
----
 
 ## 2. Identity
 
@@ -126,36 +121,40 @@ Beyond that, an entity carries any number of **scheme-qualified identifiers** as
 ```
 
 This is the mechanism that makes the model work internationally. It is the same pattern
-OCDS uses for organization identifiers, so procurement data crosswalks without
+[OCDS](/standards/ocds/) uses for organization identifiers, so procurement data crosswalks without
 transformation.
 
 **Registered scheme tokens:** `wikidata`, `iso3166-1-alpha2`, `iso3166-1-alpha3`,
 `iso3166-2`, `geonames`, `lei`, `ocd-division`, `gs:local`; any `org-id:<prefix>` token from
 the [org-id.guide](https://org-id.guide) register; or an absolute IRI naming your own scheme.
 
-A **Wikidata QID is strongly recommended** on every jurisdiction. It is the only identifier
+A **[Wikidata QID](/standards/wikidata/) is strongly recommended** on every jurisdiction. It is the only identifier
 system with global coverage across all tiers, which makes it the practical join key between
 publishers in different countries.
 
----
 
 ## 3. Repository layout
 
-```
-context/v1/context.jsonld    the @context every instance imports; immutable once published
-vocabulary/govschema.ttl       gs: terms, each subClassOf/subPropertyOf a schema.org term
-profiles/_core/                Jurisdiction · Organization · Person · Role · Identifier
-profiles/{org,code,meetings,requests,budget,procurement}/
-examples/example-city/         one coherent, cross-linked fixture set
-crosswalks/                    mapping tables to the standards being profiled
-shapes/                        SHACL, for semantic validation
-tools/validate.py              shape + reference-integrity checker
-```
+- `context/v1/context.jsonld` — the @context every instance imports; immutable once published
+- `vocabulary/govschema.ttl` — gs: terms, each subClassOf/subPropertyOf a schema.org term
+- `profiles/_core/` — Jurisdiction · Organization · Person · Role · Identifier
+- `profiles/{org,code,meetings,requests,budget,procurement,catalog,alerts,permits,elections,services}/` — one directory per [domain profile](/profiles/)
+- `examples/example-city/` — one coherent, cross-linked fixture set
+- `crosswalks/` — mapping tables to the standards being profiled
+- `shapes/` — SHACL, for semantic validation
+- `tools/validate.py` — shape + reference-integrity checker
 
-Every domain profile carries the same five artifacts, so the pattern is learned once:
-`README.md` · `schema/*.schema.json` · `context.jsonld` · `crosswalk.md` · `examples/`.
+Every profile directory carries the same three artifacts, so the pattern is learned once:
 
----
+- `README.md`
+- `schema/*.schema.json`
+- `codelists/*.json`
+
+The `@context` and example data are shared across every profile rather than duplicated in
+each one — see `context/v1/context.jsonld` and [Examples](/examples/). A `crosswalk.md`
+mapping a profile to its own source standard is added as it's written; today only `org` has
+one, alongside the standard-level mapping tables already in `crosswalks/`.
+
 
 ## 4. Validation
 
@@ -183,7 +182,7 @@ level it claims; an unverified claim is worse than no claim.
 
 ### Conformance levels
 
-A publisher declares a level with `conformanceLevel` (`gs:conformanceLevel`). This is
+A publisher declares a level with [`conformanceLevel`](/v1/ConformanceLevel/) (`gs:conformanceLevel`). This is
 deliberately **not** `dcterms:conformsTo`, which means an external standard the data follows
 and is typed as an IRI — a bare level name expanded there becomes a broken relative IRI. The ladder exists so that a small
 authority can publish something genuinely useful on day one instead of bouncing off a
@@ -191,34 +190,36 @@ forty-field requirement.
 
 | Level | Requirement |
 |---|---|
-| **Core** | Jurisdiction and Organization present, correctly separated, each with `@id` and one identifier |
-| **Standard** | Core, plus every required field of each domain profile in use, and all references resolve |
-| **Extended** | Standard, plus recommended optional fields and a crosswalk to the source standard |
+| [Core](/v1/conformance/core/) | Jurisdiction and Organization present, correctly separated, each with `@id` and one identifier |
+| [Standard](/v1/conformance/standard/) | Core, plus every required field of each domain profile in use, and all references resolve |
+| [Extended](/v1/conformance/extended/) | Standard, plus recommended optional fields and a crosswalk to the source standard |
 
----
 
 ## 5. Domain profiles
 
-All nine profiles are specified, implemented, and validating.
+Every profile in the table above is specified, implemented, and validating.
 
 | Profile | schema.org type | Source standard | Status |
 |---|---|---|---|
-| `_core` | `AdministrativeArea`, `GovernmentOrganization`, `Person`, `OrganizationRole` | Popolo, W3C ORG | **implemented** |
-| `org` | `gs:Post`, `schema:DataFeed` | Popolo, W3C ORG | **implemented** |
-| `code` | `Legislation` / `LegislationObject` | Akoma Ntoso, ELI | **implemented** |
-| `meetings` | `gs:Meeting`, `EventSeries`, `Schedule` | Popolo, OCD | **implemented** |
-| `requests` | *none — projection only* | **Open311 GeoReport v2** | **implemented** |
-| `budget` | *none — projection only* | **Fiscal Data Package**, COFOG, GFSM 2014 | **implemented** |
-| `procurement` | *none — projection only* | **OCDS** | **implemented** |
-| `catalog` | `DataCatalog`, `Dataset` | **DCAT / DCAT-AP** | **implemented** |
-| `alerts` | `SpecialAnnouncement` (projection only) | **CAP 1.2 (OASIS)** | **implemented** |
+| `_core` | `AdministrativeArea`, `GovernmentOrganization`, `Person`, `OrganizationRole` | [schema.org](/standards/schema-org/), [Popolo](/standards/popolo/), [W3C ORG](/standards/w3c-org/) | <span class="badge text-bg-success">implemented</span> |
+| `org` | `gs:Post`, `schema:DataFeed` | [schema.org](/standards/schema-org/), [Popolo](/standards/popolo/), [W3C ORG](/standards/w3c-org/) | <span class="badge text-bg-success">implemented</span> |
+| `code` | `Legislation` / `LegislationObject` | [schema.org](/standards/schema-org/), [Akoma Ntoso](/standards/akoma-ntoso/), [ELI](/standards/eli/) | <span class="badge text-bg-success">implemented</span> |
+| `meetings` | `gs:Meeting`, `EventSeries`, `Schedule` | [schema.org](/standards/schema-org/), [Popolo](/standards/popolo/), [OCD](/standards/open-civic-data/) | <span class="badge text-bg-success">implemented</span> |
+| `requests` | none — projection only | [schema.org](/standards/schema-org/), [Open311 GeoReport v2](/standards/open311-georeport-v2/) | <span class="badge text-bg-success">implemented</span> |
+| `budget` | none — projection only | [schema.org](/standards/schema-org/), [Fiscal Data Package](/standards/fiscal-data-package/), [COFOG](/standards/cofog/), [GFSM 2014](/standards/gfsm-2014/) | <span class="badge text-bg-success">implemented</span> |
+| `procurement` | none — projection only | [schema.org](/standards/schema-org/), [OCDS](/standards/ocds/) | <span class="badge text-bg-success">implemented</span> |
+| `catalog` | `DataCatalog`, `Dataset` | [schema.org](/standards/schema-org/), [DCAT / DCAT-AP](/standards/dcat/) | <span class="badge text-bg-success">implemented</span> |
+| `alerts` | `SpecialAnnouncement` (projection only) | [schema.org](/standards/schema-org/), [CAP 1.2 (OASIS)](/standards/cap/) | <span class="badge text-bg-success">implemented</span> |
+| `permits` | `GovernmentPermit` | [schema.org](/standards/schema-org/), [BLDS](/standards/blds/), national equivalents | <span class="badge text-bg-success">implemented</span> |
+| `elections` | `gs:Election`, `gs:Contest`, `gs:Candidacy`, `PoliticalParty` | [schema.org](/standards/schema-org/), [NIST SP 1500-100](/standards/nist-sp-1500-100/), VIP | <span class="badge text-bg-success">implemented</span> |
+| `services` | `GovernmentService` | [schema.org](/standards/schema-org/), [Open Referral / HSDS](/standards/open-referral-hsds/) | <span class="badge text-bg-success">implemented</span> |
 
-Build order follows dependency, not interest: `_core` → `org` → `code` + `meetings`
-(coupled: agenda items cite legislation, votes occur at meetings) → `budget` → `procurement`
-(contracts cite budget lines). `requests` is independent and can be built at any point; it
-is the strongest early adoption driver, because authorities already have 311 data flowing.
+All twelve profiles are implemented. `_core` is the shared dependency every other profile
+builds on; `code` and `meetings` are coupled (agenda items cite legislation, votes occur at
+meetings), and `procurement` cites `budget` lines. `requests` depends on no other profile,
+which is also why it tends to be the easiest first one for a publisher to adopt: most
+authorities already have 311 data flowing.
 
----
 
 ## 6. Versioning
 

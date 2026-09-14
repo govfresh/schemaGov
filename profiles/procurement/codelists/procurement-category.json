@@ -3,11 +3,35 @@
   "@id": "https://schema.govfresh.com/v1/ProcurementCategory",
   "@type": "DefinedTermSet",
   "name": "Procurement category",
-  "description": "The broad kind of thing being bought, per OCDS. Deliberately coarse; use the classification field with CPV, UNSPSC or NIGP codes for detail.",
+  "description": "The broad kind of thing being bought, following OCDS. Kept coarse on purpose — use the classification field with CPV, UNSPSC, or NIGP codes for detail.",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:proccat/goods","termCode":"goods","name":"Goods","description":"Physical products."},
-    {"@type":"DefinedTerm","@id":"gs:proccat/works","termCode":"works","name":"Works","description":"Construction and civil engineering."},
-    {"@type":"DefinedTerm","@id":"gs:proccat/services","termCode":"services","name":"Services"},
-    {"@type":"DefinedTerm","@id":"gs:proccat/consultingServices","termCode":"consultingServices","name":"Consulting services","description":"Separated from services because many procurement regimes apply different thresholds and rules to advisory work."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:proccat/goods",
+      "termCode": "goods",
+      "name": "Goods",
+      "description": "Physical products."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:proccat/works",
+      "termCode": "works",
+      "name": "Works",
+      "description": "Construction and civil engineering."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:proccat/services",
+      "termCode": "services",
+      "name": "Services",
+      "description": "Services."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:proccat/consultingServices",
+      "termCode": "consultingServices",
+      "name": "Consulting services",
+      "description": "Advisory work, kept separate from other services because many procurement rules apply different thresholds to it."
+    }
   ]
 }

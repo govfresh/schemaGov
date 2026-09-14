@@ -2,34 +2,40 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/requests/service-request.schema.json",
   "title": "ServiceRequest",
-  "description": "One report of a problem or request for service - a pothole, a broken streetlight, an abandoned vehicle. Mirrors Open311 GeoReport v2, which is the established standard and remains the source model; this is a schema.org projection of it, not a replacement. schema.org has no service request concept of any kind, so gs:ServiceRequest is minted outright. NOTE: this schema deliberately has no fields for the reporter's name, email, phone, device id, or account id. See the privacy section in the profile README - those fields exist in the Open311 POST payload and must not survive into published data.",
+  "description": "One report of a problem or request for service - a pothole, a broken streetlight, an abandoned vehicle.",
+  "standards": [
+    "open311-georeport-v2"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This request's own dereferenceable identifier."
     },
     "@type": {
-      "const": "ServiceRequest"
+      "const": "ServiceRequest",
+      "description": "Always `ServiceRequest`. Mirrors Open311 GeoReport v2, which is the established standard and remains the source model; this is a schema.org projection of it, not a replacement - schema.org has no service request concept of any kind, so `gs:ServiceRequest` is minted outright. Deliberately has no fields for the reporter's name, email, phone, device ID, or account ID: those exist in the Open311 POST payload and must not survive into published data. See the privacy section in the profile README."
     },
     "identifier": {
       "type": "array",
       "items": {
         "$ref": "../_core/identifier.schema.json"
-      }
+      },
+      "description": "Any scheme-qualified identifiers for this request beyond its `@id`."
     },
     "serviceRequestId": {
       "type": "string",
-      "description": "The publisher's own request number, as shown to the public. Open311 service_request_id."
+      "description": "The publisher's own request number, as shown to the public. Open311 `service_request_id`."
     },
     "serviceCode": {
       "type": "string",
-      "description": "The code of the service requested. Open311 service_code. Must match a Service in the catalogue."
+      "description": "The code of the service requested. Open311 `service_code`. Must match a `GovernmentService` in the catalogue."
     },
     "service": {
       "$ref": "../_core/reference.schema.json",
-      "description": "The GovernmentService this request is against."
+      "description": "The `GovernmentService` this request is against."
     },
     "description": {
       "type": "string",
@@ -37,7 +43,7 @@
     },
     "requestStatus": {
       "type": "string",
-      "description": "termCode from the ServiceRequestStatus code list. Open311 defines only open and closed; anything other than closed maps to open for Open311 compatibility.",
+      "description": "termCode from the `ServiceRequestStatus` code list. Open311 defines only `open` and `closed`; anything other than `closed` maps to `open` for Open311 compatibility.",
       "enum": [
         "open",
         "inProgress",
@@ -49,30 +55,30 @@
     },
     "statusNote": {
       "type": "string",
-      "description": "Public explanation of the current status. Open311 status_notes."
+      "description": "Public explanation of the current status. Open311 `status_notes`."
     },
     "agencyResponsible": {
       "$ref": "../_core/reference.schema.json",
-      "description": "The GovernmentOrganization handling it."
+      "description": "The `GovernmentOrganization` handling it."
     },
     "dateCreated": {
       "type": "string",
       "format": "date-time",
-      "description": "Open311 requested_datetime."
+      "description": "Open311 `requested_datetime`."
     },
     "dateModified": {
       "type": "string",
       "format": "date-time",
-      "description": "Open311 updated_datetime."
+      "description": "Open311 `updated_datetime`."
     },
     "expectedResolutionDate": {
       "type": "string",
       "format": "date-time",
-      "description": "Open311 expected_datetime."
+      "description": "Open311 `expected_datetime`."
     },
     "geo": {
       "type": "object",
-      "description": "schema.org GeoCoordinates. Round coordinates for requests at residential addresses - see the privacy section of the profile README.",
+      "description": "schema.org `GeoCoordinates`. Round coordinates for requests at residential addresses - see the privacy section of the profile README.",
       "properties": {
         "@type": {
           "const": "GeoCoordinates"
@@ -96,41 +102,42 @@
     },
     "address": {
       "type": "object",
-      "description": "schema.org PostalAddress."
+      "description": "schema.org `PostalAddress`, when the request concerns one rather than coordinates alone."
     },
     "location": {
       "$ref": "../_core/reference.schema.json",
-      "description": "A named Facility or Place, where the request concerns one."
+      "description": "A named `Facility` or `Place`, where the request concerns one."
     },
     "jurisdiction": {
       "$ref": "../_core/reference.schema.json",
-      "description": "The Jurisdiction the request falls in."
+      "description": "The `Jurisdiction` the request falls in."
     },
     "image": {
       "type": "array",
       "items": {
         "type": "object"
       },
-      "description": "schema.org ImageObject. Open311 media_url. Photos submitted by the public routinely contain bystanders, licence plates, and house numbers; review before publishing."
+      "description": "schema.org `ImageObject`. Open311 `media_url`. Photos submitted by the public routinely contain bystanders, licence plates, and house numbers; review before publishing."
     },
     "additionalProperty": {
       "type": "array",
       "items": {
         "type": "object"
       },
-      "description": "Answers to the service's own questions, as schema.org PropertyValue with propertyID matching the attribute's valueName. Open311 attribute[]."
+      "description": "Answers to the service's own questions, as schema.org `PropertyValue` with `propertyID` matching the attribute's `valueName`. Open311 `attribute[]`."
     },
     "sourceDataset": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
     },
     "duplicateOf": {
       "$ref": "../_core/reference.schema.json",
-      "description": "The request this duplicates, when requestStatus is 'duplicate'. A reference, not prose: 'Duplicate of 2025-104882' in a status note cannot be followed by anything."
+      "description": "The request this duplicates, when `requestStatus` is `duplicate`. A reference, not prose: 'Duplicate of 2025-104882' in a status note cannot be followed by anything."
     },
     "relatedAlert": {
       "$ref": "../_core/reference.schema.json",
-      "description": "An Alert this request concerns. A service disruption is both: the disruption is an alert, reports about it are requests."
+      "description": "An `Alert` this request concerns. A service disruption is both: the disruption is an alert, reports about it are requests."
     },
     "statusHistory": {
       "type": "array",

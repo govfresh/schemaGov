@@ -3,17 +3,23 @@
   "$id": "https://schema.govfresh.com/v1/procurement/party.schema.json",
   "title": "Party",
   "description": "A non-government organization taking part in a contracting process - a tenderer, a supplier, a funder - with the roles it plays. Government participants are NOT duplicated here: the buyer and procuring entity are _core GovernmentOrganizations, referenced directly from the process, so one body never becomes two entities. A scheme-qualified identifier is required: a supplier known only by name cannot be joined across contracts or to a company register, and unjoinable supplier data is the main reason procurement transparency fails in practice.",
+  "standards": [
+    "ocds"
+  ],
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This party's own dereferenceable identifier."
     },
     "@type": {
-      "const": "Organization"
+      "const": "Organization",
+      "description": "Always `Organization`, a real schema.org type - `Party` is gov-schema's name for this role, not a minted type schema.org needs to know about."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The party's legal or trading name."
     },
     "identifier": {
       "type": "array",
@@ -25,6 +31,7 @@
     },
     "role": {
       "type": "array",
+      "description": "termCode(s) from the `PartyRole` code list.",
       "items": {
         "type": "string",
         "enum": [
@@ -41,14 +48,17 @@
       "minItems": 1
     },
     "address": {
-      "type": "object"
+      "type": "object",
+      "description": "schema:PostalAddress for this party."
     },
     "contactPoint": {
-      "type": "object"
+      "type": "object",
+      "description": "How to reach this party."
     },
     "url": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The party's own website, where one exists."
     }
   },
   "required": [

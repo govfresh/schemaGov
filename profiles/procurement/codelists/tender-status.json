@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/TenderStatus",
   "@type": "DefinedTermSet",
   "name": "Tender status",
-  "description": "The stage of a solicitation, from OCDS. Kept separate from award and contract status because 'active' means something different at each stage.",
+  "description": "The stage a solicitation has reached, following OCDS. Kept apart from award and contract status, since 'active' means something different at each stage.",
   "url": "https://standard.open-contracting.org",
   "hasDefinedTerm": [
     {
@@ -18,7 +18,7 @@
       "@id": "gs:tenderstatus/planned",
       "termCode": "planned",
       "name": "Planned",
-      "description": "A future procurement is intended and announced."
+      "description": "A future procurement is intended and has been announced."
     },
     {
       "@type": "DefinedTerm",
@@ -32,28 +32,28 @@
       "@id": "gs:tenderstatus/cancelled",
       "termCode": "cancelled",
       "name": "Cancelled",
-      "description": "Abandoned before completion."
+      "description": "Dropped before it was completed."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:tenderstatus/unsuccessful",
       "termCode": "unsuccessful",
       "name": "Unsuccessful",
-      "description": "Completed with no award made."
+      "description": "Completed, with no award made."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:tenderstatus/complete",
       "termCode": "complete",
       "name": "Complete",
-      "description": "Completed with an award made."
+      "description": "Completed, with an award made."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:tenderstatus/withdrawn",
       "termCode": "withdrawn",
       "name": "Withdrawn",
-      "description": "Removed before bidding opened."
+      "description": "Pulled before bidding opened."
     }
   ]
 }

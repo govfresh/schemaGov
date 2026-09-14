@@ -2,39 +2,40 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/meetings/meeting.schema.json",
   "title": "Meeting",
-  "description": "A sitting of a government body: a council meeting, a committee hearing, a commission session. Minted as a subclass of schema:Event because Event alone cannot distinguish a council meeting from a summer concert, and discovery depends on that distinction. Everything else - scheduling, status, attendance mode, location, recordings - uses schema.org properties unchanged.",
+  "description": "A sitting of a government body: a council meeting, a committee hearing, a commission session.",
   "type": "object",
   "properties": {
     "@context": {},
-    "@id": {"type": "string", "format": "iri"},
-    "@type": {"enum": ["Meeting", "EventSeries"], "description": "Use EventSeries for the recurring series, Meeting for one sitting."},
-    "name": {"type": "string"},
-    "description": {"type": "string"},
-    "url": {"type": "string", "format": "iri"},
-    "identifier": {"type": "array", "items": {"$ref": "../_core/identifier.schema.json"}},
+    "@id": {"type": "string", "format": "iri", "description": "This meeting's own dereferenceable identifier."},
+    "@type": {"enum": ["Meeting", "EventSeries"], "description": "Use `EventSeries` for the recurring series, `Meeting` for one sitting - minted as a subclass of `schema:Event` because `Event` alone cannot distinguish a council meeting from a summer concert, and discovery depends on that distinction."},
+    "name": {"type": "string", "description": "The meeting's title, e.g. 'City Council Regular Meeting'."},
+    "description": {"type": "string", "description": "A plain-language summary of the meeting's purpose, when the name alone isn't enough."},
+    "url": {"type": "string", "format": "iri", "description": "Where this meeting's canonical human-readable page lives."},
+    "identifier": {"type": "array", "items": {"$ref": "../_core/identifier.schema.json"}, "description": "Any scheme-qualified identifiers for this meeting beyond its `@id`."},
     "organizer": {
       "$ref": "../_core/reference.schema.json",
-      "description": "The GovernmentOrganization sitting. Required: a meeting with no body cannot be placed in the structure."
+      "description": "The `GovernmentOrganization` sitting. Required: a meeting with no body cannot be placed in the structure."
     },
     "startDate": {"type": "string", "description": "Use a full date-time with offset. A meeting time without an offset is ambiguous.", "anyOf": [{"format": "date-time"}, {"format": "date"}]},
-    "endDate": {"type": "string", "anyOf": [{"format": "date-time"}, {"format": "date"}]},
+    "endDate": {"type": "string", "description": "When the sitting adjourned, once known.", "anyOf": [{"format": "date-time"}, {"format": "date"}]},
     "eventSchedule": {
       "type": "object",
-      "description": "For a series: a schema:Schedule. 'Second Wednesday of each month' is byDay Wednesday, byMonthWeek 2, repeatFrequency P1M - machine-readable, unlike a prose string."
+      "description": "For a series: a `schema:Schedule`. 'Second Wednesday of each month' is `byDay` Wednesday, `byMonthWeek` 2, `repeatFrequency` P1M - machine-readable, unlike a prose string."
     },
     "eventStatus": {
       "type": "string",
-      "description": "Real schema.org EventStatusType. A cancelled meeting must stay published as cancelled, not disappear.",
+      "description": "Real schema.org `EventStatusType`. A cancelled meeting must stay published as cancelled, not disappear.",
       "enum": ["EventScheduled", "EventCancelled", "EventPostponed", "EventRescheduled", "EventMovedOnline"]
     },
     "eventAttendanceMode": {
       "type": "string",
+      "description": "Whether the meeting is in person, online, or both.",
       "enum": ["OfflineEventAttendanceMode", "OnlineEventAttendanceMode", "MixedEventAttendanceMode"]
     },
-    "previousStartDate": {"type": "string", "format": "date-time", "description": "Required by schema.org semantics when eventStatus is EventRescheduled."},
-    "location": {"$ref": "../_core/reference.schema.json", "description": "A Facility from _core."},
-    "superEvent": {"$ref": "../_core/reference.schema.json", "description": "The EventSeries this sitting belongs to."},
-    "subEvent": {"type": "array", "items": {"$ref": "../_core/reference.schema.json"}},
+    "previousStartDate": {"type": "string", "format": "date-time", "description": "Required by schema.org semantics when `eventStatus` is `EventRescheduled`."},
+    "location": {"$ref": "../_core/reference.schema.json", "description": "A `Facility` from _core."},
+    "superEvent": {"$ref": "../_core/reference.schema.json", "description": "The `EventSeries` this sitting belongs to."},
+    "subEvent": {"type": "array", "items": {"$ref": "../_core/reference.schema.json"}, "description": "Recesses or breakout sessions within this sitting, when published as their own entities."},
     "attendee": {"type": "array", "items": {"$ref": "../_core/reference.schema.json"}, "description": "People or Roles present."},
     "agendaItem": {
       "type": "array",
@@ -46,12 +47,12 @@
     "recording": {
       "type": "array",
       "items": {"type": "object"},
-      "description": "schema:VideoObject or AudioObject of the proceedings."
+      "description": "`schema:VideoObject` or `AudioObject` of the proceedings."
     },
-    "isAccessibleForFree": {"type": "boolean"},
-    "inLanguage": {"type": "array", "items": {"type": "string"}},
-    "maximumAttendeeCapacity": {"type": "integer"},
-    "sourceDataset": {"type": "string", "format": "iri"}
+    "isAccessibleForFree": {"type": "boolean", "description": "Whether attending or viewing the meeting costs nothing."},
+    "inLanguage": {"type": "array", "items": {"type": "string"}, "description": "The language(s) the meeting is conducted in."},
+    "maximumAttendeeCapacity": {"type": "integer", "description": "The venue's attendance limit, when relevant (a fire-code capacity, a webinar seat limit)."},
+    "sourceDataset": {"type": "string", "format": "iri", "description": "The Dataset this record was published as part of."}
   },
   "required": ["@id", "@type", "name", "organizer"],
   "additionalProperties": true

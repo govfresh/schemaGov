@@ -3,49 +3,49 @@
   "@id": "https://schema.govfresh.com/v1/PermitType",
   "@type": "DefinedTermSet",
   "name": "Permit type",
-  "description": "Kinds of permission a government grants. Deliberately generic and mechanism-based: the same permission is a building permit, planning permission, a permis de construire or a Baugenehmigung depending on the country, and a code list of national names would not travel.",
+  "description": "The kind of permission a government grants. Kept broad and based on the mechanism, not the local name - the same permission is a building permit in one country and a Baugenehmigung in another. A list of national names wouldn't travel.",
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",
       "@id": "gs:permittype/building",
       "termCode": "building",
       "name": "Building",
-      "description": "Permission to construct or modify a structure."
+      "description": "Permission to build or change a structure."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:permittype/demolition",
       "termCode": "demolition",
       "name": "Demolition",
-      "description": "Permission to demolish."
+      "description": "Permission to tear a structure down."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:permittype/planning",
       "termCode": "planning",
       "name": "Planning",
-      "description": "Permission for a change in land use or development, distinct from construction consent."
+      "description": "Permission to change land use or start a development, separate from permission to build."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:permittype/occupancy",
       "termCode": "occupancy",
       "name": "Occupancy",
-      "description": "Permission to occupy or use a completed structure."
+      "description": "Permission to occupy or use a finished structure."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:permittype/business",
       "termCode": "business",
       "name": "Business licence",
-      "description": "Permission to operate a business."
+      "description": "Permission to run a business."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:permittype/trade",
       "termCode": "trade",
       "name": "Trade or professional licence",
-      "description": "Permission for an individual to practise a regulated trade."
+      "description": "Permission for a person to work in a regulated trade."
     },
     {
       "@type": "DefinedTerm",
@@ -59,7 +59,7 @@
       "@id": "gs:permittype/sign",
       "termCode": "sign",
       "name": "Signage",
-      "description": "Permission to erect signage or advertising."
+      "description": "Permission to put up signage or advertising."
     },
     {
       "@type": "DefinedTerm",
@@ -73,27 +73,28 @@
       "@id": "gs:permittype/environmental",
       "termCode": "environmental",
       "name": "Environmental",
-      "description": "Permission for a regulated environmental activity: discharge, extraction, tree works."
+      "description": "Permission for a regulated environmental activity, like discharge, extraction, or tree removal."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:permittype/excavation",
       "termCode": "excavation",
       "name": "Excavation or right of way",
-      "description": "Permission to excavate or occupy the public right of way."
+      "description": "Permission to dig up or occupy public land."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:permittype/transport",
       "termCode": "transport",
       "name": "Transport",
-      "description": "Permission relating to vehicles, haulage or public transport operation."
+      "description": "Permission related to vehicles, hauling, or running public transport."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:permittype/other",
       "termCode": "other",
-      "name": "Other"
+      "name": "Other",
+      "description": "Anything that doesn't fit the other types."
     }
   ]
 }

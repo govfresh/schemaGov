@@ -3,11 +3,35 @@
   "@id": "https://schema.govfresh.com/v1/ProcurementMethod",
   "@type": "DefinedTermSet",
   "name": "Procurement method",
-  "description": "How bids were invited, per OCDS. This is the field that makes non-competitive awards visible. Publishing it consistently is what allows anyone to ask how much of a government's spending was never competed - a question that is otherwise unanswerable no matter how many contracts are published.",
+  "description": "How bids were invited, following OCDS. This field makes non-competitive awards visible. Publishing it is what lets anyone ask how much government spending was never put out to competition - a question no number of published contracts can answer on its own.",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:procmethod/open","termCode":"open","name":"Open","description":"Any interested supplier may bid."},
-    {"@type":"DefinedTerm","@id":"gs:procmethod/selective","termCode":"selective","name":"Selective","description":"Only pre-qualified suppliers may bid."},
-    {"@type":"DefinedTerm","@id":"gs:procmethod/limited","termCode":"limited","name":"Limited","description":"A small number of suppliers are invited directly."},
-    {"@type":"DefinedTerm","@id":"gs:procmethod/direct","termCode":"direct","name":"Direct","description":"Awarded to one supplier without competition. Always publish procurementMethodRationale alongside this: a sole-source award without a stated reason is the most common audit finding in public procurement."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:procmethod/open",
+      "termCode": "open",
+      "name": "Open",
+      "description": "Any interested supplier can bid."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:procmethod/selective",
+      "termCode": "selective",
+      "name": "Selective",
+      "description": "Only pre-qualified suppliers can bid."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:procmethod/limited",
+      "termCode": "limited",
+      "name": "Limited",
+      "description": "A small number of suppliers are invited directly."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:procmethod/direct",
+      "termCode": "direct",
+      "name": "Direct",
+      "description": "Given to one supplier with no competition. Always publish procurementMethodRationale alongside this — a sole-source award with no stated reason is the most common finding in procurement audits."
+    }
   ]
 }

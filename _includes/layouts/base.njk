@@ -3,25 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% if title %}{{ title }} · {% endif %}{{ site.title }}</title>
-<meta name="description" content="{{ description or site.description }}">
+{% set pageTitle = (title + " · " + site.title) if title else site.title %}
+{% set pageDescription = description or site.description %}
+<title>{{ pageTitle | safe }}</title>
+<meta name="description" content="{{ pageDescription | safe }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ pageTitle | safe }}">
+<meta property="og:description" content="{{ pageDescription | safe }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}/assets/img/brand/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ pageTitle | safe }}">
+
+<!-- Dark mode: follow system preference, live (lf-ui's js/theme.js) — loaded
+     before any stylesheet so the right theme is set before first paint. -->
+<script src="/js/theme.js"></script>
+<link rel="icon" href="/assets/img/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/img/favicon/apple-icon-180x180.png">
+<link rel="manifest" href="/assets/img/favicon/site.webmanifest">
 <link rel="stylesheet" href="/assets/lf-ui/bootstrap.min.css">
 <link rel="stylesheet" href="/assets/lf-ui/lf-theme.css">
 <link rel="stylesheet" href="/assets/lf-ui/lf-components.css">
-<style>
-  .gs-mono { font-family: "Roboto Mono", ui-monospace, monospace; }
-  .gs-field-table code { font-size: .8125rem; word-break: break-word; }
-  .gs-req { font-size: .6875rem; letter-spacing: .04em; text-transform: uppercase; }
-  .gs-sidebar { position: sticky; top: 1.5rem; }
-  .gs-hero { border-bottom: 1px solid var(--bs-border-color); }
-  pre[class*="language-"], pre { max-height: 32rem; overflow: auto; }
-  .gs-ns { word-break: break-all; }
-</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
 </head>
 <body class="d-flex flex-column min-vh-100">
 <a href="#main" class="visually-hidden-focusable skip-link">Skip to main content</a>
 {% include "nav.njk" %}
-<main id="main" class="flex-grow-1">
+<main id="main" class="flex-grow-1 pb-5">
   {{ content | safe }}
 </main>
 {% include "footer.njk" %}

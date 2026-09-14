@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+title: About
+description: What gov-schema is, why it exists, who maintains it, and how to contribute.
+---
+{% set toc = docs.about | withToc %}
+<div class="container hero-xs">
+  <div class="toc-layout row gap-4">
+    <div class="col">
+      <div class="hero-divider pb-3 mb-4">
+        {% include "page-header.njk" %}
+      </div>
+
+      {{ toc.html | safe }}
+    </div>
+    <div class="toc-sidebar col-auto">{{ toc.toc | safe }}</div>
+  </div>
+</div>
+<script src="/assets/lf-ui/toc-active.js" defer></script>

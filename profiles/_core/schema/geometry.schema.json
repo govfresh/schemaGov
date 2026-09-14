@@ -2,10 +2,10 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/_core/geometry.schema.json",
   "title": "Geometry",
-  "description": "A shape on the earth, held either by reference or inline. A value type rather than an entity, like Identifier and Amount. schema:GeoShape cannot do this job: its polygon is a space-delimited text string with no coordinate reference system, no multipolygon and no interior rings, and schema.org's own GeospatialGeometry is a declared placeholder that was never filled in. Exactly one of contentUrl or coordinates must be present.",
+  "description": "A shape on the earth, held either by reference or inline.",
   "type": "object",
   "properties": {
-    "@type": {"const": "Geometry"},
+    "@type": {"const": "Geometry", "description": "Always `Geometry` - a value type rather than an entity, like `Identifier` and `MonetaryAmount`. `schema:GeoShape` cannot do this job: its polygon is a space-delimited text string with no coordinate reference system, no multipolygon and no interior rings, and schema.org's own `GeospatialGeometry` is a declared placeholder that was never filled in. Exactly one of `contentUrl` or `coordinates` must be present."},
     "geometryType": {
       "type": "string",
       "description": "GeoJSON geometry type. MultiPolygon is the common case for real administrative areas, which have islands and exclaves.",
@@ -22,11 +22,11 @@
     "encodingFormat": {"type": "string", "description": "Usually application/geo+json."},
     "sourceReferenceSystem": {
       "type": "string",
-      "description": "The CRS the publisher's authoritative source is held in, as an OGC CRS URI or 'epsg:NNNN' shorthand. This is PROVENANCE, not a claim about the coordinates here: GeoJSON mandates WGS84 longitude/latitude and forbids alternatives, so referenced and inline GeoJSON are always CRS84. Recording it matters because national-grid coordinates read as WGS84 land in the wrong hemisphere."
+      "description": "The CRS the publisher's authoritative source is held in, as an OGC CRS URI or 'epsg:NNNN' shorthand. This is provenance, not a claim about the coordinates here: GeoJSON mandates WGS84 longitude/latitude and forbids alternatives, so referenced and inline GeoJSON are always CRS84. Recording it matters because national-grid coordinates read as WGS84 land in the wrong hemisphere."
     },
     "simplified": {
       "type": "boolean",
-      "description": "Whether this is a generalised rendering for display. A simplified boundary is NOT the legal boundary, and using one to decide whether an address falls inside a district gives wrong answers at the edges. A consumer needs to know which it has."
+      "description": "Whether this is a generalised rendering for display. A simplified boundary is not the legal boundary, and using one to decide whether an address falls inside a district gives wrong answers at the edges. A consumer needs to know which it has."
     },
     "vertexCount": {"type": "integer", "minimum": 0, "description": "Approximate vertex count, where the publisher knows it."}
   },

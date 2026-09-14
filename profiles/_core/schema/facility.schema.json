@@ -2,13 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/_core/facility.schema.json",
   "title": "Facility",
-  "description": "A physical place operated by government: a city hall, chamber, courthouse, depot, library. A Facility is a Place and nothing else - it is neither the territory (Jurisdiction) nor the body (GovernmentOrganization). The occupying organization points here with schema:location. Meetings point here with schema:location too, which is why this belongs in _core rather than in the meetings profile.",
+  "description": "A physical place operated by government: a city hall, chamber, courthouse, depot, library.",
   "type": "object",
   "properties": {
     "@context": {},
-    "@id": {"type": "string", "format": "iri"},
+    "@id": {"type": "string", "format": "iri", "description": "This facility's own dereferenceable identifier."},
     "@type": {
-      "description": "Types listed here are cleanly Place-only. Avoid GovernmentOffice, PoliceStation, FireStation, and Library: each is dual-typed as Organization AND Place through LocalBusiness, which collapses the distinction this profile depends on. Use GovernmentBuilding for those buildings instead.",
+      "description": "A `Facility` is a `Place` and nothing else - it is neither the territory (`Jurisdiction`) nor the body (`GovernmentOrganization`). The occupying organization points here with `schema:location`; meetings point here with `schema:location` too, which is why this belongs in _core rather than in the meetings profile. Types listed here are cleanly Place-only: avoid `GovernmentOffice`, `PoliceStation`, `FireStation`, and `Library`, each of which is dual-typed as `Organization` and `Place` through `LocalBusiness`, collapsing the distinction this profile depends on. Use `GovernmentBuilding` for those buildings instead.",
       "enum": [
         "GovernmentBuilding",
         "CityHall",
@@ -21,29 +21,29 @@
         "Place"
       ]
     },
-    "name": {"type": "string"},
-    "alternateName": {"type": "array", "items": {"type": "string"}},
-    "description": {"type": "string"},
-    "url": {"type": "string", "format": "iri"},
-    "identifier": {"type": "array", "items": {"$ref": "identifier.schema.json"}},
-    "address": {"type": "object", "description": "schema.org PostalAddress."},
-    "geo": {"type": "object", "description": "schema.org GeoCoordinates or GeoShape."},
+    "name": {"type": "string", "description": "The facility's public name, e.g. 'City Hall'."},
+    "alternateName": {"type": "array", "items": {"type": "string"}, "description": "Other names this facility is known by."},
+    "description": {"type": "string", "description": "A plain-language description of the facility."},
+    "url": {"type": "string", "format": "iri", "description": "Where more information about this facility can be found."},
+    "identifier": {"type": "array", "items": {"$ref": "identifier.schema.json"}, "description": "Any scheme-qualified identifiers for this facility beyond its `@id`."},
+    "address": {"type": "object", "description": "schema.org `PostalAddress`."},
+    "geo": {"type": "object", "description": "schema.org `GeoCoordinates` or `GeoShape`."},
     "containedInPlace": {
       "$ref": "reference.schema.json",
-      "description": "The Jurisdiction this facility sits in. Lets a facility be located without duplicating the territorial hierarchy."
+      "description": "The `Jurisdiction` this facility sits in. Lets a facility be located without duplicating the territorial hierarchy."
     },
     "openingHoursSpecification": {
       "type": "array",
       "items": {"type": "object"},
-      "description": "schema.org OpeningHoursSpecification. Note that schema:publicAccess is a Boolean on Place, not an hours structure - a common mistake."
+      "description": "schema.org `OpeningHoursSpecification`. Note that `schema:publicAccess` is a Boolean on `Place`, not an hours structure - a common mistake."
     },
     "publicAccess": {"type": "boolean", "description": "Whether the public may enter. Boolean, per schema.org."},
-    "isAccessibleForFree": {"type": "boolean"},
+    "isAccessibleForFree": {"type": "boolean", "description": "Whether visiting this facility costs nothing."},
     "maximumAttendeeCapacity": {"type": "integer", "description": "Useful for chambers hosting public meetings."},
-    "hasMap": {"type": "string", "format": "iri"},
-    "photo": {"type": "string", "format": "iri"},
-    "branchCode": {"type": "string"},
-    "sourceDataset": {"type": "string", "format": "iri"}
+    "hasMap": {"type": "string", "format": "iri", "description": "A URL to a map of this facility."},
+    "photo": {"type": "string", "format": "iri", "description": "A photo of this facility."},
+    "branchCode": {"type": "string", "description": "The facility's internal branch or location code, when the organization uses one."},
+    "sourceDataset": {"type": "string", "format": "iri", "description": "The `Dataset` this record was published as part of."}
   },
   "required": ["@id", "@type", "name"],
   "additionalProperties": true
