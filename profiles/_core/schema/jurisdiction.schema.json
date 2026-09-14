@@ -2,16 +2,20 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/_core/jurisdiction.schema.json",
   "title": "Jurisdiction",
-  "description": "A governed territory: a country, region, municipality, or special-purpose area. A Jurisdiction is a Place. It has no employees, departments, or legislation - those belong to the Organization that governs it, which points here with areaServed. Keeping these two apart is the central rule of this profile.",
+  "description": "A governed territory: a country, region, municipality, or special-purpose area.",
+  "standards": [
+    "wikidata"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This jurisdiction's own dereferenceable identifier."
     },
     "@type": {
-      "description": "Use the most specific schema.org type that applies.",
+      "description": "A `Jurisdiction` is a `Place`. It has no employees, departments, or legislation - those belong to the `Organization` that governs it, which points here with `areaServed`. Keeping these two apart is the central rule of this profile. Use the most specific schema.org type below that applies.",
       "enum": [
         "AdministrativeArea",
         "Country",
@@ -20,7 +24,8 @@
       ]
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The jurisdiction's official name."
     },
     "alternateName": {
       "type": "array",
@@ -30,11 +35,13 @@
       "description": "Endonyms, historical names, and the local-language term for the tier (e.g. 'Comune di Bologna')."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language description of the jurisdiction."
     },
     "url": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "Where more information about this jurisdiction can be found."
     },
     "identifier": {
       "type": "array",
@@ -49,11 +56,12 @@
       "items": {
         "type": "string",
         "format": "iri"
-      }
+      },
+      "description": "Links to authoritative external records for this jurisdiction, e.g. its Wikidata entry."
     },
     "governmentLevel": {
       "type": "string",
-      "description": "termCode from the GovernmentLevel code list.",
+      "description": "termCode from the `GovernmentLevel` code list.",
       "enum": [
         "supranational",
         "national",
@@ -73,11 +81,12 @@
       "type": "array",
       "items": {
         "$ref": "reference.schema.json"
-      }
+      },
+      "description": "Jurisdictions directly contained within this one."
     },
     "geo": {
       "type": "object",
-      "description": "schema.org GeoCoordinates or GeoShape."
+      "description": "schema.org `GeoCoordinates` or `GeoShape`."
     },
     "population": {
       "type": "object",
@@ -112,14 +121,14 @@
       "items": {
         "$ref": "reference.schema.json"
       },
-      "description": "Government organizations governing this area. Convenience inverse of Organization.areaServed."
+      "description": "`GovernmentOrganization`s governing this area. Convenience inverse of `Organization.areaServed`."
     },
     "boundary": {
       "type": "array",
       "items": {
         "$ref": "reference.schema.json"
       },
-      "description": "References to Boundary entities for this area, including superseded ones. Separate entities rather than inline geometry so that a historical extent can be cited: an electoral district boundary is exactly what gets cited in a dispute, and a citation needs something to point at."
+      "description": "References to `Boundary` entities for this area, including superseded ones. Separate entities rather than inline geometry so that a historical extent can be cited: an electoral district boundary is exactly what gets cited in a dispute, and a citation needs something to point at."
     }
   },
   "required": [

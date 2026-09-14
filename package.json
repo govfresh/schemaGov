@@ -1,7 +1,7 @@
 {
   "name": "gov-schema",
   "version": "1.0.0",
-  "description": "A shared vocabulary for describing government, built as a profile of schema.org and established open standards.",
+  "description": "A shared vocabulary for government operations, built as a profile of schema.org and established open standards.",
   "type": "module",
   "scripts": {
     "build": "npx @11ty/eleventy --quiet",
@@ -12,7 +12,8 @@
     "validate:shacl": "python3 tools/shacl.py examples/example-city",
     "validate:pilot": "python3 tools/validate.py examples/pilot-uk-contracts && python3 tools/shacl.py examples/pilot-uk-contracts && python3 tools/validate.py examples/pilot-ie-datasets && python3 tools/shacl.py examples/pilot-ie-datasets && python3 tools/validate.py examples/pilot-seattle-meetings && python3 tools/shacl.py examples/pilot-seattle-meetings && python3 tools/validate.py examples/pilot-nws-alerts && python3 tools/shacl.py examples/pilot-nws-alerts && python3 tools/validate.py examples/pilot-eurostat-budget && python3 tools/shacl.py examples/pilot-eurostat-budget && python3 tools/validate.py examples/pilot-uk-legislation && python3 tools/shacl.py examples/pilot-uk-legislation && python3 tools/validate.py examples/pilot-bloomington-311 && python3 tools/shacl.py examples/pilot-bloomington-311 && python3 tools/validate.py examples/pilot-seattle-permits && python3 tools/shacl.py examples/pilot-seattle-permits && python3 tools/validate.py examples/pilot-chicago-permits && python3 tools/shacl.py examples/pilot-chicago-permits && python3 tools/validate.py examples/pilot-uk-elections && python3 tools/shacl.py examples/pilot-uk-elections && python3 tools/validate.py examples/pilot-govuk-services && python3 tools/shacl.py examples/pilot-govuk-services",
     "check:context": "python3 tools/check-context.py",
-    "audit:jsonld": "python3 tools/audit-jsonld.py"
+    "audit:jsonld": "python3 tools/audit-jsonld.py",
+    "check:readability": "python3 scripts/readability.py"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

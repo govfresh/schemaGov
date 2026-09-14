@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/BudgetDirection",
   "@type": "DefinedTermSet",
   "name": "Budget direction",
-  "description": "Whether a budget line is money in, money out, or a financing movement. Required on every line, because a bare amount cannot be interpreted without it - 41,200,000 is meaningless until you know which way it flows.",
+  "description": "Whether a budget line is money coming in, money going out, or a financing move. This is required on every line, because a number alone doesn't tell you which way the money flows.",
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",
@@ -17,14 +17,14 @@
       "@id": "gs:direction/expenditure",
       "termCode": "expenditure",
       "name": "Expenditure",
-      "description": "Money spent on the delivery of government functions."
+      "description": "Money spent to deliver government services."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:direction/financing",
       "termCode": "financing",
       "name": "Financing",
-      "description": "Movements in assets and liabilities: borrowing, repayment, transfers to reserves."
+      "description": "Changes in assets and debts: borrowing, paying back loans, moving money to reserves."
     }
   ]
 }

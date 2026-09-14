@@ -3,13 +3,49 @@
   "@id": "https://schema.govfresh.com/v1/VoteOption",
   "@type": "DefinedTermSet",
   "name": "Vote option",
-  "description": "How a member's vote is recorded. Absence is distinguished from abstention because they mean different things: an abstention is a decision, an absence is not, and several systems count them differently against a required majority.",
+  "description": "How a member's vote is recorded. Being absent is kept separate from abstaining, because they mean different things. Abstaining is a choice; being absent isn't. Some systems count them differently toward a required majority.",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:vote/yes","termCode":"yes","name":"Yes","description":"In favour. Aye, for, ja, oui."},
-    {"@type":"DefinedTerm","@id":"gs:vote/no","termCode":"no","name":"No","description":"Against. Nay, contra."},
-    {"@type":"DefinedTerm","@id":"gs:vote/abstain","termCode":"abstain","name":"Abstain","description":"Present and deliberately declining to vote."},
-    {"@type":"DefinedTerm","@id":"gs:vote/absent","termCode":"absent","name":"Absent","description":"Not present for the vote."},
-    {"@type":"DefinedTerm","@id":"gs:vote/excused","termCode":"excused","name":"Excused","description":"Absent with the body's leave, often for a declared conflict of interest."},
-    {"@type":"DefinedTerm","@id":"gs:vote/notVoting","termCode":"notVoting","name":"Not voting","description":"Present but recorded as not voting, where the system distinguishes this from abstention."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:vote/yes",
+      "termCode": "yes",
+      "name": "Yes",
+      "description": "In favor. Aye, for, ja, oui."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:vote/no",
+      "termCode": "no",
+      "name": "No",
+      "description": "Against. Nay, contra."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:vote/abstain",
+      "termCode": "abstain",
+      "name": "Abstain",
+      "description": "Present, but chose not to vote."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:vote/absent",
+      "termCode": "absent",
+      "name": "Absent",
+      "description": "Not present for the vote."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:vote/excused",
+      "termCode": "excused",
+      "name": "Excused",
+      "description": "Absent with the body's permission, often because of a conflict of interest."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:vote/notVoting",
+      "termCode": "notVoting",
+      "name": "Not voting",
+      "description": "Present, but recorded as not voting — where the system tracks this separately from abstaining."
+    }
   ]
 }

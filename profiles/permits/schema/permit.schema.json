@@ -3,50 +3,145 @@
   "$id": "https://schema.govfresh.com/v1/permits/permit.schema.json",
   "title": "Permit",
   "description": "A permission granted by government to do something otherwise restricted: build, demolish, trade, occupy, hold an event, serve alcohol. Building permits and business licences are the highest-volume records most governments hold. schema:GovernmentPermit is a real type and supplies the grant itself - issuedBy, validFrom, validUntil, validFor, validIn - but nothing about the application that produced it, which is where most of the public interest lies. Those fields are minted here.",
+  "standards": [
+    "blds"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
-    "@id": {"type": "string", "format": "iri"},
-    "@type": {"const": "GovernmentPermit"},
-    "permitNumber": {"type": "string", "description": "The reference the authority uses publicly."},
-    "name": {"type": "string"},
-    "description": {"type": "string", "description": "What is permitted. For building work, the description of works as submitted."},
-    "url": {"type": "string", "format": "iri"},
-    "identifier": {"type": "array", "items": {"$ref": "../_core/identifier.schema.json"}},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This permit's own dereferenceable identifier."
+    },
+    "@type": {
+      "const": "GovernmentPermit",
+      "description": "Always `GovernmentPermit`, a real schema.org type."
+    },
+    "permitNumber": {
+      "type": "string",
+      "description": "The reference the authority uses publicly."
+    },
+    "name": {
+      "type": "string",
+      "description": "The permit's title, e.g. 'Building permit, 123 Main St'."
+    },
+    "description": {
+      "type": "string",
+      "description": "What is permitted. For building work, the description of works as submitted."
+    },
+    "url": {
+      "type": "string",
+      "format": "iri",
+      "description": "Where this permit's canonical human-readable page lives."
+    },
+    "identifier": {
+      "type": "array",
+      "description": "Any scheme-qualified identifiers for this permit beyond its `@id`.",
+      "items": {
+        "$ref": "../_core/identifier.schema.json"
+      }
+    },
     "permitType": {
       "type": "string",
       "description": "termCode from the PermitType code list. Deliberately generic: the same permission is a building permit, planning permission, a permis de construire or a Baugenehmigung depending on the country.",
-      "enum": ["building", "demolition", "planning", "occupancy", "business", "trade", "event", "sign", "alcohol", "environmental", "excavation", "transport", "other"]
+      "enum": [
+        "building",
+        "demolition",
+        "planning",
+        "occupancy",
+        "business",
+        "trade",
+        "event",
+        "sign",
+        "alcohol",
+        "environmental",
+        "excavation",
+        "transport",
+        "other"
+      ]
     },
     "permitStatus": {
       "type": "string",
       "description": "Where the application has reached. Required: a permit record without a status cannot be told apart from an application that was never decided.",
-      "enum": ["applied", "underReview", "approved", "issued", "refused", "withdrawn", "expired", "revoked", "completed"]
+      "enum": [
+        "applied",
+        "underReview",
+        "approved",
+        "issued",
+        "refused",
+        "withdrawn",
+        "expired",
+        "revoked",
+        "completed"
+      ]
     },
     "workType": {
       "type": "string",
       "description": "For construction permits, the nature of the works.",
-      "enum": ["newBuild", "extension", "alteration", "changeOfUse", "demolition", "repair", "temporary"]
+      "enum": [
+        "newBuild",
+        "extension",
+        "alteration",
+        "changeOfUse",
+        "demolition",
+        "repair",
+        "temporary"
+      ]
     },
     "issuedBy": {
       "$ref": "../_core/reference.schema.json",
       "description": "The GovernmentOrganization granting it. Real schema.org property."
     },
-    "validIn": {"$ref": "../_core/reference.schema.json", "description": "The Jurisdiction the permit is valid in. Real schema.org property."},
-    "applicationDate": {"type": "string", "format": "date", "description": "When the application was received. With decisionDate this is what makes processing time measurable, which is the question residents and developers actually ask."},
-    "decisionDate": {"type": "string", "format": "date", "description": "When it was granted or refused."},
-    "validFrom": {"type": "string", "format": "date"},
-    "validUntil": {"type": "string", "format": "date"},
-    "completionDate": {"type": "string", "format": "date", "description": "For works, when they were signed off."},
+    "validIn": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The Jurisdiction the permit is valid in. Real schema.org property."
+    },
+    "applicationDate": {
+      "type": "string",
+      "format": "date",
+      "description": "When the application was received. With decisionDate this is what makes processing time measurable, which is the question residents and developers actually ask."
+    },
+    "decisionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "When it was granted or refused."
+    },
+    "validFrom": {
+      "type": "string",
+      "format": "date",
+      "description": "When the permit takes effect."
+    },
+    "validUntil": {
+      "type": "string",
+      "format": "date",
+      "description": "When the permit expires. Absent means no fixed expiry."
+    },
+    "completionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "For works, when they were signed off."
+    },
     "premises": {
       "type": "object",
-      "description": "Where the permit applies. An address, a parcel identifier, or a reference to a Place - whichever the authority holds. NOTE: a residential building permit ties a named applicant to a home address; see the privacy section of the profile README before publishing applicant details alongside this.",
+      "description": "Where the permit applies: an address, a parcel identifier, or a reference to a `Place` - whichever the authority holds. A residential building permit ties a named applicant to a home address, so see the privacy section of the profile README before publishing applicant details alongside this.",
       "properties": {
-        "@type": {"const": "Place"},
-        "address": {"type": "object"},
-        "geo": {"type": "object"},
-        "parcelIdentifier": {"$ref": "../_core/identifier.schema.json", "description": "Cadastral or tax-parcel reference, scheme-qualified."},
-        "name": {"type": "string"}
+        "@type": {
+          "const": "Place"
+        },
+        "address": {
+          "type": "object"
+        },
+        "geo": {
+          "type": "object"
+        },
+        "parcelIdentifier": {
+          "$ref": "../_core/identifier.schema.json",
+          "description": "Cadastral or tax-parcel reference, scheme-qualified."
+        },
+        "name": {
+          "type": "string"
+        }
       },
       "additionalProperties": true
     },
@@ -54,15 +149,38 @@
       "$ref": "../_core/reference.schema.json",
       "description": "Who applied, as a reference to an Organization. Optional by design: where the applicant is a private individual rather than a business, publishing their name against their home address is a disclosure decision the authority must make deliberately, not a field the schema demands."
     },
-    "declaredValue": {"$ref": "../budget/amount.schema.json", "description": "Declared value of the works, where the authority collects it."},
-    "fee": {"$ref": "../budget/amount.schema.json", "description": "Fee charged for the permit."},
-    "condition": {"type": "array", "items": {"type": "string"}, "description": "Conditions attached to the grant. A permit granted subject to conditions is not the same as one granted outright, and only this field shows the difference."},
+    "declaredValue": {
+      "$ref": "../budget/amount.schema.json",
+      "description": "Declared value of the works, where the authority collects it."
+    },
+    "fee": {
+      "$ref": "../budget/amount.schema.json",
+      "description": "Fee charged for the permit."
+    },
+    "condition": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Conditions attached to the grant. A permit granted subject to conditions is not the same as one granted outright, and only this field shows the difference."
+    },
     "relatedLegislation": {
       "$ref": "../_core/reference.schema.json",
       "description": "The provision the permit is granted under - a zoning chapter, a licensing act. Joins to the code profile."
     },
-    "sourceDataset": {"type": "string", "format": "iri"}
+    "sourceDataset": {
+      "type": "string",
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
+    }
   },
-  "required": ["@id", "@type", "permitNumber", "permitType", "permitStatus", "issuedBy"],
+  "required": [
+    "@id",
+    "@type",
+    "permitNumber",
+    "permitType",
+    "permitStatus",
+    "issuedBy"
+  ],
   "additionalProperties": true
 }

@@ -1,6 +1,10 @@
 {
   "docs": [
     {
+      "title": "About",
+      "url": "/about/"
+    },
+    {
       "title": "Specification",
       "url": "/spec/"
     },
@@ -13,8 +17,12 @@
       "url": "/vocabulary/"
     },
     {
-      "title": "Examples",
-      "url": "/examples/"
+      "title": "Standards",
+      "url": "/standards/"
     }
+  ],
+  "icons": [
+    { "type": "search", "url": "/search/" },
+    { "type": "github", "url": "https://github.com/govfresh/gov-schema" }
   ]
 }

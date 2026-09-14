@@ -3,27 +3,35 @@
   "$id": "https://schema.govfresh.com/v1/procurement/tender.schema.json",
   "title": "Tender",
   "description": "The solicitation: what is being bought, how bids are invited, and on what timetable. Mirrors the OCDS tender block.",
+  "standards": [
+    "ocds"
+  ],
   "type": "object",
   "properties": {
     "@type": {
-      "const": "Tender"
+      "const": "Tender",
+      "description": "Always `Tender`."
     },
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This tender's own dereferenceable identifier."
     },
     "tenderId": {
       "type": "string",
       "description": "The buyer's own tender reference."
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "description": "A short label for what's being procured."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language summary of what's being bought and how bids are invited."
     },
     "status": {
       "type": "string",
+      "description": "termCode from the `TenderStatus` code list.",
       "enum": [
         "planning",
         "planned",
@@ -54,6 +62,7 @@
     },
     "mainProcurementCategory": {
       "type": "string",
+      "description": "termCode from the `ProcurementCategory` code list.",
       "enum": [
         "goods",
         "works",
@@ -73,7 +82,8 @@
       "description": "Estimated value."
     },
     "procuringEntity": {
-      "$ref": "../_core/reference.schema.json"
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `GovernmentOrganization` running the tender, where different from the process's own `buyer`."
     },
     "tenderPeriodStart": {
       "type": "string",
@@ -84,7 +94,8 @@
         {
           "format": "date-time"
         }
-      ]
+      ],
+      "description": "When bids may first be submitted."
     },
     "tenderPeriodEnd": {
       "type": "string",
@@ -95,7 +106,8 @@
         {
           "format": "date-time"
         }
-      ]
+      ],
+      "description": "The submission deadline."
     },
     "enquiryPeriodEnd": {
       "type": "string",
@@ -106,17 +118,21 @@
         {
           "format": "date-time"
         }
-      ]
+      ],
+      "description": "The deadline for bidders to ask questions, where the process has one."
     },
     "numberOfTenderers": {
       "type": "integer",
-      "minimum": 0
+      "minimum": 0,
+      "description": "How many bids were received."
     },
     "submissionMethodDetails": {
-      "type": "string"
+      "type": "string",
+      "description": "How and where to submit a bid, in the publisher's own words."
     },
     "document": {
       "type": "array",
+      "description": "Links to supporting documents, e.g. the tender notice or bid specification.",
       "items": {
         "type": "string",
         "format": "iri"

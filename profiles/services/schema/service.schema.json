@@ -3,34 +3,44 @@
   "$id": "https://schema.govfresh.com/v1/services/service.schema.json",
   "title": "Service",
   "description": "A service a resident can obtain from government: a birth certificate, a business registration, housing support, a parking permit. The requests profile covers reporting a problem; this covers finding and using a service, which is the most common thing anyone asks a government website. Mirrors Open Referral / HSDS, which remains the source model. This is the fuller definition of schema:GovernmentService; requests/service.schema.json describes the same type at the depth Open311 needs, and a publisher serving both should use this one.",
+  "standards": [
+    "open-referral-hsds"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This service's own dereferenceable identifier."
     },
     "@type": {
-      "const": "GovernmentService"
+      "const": "GovernmentService",
+      "description": "Always `GovernmentService`, a real schema.org type."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The service's public name, e.g. 'Apply for a business licence'."
     },
     "alternateName": {
       "type": "array",
+      "description": "Other names residents might know this service by.",
       "items": {
         "type": "string"
       }
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language explanation of the service, shown to residents deciding whether it's the one they need."
     },
     "url": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "Where more information about this service can be found."
     },
     "identifier": {
       "type": "array",
+      "description": "Any scheme-qualified identifiers for this service beyond its `@id`.",
       "items": {
         "$ref": "../_core/identifier.schema.json"
       }
@@ -45,6 +55,7 @@
     },
     "keywords": {
       "type": "array",
+      "description": "Search terms residents might use to find this service.",
       "items": {
         "type": "string"
       }
@@ -54,7 +65,8 @@
       "description": "The GovernmentOrganization providing it."
     },
     "areaServed": {
-      "$ref": "../_core/reference.schema.json"
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `Jurisdiction` this service is available in."
     },
     "serviceStatus": {
       "type": "string",
@@ -207,7 +219,8 @@
       "description": "Whether interpretation is offered for languages not listed."
     },
     "accessibilityNote": {
-      "type": "string"
+      "type": "string",
+      "description": "Accommodations available for residents with disabilities."
     },
     "relatedLegislation": {
       "$ref": "../_core/reference.schema.json",
@@ -222,11 +235,13 @@
         {
           "format": "date-time"
         }
-      ]
+      ],
+      "description": "When this record was last updated."
     },
     "sourceDataset": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
     }
   },
   "required": [

@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/AlertStatus",
   "@type": "DefinedTermSet",
   "name": "Alert status",
-  "description": "The handling code for an alert, from OASIS CAP 1.2. Anything other than 'actual' must never be rendered to the public as a real warning; publishing a test without this field is dangerous, which is why it is required.",
+  "description": "What this alert message is for, using the same codes as CAP 1.2 (OASIS). Never show anything but 'actual' to the public as a real warning — publishing a test or drill without this field is dangerous, which is why it's required.",
   "url": "http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html",
   "hasDefinedTerm": [
     {
@@ -18,7 +18,7 @@
       "@id": "gs:alertstatus/exercise",
       "termCode": "exercise",
       "name": "Exercise",
-      "description": "A drill. Addressees must treat it as an exercise, never as real."
+      "description": "A drill. Treat it as practice, never as real."
     },
     {
       "@type": "DefinedTerm",
@@ -32,14 +32,14 @@
       "@id": "gs:alertstatus/test",
       "termCode": "test",
       "name": "Test",
-      "description": "A technical test. Recipients should disregard it."
+      "description": "A technical test. Ignore it."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:alertstatus/draft",
       "termCode": "draft",
       "name": "Draft",
-      "description": "Not yet issued; a preliminary template."
+      "description": "Not sent yet — an early version."
     }
   ]
 }

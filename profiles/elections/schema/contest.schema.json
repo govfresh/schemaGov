@@ -8,28 +8,34 @@
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This contest's own dereferenceable identifier."
     },
     "@type": {
       "const": "Contest"
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The contest's title as it appears on the ballot, e.g. 'Mayor' or 'Measure A'."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language summary of what's being decided, when the name alone isn't enough."
     },
     "identifier": {
       "type": "array",
+      "description": "Any scheme-qualified identifiers for this contest beyond its `@id`.",
       "items": {
         "$ref": "../_core/identifier.schema.json"
       }
     },
     "election": {
-      "$ref": "../_core/reference.schema.json"
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `Election` this contest is part of."
     },
     "contestType": {
       "type": "string",
+      "description": "termCode from the `ContestType` code list.",
       "enum": [
         "office",
         "ballotMeasure"
@@ -66,6 +72,7 @@
     },
     "candidacy": {
       "type": "array",
+      "description": "The candidacies standing in this contest, where it fills an office rather than deciding a measure.",
       "items": {
         "$ref": "candidacy.schema.json"
       }
@@ -99,7 +106,8 @@
     },
     "validVotes": {
       "type": "integer",
-      "minimum": 0
+      "minimum": 0,
+      "description": "Ballots counted toward the result. With `invalidVotes`, sums to `totalVotes`."
     },
     "invalidVotes": {
       "type": "integer",
@@ -108,11 +116,13 @@
     },
     "totalVotes": {
       "type": "integer",
-      "minimum": 0
+      "minimum": 0,
+      "description": "All ballots cast in this contest, valid and invalid."
     },
     "sourceDataset": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
     },
     "registeredVoters": {
       "type": "integer",

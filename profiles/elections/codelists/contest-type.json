@@ -3,21 +3,21 @@
   "@id": "https://schema.govfresh.com/v1/ContestType",
   "@type": "DefinedTermSet",
   "name": "Contest type",
-  "description": "Whether a contest fills an office or decides a question. Ballot measures are modelled alongside offices because they appear on the same ballot and are reported in the same returns, but their options are people in one case and propositions in the other.",
+  "description": "Whether a contest fills an office or decides a question. Ballot measures sit here too. They're on the same ballot and reported the same way, even though one has candidates and the other has proposals.",
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",
       "@id": "gs:contesttype/office",
       "termCode": "office",
       "name": "Office",
-      "description": "A contest to fill one or more posts."
+      "description": "A contest to fill one or more seats."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:contesttype/ballotMeasure",
       "termCode": "ballotMeasure",
       "name": "Ballot measure",
-      "description": "A proposition, referendum question or bond measure put to voters."
+      "description": "A proposal, referendum question, or bond measure put to voters."
     }
   ]
 }

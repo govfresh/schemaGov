@@ -2,41 +2,46 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/meetings/agenda-item.schema.json",
   "title": "AgendaItem",
-  "description": "One numbered piece of business at a meeting. Minted as a subclass of schema:ListItem, which already supplies ordering. An agenda item is the hinge between the meetings profile and the code profile: 'about' points at the Legislation under consideration, so a law's passage can be traced to the sitting that passed it and the vote that carried it.",
+  "description": "One numbered piece of business at a meeting.",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This agenda item's own dereferenceable identifier."
     },
     "@type": {
-      "const": "AgendaItem"
+      "const": "AgendaItem",
+      "description": "Always `AgendaItem` - minted as a subclass of `schema:ListItem`, which already supplies ordering."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The item's short title as it appears on the agenda, e.g. 'Approval of minutes'."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A longer plain-language summary of the item, when the name alone isn't enough."
     },
     "position": {
       "type": [
         "integer",
         "string"
       ],
-      "description": "Order on the agenda. schema:position ranges over Integer or Text, and real agenda numbering is frequently alphanumeric - '3.', 'A.', '2a.' - so a string is valid. Use the publisher's own agenda number where one exists; fall back to an ordinal only when it does not."
+      "description": "Order on the agenda. `schema:position` ranges over `Integer` or `Text`, and real agenda numbering is frequently alphanumeric - '3.', 'A.', '2a.' - so a string is valid. Use the publisher's own agenda number where one exists; fall back to an ordinal only when it does not."
     },
     "identifier": {
       "type": "array",
       "items": {
         "$ref": "../_core/identifier.schema.json"
-      }
+      },
+      "description": "Any scheme-qualified identifiers for this item beyond its `@id`."
     },
     "about": {
       "type": "array",
       "items": {
         "$ref": "../_core/reference.schema.json"
       },
-      "description": "The Legislation under consideration, where the item concerns one. The join to the code profile."
+      "description": "The `Legislation` under consideration, where the item concerns one - the hinge between the meetings profile and the code profile, so a law's passage can be traced to the sitting that passed it and the vote that carried it."
     },
     "result": {
       "type": "string",
@@ -64,11 +69,12 @@
       "items": {
         "type": "string",
         "format": "iri"
-      }
+      },
+      "description": "Supporting documents for this item - a staff report, a proposed ordinance's text."
     },
     "isPartOf": {
       "$ref": "../_core/reference.schema.json",
-      "description": "The Meeting, when the item is published standalone."
+      "description": "The `Meeting`, when the item is published standalone."
     }
   },
   "required": [

@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/LifeEvent",
   "@type": "DefinedTermSet",
   "name": "Life event",
-  "description": "The circumstances a service relates to. People look for government services by what is happening to them - having a baby, losing a job, moving home - not by the department that happens to run them, which is why the EU Single Digital Gateway organises services this way. Deliberately coarse and universal: the department that issues a birth certificate differs everywhere, the fact of a birth does not.",
+  "description": "What's happening in someone's life that a service relates to. People look for services by what's going on for them - having a baby, losing a job, moving house - not by which department runs the service. That's why the EU Single Digital Gateway sorts services this way. Kept broad on purpose: the department that issues a birth certificate differs everywhere, but the fact of a birth doesn't.",
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",
@@ -31,14 +31,14 @@
       "@id": "gs:lifeevent/employment",
       "termCode": "employment",
       "name": "Employment",
-      "description": "Starting work, employment rights, workplace regulation."
+      "description": "Starting work, employment rights, workplace rules."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:lifeevent/unemployment",
       "termCode": "unemployment",
       "name": "Unemployment",
-      "description": "Jobseeking, income support, retraining."
+      "description": "Looking for work, income support, retraining."
     },
     {
       "@type": "DefinedTerm",
@@ -59,28 +59,28 @@
       "@id": "gs:lifeevent/marriage",
       "termCode": "marriage",
       "name": "Marriage or partnership",
-      "description": "Registering, dissolving, name changes."
+      "description": "Registering a marriage, ending one, changing your name."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:lifeevent/family",
       "termCode": "family",
       "name": "Family",
-      "description": "Childcare, adoption, care responsibilities."
+      "description": "Childcare, adoption, caregiving."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:lifeevent/health",
       "termCode": "health",
       "name": "Health",
-      "description": "Registering with services, entitlements, records."
+      "description": "Registering with health services, entitlements, records."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:lifeevent/disability",
       "termCode": "disability",
       "name": "Disability",
-      "description": "Assessments, adaptations, support payments."
+      "description": "Assessments, home adaptations, support payments."
     },
     {
       "@type": "DefinedTerm",
@@ -94,7 +94,7 @@
       "@id": "gs:lifeevent/business",
       "termCode": "business",
       "name": "Business",
-      "description": "Registration, licensing, premises, trading."
+      "description": "Registering a business, licensing, premises, trading."
     },
     {
       "@type": "DefinedTerm",
@@ -122,7 +122,7 @@
       "@id": "gs:lifeevent/immigration",
       "termCode": "immigration",
       "name": "Immigration and residence",
-      "description": "Residence, citizenship, documentation."
+      "description": "Residence, citizenship, paperwork."
     },
     {
       "@type": "DefinedTerm",
@@ -142,7 +142,8 @@
       "@type": "DefinedTerm",
       "@id": "gs:lifeevent/other",
       "termCode": "other",
-      "name": "Other"
+      "name": "Other",
+      "description": "Anything that doesn't fit the other categories."
     }
   ]
 }

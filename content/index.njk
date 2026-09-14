@@ -1,81 +1,107 @@
 ---
 layout: layouts/base.njk
 title: null
-description: A shared vocabulary for describing government, built as a profile of schema.org and established open standards.
 ---
-<div class="gs-hero py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <p class="text-uppercase small fw-semibold text-body-secondary mb-2">Version {{ site.version }}</p>
-        <h1 class="display-5 mb-3">A shared vocabulary for describing government</h1>
-        <p class="lead mb-4">{{ site.description }}</p>
-        <p class="mb-4">
-          <a href="/spec/" class="btn btn-primary">Read the specification</a>
-          <a href="/profiles/core/" class="btn btn-outline-secondary ms-2">Browse the core profile</a>
-        </p>
-        <p class="small text-body-secondary mb-0">
-          Namespace <code class="gs-ns">{{ site.namespace }}</code>
-        </p>
-      </div>
+<div class="container hero-xs hero-divider pb-4 mb-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <h1 class="display-5 mb-3">A shared vocabulary for government operations</h1>
+      <p class="lead mb-4">{{ site.description | safe }}</p>
+      <p class="mb-4">
+        <a href="/spec/" class="btn btn-primary">Specification</a>
+        <a href="/profiles/" class="btn btn-primary ms-3">Profiles</a>
+      </p>
+      <p class="icon-line mb-1"><i class="fa-solid fa-tag"></i> Version: {{ site.version }}</p>
+      <p class="icon-line mb-1 text-break"><i class="fa-solid fa-globe"></i> Namespace: {{ site.namespace }}</p>
+      <p class="icon-line mb-1"><i class="fa-solid fa-code"></i> Prefix: {{ site.prefix }}</p>
+      <p class="icon-line mb-0"><i class="fa-solid fa-scale-balanced"></i> Licence: <a href="{{ site.repo }}/blob/main/LICENSE">{{ site.licenseName }}</a> for the vocabulary and schemas, <a href="{{ site.repo }}/blob/main/LICENSE-CODE">MIT</a> for the tooling</p>
     </div>
   </div>
 </div>
 
-<div class="container py-5">
-  <div class="row g-4 mb-5">
+<div class="container">
+  <h2 class="h4 mb-3">About</h2>
+  <div class="row g-4 mb-5 card-group">
     <div class="col-md-4">
       <div class="card h-100"><div class="card-body">
-        <h2 class="h5">A profile, not a new standard</h2>
-        <p class="mb-0 small">schema.org covers about half of what a government publishes. Where it fits, gov-schema uses it directly. Where it has nothing, a mature open standard already exists, so gov-schema adopts that and defines a schema.org projection.</p>
+        <div class="mb-2"><i class="fa-solid fa-puzzle-piece fa-2x" aria-hidden="true"></i></div>
+        <h3 class="h5">A profile, not a new standard</h3>
+        <p class="mb-0 small">Builds on schema.org and existing open standards, instead of inventing a new one.</p>
       </div></div>
     </div>
     <div class="col-md-4">
       <div class="card h-100"><div class="card-body">
-        <h2 class="h5">A place is not an organization</h2>
-        <p class="mb-0 small">A city is a territory; the city government is a body. Territories have no employees or budgets. They are separate entities linked by <code>areaServed</code>, and the validator enforces it.</p>
+        <div class="mb-2"><i class="fa-solid fa-door-open fa-2x" aria-hidden="true"></i></div>
+        <h3 class="h5">Free for anyone to use</h3>
+        <p class="mb-0 small">Public domain ({{ site.licenseName }}). Any government, vendor, or project can use it, free, without asking permission.</p>
       </div></div>
     </div>
     <div class="col-md-4">
       <div class="card h-100"><div class="card-body">
-        <h2 class="h5">Works across countries</h2>
-        <p class="mb-0 small">No national identifier system, government tier, or naming convention is built in. Identity is scheme-qualified, so an entity carries as many identifiers as it has.</p>
+        <div class="mb-2"><i class="fa-solid fa-globe fa-2x" aria-hidden="true"></i></div>
+        <h3 class="h5">Works across countries</h3>
+        <p class="mb-0 small">No country's identifiers, government tiers, or naming conventions are built in, so it fits governments everywhere.</p>
       </div></div>
     </div>
   </div>
 
-  <h2 class="h4 mb-3">Domain coverage</h2>
-  <div class="table-responsive mb-5">
-    <table class="table table-sm align-middle">
-      <thead><tr><th>Domain</th><th>schema.org</th><th>Source standard</th><th>Status</th></tr></thead>
-      <tbody>
-        {% for b in profiles.built %}
-        <tr>
-          <td><strong>{{ b.name }}</strong></td>
-          <td class="small">{{ b.schemas | length }} schemas</td>
-          <td>{{ b.source }}</td>
-          <td><span class="badge text-bg-success">implemented</span></td>
-        </tr>
-        {% endfor %}
-        {% for p in profiles.planned %}
-        <tr>
-          <td><strong>{{ p.title }}</strong></td>
-          <td class="text-body-secondary small">see profile</td>
-          <td>{{ p.source }}</td>
-          <td><span class="badge text-bg-secondary">planned</span></td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+  <h2 class="h4 mb-1">Who this is for</h2>
+  <p class="text-body-secondary mb-3">Who gov-schema supports.</p>
+  <div class="row row-cols-2 row-cols-md-3 g-4 mb-5 card-group">
+    <div class="col">
+      <div class="card h-100"><div class="card-body">
+        <div class="mb-2"><i class="fa-solid fa-briefcase fa-2x" aria-hidden="true"></i></div>
+        <h3 class="h6 mb-0">Executives</h3>
+      </div></div>
+    </div>
+    <div class="col">
+      <div class="card h-100"><div class="card-body">
+        <div class="mb-2"><i class="fa-solid fa-clipboard-list fa-2x" aria-hidden="true"></i></div>
+        <h3 class="h6 mb-0">Service managers</h3>
+      </div></div>
+    </div>
+    <div class="col">
+      <div class="card h-100"><div class="card-body">
+        <div class="mb-2"><i class="fa-solid fa-code fa-2x" aria-hidden="true"></i></div>
+        <h3 class="h6 mb-0">Digital teams</h3>
+      </div></div>
+    </div>
+    <div class="col">
+      <div class="card h-100"><div class="card-body">
+        <div class="mb-2"><i class="fa-solid fa-handshake fa-2x" aria-hidden="true"></i></div>
+        <h3 class="h6 mb-0">Vendors</h3>
+      </div></div>
+    </div>
+    <div class="col">
+      <div class="card h-100"><div class="card-body">
+        <div class="mb-2"><i class="fa-solid fa-landmark fa-2x" aria-hidden="true"></i></div>
+        <h3 class="h6 mb-0">Policy makers</h3>
+      </div></div>
+    </div>
+    <div class="col">
+      <div class="card h-100"><div class="card-body">
+        <div class="mb-2"><i class="fa-solid fa-chart-line fa-2x" aria-hidden="true"></i></div>
+        <h3 class="h6 mb-0">Analysts</h3>
+      </div></div>
+    </div>
   </div>
 
-  <h2 class="h4 mb-3">The namespace</h2>
-  <p class="small text-body-secondary">These are not documentation pages. Every published gov-schema document pins these exact URLs, and they are immutable once released.</p>
-  <ul class="list-unstyled gs-mono small">
-    <li class="mb-1"><a href="/v1/context.jsonld">/v1/context.jsonld</a> — the JSON-LD context</li>
-    <li class="mb-1"><a href="/v1/govschema.ttl">/v1/govschema.ttl</a> — the RDF vocabulary</li>
-    {% for b in profiles.built %}{% for s in b.schemas %}
-    <li class="mb-1"><a href="{{ b.urlBase }}{{ s.file }}">{{ b.urlBase }}{{ s.file }}</a></li>
-    {% endfor %}{% endfor %}
-  </ul>
+  <h2 class="h4 mb-1">Profiles</h2>
+  <p class="text-body-secondary mb-3">Domain profiles gov-schema has built so far.</p>
+  <div class="row g-3 mb-5 card-group">
+    {% for b in profiles.built %}
+    {% include "profile-card.njk" %}
+    {% endfor %}
+    {% for p in profiles.planned %}
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-body">
+          <h3 class="h5 mb-2">{{ p.title }}</h3>
+          <span class="badge text-bg-secondary">planned</span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
 </div>

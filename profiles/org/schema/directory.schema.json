@@ -2,34 +2,42 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/org/directory.schema.json",
   "title": "Directory",
-  "description": "A dated, retrievable package of a publisher's whole organizational structure, expressed as a schema.org DataFeed. Without this an org chart is only a pile of files with no statement of what the set contains, when it was current, or who stands behind it. A consumer polls one URL and can tell whether anything changed.",
+  "description": "A dated, retrievable package of a publisher's whole organizational structure.",
+  "standards": [
+    "w3c-org"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This directory's own dereferenceable identifier."
     },
     "@type": {
-      "const": "DataFeed"
+      "const": "DataFeed",
+      "description": "Always `DataFeed`. Without this an org chart is only a pile of files with no statement of what the set contains, when it was current, or who stands behind it - a consumer polls one URL and can tell whether anything changed."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The directory's title."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language description of what this directory covers."
     },
     "url": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "Where this directory can be retrieved."
     },
     "publisher": {
       "$ref": "../_core/reference.schema.json",
-      "description": "The GovernmentOrganization asserting this directory. Required: an unattributed directory cannot be trusted or corrected."
+      "description": "The `GovernmentOrganization` asserting this directory. Required: an unattributed directory cannot be trusted or corrected."
     },
     "about": {
       "$ref": "../_core/reference.schema.json",
-      "description": "The Jurisdiction this directory covers."
+      "description": "The `Jurisdiction` this directory covers."
     },
     "dateModified": {
       "type": "string",
@@ -53,10 +61,11 @@
           "extended"
         ]
       },
-      "description": "gov-schema conformance level claimed, per SPEC section 4. Distinct from conformsTo, which names an external standard the data follows."
+      "description": "gov-schema conformance level claimed, per SPEC section 4. Distinct from `conformsTo`, which names an external standard the data follows."
     },
     "numberOfItems": {
-      "type": "integer"
+      "type": "integer",
+      "description": "How many entities this directory contains."
     },
     "dataFeedElement": {
       "type": "array",
@@ -67,13 +76,15 @@
     },
     "license": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The license this directory is published under."
     },
     "inLanguage": {
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "description": "The language(s) this directory is published in."
     }
   },
   "required": [

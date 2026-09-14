@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/MessageType",
   "@type": "DefinedTermSet",
   "name": "Message type",
-  "description": "What an alert message does, from OASIS CAP 1.2. An update or cancel must carry references to the alert it supersedes, or consumers show the old and new warning side by side.",
+  "description": "What this alert message does, using the same codes as CAP 1.2 (OASIS). An update or cancel message must point back to the alert it replaces, or people will see the old and new warning side by side.",
   "url": "http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html",
   "hasDefinedTerm": [
     {
@@ -11,14 +11,14 @@
       "@id": "gs:msgtype/alert",
       "termCode": "alert",
       "name": "Alert",
-      "description": "New information about a situation."
+      "description": "Shares new information about a situation."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:msgtype/update",
       "termCode": "update",
       "name": "Update",
-      "description": "Updates and supersedes an earlier alert."
+      "description": "Replaces an earlier alert with new information."
     },
     {
       "@type": "DefinedTerm",
@@ -32,14 +32,14 @@
       "@id": "gs:msgtype/ack",
       "termCode": "ack",
       "name": "Acknowledgement",
-      "description": "Acknowledges receipt of an earlier message."
+      "description": "Confirms an earlier message was received."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:msgtype/error",
       "termCode": "error",
       "name": "Error",
-      "description": "Reports a rejected message."
+      "description": "Reports that a message was rejected."
     }
   ]
 }

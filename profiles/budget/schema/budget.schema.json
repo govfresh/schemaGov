@@ -3,28 +3,37 @@
   "$id": "https://schema.govfresh.com/v1/budget/budget.schema.json",
   "title": "Budget",
   "description": "A government's fiscal plan for one period, at one phase of the budget cycle. Mirrors the Fiscal Data Package, which remains the source model; this is a schema.org projection for discovery and for joining budgets to the organization, meeting, and legislation that produced them. schema.org has no budget, fiscal, expenditure, or appropriation concept of any kind - MonetaryAmount is a value type, not a model - so gs:Budget is minted outright.",
+  "standards": [
+    "fiscal-data-package"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This budget's own dereferenceable identifier."
     },
     "@type": {
-      "const": "Budget"
+      "const": "Budget",
+      "description": "Always `Budget`."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The budget document's title, e.g. 'Example City FY2026 Adopted Budget'."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language summary of this budget, when the name alone isn't enough."
     },
     "url": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "Where this budget's canonical human-readable page lives."
     },
     "identifier": {
       "type": "array",
+      "description": "Any scheme-qualified identifiers for this budget beyond its `@id`.",
       "items": {
         "$ref": "../_core/identifier.schema.json"
       }
@@ -53,11 +62,13 @@
     },
     "startDate": {
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "description": "When the fiscal period begins."
     },
     "endDate": {
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "description": "When the fiscal period ends."
     },
     "currency": {
       "type": "string",
@@ -82,6 +93,7 @@
     },
     "budgetLine": {
       "type": "array",
+      "description": "The `BudgetLine`s that make up this budget.",
       "items": {
         "$ref": "../_core/reference.schema.json"
       }
@@ -118,21 +130,25 @@
         {
           "format": "date-time"
         }
-      ]
+      ],
+      "description": "When this record was last updated."
     },
     "inLanguage": {
       "type": "array",
+      "description": "The language(s) this budget document is published in.",
       "items": {
         "type": "string"
       }
     },
     "license": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The licence this budget data is published under."
     },
     "sourceDataset": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
     }
   },
   "required": [

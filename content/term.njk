@@ -7,42 +7,46 @@ pagination:
   addAllPagesToCollections: true
 permalink: "/v1/{{ codelist.termSegment }}/"
 eleventyComputed:
-  title: "{{ codelist.name }}"
-  description: "{{ codelist.description }}"
+  title: "{{ codelist.name | safe }}"
+  description: "{{ codelist.description | safe }}"
 ---
-<div class="container py-5">
-  <nav aria-label="Breadcrumb" class="small mb-3">
-    <a href="/vocabulary/">Vocabulary</a> <span class="text-body-secondary">/</span> {{ codelist.name }}
-  </nav>
-  <p class="text-uppercase small fw-semibold text-body-secondary mb-1">DefinedTermSet</p>
-  <h1 class="mb-3">{{ codelist.name }}</h1>
-  <p class="lead">{{ codelist.description }}</p>
+<div class="container hero-xs">
+  <div class="hero-divider pb-3 mb-4">
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/vocabulary/">Vocabulary</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ codelist.name | safe }}</li>
+      </ol>
+    </nav>
+    {% include "page-header.njk" %}
+  </div>
 
-  <dl class="row small border-top border-bottom py-3 mb-4">
-    <dt class="col-sm-3">Term IRI</dt>
-    <dd class="col-sm-9 gs-mono gs-ns mb-2">{{ codelist.id }}</dd>
-    <dt class="col-sm-3">Machine-readable</dt>
-    <dd class="col-sm-9 mb-0"><a href="/v1/codelists/{{ codelist.file }}" class="gs-mono">/v1/codelists/{{ codelist.file }}</a></dd>
-  </dl>
+  {% if codelist.usedBy | length %}
+  <p class="small text-body-secondary mb-3">Part of the <a href="/profiles/{{ codelist.usedBy[0].profileSlug }}/">{{ codelist.usedBy[0].profileName }}</a> profile, used by
+    {% for u in codelist.usedBy %}<a href="/profiles/{{ u.profileSlug }}/#{{ u.schemaSlug }}">{{ u.schemaTitle }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.
+  </p>
+  {% endif %}
 
   <h2 class="h5 mb-3">Terms</h2>
   <div class="table-responsive">
-    <table class="table table-sm align-middle">
+    <table class="table align-middle">
       <thead><tr><th style="width:18%">Code</th><th style="width:22%">Name</th><th>Description</th></tr></thead>
       <tbody>
         {% for t in codelist.terms %}
         <tr>
-          <td><code>{{ t.code }}</code></td>
+          <td>{% if t.path %}<a href="/v1/{{ t.path }}/"><code>{{ t.code }}</code></a>{% else %}<code>{{ t.code }}</code>{% endif %}</td>
           <td>{{ t.name }}</td>
-          <td class="small">{{ t.description }}</td>
+          <td class="small">{{ t.description | linkifyTerms | inlineCode(profiles.built) | safe }}</td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
   </div>
 
-  <p class="small text-body-secondary mt-4 mb-0">
-    This set is extensible. Publishers should map a local tier onto the closest term and carry
-    the local name in <code>alternateName</code>, rather than requesting a new term.
-  </p>
+  <div class="input-group input-group-sm copy-field mb-3">
+    <input type="text" class="form-control font-secondary" value="{{ codelist.id }}" readonly aria-label="Code list ID for {{ codelist.name }}">
+    <button class="btn btn-secondary" type="button" data-copy><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" style="width:0.85em;height:0.85em;vertical-align:-0.05em;margin-right:0.35em;"><path d="M208 0h124.1C344.8 0 357 5.1 366 14.1L433.9 82c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64v256h192v-32h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z"/></svg><span class="copy-label">Copy</span></button>
+  </div>
+  <a href="/v1/codelists/{{ codelist.file }}" class="btn btn-secondary btn-sm mb-4"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width:0.85em;height:0.85em;vertical-align:-0.05em;margin-right:0.35em;"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>Download JSON</a>
 </div>
+<script src="/assets/lf-ui/copy-field.js" defer></script>

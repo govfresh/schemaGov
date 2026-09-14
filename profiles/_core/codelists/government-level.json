@@ -3,15 +3,63 @@
   "@id": "https://schema.govfresh.com/v1/GovernmentLevel",
   "@type": "DefinedTermSet",
   "name": "Government level",
-  "description": "Tiers of government, named so they hold across countries. National naming varies enormously (commune, municipio, kommun, ward, prefecture); publishers SHOULD pick the closest term here and carry the local name in an additional identifier or alternateName rather than requesting a new term.",
+  "description": "The level a government sits at. It's worded to work in any country. Local names vary a lot - commune, municipio, kommun, ward, prefecture. Pick the closest term here, and put the local name in an identifier or alternateName instead of asking for a new one.",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:level/supranational","termCode":"supranational","name":"Supranational","description":"A body above the national level, e.g. the European Union."},
-    {"@type":"DefinedTerm","@id":"gs:level/national","termCode":"national","name":"National","description":"The sovereign state. Corresponds to ISO 3166-1."},
-    {"@type":"DefinedTerm","@id":"gs:level/regional","termCode":"regional","name":"Regional","description":"A first-level subdivision: state, province, region, land, canton. Corresponds to ISO 3166-2."},
-    {"@type":"DefinedTerm","@id":"gs:level/subregional","termCode":"subregional","name":"Subregional","description":"A second-level subdivision: county, district, department, prefecture."},
-    {"@type":"DefinedTerm","@id":"gs:level/municipal","termCode":"municipal","name":"Municipal","description":"A local authority: city, municipality, commune, town, borough."},
-    {"@type":"DefinedTerm","@id":"gs:level/submunicipal","termCode":"submunicipal","name":"Submunicipal","description":"A subdivision of a municipality: ward, parish, neighbourhood council, arrondissement."},
-    {"@type":"DefinedTerm","@id":"gs:level/specialpurpose","termCode":"specialPurpose","name":"Special purpose","description":"A body with a defined remit rather than a general territorial mandate: school district, transit authority, water board."},
-    {"@type":"DefinedTerm","@id":"gs:level/indigenous","termCode":"indigenous","name":"Indigenous","description":"An Indigenous, tribal, or First Nations government. Deliberately not nested under another level, because its authority is not always territorially derived."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:level/supranational",
+      "termCode": "supranational",
+      "name": "Supranational",
+      "description": "A body above the national level, like the European Union."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:level/national",
+      "termCode": "national",
+      "name": "National",
+      "description": "The country itself. Matches the country codes in ISO 3166-1."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:level/regional",
+      "termCode": "regional",
+      "name": "Regional",
+      "description": "The first level below the country: a state, province, region, land, or canton. Matches ISO 3166-2."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:level/subregional",
+      "termCode": "subregional",
+      "name": "Subregional",
+      "description": "The second level below the country: a county, district, department, or prefecture."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:level/municipal",
+      "termCode": "municipal",
+      "name": "Municipal",
+      "description": "A local government: a city, municipality, commune, town, or borough."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:level/submunicipal",
+      "termCode": "submunicipal",
+      "name": "Submunicipal",
+      "description": "A part of a municipality: a ward, parish, neighbourhood council, or arrondissement."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:level/specialpurpose",
+      "termCode": "specialPurpose",
+      "name": "Special purpose",
+      "description": "A body set up to do one job instead of govern an area, like a school district, transit authority, or water board."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:level/indigenous",
+      "termCode": "indigenous",
+      "name": "Indigenous",
+      "description": "An Indigenous, tribal, or First Nations government. It stands on its own here instead of nesting under another level, because its authority doesn't always come from a territory."
+    }
   ]
 }

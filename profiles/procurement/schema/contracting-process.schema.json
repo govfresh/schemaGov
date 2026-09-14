@@ -3,32 +3,41 @@
   "$id": "https://schema.govfresh.com/v1/procurement/contracting-process.schema.json",
   "title": "ContractingProcess",
   "description": "One complete procurement, from planning through tender, award, and contract - the spine that OCDS calls a contracting process, identified by an ocid. Everything that happens hangs off this one identifier, which is what makes it possible to follow a single purchase from the budget line that funded it to the supplier that was paid. schema.org has no tender, procurement, bid, or solicitation concept; Demand and Offer are retail constructs carrying GTIN, SKU and warranty semantics that do not apply, so nothing is gained by forcing a tender into them.",
+  "standards": [
+    "ocds"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This process's own dereferenceable identifier."
     },
     "@type": {
-      "const": "ContractingProcess"
+      "const": "ContractingProcess",
+      "description": "Always `ContractingProcess`."
     },
     "ocid": {
       "type": "string",
       "description": "Open Contracting ID: a globally unique identifier for this process, prefixed with a registered publisher prefix. The join key across publishers and the reason OCDS data is aggregatable at all."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "A short label for the process, e.g. what's being procured."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language summary of the procurement."
     },
     "url": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "Where this process's canonical human-readable page lives."
     },
     "identifier": {
       "type": "array",
+      "description": "Any scheme-qualified identifiers for this process beyond its `@id`.",
       "items": {
         "$ref": "../_core/identifier.schema.json"
       }
@@ -38,7 +47,8 @@
       "description": "The GovernmentOrganization paying. Required: a procurement with no accountable buyer cannot be audited."
     },
     "jurisdiction": {
-      "$ref": "../_core/reference.schema.json"
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `Jurisdiction` the procurement is conducted in."
     },
     "budgetLine": {
       "type": "array",
@@ -48,16 +58,19 @@
       "description": "The BudgetLine(s) funding this process. The join to the budget profile, and the link that answers 'what did we actually buy with that appropriation'."
     },
     "tender": {
-      "$ref": "tender.schema.json"
+      "$ref": "tender.schema.json",
+      "description": "The `Tender` for this process - what was solicited, and how."
     },
     "award": {
       "type": "array",
+      "description": "The `Award`(s) made in this process. Usually one, but a process can split a contract across several suppliers.",
       "items": {
         "$ref": "award.schema.json"
       }
     },
     "contract": {
       "type": "array",
+      "description": "The `Contract`(s) signed as a result of this process.",
       "items": {
         "$ref": "contract.schema.json"
       }
@@ -78,14 +91,17 @@
         {
           "format": "date-time"
         }
-      ]
+      ],
+      "description": "When this record was last updated."
     },
     "language": {
-      "type": "string"
+      "type": "string",
+      "description": "The language this process's documents are in."
     },
     "sourceDataset": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
     }
   },
   "required": [

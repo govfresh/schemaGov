@@ -3,23 +3,90 @@
   "$id": "https://schema.govfresh.com/v1/catalog/catalog.schema.json",
   "title": "Catalog",
   "description": "A catalogue of a government's published datasets, aligned with DCAT and expressed as a schema.org DataCatalog. DCAT is the international standard here (DCAT-AP in the EU, DCAT-US in the States, and the basis of most national open-data portals), and schema.org DataCatalog is what Google Dataset Search consumes - so this projection has an immediate real consumer rather than a hypothetical one.",
+  "standards": [
+    "dcat"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
-    "@id": {"type": "string", "format": "iri"},
-    "@type": {"const": "DataCatalog"},
-    "name": {"type": "string"},
-    "description": {"type": "string"},
-    "url": {"type": "string", "format": "iri"},
-    "identifier": {"type": "array", "items": {"$ref": "../_core/identifier.schema.json"}},
-    "publisher": {"$ref": "../_core/reference.schema.json"},
-    "about": {"$ref": "../_core/reference.schema.json", "description": "The Jurisdiction covered."},
-    "dataset": {"type": "array", "items": {"$ref": "../_core/reference.schema.json"}},
-    "license": {"type": "string", "format": "iri"},
-    "inLanguage": {"type": "array", "items": {"type": "string"}},
-    "dateModified": {"type": "string", "anyOf": [{"format": "date"}, {"format": "date-time"}]},
-    "contactPoint": {"type": "object"}
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This catalogue's own dereferenceable identifier."
+    },
+    "@type": {
+      "const": "DataCatalog",
+      "description": "Always `DataCatalog`, a real schema.org type."
+    },
+    "name": {
+      "type": "string",
+      "description": "The catalogue's title."
+    },
+    "description": {
+      "type": "string",
+      "description": "A plain-language description of what this catalogue covers."
+    },
+    "url": {
+      "type": "string",
+      "format": "iri",
+      "description": "Where this catalogue's canonical human-readable page lives."
+    },
+    "identifier": {
+      "type": "array",
+      "description": "Any scheme-qualified identifiers for this catalogue beyond its `@id`.",
+      "items": {
+        "$ref": "../_core/identifier.schema.json"
+      }
+    },
+    "publisher": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `GovernmentOrganization` publishing this catalogue."
+    },
+    "about": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The Jurisdiction covered."
+    },
+    "dataset": {
+      "type": "array",
+      "description": "The `Dataset`s listed in this catalogue.",
+      "items": {
+        "$ref": "../_core/reference.schema.json"
+      }
+    },
+    "license": {
+      "type": "string",
+      "format": "iri",
+      "description": "The default licence for datasets in this catalogue, where one applies to all of them."
+    },
+    "inLanguage": {
+      "type": "array",
+      "description": "The language(s) this catalogue is published in.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dateModified": {
+      "type": "string",
+      "anyOf": [
+        {
+          "format": "date"
+        },
+        {
+          "format": "date-time"
+        }
+      ],
+      "description": "When this catalogue last changed."
+    },
+    "contactPoint": {
+      "type": "object",
+      "description": "How to reach the publisher with questions about this catalogue."
+    }
   },
-  "required": ["@id", "@type", "name", "publisher"],
+  "required": [
+    "@id",
+    "@type",
+    "name",
+    "publisher"
+  ],
   "additionalProperties": true
 }

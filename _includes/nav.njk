@@ -1,23 +1,49 @@
-<nav class="navbar navbar-expand-lg border-bottom" aria-label="Primary navigation">
+<nav class="navbar navbar-expand-lg" aria-label="Primary navigation">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="/">{{ site.title }}</a>
+    <a class="navbar-brand" href="/" aria-label="{{ site.title }}">
+      {% if site.logo.file %}
+        <span
+          class="brand-mark logo-height-{{ site.logo.size or 'short' }}"
+          aria-hidden="true"
+          style="--brand-mark-src: url('{{ site.logo.file }}'); aspect-ratio: {{ site.logo.width }} / {{ site.logo.height }};">
+        </span>
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#siteNav" aria-controls="siteNav"
             aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    {% set ICON_PRESETS = {
+      "github": { icon: "fa-brands fa-github", label: "GitHub" },
+      "search": { icon: "fa-solid fa-magnifying-glass", label: "Search" }
+    } %}
     <div class="collapse navbar-collapse" id="siteNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         {% for item in nav.docs %}
         <li class="nav-item">
-          <a class="nav-link{% if page.url == item.url %} active{% endif %}"
-             href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+          <a class="nav-link" href="{{ item.url }}"
+             {% if item["icon-only"] %}aria-label="{{ item.title }}"{% endif %}
+             {% if "http" not in item.url and item.url in page.url %}aria-current="page"{% endif %}>
+            {% if item.icon %}<i class="{{ item.icon }}" aria-hidden="true"></i>{% endif %}{% if not item["icon-only"] %} {{ item.title }}{% endif %}
+          </a>
         </li>
         {% endfor %}
-        <li class="nav-item">
-          <a class="nav-link" href="{{ site.repo }}">GitHub</a>
-        </li>
       </ul>
+      {% if nav.icons | length %}
+      <ul class="navbar-nav align-items-lg-center ms-lg-3 ps-lg-3 border-lg-start">
+        {% for item in nav.icons %}
+        {% set preset = ICON_PRESETS[item.type] %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ item.url }}" aria-label="{{ item.label or preset.label }}">
+            <i class="{{ item.icon or preset.icon }}" aria-hidden="true"></i>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     </div>
   </div>
 </nav>

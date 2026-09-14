@@ -3,14 +3,14 @@
   "@id": "https://schema.govfresh.com/v1/PermitStatus",
   "@type": "DefinedTermSet",
   "name": "Permit status",
-  "description": "Where an application has reached. Refusals, withdrawals and revocations are included deliberately: a dataset containing only granted permits cannot answer what proportion of applications succeed, which is one of the main questions asked of this data.",
+  "description": "Where an application has reached. Refusals, withdrawals, and revocations are included on purpose. That way the data can show how many applications actually succeed, not just the ones that were granted.",
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",
       "@id": "gs:permitstatus/applied",
       "termCode": "applied",
       "name": "Applied",
-      "description": "Received, not yet under substantive review."
+      "description": "Received. Not yet reviewed in detail."
     },
     {
       "@type": "DefinedTerm",
@@ -24,7 +24,7 @@
       "@id": "gs:permitstatus/approved",
       "termCode": "approved",
       "name": "Approved",
-      "description": "Decided in favour but not yet issued, e.g. pending fees."
+      "description": "Decided in favor, but not yet issued — for example, waiting on fees."
     },
     {
       "@type": "DefinedTerm",
@@ -45,28 +45,28 @@
       "@id": "gs:permitstatus/withdrawn",
       "termCode": "withdrawn",
       "name": "Withdrawn",
-      "description": "Withdrawn by the applicant before a decision."
+      "description": "Pulled by the applicant before a decision was made."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:permitstatus/expired",
       "termCode": "expired",
       "name": "Expired",
-      "description": "Lapsed without being exercised, or past its validity."
+      "description": "Lapsed without being used, or past its valid dates."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:permitstatus/revoked",
       "termCode": "revoked",
       "name": "Revoked",
-      "description": "Withdrawn by the authority after issue."
+      "description": "Pulled by the authority after being issued."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:permitstatus/completed",
       "termCode": "completed",
       "name": "Completed",
-      "description": "Works finished and signed off."
+      "description": "The work is finished and signed off."
     }
   ]
 }

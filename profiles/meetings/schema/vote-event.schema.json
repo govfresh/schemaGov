@@ -2,18 +2,57 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/meetings/vote-event.schema.json",
   "title": "VoteEvent",
-  "description": "A single vote taken by a body, with its tally and optionally each member's cast vote. Modelled on Popolo VoteEvent/Count/Vote rather than schema:VoteAction, because VoteAction is built around choosing a candidate and has no way to express aye, nay, or abstain on a motion. Publishing the counts alone is valid; publishing individual votes is what makes a record auditable.",
+  "description": "A single vote taken by a body, with its tally and optionally each member's cast vote.",
+  "standards": [
+    "popolo"
+  ],
   "type": "object",
   "properties": {
-    "@id": {"type": "string", "format": "iri"},
-    "@type": {"const": "VoteEvent"},
-    "name": {"type": "string", "description": "What was voted on, e.g. 'Motion to adopt Ordinance 2025-15'."},
-    "startDate": {"type": "string", "anyOf": [{"format": "date-time"}, {"format": "date"}]},
-    "organizer": {"$ref": "../_core/reference.schema.json", "description": "The body that voted."},
-    "about": {"type": "array", "items": {"$ref": "../_core/reference.schema.json"}, "description": "The Legislation voted on."},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This vote event's own dereferenceable identifier."
+    },
+    "@type": {
+      "const": "VoteEvent",
+      "description": "Always `VoteEvent` - modelled on Popolo `VoteEvent` rather than `schema:VoteAction`, because `VoteAction` is built around choosing a candidate and has no way to express aye, nay, or abstain on a motion."
+    },
+    "name": {
+      "type": "string",
+      "description": "What was voted on, e.g. 'Motion to adopt Ordinance 2025-15'."
+    },
+    "startDate": {
+      "type": "string",
+      "description": "When the vote was taken.",
+      "anyOf": [
+        {
+          "format": "date-time"
+        },
+        {
+          "format": "date"
+        }
+      ]
+    },
+    "organizer": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The body that voted."
+    },
+    "about": {
+      "type": "array",
+      "items": {
+        "$ref": "../_core/reference.schema.json"
+      },
+      "description": "The `Legislation` voted on."
+    },
     "result": {
       "type": "string",
-      "enum": ["passed", "failed", "tied", "withdrawn"]
+      "description": "The outcome of the vote.",
+      "enum": [
+        "passed",
+        "failed",
+        "tied",
+        "withdrawn"
+      ]
     },
     "requiredMajority": {
       "type": "string",
@@ -21,33 +60,73 @@
     },
     "count": {
       "type": "array",
-      "description": "The tally. Popolo Count: one entry per option.",
+      "description": "The tally. Popolo `Count`: one entry per option.",
       "items": {
         "type": "object",
         "properties": {
-          "option": {"type": "string", "enum": ["yes", "no", "abstain", "absent", "excused", "notVoting"]},
-          "value": {"type": "integer", "minimum": 0}
+          "option": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "no",
+              "abstain",
+              "absent",
+              "excused",
+              "notVoting"
+            ]
+          },
+          "value": {
+            "type": "integer",
+            "minimum": 0
+          }
         },
-        "required": ["option", "value"],
+        "required": [
+          "option",
+          "value"
+        ],
         "additionalProperties": false
       }
     },
     "vote": {
       "type": "array",
-      "description": "Individual cast votes. Popolo Vote.",
+      "description": "Individual cast votes. Popolo `Vote`. Publishing the counts alone (see `count`) is valid; publishing individual votes is what makes a record auditable.",
       "items": {
         "type": "object",
         "properties": {
-          "@type": {"const": "Vote"},
-          "voter": {"$ref": "../_core/reference.schema.json"},
-          "option": {"type": "string", "enum": ["yes", "no", "abstain", "absent", "excused", "notVoting"]},
-          "role": {"type": "string", "description": "The Post or role the voter held at the time, where relevant."}
+          "@type": {
+            "const": "Vote"
+          },
+          "voter": {
+            "$ref": "../_core/reference.schema.json"
+          },
+          "option": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "no",
+              "abstain",
+              "absent",
+              "excused",
+              "notVoting"
+            ]
+          },
+          "role": {
+            "type": "string",
+            "description": "The `Post` or role the voter held at the time, where relevant."
+          }
         },
-        "required": ["@type", "voter", "option"],
+        "required": [
+          "@type",
+          "voter",
+          "option"
+        ],
         "additionalProperties": false
       }
     }
   },
-  "required": ["@type", "result"],
+  "required": [
+    "@type",
+    "result"
+  ],
   "additionalProperties": true
 }

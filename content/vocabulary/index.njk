@@ -1,32 +1,50 @@
 ---
 layout: layouts/base.njk
 title: Vocabulary
-description: Minted terms and the extensible code lists for government level and organization classification.
+description: The terms and categories gov-schema defines itself, for concepts no existing standard already covers.
 ---
-<div class="container py-5">
-  <h1 class="mb-3">Vocabulary</h1>
-  <p class="lead">gov-schema mints nothing schema.org already covers. These code lists are <code>DefinedTermSet</code>s rather than fixed enumerations, because tiers of government differ enormously by country.</p>
-  <p class="small"><a href="/v1/govschema.ttl">Download the RDF vocabulary (Turtle)</a></p>
+{% set bodyHtml %}
+{% for c in profiles.codelists %}
+<section class="mb-5">
+  <h2 id="{{ c.slug }}">{{ c.name | safe }}</h2>
+  <p>{{ c.description | linkifyTerms | inlineCode(profiles.built) | safe }}</p>
+  <p class="small font-secondary mb-3"><span class="text-body-secondary">Definition:</span> <a href="/v1/{{ c.termSegment }}/">{{ c.name }}</a></p>
+  <div class="table-responsive">
+    <table class="table align-middle">
+      <thead><tr><th style="width:18%">Code</th><th style="width:22%">Name</th><th>Description</th></tr></thead>
+      <tbody>
+        {% for t in c.terms %}
+        <tr>
+          <td>{% if t.path %}<a href="/v1/{{ t.path }}/"><code>{{ t.code }}</code></a>{% else %}<code>{{ t.code }}</code>{% endif %}</td>
+          <td>{{ t.name }}</td>
+          <td class="small">{{ t.description | linkifyTerms | inlineCode(profiles.built) | safe }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="input-group input-group-sm copy-field mb-3">
+    <input type="text" class="form-control font-secondary" value="{{ c.id }}" readonly aria-label="Code list ID for {{ c.name }}">
+    <button class="btn btn-secondary" type="button" data-copy><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" style="width:0.85em;height:0.85em;vertical-align:-0.05em;margin-right:0.35em;"><path d="M208 0h124.1C344.8 0 357 5.1 366 14.1L433.9 82c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64v256h192v-32h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z"/></svg><span class="copy-label">Copy</span></button>
+  </div>
+  <a href="/v1/codelists/{{ c.file }}" class="btn btn-secondary btn-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width:0.85em;height:0.85em;vertical-align:-0.05em;margin-right:0.35em;"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>Download JSON</a>
+</section>
+{% endfor %}
+{% endset %}
+{% set toc = bodyHtml | withToc %}
+<div class="container hero-xs">
+  <div class="toc-layout row gap-4">
+    <div class="col">
+      <div class="hero-divider pb-3 mb-4">
+        {% include "page-header.njk" %}
 
-  {% for c in profiles.codelists %}
-  <section class="mb-5">
-    <h2 class="h4 border-bottom pb-2">{{ c.name }}</h2>
-    <p>{{ c.description }}</p>
-    <p class="small gs-mono text-body-secondary"><a href="/v1/codelists/{{ c.file }}">{{ c.id }}</a></p>
-    <div class="table-responsive">
-      <table class="table table-sm align-middle">
-        <thead><tr><th style="width:18%">Code</th><th style="width:22%">Name</th><th>Description</th></tr></thead>
-        <tbody>
-          {% for t in c.terms %}
-          <tr>
-            <td><code>{{ t.code }}</code></td>
-            <td>{{ t.name }}</td>
-            <td class="small">{{ t.description }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+        <a href="/v1/govschema.ttl" class="btn btn-secondary btn-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width:0.85em;height:0.85em;vertical-align:-0.05em;margin-right:0.35em;"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>Download full vocabulary (Turtle)</a>
+      </div>
+
+      {{ toc.html | safe }}
     </div>
-  </section>
-  {% endfor %}
+    <div class="toc-sidebar col-auto">{{ toc.toc | safe }}</div>
+  </div>
 </div>
+<script src="/assets/lf-ui/toc-active.js" defer></script>
+<script src="/assets/lf-ui/copy-field.js" defer></script>

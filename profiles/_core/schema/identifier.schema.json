@@ -2,11 +2,17 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/_core/identifier.schema.json",
   "title": "Identifier",
-  "description": "A scheme-qualified identifier, expressed as a schema.org PropertyValue where propertyID names the scheme and value carries the code. This is the mechanism that makes the model work internationally: no national identifier system is privileged, and an entity may carry as many as it has. The same pattern is used by OCDS for organization identifiers.",
+  "description": "A scheme-qualified identifier.",
+  "standards": [
+    "ocds",
+    "wikidata",
+    "open-civic-data"
+  ],
   "type": "object",
   "properties": {
     "@type": {
-      "const": "PropertyValue"
+      "const": "PropertyValue",
+      "description": "Always `PropertyValue`, where `propertyID` names the scheme and `value` carries the code. This is the mechanism that makes the model work internationally: no national identifier system is privileged, and an entity may carry as many as it has. The same pattern is used by OCDS for organization identifiers."
     },
     "propertyID": {
       "type": "string",
@@ -37,7 +43,8 @@
     },
     "value": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "The identifier's actual code or value."
     },
     "name": {
       "type": "string",

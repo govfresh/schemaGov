@@ -6,8 +6,8 @@
   "type": "object",
   "properties": {
     "@id":  {"type": "string", "format": "iri", "description": "Absolute IRI of the referenced entity."},
-    "@type": {"type": "string"},
-    "name": {"type": "string"}
+    "@type": {"type": "string", "description": "The referenced entity's type, as a display hint."},
+    "name": {"type": "string", "description": "The referenced entity's name, as a display hint."}
   },
   "required": ["@id"],
   "additionalProperties": false

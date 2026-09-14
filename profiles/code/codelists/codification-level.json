@@ -3,19 +3,91 @@
   "@id": "https://schema.govfresh.com/v1/CodificationLevel",
   "@type": "DefinedTermSet",
   "name": "Codification level",
-  "description": "The structural tier a piece of legislation occupies within a code. schema:hasPart nests parts but never says what kind of part, which is the one substantive gap in schema.org's otherwise complete legislation vocabulary. Systems differ in which tiers they use and in what order; publishers should use the terms their own code uses and rely on isPartOf for the actual nesting rather than assuming a fixed depth.",
+  "description": "Where a piece of legislation sits within a code. schema.org lets you nest one part inside another (hasPart) but never says what kind of part it is — this fills that gap. Legal systems use different tiers in different orders, so publish whatever tier your own code uses and rely on isPartOf to show the actual nesting, rather than assuming every code has the same depth.",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:codlevel/code","termCode":"code","name":"Code","description":"The whole consolidated body of law."},
-    {"@type":"DefinedTerm","@id":"gs:codlevel/title","termCode":"title","name":"Title","description":"A top-level grouping, common in US municipal codes."},
-    {"@type":"DefinedTerm","@id":"gs:codlevel/book","termCode":"book","name":"Book","description":"A top-level grouping, common in civil-law codes."},
-    {"@type":"DefinedTerm","@id":"gs:codlevel/part","termCode":"part","name":"Part"},
-    {"@type":"DefinedTerm","@id":"gs:codlevel/division","termCode":"division","name":"Division"},
-    {"@type":"DefinedTerm","@id":"gs:codlevel/chapter","termCode":"chapter","name":"Chapter"},
-    {"@type":"DefinedTerm","@id":"gs:codlevel/article","termCode":"article","name":"Article","description":"The primary numbered unit in most civil-law systems."},
-    {"@type":"DefinedTerm","@id":"gs:codlevel/section","termCode":"section","name":"Section","description":"The primary numbered unit in most common-law systems."},
-    {"@type":"DefinedTerm","@id":"gs:codlevel/subsection","termCode":"subsection","name":"Subsection"},
-    {"@type":"DefinedTerm","@id":"gs:codlevel/paragraph","termCode":"paragraph","name":"Paragraph"},
-    {"@type":"DefinedTerm","@id":"gs:codlevel/schedule","termCode":"schedule","name":"Schedule","description":"Supplementary material with legal force, appended to the main text."},
-    {"@type":"DefinedTerm","@id":"gs:codlevel/annex","termCode":"annex","name":"Annex","description":"Supplementary material, the usual term in EU and civil-law drafting."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:codlevel/code",
+      "termCode": "code",
+      "name": "Code",
+      "description": "The whole body of law, consolidated into one code."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:codlevel/title",
+      "termCode": "title",
+      "name": "Title",
+      "description": "A top-level grouping, common in US municipal codes."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:codlevel/book",
+      "termCode": "book",
+      "name": "Book",
+      "description": "A top-level grouping, common in civil-law codes."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:codlevel/part",
+      "termCode": "part",
+      "name": "Part",
+      "description": "A grouping below title or book."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:codlevel/division",
+      "termCode": "division",
+      "name": "Division",
+      "description": "A grouping below part."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:codlevel/chapter",
+      "termCode": "chapter",
+      "name": "Chapter",
+      "description": "A grouping below division, or the top-level grouping where a code has no title or book."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:codlevel/article",
+      "termCode": "article",
+      "name": "Article",
+      "description": "The main numbered unit in most civil-law systems."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:codlevel/section",
+      "termCode": "section",
+      "name": "Section",
+      "description": "The main numbered unit in most common-law systems."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:codlevel/subsection",
+      "termCode": "subsection",
+      "name": "Subsection",
+      "description": "A grouping below section."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:codlevel/paragraph",
+      "termCode": "paragraph",
+      "name": "Paragraph",
+      "description": "A grouping below subsection, usually the smallest numbered unit."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:codlevel/schedule",
+      "termCode": "schedule",
+      "name": "Schedule",
+      "description": "Extra material at the end of a document that still carries legal force."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:codlevel/annex",
+      "termCode": "annex",
+      "name": "Annex",
+      "description": "Extra material at the end of a document — the usual term in EU and civil-law drafting."
+    }
   ]
 }

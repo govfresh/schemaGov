@@ -1,0 +1,58 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: standards
+  size: 1
+  alias: standard
+  addAllPagesToCollections: true
+permalink: "/standards/{{ standard.slug }}/"
+eleventyComputed:
+  title: "{{ standard.name | safe }}"
+  description: "{{ standard.description | safe }}"
+---
+{% set bodyHtml %}
+{% if standard.usedBy | length %}
+<section class="mb-5">
+  <h2 id="profiles">Profiles</h2>
+  <p>Domain profiles that reference {{ standard.name }}.</p>
+  <div class="row g-3 card-group">
+    {% for b in standard.usedBy %}
+    {% include "profile-card.njk" %}
+    {% endfor %}
+  </div>
+</section>
+{% elif standard.slug == "schema-org" %}
+<section class="mb-5">
+  <h2 id="profiles">Profiles</h2>
+  <p>schema.org is the base every profile projects into, not a reference a schema calls out by name - see <a href="/profiles/">all profiles</a>.</p>
+</section>
+{% endif %}
+<section class="mb-5">
+  <h2 id="learn-more">Learn more</h2>
+  <a href="{{ standard.url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width:0.85em;height:0.85em;vertical-align:-0.05em;margin-right:0.35em;"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>Visit {{ standard.name }}</a>
+</section>
+{% endset %}
+{% set toc = bodyHtml | withToc %}
+<div class="container hero-xs">
+  <div class="toc-layout row gap-4">
+    <div class="col">
+      <div class="hero-divider pb-3 mb-4">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/standards/">Standards</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ standard.name | safe }}</li>
+          </ol>
+        </nav>
+        <div class="col-lg-8">
+          {% include "page-header.njk" %}
+        </div>
+
+        <p class="icon-line mt-3 mb-0"><i class="fa-solid fa-building"></i> Published by: {{ standard.org | safe }}</p>
+      </div>
+
+      {{ toc.html | safe }}
+    </div>
+    <div class="toc-sidebar col-auto">{{ toc.toc | safe }}</div>
+  </div>
+</div>
+<script src="/assets/lf-ui/toc-active.js" defer></script>

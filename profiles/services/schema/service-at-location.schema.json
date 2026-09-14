@@ -3,16 +3,50 @@
   "$id": "https://schema.govfresh.com/v1/services/service-at-location.schema.json",
   "title": "ServiceAtLocation",
   "description": "One service delivered at one place, with the hours that apply there. HSDS models this as a separate join rather than a field on either side, because a service and a location are independent: one office delivers many services, one service runs from many offices, and the opening hours belong to the pairing rather than to either alone.",
+  "standards": [
+    "open-referral-hsds"
+  ],
   "type": "object",
   "properties": {
-    "@type": {"const": "ServiceAtLocation"},
-    "@id": {"type": "string", "format": "iri"},
-    "location": {"$ref": "../_core/reference.schema.json", "description": "A Facility from _core."},
-    "openingHoursSpecification": {"type": "array", "items": {"type": "object"}},
-    "appointmentRequired": {"type": "boolean"},
-    "description": {"type": "string"},
-    "availableLanguage": {"type": "array", "items": {"type": "string"}}
+    "@type": {
+      "const": "ServiceAtLocation",
+      "description": "Always `ServiceAtLocation`."
+    },
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This pairing's own dereferenceable identifier."
+    },
+    "location": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "A Facility from _core."
+    },
+    "openingHoursSpecification": {
+      "type": "array",
+      "description": "schema:OpeningHoursSpecification - the hours this service is available at this location, which may differ from the location's own general hours.",
+      "items": {
+        "type": "object"
+      }
+    },
+    "appointmentRequired": {
+      "type": "boolean",
+      "description": "Whether this service must be booked in advance at this location."
+    },
+    "description": {
+      "type": "string",
+      "description": "A plain-language note on this specific pairing, when it differs from the service's own description - e.g. a satellite office offering only part of the service."
+    },
+    "availableLanguage": {
+      "type": "array",
+      "description": "BCP 47 tags for languages available at this specific location, where they differ from the service's own `availableLanguage`.",
+      "items": {
+        "type": "string"
+      }
+    }
   },
-  "required": ["@type", "location"],
+  "required": [
+    "@type",
+    "location"
+  ],
   "additionalProperties": false
 }

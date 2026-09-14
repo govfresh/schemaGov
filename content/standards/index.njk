@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Standards
+description: The external standards gov-schema profiles against, and which profiles use each one.
+---
+<div class="container hero-xs hero-divider">
+  {% include "page-header.njk" %}
+</div>
+
+<div class="container pt-4">
+  <div class="row g-3 mb-3 card-group">
+    {% for std in standards %}
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="h5"><a href="/standards/{{ std.slug }}/" class="stretched-link">{{ std.name }}</a></h2>
+          <p class="mb-2 small text-body-secondary">{{ std.org | safe }}</p>
+          <p class="mb-0 small">{{ std.description | safe }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

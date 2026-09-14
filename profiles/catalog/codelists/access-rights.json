@@ -3,28 +3,28 @@
   "@id": "https://schema.govfresh.com/v1/AccessRights",
   "@type": "DefinedTermSet",
   "name": "Access rights",
-  "description": "Whether the data itself is available, per DCAT dct:accessRights. Publishing metadata about restricted data is legitimate and useful; publishing it without saying the data is restricted is not.",
+  "description": "Whether the data itself, not just its listing, is available. Publishing details about restricted data is fine. Not saying it's restricted is not.",
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",
       "@id": "gs:accessrights/public",
       "termCode": "public",
       "name": "Public",
-      "description": "The data is openly available."
+      "description": "Anyone can get the data."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:accessrights/restricted",
       "termCode": "restricted",
       "name": "Restricted",
-      "description": "The metadata is public; access to the data requires authorisation."
+      "description": "Anyone can see the listing, but getting the data itself needs permission."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:accessrights/nonPublic",
       "termCode": "nonPublic",
       "name": "Non-public",
-      "description": "The data is not available outside the publishing body."
+      "description": "Only the publishing body can access the data."
     }
   ]
 }

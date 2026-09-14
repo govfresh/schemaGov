@@ -7,34 +7,37 @@ pagination:
   addAllPagesToCollections: true
 permalink: "/v1/{{ term.path }}/"
 eleventyComputed:
-  title: "{{ term.name }}"
-  description: "{{ term.description or term.name }} — a term in the {{ term.setName }} code list."
+  title: "{{ term.name | safe }}"
+  description: "{{ term.description | safe }}"
 ---
-<div class="container py-5">
-  <nav aria-label="Breadcrumb" class="small mb-3">
-    <a href="/vocabulary/">Vocabulary</a> <span class="text-body-secondary">/</span>
-    <a href="/v1/{{ term.setSegment }}/">{{ term.setName }}</a> <span class="text-body-secondary">/</span>
-    {{ term.code }}
-  </nav>
+<div class="container hero-xs">
+  <div class="hero-divider pb-3 mb-4">
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/vocabulary/">Vocabulary</a></li>
+        <li class="breadcrumb-item"><a href="/v1/{{ term.setSegment }}/">{{ term.setName }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ term.code }}</li>
+      </ol>
+    </nav>
 
-  <p class="text-uppercase small fw-semibold text-body-secondary mb-1">DefinedTerm</p>
-  <h1 class="mb-2">{{ term.name }}</h1>
-  <p class="gs-mono text-body-secondary mb-3"><code>{{ term.code }}</code></p>
-  {% if term.description %}<p class="lead">{{ term.description }}</p>{% endif %}
+    {% include "page-header.njk" %}
 
-  <dl class="row small border-top border-bottom py-3 mb-4">
-    <dt class="col-sm-3">Term IRI</dt>
-    <dd class="col-sm-9 gs-mono gs-ns mb-2">{{ site.namespace }}{{ term.path }}</dd>
-    <dt class="col-sm-3">In code list</dt>
-    <dd class="col-sm-9 mb-2"><a href="/v1/{{ term.setSegment }}/">{{ term.setName }}</a></dd>
-    <dt class="col-sm-3">Machine-readable</dt>
-    <dd class="col-sm-9 mb-2"><a href="/v1/codelists/{{ term.file }}" class="gs-mono">/v1/codelists/{{ term.file }}</a></dd>
-    <dt class="col-sm-3">Profile</dt>
-    <dd class="col-sm-9 mb-0"><a href="/profiles/{{ term.profile }}/">{{ term.profile }}</a></dd>
-  </dl>
+    <dl class="row small pt-3 mb-0">
+      <dt class="col-sm-3">Code</dt>
+      <dd class="col-sm-9 font-secondary mb-2">{{ term.code }}</dd>
+      <dt class="col-sm-3">Full identifier (IRI)</dt>
+      <dd class="col-sm-9 font-secondary text-break mb-2">{{ site.namespace }}{{ term.path }}</dd>
+      <dt class="col-sm-3">Part of</dt>
+      <dd class="col-sm-9 mb-2"><a href="/v1/{{ term.setSegment }}/">{{ term.setName }}</a></dd>
+      <dt class="col-sm-3">JSON file</dt>
+      <dd class="col-sm-9 mb-2"><a href="/v1/codelists/{{ term.file }}" class="font-secondary">/v1/codelists/{{ term.file }}</a></dd>
+      <dt class="col-sm-3">Profile</dt>
+      <dd class="col-sm-9 mb-0"><a href="/profiles/{{ term.profile }}/">{{ term.profile }}</a></dd>
+    </dl>
+  </div>
 
-  <p class="small text-body-secondary mb-0">
-    This is the IRI a published gov-schema document expands this value to. Use the
-    <code>termCode</code> in documents; the IRI is what it means.
+  <p class="small text-body-secondary mb-0 mt-4">
+    A document only ever uses the short code above (<code>{{ term.code }}</code>). The full identifier
+    is just its complete, globally unique form, so any system reading it knows exactly which term is meant.
   </p>
 </div>

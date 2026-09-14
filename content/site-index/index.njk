@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+title: Site index
+description: Every section of schema.govfresh.com, grouped by kind.
+---
+<div class="container hero-xs hero-divider">
+  {% include "page-header.njk" %}
+</div>
+
+<div class="container pt-4">
+  <h2 class="h5 mb-3">Main</h2>
+  <ul class="mb-5">
+    <li><a href="/about/">About</a></li>
+    <li><a href="/spec/">Specification</a></li>
+    <li><a href="/profiles/">Profiles</a></li>
+    <li><a href="/vocabulary/">Vocabulary</a></li>
+    <li><a href="/standards/">Standards</a></li>
+  </ul>
+
+  <h2 class="h5 mb-3">Profiles</h2>
+  <ul class="mb-5">
+    {% for b in profiles.built %}
+    <li><a href="/profiles/{{ b.slug }}/">{{ b.name }}</a></li>
+    {% endfor %}
+    {% for p in profiles.planned %}
+    <li>{{ p.title }} <span class="badge text-bg-secondary">planned</span></li>
+    {% endfor %}
+  </ul>
+
+  <h2 class="h5 mb-3">Vocabulary (code lists)</h2>
+  <ul class="mb-5">
+    {% for c in profiles.codelists %}
+    <li><a href="/v1/{{ c.termSegment }}/">{{ c.name }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h2 class="h5 mb-3">Standards</h2>
+  <ul class="mb-0">
+    {% for std in standards %}
+    <li><a href="/standards/{{ std.slug }}/">{{ std.name }}</a></li>
+    {% endfor %}
+  </ul>
+</div>

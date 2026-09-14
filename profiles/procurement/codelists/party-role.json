@@ -3,15 +3,63 @@
   "@id": "https://schema.govfresh.com/v1/PartyRole",
   "@type": "DefinedTermSet",
   "name": "Party role",
-  "description": "What an organization does in a contracting process, per OCDS. One organization may hold several roles in the same process, which is why roles live on the party rather than being implied by where the organization is mentioned.",
+  "description": "What an organization does in a procurement process, following OCDS. One organization can hold several roles in one process. That's why roles belong to the party, not to wherever it shows up.",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:partyrole/buyer","termCode":"buyer","name":"Buyer","description":"The organization whose budget pays."},
-    {"@type":"DefinedTerm","@id":"gs:partyrole/procuringEntity","termCode":"procuringEntity","name":"Procuring entity","description":"The organization running the process, which is not always the buyer."},
-    {"@type":"DefinedTerm","@id":"gs:partyrole/tenderer","termCode":"tenderer","name":"Tenderer","description":"Submitted a bid. Publishing unsuccessful tenderers, not only the winner, is what makes a competition auditable."},
-    {"@type":"DefinedTerm","@id":"gs:partyrole/supplier","termCode":"supplier","name":"Supplier","description":"Was awarded a contract."},
-    {"@type":"DefinedTerm","@id":"gs:partyrole/payer","termCode":"payer","name":"Payer"},
-    {"@type":"DefinedTerm","@id":"gs:partyrole/payee","termCode":"payee","name":"Payee"},
-    {"@type":"DefinedTerm","@id":"gs:partyrole/funder","termCode":"funder","name":"Funder","description":"Provided the money, often a different tier of government or a donor."},
-    {"@type":"DefinedTerm","@id":"gs:partyrole/reviewBody","termCode":"reviewBody","name":"Review body","description":"Handles complaints and challenges to the process."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:partyrole/buyer",
+      "termCode": "buyer",
+      "name": "Buyer",
+      "description": "The organization whose budget pays."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:partyrole/procuringEntity",
+      "termCode": "procuringEntity",
+      "name": "Procuring entity",
+      "description": "The organization running the process. Not always the same as the buyer."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:partyrole/tenderer",
+      "termCode": "tenderer",
+      "name": "Tenderer",
+      "description": "Submitted a bid. Publishing every tenderer, not just the winner, is what lets people check that a competition was fair."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:partyrole/supplier",
+      "termCode": "supplier",
+      "name": "Supplier",
+      "description": "Won a contract."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:partyrole/payer",
+      "termCode": "payer",
+      "name": "Payer",
+      "description": "Paid money in the process."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:partyrole/payee",
+      "termCode": "payee",
+      "name": "Payee",
+      "description": "Received money in the process."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:partyrole/funder",
+      "termCode": "funder",
+      "name": "Funder",
+      "description": "Provided the money, often a different level of government or a donor."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:partyrole/reviewBody",
+      "termCode": "reviewBody",
+      "name": "Review body",
+      "description": "Handles complaints and challenges to the process."
+    }
   ]
 }

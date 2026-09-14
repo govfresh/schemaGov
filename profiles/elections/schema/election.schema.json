@@ -3,28 +3,36 @@
   "$id": "https://schema.govfresh.com/v1/elections/election.schema.json",
   "title": "Election",
   "description": "An electoral event on a given date, containing one or more contests. schema.org has no Election, Candidate, Ballot or constituency of any kind - only PoliticalParty, which is used - so this profile is minted over NIST SP 1500-100 and VIP. Closes a loop left open by the org profile: org records that a Post is filled by election and how long a term runs, but nothing about the election that produced the officeholder.",
+  "standards": [
+    "nist-sp-1500-100"
+  ],
   "type": "object",
   "properties": {
     "@context": {},
     "@id": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "This election's own dereferenceable identifier."
     },
     "@type": {
       "const": "Election"
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The election's title, e.g. 'Example City general election, 2022'."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "A plain-language summary of the election, when the name alone isn't enough."
     },
     "url": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "Where this election's canonical human-readable page lives."
     },
     "identifier": {
       "type": "array",
+      "description": "Any scheme-qualified identifiers for this election beyond its `@id`.",
       "items": {
         "$ref": "../_core/identifier.schema.json"
       }
@@ -36,6 +44,7 @@
     },
     "electionType": {
       "type": "string",
+      "description": "termCode from the `ElectionType` code list.",
       "enum": [
         "general",
         "primary",
@@ -49,6 +58,7 @@
     },
     "electionStatus": {
       "type": "string",
+      "description": "termCode from the `ElectionStatus` code list.",
       "enum": [
         "scheduled",
         "completed",
@@ -61,17 +71,20 @@
       "description": "The GovernmentOrganization running the election, which is frequently not the body being elected."
     },
     "jurisdiction": {
-      "$ref": "../_core/reference.schema.json"
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `Jurisdiction` this election is held in."
     },
     "contest": {
       "type": "array",
+      "description": "The `Contest`s decided at this election.",
       "items": {
         "$ref": "../_core/reference.schema.json"
       }
     },
     "registeredVoters": {
       "type": "integer",
-      "minimum": 0
+      "minimum": 0,
+      "description": "The electorate for the election as a whole. See `Contest.registeredVoters` for the per-contest figure, which is what turnout should actually be measured against."
     },
     "ballotsCast": {
       "type": "integer",
@@ -80,7 +93,8 @@
     },
     "sourceDataset": {
       "type": "string",
-      "format": "iri"
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
     }
   },
   "required": [

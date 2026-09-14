@@ -1,6 +1,6 @@
 # gov-schema
 
-A shared vocabulary for describing government — organizations, legislation, meetings,
+A shared vocabulary for government operations — organizations, legislation, meetings,
 service requests, budgets, and contracts — built as a **profile of schema.org combined with
 the open standards already established in each domain**, not as a competing standard.
 
@@ -44,9 +44,11 @@ Both are enforced by the validator. See [SPEC.md](SPEC.md) for the full rational
 context/v1/       the @context every document imports
 vocabulary/       gs: terms, each mapped onto a schema.org term
 profiles/_core/   Jurisdiction · Organization · Person · Role · Identifier
-profiles/…        org · code · meetings · requests · budget · procurement
-examples/         a coherent, cross-linked fixture set
+profiles/…        org · code · meetings · requests · budget · procurement ·
+                   catalog · alerts · permits · elections · services
+examples/         a coherent, cross-linked fixture set, plus real-publisher pilots
 crosswalks/       mapping tables to the standards being profiled
+shapes/           SHACL, for semantic validation
 tools/validate.py shape + reference-integrity checker
 ```
 
@@ -60,6 +62,12 @@ every such URL resolves in the built site, and CI fails the build if one does no
 Built with [Eleventy](https://www.11ty.dev), following the ScanGov 11ty conventions, themed
 with the `lf-ui` layer (Bootstrap 5.3.2). Reference pages are generated from the JSON Schemas
 and code lists themselves, so the documentation cannot drift from what the validator enforces.
+
+Beyond the profiles, the site documents every external standard gov-schema profiles against
+(schema.org, Popolo, OCDS, and the rest) on its own page under `/standards/`, explains the
+project itself under `/about/`, and is fully searchable from `/search/` — one index covering
+every profile, field, code list, term, and standard, built at generation time from the same
+data the pages themselves are generated from.
 
 ```bash
 npm install

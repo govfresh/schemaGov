@@ -3,16 +3,70 @@
   "@id": "https://schema.govfresh.com/v1/ResponseType",
   "@type": "DefinedTermSet",
   "name": "Response type",
-  "description": "What the public is being told to do, from OASIS CAP 1.2. Separate from the free-text instruction so that systems can act on it - a phone can decide whether to override silent mode for 'evacuate' but not for 'monitor'.",
+  "description": "What the public should do, using the same codes as CAP 1.2 (OASIS). This is separate from the free-text instruction so a system can act on it automatically — a phone can override silent mode for 'evacuate' but not for 'monitor'.",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:resptype/shelter","termCode":"shelter","name":"Shelter","description":"Take shelter in place or as instructed."},
-    {"@type":"DefinedTerm","@id":"gs:resptype/evacuate","termCode":"evacuate","name":"Evacuate","description":"Relocate as instructed."},
-    {"@type":"DefinedTerm","@id":"gs:resptype/prepare","termCode":"prepare","name":"Prepare","description":"Make preparations."},
-    {"@type":"DefinedTerm","@id":"gs:resptype/execute","termCode":"execute","name":"Execute","description":"Execute a pre-planned activity."},
-    {"@type":"DefinedTerm","@id":"gs:resptype/avoid","termCode":"avoid","name":"Avoid","description":"Avoid the hazard or the area."},
-    {"@type":"DefinedTerm","@id":"gs:resptype/monitor","termCode":"monitor","name":"Monitor","description":"Attend to information sources."},
-    {"@type":"DefinedTerm","@id":"gs:resptype/assess","termCode":"assess","name":"Assess","description":"Evaluate the information. Intended for responders, not the public."},
-    {"@type":"DefinedTerm","@id":"gs:resptype/allClear","termCode":"allClear","name":"All clear","description":"The hazard has passed."},
-    {"@type":"DefinedTerm","@id":"gs:resptype/none","termCode":"none","name":"None","description":"No action recommended."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:resptype/shelter",
+      "termCode": "shelter",
+      "name": "Shelter",
+      "description": "Take shelter now, or as instructed."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:resptype/evacuate",
+      "termCode": "evacuate",
+      "name": "Evacuate",
+      "description": "Leave the area, as instructed."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:resptype/prepare",
+      "termCode": "prepare",
+      "name": "Prepare",
+      "description": "Get ready."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:resptype/execute",
+      "termCode": "execute",
+      "name": "Execute",
+      "description": "Carry out a plan you already have in place."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:resptype/avoid",
+      "termCode": "avoid",
+      "name": "Avoid",
+      "description": "Stay away from the hazard or the area."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:resptype/monitor",
+      "termCode": "monitor",
+      "name": "Monitor",
+      "description": "Keep watching for more information."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:resptype/assess",
+      "termCode": "assess",
+      "name": "Assess",
+      "description": "Evaluate the situation. Meant for responders, not the public."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:resptype/allClear",
+      "termCode": "allClear",
+      "name": "All clear",
+      "description": "The danger has passed."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:resptype/none",
+      "termCode": "none",
+      "name": "None",
+      "description": "No action needed."
+    }
   ]
 }

@@ -3,17 +3,77 @@
   "@id": "https://schema.govfresh.com/v1/LegislationType",
   "@type": "DefinedTermSet",
   "name": "Legislation type",
-  "description": "Kinds of legislative instrument. Deliberately broad, because the same word means different things in different legal systems; publishers should pick the nearest term and carry the local name in alternateName.",
+  "description": "The kind of legislative document this is. Kept broad on purpose, since the same word means different things in different legal systems. Pick whichever term comes closest, and put the local name in alternateName.",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:legtype/code","termCode":"code","name":"Code","description":"A consolidated body of law, such as a municipal code."},
-    {"@type":"DefinedTerm","@id":"gs:legtype/ordinance","termCode":"ordinance","name":"Ordinance","description":"A local law of general and permanent effect."},
-    {"@type":"DefinedTerm","@id":"gs:legtype/resolution","termCode":"resolution","name":"Resolution","description":"An expression of position or an administrative decision, usually without permanent legal force."},
-    {"@type":"DefinedTerm","@id":"gs:legtype/bylaw","termCode":"bylaw","name":"By-law","description":"A local law; the usual term in Commonwealth jurisdictions."},
-    {"@type":"DefinedTerm","@id":"gs:legtype/act","termCode":"act","name":"Act","description":"Primary legislation of a national or regional legislature."},
-    {"@type":"DefinedTerm","@id":"gs:legtype/regulation","termCode":"regulation","name":"Regulation","description":"Secondary or delegated legislation made under an enabling power."},
-    {"@type":"DefinedTerm","@id":"gs:legtype/decree","termCode":"decree","name":"Decree","description":"An instrument issued by an executive authority."},
-    {"@type":"DefinedTerm","@id":"gs:legtype/directive","termCode":"directive","name":"Directive","description":"An instrument binding as to result, leaving means to the implementing authority."},
-    {"@type":"DefinedTerm","@id":"gs:legtype/motion","termCode":"motion","name":"Motion","description":"A proposal put to a deliberative body for decision."},
-    {"@type":"DefinedTerm","@id":"gs:legtype/charter","termCode":"charter","name":"Charter","description":"The instrument constituting the government itself."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:legtype/code",
+      "termCode": "code",
+      "name": "Code",
+      "description": "A consolidated body of law, like a municipal code."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:legtype/ordinance",
+      "termCode": "ordinance",
+      "name": "Ordinance",
+      "description": "A local law meant to apply generally and permanently."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:legtype/resolution",
+      "termCode": "resolution",
+      "name": "Resolution",
+      "description": "A statement of position or an administrative decision, usually without lasting legal force."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:legtype/bylaw",
+      "termCode": "bylaw",
+      "name": "By-law",
+      "description": "A local law — the usual term in Commonwealth countries."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:legtype/act",
+      "termCode": "act",
+      "name": "Act",
+      "description": "Primary legislation passed by a national or regional legislature."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:legtype/regulation",
+      "termCode": "regulation",
+      "name": "Regulation",
+      "description": "Secondary legislation made using power an act hands down."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:legtype/decree",
+      "termCode": "decree",
+      "name": "Decree",
+      "description": "An order issued by an executive authority."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:legtype/directive",
+      "termCode": "directive",
+      "name": "Directive",
+      "description": "An instrument that requires a result but leaves the method up to whoever carries it out."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:legtype/motion",
+      "termCode": "motion",
+      "name": "Motion",
+      "description": "A proposal put to a group for a decision."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:legtype/charter",
+      "termCode": "charter",
+      "name": "Charter",
+      "description": "The document that sets up the government itself."
+    }
   ]
 }

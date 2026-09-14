@@ -3,16 +3,70 @@
   "@id": "https://schema.govfresh.com/v1/OrganizationClassification",
   "@type": "DefinedTermSet",
   "name": "Government organization classification",
-  "description": "What kind of body this is. Aligned with Popolo Organization.classification and the W3C Organization Ontology.",
+  "description": "What kind of body this is. It follows two existing standards: Popolo and the W3C Organization Ontology.",
   "hasDefinedTerm": [
-    {"@type":"DefinedTerm","@id":"gs:orgclass/legislature","termCode":"legislature","name":"Legislature","description":"An elected deliberative body: council, assembly, parliament, board of supervisors."},
-    {"@type":"DefinedTerm","@id":"gs:orgclass/executive","termCode":"executive","name":"Executive","description":"The head of government's office: mayoralty, cabinet, city manager's office."},
-    {"@type":"DefinedTerm","@id":"gs:orgclass/department","termCode":"department","name":"Department","description":"An operating unit delivering services under the executive."},
-    {"@type":"DefinedTerm","@id":"gs:orgclass/agency","termCode":"agency","name":"Agency","description":"A body with delegated authority, often at arm's length from the executive."},
-    {"@type":"DefinedTerm","@id":"gs:orgclass/committee","termCode":"committee","name":"Committee","description":"A subset of a legislature or board, usually with a standing subject remit."},
-    {"@type":"DefinedTerm","@id":"gs:orgclass/commission","termCode":"commission","name":"Commission","description":"An appointed body with review, advisory, or quasi-judicial authority."},
-    {"@type":"DefinedTerm","@id":"gs:orgclass/court","termCode":"court","name":"Court","description":"A judicial body."},
-    {"@type":"DefinedTerm","@id":"gs:orgclass/office","termCode":"office","name":"Office","description":"A named office held by one person, e.g. an auditor or ombudsman."},
-    {"@type":"DefinedTerm","@id":"gs:orgclass/enterprise","termCode":"enterprise","name":"Public enterprise","description":"A government-owned commercial entity: utility, transit operator, port authority."}
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/legislature",
+      "termCode": "legislature",
+      "name": "Legislature",
+      "description": "An elected group that debates and decides: a council, assembly, parliament, or board of supervisors."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/executive",
+      "termCode": "executive",
+      "name": "Executive",
+      "description": "The head of government's own office: the mayor's office, a cabinet, or a city manager's office."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/department",
+      "termCode": "department",
+      "name": "Department",
+      "description": "A unit that delivers services under the executive."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/agency",
+      "termCode": "agency",
+      "name": "Agency",
+      "description": "A body with power the executive has handed off, often at arm's length from it."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/committee",
+      "termCode": "committee",
+      "name": "Committee",
+      "description": "A smaller group inside a legislature or board, usually focused on one subject."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/commission",
+      "termCode": "commission",
+      "name": "Commission",
+      "description": "An appointed body that reviews, advises, or acts like a court on specific matters."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/court",
+      "termCode": "court",
+      "name": "Court",
+      "description": "A court."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/office",
+      "termCode": "office",
+      "name": "Office",
+      "description": "An office held by one person, like an auditor or ombudsman."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/enterprise",
+      "termCode": "enterprise",
+      "name": "Public enterprise",
+      "description": "A business the government owns, like a utility, transit operator, or port authority."
+    }
   ]
 }

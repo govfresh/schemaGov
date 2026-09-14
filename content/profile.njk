@@ -7,77 +7,85 @@ pagination:
   addAllPagesToCollections: true
 permalink: "/profiles/{{ profile.slug }}/"
 eleventyComputed:
-  title: "{{ profile.name }} profile"
-  description: "{{ profile.name }} profile reference, generated from the JSON Schemas."
+  title: "{{ profile.name | safe }} profile"
+  description: "{{ profile.description | safe }}"
 ---
-<div class="container py-5">
-  <div class="row">
-    <div class="col-lg-3">
-      <nav class="gs-sidebar d-none d-lg-block" aria-label="Schemas">
-        <p class="text-uppercase small fw-semibold text-body-secondary">Schemas</p>
-        <ul class="nav flex-column small mb-4">
-          {% for s in profile.schemas %}
-          <li class="nav-item"><a class="nav-link px-0 py-1" href="#{{ s.slug }}">{{ s.title }}</a></li>
-          {% endfor %}
-        </ul>
-        <p class="text-uppercase small fw-semibold text-body-secondary">Profiles</p>
-        <ul class="nav flex-column small">
-          {% for b in profiles.built %}
-          <li class="nav-item"><a class="nav-link px-0 py-1{% if b.slug == profile.slug %} fw-semibold{% endif %}" href="/profiles/{{ b.slug }}/">{{ b.name }}</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
-    </div>
-    <div class="col-lg-9">
-      <nav aria-label="Breadcrumb" class="small mb-3">
-        <a href="/profiles/">Profiles</a> <span class="text-body-secondary">/</span> {{ profile.name }}
-      </nav>
-      <h1 class="mb-3">{{ profile.name }} profile</h1>
-
-      <div class="alert alert-secondary small">
-        <strong>Generated from the schemas.</strong> Every field below is read from
-        <code>profiles/{{ profile.dir }}/schema/*.schema.json</code> at build time, so this page
-        cannot drift from what the validator enforces.
+{% set schemasHtml %}
+{% for s in profile.schemas %}
+<section class="mb-5">
+  <h2 id="{{ s.slug }}">{{ s.title | safe }}</h2>
+  <p>{{ s.description | linkifyTerms | inlineCode(profiles.built) | safe }}</p>
+  {% if s.standards | length %}
+  <p class="icon-line mb-3"><i class="fa-solid fa-book"></i> Standards: {% for st in s.standards %}<a href="/standards/{{ st.slug }}/">{{ st.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
+  {% endif %}
+  <div class="table-responsive">
+    <table class="table gs-field-table align-middle">
+      <thead><tr>
+        <th style="width:18%">Field</th><th style="width:20%">Type</th><th>Definition</th><th style="width:10%">Required</th>
+      </tr></thead>
+      <tbody>
+        {% for f in s.fields %}
+        <tr>
+          <td>{% if f.codelistLink %}<a href="{{ f.codelistLink }}"><code>{{ f.name }}</code></a>{% else %}<code>{{ f.name }}</code>{% endif %}</td>
+          <td><code class="text-body-secondary">{{ f | fieldType(profiles.built) | safe }}</code></td>
+          <td class="small">{{ f.description | linkifyTerms | inlineCode(profiles.built) | safe }}</td>
+          <td>{% if f.required %}Yes{% else %}No{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% set ex = examples.bySchema[profile.slug + "/" + s.slug] %}
+  {% if ex | length %}
+  <div class="accordion mb-3" id="ex-{{ s.slug }}">
+    <div class="accordion-item">
+      {# A plain div, not a real heading — withToc scans this whole schemasHtml
+         capture for h2/h3 to build the page's own TOC, and a heading here would
+         wrongly add "Example" to it once per schema. #}
+      <div class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex-{{ s.slug }}-body" aria-expanded="false" aria-controls="ex-{{ s.slug }}-body">Example</button>
       </div>
-
-      <div class="row g-3 mb-5">
-        <div class="col-6 col-md-3"><div class="border rounded p-3 text-center">
-          <div class="h3 mb-0">{{ profile.schemas | length }}</div><div class="small text-body-secondary">schemas</div>
-        </div></div>
-        <div class="col-6 col-md-3"><div class="border rounded p-3 text-center">
-          <div class="h3 mb-0">{{ profile.codelists | length }}</div><div class="small text-body-secondary">code lists</div>
-        </div></div>
-        <div class="col-6 col-md-3"><div class="border rounded p-3 text-center">
-          <div class="h3 mb-0">{{ examples.entities | length }}</div><div class="small text-body-secondary">example entities</div>
-        </div></div>
-        <div class="col-6 col-md-3"><div class="border rounded p-3 text-center">
-          <div class="h3 mb-0">{{ examples.refCount }}</div><div class="small text-body-secondary">cross-references</div>
-        </div></div>
-      </div>
-
-      {% for s in profile.schemas %}
-      <section id="{{ s.slug }}" class="mb-5">
-        <h2 class="h4 border-bottom pb-2">{{ s.title }}</h2>
-        <p>{{ s.description }}</p>
-        <p class="small gs-mono text-body-secondary"><a href="{{ profile.urlBase }}{{ s.file }}">{{ s.id }}</a></p>
-        <div class="table-responsive">
-          <table class="table table-sm gs-field-table align-middle">
-            <thead><tr>
-              <th style="width:22%">Field</th><th style="width:24%">Type</th><th>Notes</th>
-            </tr></thead>
-            <tbody>
-              {% for f in s.fields %}
-              <tr>
-                <td><code>{{ f.name }}</code>{% if f.required %}<br><span class="gs-req text-danger fw-semibold">required</span>{% endif %}</td>
-                <td><code class="text-body-secondary">{{ f.def | fieldType }}</code></td>
-                <td class="small">{{ f.description }}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+      <div id="ex-{{ s.slug }}-body" class="accordion-collapse collapse" data-bs-parent="#ex-{{ s.slug }}">
+        <div class="accordion-body p-0">
+          <div class="d-flex justify-content-end p-2">
+            <button class="btn btn-secondary btn-sm" type="button" data-copy data-copy-target="#ex-{{ s.slug }}-code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" style="width:0.85em;height:0.85em;vertical-align:-0.05em;margin-right:0.35em;"><path d="M208 0h124.1C344.8 0 357 5.1 366 14.1L433.9 82c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64v256h192v-32h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z"/></svg><span class="copy-label">Copy</span></button>
+          </div>
+          <pre class="mb-0 p-3"><code id="ex-{{ s.slug }}-code" class="language-json">{{ ex[0].raw | highlight("json") | safe }}</code></pre>
         </div>
-      </section>
-      {% endfor %}
+      </div>
     </div>
   </div>
+  {% endif %}
+  <div class="input-group input-group-sm copy-field mb-3">
+    <input type="text" class="form-control font-secondary" value="{{ s.id }}" readonly aria-label="Schema ID for {{ s.title }}">
+    <button class="btn btn-secondary" type="button" data-copy><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" style="width:0.85em;height:0.85em;vertical-align:-0.05em;margin-right:0.35em;"><path d="M208 0h124.1C344.8 0 357 5.1 366 14.1L433.9 82c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64v256h192v-32h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z"/></svg><span class="copy-label">Copy</span></button>
+  </div>
+  <a href="{{ profile.urlBase }}{{ s.file }}" class="btn btn-secondary btn-sm mb-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width:0.85em;height:0.85em;vertical-align:-0.05em;margin-right:0.35em;"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>Download JSON</a>
+</section>
+{% endfor %}
+{% endset %}
+{% set toc = schemasHtml | withToc %}
+<div class="container hero-xs">
+  <div class="toc-layout row gap-4">
+    <div class="col">
+      <div class="hero-divider pb-3 mb-4">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/profiles/">Profiles</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ profile.name | safe }}</li>
+          </ol>
+        </nav>
+        {% include "page-header.njk" %}
+
+        <p class="icon-line mt-3 mb-1"><i class="fa-solid fa-diagram-project"></i> Schemas: {{ profile.schemas | length }}</p>
+        <p class="icon-line mb-1"><i class="fa-solid fa-list"></i> Code lists: {{ profile.codelists | length }}</p>
+        <p class="icon-line mb-0"><i class="fa-solid fa-book"></i> Standards: {{ profile.source | linkifyTerms | safe }}</p>
+      </div>
+
+      {{ toc.html | safe }}
+    </div>
+    <div class="toc-sidebar col-auto">{{ toc.toc | safe }}</div>
+  </div>
 </div>
+<script src="/assets/lf-ui/toc-active.js" defer></script>
+<script src="/assets/lf-ui/copy-field.js" defer></script>

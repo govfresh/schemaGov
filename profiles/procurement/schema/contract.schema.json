@@ -3,25 +3,90 @@
   "$id": "https://schema.govfresh.com/v1/procurement/contract.schema.json",
   "title": "Contract",
   "description": "The signed agreement resulting from an award, and what was actually paid under it. Mirrors the OCDS contract and implementation blocks. Keeping the contract value distinct from the award value, and both distinct from amounts actually transacted, is what lets an auditor see overruns.",
+  "standards": [
+    "ocds"
+  ],
   "type": "object",
   "properties": {
-    "@type": {"const": "Contract"},
-    "@id": {"type": "string", "format": "iri"},
-    "contractId": {"type": "string"},
+    "@type": {
+      "const": "Contract",
+      "description": "Always `Contract`."
+    },
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This contract's own dereferenceable identifier."
+    },
+    "contractId": {
+      "type": "string",
+      "description": "The buyer's own reference for this contract."
+    },
     "awardId": {
       "type": "string",
       "description": "The Award this contract implements. Must match an awardId in the same contracting process; the validator checks it."
     },
-    "title": {"type": "string"},
-    "description": {"type": "string"},
-    "status": {"type": "string", "enum": ["pending", "active", "cancelled", "terminated"]},
-    "value": {"$ref": "../budget/amount.schema.json"},
-    "dateSigned": {"type": "string", "anyOf": [{"format": "date"}, {"format": "date-time"}]},
-    "periodStart": {"type": "string", "format": "date"},
-    "periodEnd": {"type": "string", "format": "date"},
-    "amountPaid": {"$ref": "../budget/amount.schema.json", "description": "Total transacted to date under this contract."},
-    "document": {"type": "array", "items": {"type": "string", "format": "iri"}}
+    "title": {
+      "type": "string",
+      "description": "A short label for the contract."
+    },
+    "description": {
+      "type": "string",
+      "description": "A plain-language summary of what the contract covers."
+    },
+    "status": {
+      "type": "string",
+      "description": "termCode from the `ContractStatus` code list.",
+      "enum": [
+        "pending",
+        "active",
+        "cancelled",
+        "terminated"
+      ]
+    },
+    "value": {
+      "$ref": "../budget/amount.schema.json",
+      "description": "The `Amount` the contract is signed for."
+    },
+    "dateSigned": {
+      "type": "string",
+      "anyOf": [
+        {
+          "format": "date"
+        },
+        {
+          "format": "date-time"
+        }
+      ],
+      "description": "When the contract was signed."
+    },
+    "periodStart": {
+      "type": "string",
+      "format": "date",
+      "description": "When the contract takes effect."
+    },
+    "periodEnd": {
+      "type": "string",
+      "format": "date",
+      "description": "When the contract ends."
+    },
+    "amountPaid": {
+      "$ref": "../budget/amount.schema.json",
+      "description": "Total transacted to date under this contract."
+    },
+    "document": {
+      "type": "array",
+      "description": "Links to supporting documents, e.g. the signed contract itself.",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      }
+    }
   },
-  "required": ["@type", "contractId", "awardId", "status"],
+  "required": [
+    "@type",
+    "contractId",
+    "awardId",
+    "status"
+  ],
   "additionalProperties": true
 }

@@ -437,7 +437,10 @@ What drives adoption is not more domains:
   `procurement`
 - **A real pilot publisher, ideally non-US** — the fastest way to find where the international
   assumptions break
-- **Validation as a service** — paste a URL, get a conformance report
+- **Validation as a service** — a design note with a recommendation is written up in
+  [VALIDATOR.md](VALIDATOR.md). Note that "paste a URL" is measurably not achievable
+  on static hosting: only three of six publishers this project already converts send
+  CORS headers a browser would accept.
 - **The SHACL and conformance work in section 0**
 
 If one thing: `catalog` plus one adapter, because together they make the existing seven

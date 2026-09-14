@@ -5,12 +5,34 @@
   "description": "A sum of money, as a schema:MonetaryAmount. Currency is required on every amount rather than inherited from the budget, because amounts get copied out of their document and a figure that silently assumes a currency is how conversion errors happen.",
   "type": "object",
   "properties": {
-    "@type": {"const": "MonetaryAmount"},
-    "value": {"type": "number"},
-    "currency": {"type": "string", "pattern": "^[A-Z]{3}$", "description": "ISO 4217."},
-    "validFrom": {"type": "string", "format": "date"},
-    "validThrough": {"type": "string", "format": "date"}
+    "@type": {
+      "const": "MonetaryAmount",
+      "description": "Always `MonetaryAmount`, a real schema.org type."
+    },
+    "value": {
+      "type": "number",
+      "description": "The numeric amount, in the units `currency` names."
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "ISO 4217."
+    },
+    "validFrom": {
+      "type": "string",
+      "format": "date",
+      "description": "When this amount takes effect, for a value that changes over time."
+    },
+    "validThrough": {
+      "type": "string",
+      "format": "date",
+      "description": "When this amount stops applying."
+    }
   },
-  "required": ["@type", "value", "currency"],
+  "required": [
+    "@type",
+    "value",
+    "currency"
+  ],
   "additionalProperties": false
 }

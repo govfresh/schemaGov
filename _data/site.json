@@ -1,9 +1,16 @@
 {
+  "logo": {
+    "file": "/assets/img/brand/logo.svg",
+    "width": 1039,
+    "height": 155,
+    "size": "short"
+  },
   "title": "gov-schema",
   "titleShort": "gov-schema",
-  "description": "A shared vocabulary for describing government, built as a profile of schema.org and the open standards already established in each domain.",
+  "description": "A shared format that helps governments organize, manage, and publish clear, computer-readable data about their organizations, laws, meetings, budgets, and services.",
   "url": "https://schema.govfresh.com",
   "namespace": "https://schema.govfresh.com/v1/",
+  "prefix": "gs:",
   "version": "1.0.0-draft",
   "org": "GovFresh",
   "org-url": "https://govfresh.com",
@@ -12,5 +19,19 @@
   "timezone": "America/Los_Angeles",
   "securityExpires": "2027-01-01T00:00:00.000Z",
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "licenseName": "CC0 1.0"
+  "licenseName": "CC0 1.0",
+  "feedback": {
+    "text": "Help make gov-schema better:",
+    "link": "https://github.com/govfresh/gov-schema/issues/new",
+    "link_text": "Open an issue"
+  },
+  "cta_banner": {
+    "links": [
+      {
+        "text": "Submit issue",
+        "url": "https://github.com/govfresh/gov-schema/issues/new",
+        "icon": "fa-lightbulb"
+      }
+    ]
+  }
 }
