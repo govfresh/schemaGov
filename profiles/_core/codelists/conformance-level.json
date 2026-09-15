@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/ConformanceLevel",
   "@type": "DefinedTermSet",
   "name": "Conformance level",
-  "description": "The level of gov-schema a publisher has finished. There are three levels, so a government can publish something useful right away instead of finishing every field on day one. gov-schema checks each claim — it never just takes your word for it.",
+  "description": "The level of schemaGov a publisher has finished. There are three levels, so a government can publish something useful right away instead of finishing every field on day one. schemaGov checks each claim — it never just takes your word for it.",
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",

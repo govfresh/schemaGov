@@ -7,7 +7,7 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 
 gs: a owl:Ontology ;
-    dcterms:title "gov-schema core vocabulary" ;
+    dcterms:title "schemaGov core vocabulary" ;
     dcterms:description "Terms required to describe government entities that schema.org does not provide. Every term here is a subclass or subproperty of a schema.org term, so a consumer that understands only schema.org still reads a valid document." ;
     dcterms:publisher <https://govfresh.com> ;
     owl:versionInfo "1.0.0-draft" .
@@ -520,7 +520,7 @@ gs:procurementMethodDetails a rdf:Property ; schema:domainIncludes gs:Tender ; s
 
 gs:PublisherManifest a rdfs:Class ;
     rdfs:label "Publisher manifest" ;
-    rdfs:comment "The discovery document that makes a publisher's gov-schema data findable, served at /.well-known/gov-schema.json per RFC 8615. The only document in gov-schema with a fixed, conventional location: everything else is discovered through it." ;
+    rdfs:comment "The discovery document that makes a publisher's schemaGov data findable, served at /.well-known/schemaGov.json per RFC 8615. The only document in schemaGov with a fixed, conventional location: everything else is discovered through it." ;
     rdfs:subClassOf schema:CreativeWork .
 
 gs:ProfileEndpoint a rdfs:Class ;
@@ -536,13 +536,13 @@ gs:profileEndpoint a rdf:Property ;
 
 gs:profile a rdf:Property ;
     rdfs:label "profile" ;
-    rdfs:comment "Which gov-schema profile an endpoint or dataset serves." ;
+    rdfs:comment "Which schemaGov profile an endpoint or dataset serves." ;
     schema:domainIncludes gs:ProfileEndpoint, schema:Dataset ;
     schema:rangeIncludes schema:Text .
 
 gs:specVersion a rdf:Property ;
     rdfs:label "spec version" ;
-    rdfs:comment "The gov-schema version a publisher targets, so a consumer can detect one pinned to an older profile." ;
+    rdfs:comment "The schemaGov version a publisher targets, so a consumer can detect one pinned to an older profile." ;
     schema:domainIncludes gs:PublisherManifest ;
     schema:rangeIncludes schema:Text .
 
@@ -643,7 +643,7 @@ gs:statusHistory a rdf:Property ; schema:domainIncludes gs:ServiceRequest ; sche
 
 gs:conformanceLevel a rdf:Property ;
     rdfs:label "conformance level" ;
-    rdfs:comment "The gov-schema conformance level a document claims: core, standard or extended. Deliberately NOT dcterms:conformsTo, which means an external standard the resource follows and is typed as an IRI - a bare level name expanded there becomes a broken relative IRI, which is exactly what happened before this term existed." ;
+    rdfs:comment "The schemaGov conformance level a document claims: core, standard or extended. Deliberately NOT dcterms:conformsTo, which means an external standard the resource follows and is typed as an IRI - a bare level name expanded there becomes a broken relative IRI, which is exactly what happened before this term existed." ;
     schema:domainIncludes schema:Thing ;
     schema:rangeIncludes schema:DefinedTerm .
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert a real CAP feed into the gov-schema alerts profile.
+"""Convert a real CAP feed into the schemaGov alerts profile.
 
 Reads the US National Weather Service alerts API, which publishes Common Alerting
 Protocol content as GeoJSON. CAP is the source model for the alerts profile, so this is
@@ -19,9 +19,9 @@ import urllib.request
 from collections import defaultdict
 
 FEED = "https://api.weather.gov/alerts/active?status=actual"
-UA = "gov-schema-adapter/1.0 (schema.govfresh.com; admin@govfresh.com)"
+UA = "schemaGov-adapter/1.0 (schema.govfresh.com; admin@govfresh.com)"
 
-# CAP values are title-case in the wire format; gov-schema uses lower camel case
+# CAP values are title-case in the wire format; schemaGov uses lower camel case
 # consistently across every code list.
 ENUM = {
     "status": {"actual": "actual", "exercise": "exercise", "system": "system",
@@ -214,7 +214,7 @@ def main():
     print(f"cap adapter: {len(features)} feature(s) -> {len(alerts)} alert(s), "
           f"{len(senders)} issuing office(s)")
     print(f"  written to {out}/")
-    for label, data in (("conversion notes", notes), ("values with no gov-schema mapping", gaps)):
+    for label, data in (("conversion notes", notes), ("values with no schemaGov mapping", gaps)):
         if data:
             print(f"\n  {label}:")
             for k, n in sorted(data.items(), key=lambda x: -x[1]):

@@ -7,7 +7,7 @@ recommendation for the open geospatial question in [ROADMAP.md](ROADMAP.md).
 
 ## The problem, stated precisely
 
-Every geo-bearing entity in gov-schema carries at most a **point**. There are no boundaries
+Every geo-bearing entity in schemaGov carries at most a **point**. There are no boundaries
 anywhere — not for jurisdictions, not for wards, not for zoning districts, not for alert
 areas. Three separate pieces of work have now hit this from different directions:
 
@@ -151,7 +151,7 @@ relationships where a publisher wants to.
 
 **Raster and imagery.** Out of scope.
 
-**Coordinate transformation.** gov-schema records which CRS a source used. Converting between
+**Coordinate transformation.** schemaGov records which CRS a source used. Converting between
 them is a job for a GIS library, and a schema that implied otherwise would be lying about what
 it can guarantee.
 

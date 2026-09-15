@@ -1,6 +1,6 @@
 # Licensing
 
-gov-schema is published under two licences, split by what the material is.
+schemaGov is published under two licences, split by what the material is.
 
 | Material | Licence |
 |---|---|
@@ -14,7 +14,7 @@ public domain**, so a government can use, adapt, translate, embed or fork it wit
 attribution obligation, no licence compatibility analysis, and no legal review.
 
 That last point is the practical one. An attribution licence on a vocabulary means every
-public body publishing gov-schema data inherits an obligation, and a data-licensing question
+public body publishing schemaGov data inherits an obligation, and a data-licensing question
 that has to go past a lawyer is a question that stops adoption. The material a government
 would actually reuse — the terms, the shapes, the classifications — carries no strings.
 
@@ -30,7 +30,7 @@ keeps the warranty disclaimer that CC0 does not provide, and is what anyone vend
 
 ## Attribution
 
-CC0 asks for nothing, but attribution is welcome. gov-schema is maintained by
+CC0 asks for nothing, but attribution is welcome. schemaGov is maintained by
 [GovFresh](https://govfresh.com) at `https://schema.govfresh.com`.
 
 ## The namespace is vendor-hosted, the vocabulary is not owned

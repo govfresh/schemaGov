@@ -2,9 +2,9 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/.well-known/gov-schema.json",
+      "@id": "https://example-city.gov/.well-known/schemaGov.json",
       "@type": "PublisherManifest",
-      "name": "Example City gov-schema publication",
+      "name": "Example City schemaGov publication",
       "description": "Structured government data published by Example City.",
       "publisher": {
         "@id": "https://example-city.gov/id/organization/city-government",
@@ -102,7 +102,7 @@
       "@id": "https://example-city.gov/id/catalog/open-data",
       "@type": "DataCatalog",
       "name": "Example City open data catalogue",
-      "description": "Datasets published by Example City, including its gov-schema profiles.",
+      "description": "Datasets published by Example City, including its schemaGov profiles.",
       "url": "https://example-city.gov/data",
       "publisher": {
         "@id": "https://example-city.gov/id/organization/city-government",
@@ -166,7 +166,7 @@
       "distribution": [
         {
           "@type": "DataDownload",
-          "name": "gov-schema budget profile",
+          "name": "schemaGov budget profile",
           "contentUrl": "https://example-city.gov/data/budget.jsonld",
           "encodingFormat": "application/ld+json"
         },
@@ -216,7 +216,7 @@
       "distribution": [
         {
           "@type": "DataDownload",
-          "name": "gov-schema requests profile",
+          "name": "schemaGov requests profile",
           "contentUrl": "https://example-city.gov/data/requests.jsonld",
           "encodingFormat": "application/ld+json"
         },
@@ -260,7 +260,7 @@
       "distribution": [
         {
           "@type": "DataDownload",
-          "name": "gov-schema meetings profile",
+          "name": "schemaGov meetings profile",
           "contentUrl": "https://example-city.gov/data/meetings.jsonld",
           "encodingFormat": "application/ld+json"
         }

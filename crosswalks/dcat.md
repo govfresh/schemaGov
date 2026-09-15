@@ -6,7 +6,7 @@ table.
 
 ## Catalogue and dataset
 
-| DCAT | gov-schema | schema.org |
+| DCAT | schemaGov | schema.org |
 |---|---|---|
 | `dcat:Catalog` | `Catalog` | `DataCatalog` |
 | `dcat:Dataset` | `Dataset` | `Dataset` |
@@ -35,15 +35,15 @@ table.
 ## Deliberate differences
 
 **`dct:spatial` is a reference, not a string.** DCAT commonly carries a geographic name or a
-URI from an external gazetteer. gov-schema points at a `_core` Jurisdiction, so a dataset
+URI from an external gazetteer. schemaGov points at a `_core` Jurisdiction, so a dataset
 joins directly to the organization publishing it and the territory it covers.
 
-**`conformsToProfile` has no DCAT equivalent.** It names the gov-schema profile a dataset
+**`conformsToProfile` has no DCAT equivalent.** It names the schemaGov profile a dataset
 serves, which is what links an open-data catalogue entry to structured data rather than to a
 flat export.
 
-**The manifest is not DCAT at all.** `PublisherManifest` at `/.well-known/gov-schema.json` is
-a gov-schema addition. DCAT describes catalogues but says nothing about how to *find* one;
+**The manifest is not DCAT at all.** `PublisherManifest` at `/.well-known/schemaGov.json` is
+a schemaGov addition. DCAT describes catalogues but says nothing about how to *find* one;
 that gap is why the manifest exists.
 
 ## Note on Google Dataset Search

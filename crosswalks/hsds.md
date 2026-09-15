@@ -4,7 +4,7 @@
 used for human-services directories across the US, UK, Canada and Australia, and publishers
 should keep producing it.
 
-| HSDS | gov-schema |
+| HSDS | schemaGov |
 |---|---|
 | `Organization` | `_core` `GovernmentOrganization` |
 | `Service` | `GovernmentService` |
@@ -36,11 +36,11 @@ or 211 human-services taxonomy, which is authoritative in North America and unus
 the publisher's own classification alongside it. A publisher with an AIRS taxonomy should keep
 it in `identifier` or `keywords` rather than discard it.
 
-**`serviceArea` is a reference.** HSDS carries a geographic description; gov-schema points at
+**`serviceArea` is a reference.** HSDS carries a geographic description; schemaGov points at
 a `_core` Jurisdiction so a service joins to the organization providing it and the territory it
 covers.
 
-**Funding is out of scope here.** HSDS models funding sources on the service; gov-schema has a
+**Funding is out of scope here.** HSDS models funding sources on the service; schemaGov has a
 `budget` profile with COFOG and GFSM classification, and duplicating a weaker version would be
 worse than referencing it.
 

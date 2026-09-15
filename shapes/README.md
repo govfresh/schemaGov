@@ -1,7 +1,7 @@
 # SHACL shapes
 
 The semantic validation tier promised by [SPEC §4](../SPEC.md#4-validation), implemented in
-`gov-schema.shapes.ttl` and run by `tools/shacl.py`.
+`schemaGov.shapes.ttl` and run by `tools/shacl.py`.
 
 ## What these catch that JSON Schema cannot
 

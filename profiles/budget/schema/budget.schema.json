@@ -112,7 +112,7 @@
           "extended"
         ]
       },
-      "description": "gov-schema conformance level claimed, per SPEC section 4. Distinct from conformsTo, which names an external standard the data follows."
+      "description": "schemaGov conformance level claimed, per SPEC section 4. Distinct from conformsTo, which names an external standard the data follows."
     },
     "distribution": {
       "type": "array",

@@ -9,7 +9,7 @@ Nothing here is committed to a date. Order reflects dependency and leverage, not
 
 ## 0. Finish what the spec already promises — **DONE**
 
-**SHACL shapes — done.** `shapes/gov-schema.shapes.ttl`, run by `tools/shacl.py`, wired into
+**SHACL shapes — done.** `shapes/schemaGov.shapes.ttl`, run by `tools/shacl.py`, wired into
 `npm run check` and CI. Measured against a deliberately broken fixture, JSON Schema caught 1
 of 5 faults and the shapes caught the other 4: a Role pointing at an Organization instead of a
 Person, `areaServed` pointing at a body instead of a territory, and a cycle in the
@@ -26,7 +26,7 @@ claim against the level it asserts, and rejects unknown levels.
 **Depends on:** `_core` · **Standard:** DCAT / DCAT-AP (W3C) · **schema.org:** `DataCatalog`, `Dataset`, `DataDownload`
 
 The highest-leverage gap, and not a domain at all: **nothing currently tells a consumer where
-a government's gov-schema data lives.** Every profile published, and no way to find any of them.
+a government's schemaGov data lives.** Every profile published, and no way to find any of them.
 
 A well-known discovery document plus a DCAT-aligned catalogue fixes that and generalises the
 `Directory` pattern already proven in `org`. Google Dataset Search consumes schema.org
@@ -248,7 +248,7 @@ context failed, which is what localised the bug.
 **A second fault surfaced in the same pass and is also fixed:** `code.jsonld` used
 `schema:about` for free-text subject keywords. `about` is typed `@id` because it normally
 references entities, so the strings expanded as relative IRIs against the document base -
-`file:///Users/.../gov-schema`, the same failure as the original `conformsTo` bug. Subject
+`file:///Users/.../schemaGov`, the same failure as the original `conformsTo` bug. Subject
 keywords moved to `schema:keywords`.
 
 **Code-list values — RESOLVED.** The thirteen missing code lists are written
@@ -278,7 +278,7 @@ Settled: **CC0 1.0** for the specification, vocabulary, schemas, code lists and 
 **MIT** for the tooling. See [LICENSING.md](LICENSING.md).
 
 The reasoning matters for adoption: an attribution licence on a vocabulary means every public
-body publishing gov-schema data inherits an obligation, and a data-licensing question that has
+body publishing schemaGov data inherits an obligation, and a data-licensing question that has
 to go past a lawyer is one that stops adoption. CC0 also answers the vendor-namespace
 question directly — terms live under a GovFresh domain because it is maintained, not because
 the vocabulary is owned.
@@ -468,5 +468,5 @@ nine profiles of self-authored fixtures never surfaced - see
 **Confirmed by the pilot, not yet fixed:** real portals carry per-language titles
 (`title_translated: {"en": ..., "ga": ...}` on data.gov.ie), an EU High Value Dataset category,
 a spatial reference system (`srs`), and `applicable_legislation` linking a dataset to an ELI
-URI - a `catalog` to `code` join this profile does not model. gov-schema currently carries a
+URI - a `catalog` to `code` join this profile does not model. schemaGov currently carries a
 single `name` plus `inLanguage`, which cannot represent a bilingual publisher.

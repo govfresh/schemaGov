@@ -1,11 +1,11 @@
 # Akoma Ntoso and ELI crosswalk
 
-gov-schema does not replace Akoma Ntoso. The two describe different layers of the same
+schemaGov does not replace Akoma Ntoso. The two describe different layers of the same
 document and are designed to be used together.
 
 | Layer | Standard | What it carries |
 |---|---|---|
-| Bibliographic / relational | gov-schema `code` (schema.org + ELI) | What the law is, what it changes, who passed it, when it is in force, which file is authoritative |
+| Bibliographic / relational | schemaGov `code` (schema.org + ELI) | What the law is, what it changes, who passed it, when it is in force, which file is authoritative |
 | Textual / structural | Akoma Ntoso (OASIS LegalDocML) | The text itself: clauses, provisos, definitions, internal cross-references, amendment instructions |
 
 They join at `encoding` → `LegislationObject`, whose `conformsTo` names the AKN namespace and
@@ -16,7 +16,7 @@ whose `contentUrl` points at the XML.
 schema.org's `legislation*` properties are derived directly from ELI, so the mapping is
 near-identity.
 
-| ELI | gov-schema |
+| ELI | schemaGov |
 |---|---|
 | `eli:LegalResource` | `Legislation` (the work) |
 | `eli:LegalExpression` / `eli:Format` | `LegislationObject` (the file) |
@@ -33,7 +33,7 @@ mints them.
 
 ## Akoma Ntoso
 
-| AKN | gov-schema |
+| AKN | schemaGov |
 |---|---|
 | `<akomaNtoso>` document | `LegislationObject` with `encodingFormat: application/akn+xml` |
 | FRBR Work | `Legislation` |

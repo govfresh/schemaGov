@@ -20,7 +20,7 @@ on a `Role`. This is the equivalent of a Popolo Membership, and it is what lets 
 answer *who was mayor in 2019* rather than only *who is mayor*. One person holding several
 offices over time produces several Roles and exactly one Person.
 
-gov-schema follows the schema.org Role idiom, where the Role sits in the property slot and
+schemaGov follows the schema.org Role idiom, where the Role sits in the property slot and
 the property name repeats inside it to carry the value:
 
 ```json

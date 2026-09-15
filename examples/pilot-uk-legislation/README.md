@@ -10,7 +10,7 @@ python3 tools/adapters/legislation-uk.py --uri ukpga/2014/30 \
 
 Taxation of Pensions Act 2014: 11 parts, 122 sections, 136 entities.
 
-`code` makes the strongest architectural claims in gov-schema — that schema.org's
+`code` makes the strongest architectural claims in schemaGov — that schema.org's
 ELI-derived vocabulary does nearly all the work, that the FRBR work/expression split is real
 rather than theoretical, and that document structure belongs to Akoma Ntoso rather than here.
 This is the test of those claims.

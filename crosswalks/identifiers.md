@@ -1,6 +1,6 @@
 # Identifier crosswalk
 
-gov-schema does not define an identifier system. It carries any number of external ones as
+schemaGov does not define an identifier system. It carries any number of external ones as
 scheme-qualified `schema:PropertyValue` pairs (SPEC §2), which is what lets the model work
 across countries without privileging one nation's registry.
 

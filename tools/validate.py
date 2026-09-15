@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate gov-schema instance documents.
+"""Validate schemaGov instance documents.
 
 Two independent checks:
 
@@ -578,10 +578,10 @@ def main(argv):
         if "PublisherManifest" not in types_:
             continue
 
-        if "/.well-known/gov-schema.json" not in nid:
+        if "/.well-known/schemaGov.json" not in nid:
             errors.append(
                 f"manifest is not at its conventional location: {nid}\n"
-                f"    serve it at /.well-known/gov-schema.json (RFC 8615), or consumers "
+                f"    serve it at /.well-known/schemaGov.json (RFC 8615), or consumers "
                 f"cannot find it without being told the URL"
             )
 
@@ -681,7 +681,7 @@ def main(argv):
                     )
 
     # --- report --------------------------------------------------------------
-    print(f"gov-schema validate: {len(paths)} file(s), {len(entities)} entities, "
+    print(f"schemaGov validate: {len(paths)} file(s), {len(entities)} entities, "
           f"{len(refs)} cross-references")
     if claims:
         shown = ", ".join(sorted({lvl for _, lvl in claims}))

@@ -23,6 +23,6 @@
   ],
   "icons": [
     { "type": "search", "url": "/search/" },
-    { "type": "github", "url": "https://github.com/govfresh/gov-schema" }
+    { "type": "github", "url": "https://github.com/govfresh/schemaGov" }
   ]
 }

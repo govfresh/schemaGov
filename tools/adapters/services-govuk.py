@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert GOV.UK services into the gov-schema services profile.
+"""Convert GOV.UK services into the schemaGov services profile.
 
 GOV.UK is arguably the best-organised government service catalogue in the world, and it
 does NOT use HSDS. That makes it a harder and more informative test than an HSDS publisher
@@ -22,7 +22,7 @@ import urllib.request
 from collections import defaultdict
 
 SITE = "https://www.gov.uk"
-UA = "gov-schema-adapter/1.0 (schema.govfresh.com)"
+UA = "schemaGov-adapter/1.0 (schema.govfresh.com)"
 
 # GOV.UK organises by topic taxonomy, which is adjacent to life events but not identical.
 # Mapped on keywords, with every mapping reported so the guesswork is visible.

@@ -1,7 +1,7 @@
 # Crosswalks
 
-gov-schema profiles existing standards rather than replacing them. Each file here maps one
-standard onto the gov-schema representation, in both directions where possible.
+schemaGov profiles existing standards rather than replacing them. Each file here maps one
+standard onto the schemaGov representation, in both directions where possible.
 
 | File | Standard | Scope | Status |
 |---|---|---|---|

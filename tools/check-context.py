@@ -83,7 +83,7 @@ def main():
             httpd.shutdown()
             return 1
 
-        print(f"gov-schema check-context: serving _site at {origin}")
+        print(f"schemaGov check-context: serving _site at {origin}")
         print(f"  /v1/context.jsonld  {len(body):,} bytes  Content-Type: {ctype}")
 
         local_ctx = json.loads((ROOT / "context/v1/context.jsonld").read_text())["@context"]

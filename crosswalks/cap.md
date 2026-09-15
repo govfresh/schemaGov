@@ -7,7 +7,7 @@ government's published record.
 
 ## Alert element
 
-| CAP | gov-schema |
+| CAP | schemaGov |
 |---|---|
 | `identifier` | `alertIdentifier` |
 | `sender` | `sender` → a GovernmentOrganization reference |
@@ -22,7 +22,7 @@ government's published record.
 
 ## Info element
 
-| CAP | gov-schema |
+| CAP | schemaGov |
 |---|---|
 | `language` | `inLanguage` |
 | `category` | `category[]` |
@@ -39,13 +39,13 @@ government's published record.
 | `audience` | `audience` |
 | `eventCode`, `parameter` | use `identifier[]` with a scheme-qualified `propertyID` |
 
-CAP values are title-case (`Immediate`, `Severe`, `Observed`); gov-schema uses lower camel
+CAP values are title-case (`Immediate`, `Severe`, `Observed`); schemaGov uses lower camel
 case throughout for consistency with every other code list in the profile. The mapping is
 case-insensitive and otherwise identical.
 
 ## Area element
 
-| CAP | gov-schema |
+| CAP | schemaGov |
 |---|---|
 | `areaDesc` | `areaDescription` |
 | `polygon` | `geometry` — a **URL** to GeoJSON, not inline coordinates |
@@ -54,9 +54,9 @@ case-insensitive and otherwise identical.
 | `altitude`, `ceiling` | not modelled — aviation-specific |
 | — | `jurisdiction` → a `_core` Jurisdiction reference |
 
-**The polygon difference is deliberate.** CAP inlines coordinate pairs as text. gov-schema
+**The polygon difference is deliberate.** CAP inlines coordinate pairs as text. schemaGov
 references GeoJSON (RFC 7946, WGS84) by URL, because a real warning polygon is thousands of
-pairs and alerts travel over constrained channels. Converting CAP → gov-schema means writing
+pairs and alerts travel over constrained channels. Converting CAP → schemaGov means writing
 the polygon to a file and linking it; converting back means inlining it.
 
 `jurisdiction` has no CAP equivalent and is the main thing this projection adds: it joins an
@@ -66,7 +66,7 @@ alert to the territory, the organization, and everything else in the graph.
 
 For discovery only, an alert may additionally be expressed as `SpecialAnnouncement`:
 
-| gov-schema | `SpecialAnnouncement` |
+| schemaGov | `SpecialAnnouncement` |
 |---|---|
 | `headline` | `name` |
 | `description` | `text` |

@@ -54,7 +54,7 @@ export default async function () {
     const title = item.label || ICON_LABELS[item.type] || item.type
     entries.push({ title, url: item.url, body: title })
   }
-  entries.push({ title: 'Home', url: '/', body: 'gov-schema a shared vocabulary for government operations' })
+  entries.push({ title: 'Home', url: '/', body: 'schemaGov a shared vocabulary for government operations' })
   entries.push({ title: 'Site index', url: '/site-index/', body: 'every page on the site' })
 
   return entries.map((e, id) => ({ id, ...e }))

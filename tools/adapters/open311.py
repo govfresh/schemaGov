@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Convert a real Open311 GeoReport v2 endpoint into the gov-schema requests profile.
+"""Convert a real Open311 GeoReport v2 endpoint into the schemaGov requests profile.
 
-The requests profile carries the strongest opinion in gov-schema: reporter privacy is
+The requests profile carries the strongest opinion in schemaGov: reporter privacy is
 treated as a schema concern, and the validator fails the build if a published request
 carries a reporter-identifying field. This is the test of that opinion against real 311
 data.
@@ -22,7 +22,7 @@ import sys
 import urllib.request
 from collections import defaultdict
 
-UA = "gov-schema-adapter/1.0 (schema.govfresh.com)"
+UA = "schemaGov-adapter/1.0 (schema.govfresh.com)"
 
 STATUS = {"open": "open", "closed": "closed", "in progress": "inProgress",
           "investigating": "inProgress", "action scheduled": "inProgress",

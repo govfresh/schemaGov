@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/catalog/manifest.schema.json",
   "title": "PublisherManifest",
-  "description": "The document that makes a government's gov-schema data findable at all. Served at /.well-known/gov-schema.json (RFC 8615), it declares who is publishing, which jurisdiction they cover, which profiles they publish, and where each one lives. Without it a consumer has no entry point: seven profiles of well-modelled data are useless if nobody can discover the URLs. This is the only document in gov-schema with a fixed, conventional location.",
+  "description": "The document that makes a government's schemaGov data findable at all. Served at /.well-known/schemaGov.json (RFC 8615), it declares who is publishing, which jurisdiction they cover, which profiles they publish, and where each one lives. Without it a consumer has no entry point: seven profiles of well-modelled data are useless if nobody can discover the URLs. This is the only document in schemaGov with a fixed, conventional location.",
   "type": "object",
   "properties": {
     "@context": {},
@@ -33,7 +33,7 @@
     },
     "specVersion": {
       "type": "string",
-      "description": "The gov-schema version this publisher targets, e.g. '1.0.0'. Lets a consumer detect a publisher pinned to an older profile."
+      "description": "The schemaGov version this publisher targets, e.g. '1.0.0'. Lets a consumer detect a publisher pinned to an older profile."
     },
     "conformanceLevel": {
       "type": "array",
@@ -45,7 +45,7 @@
           "extended"
         ]
       },
-      "description": "gov-schema conformance level claimed, per SPEC section 4. Distinct from conformsTo, which names an external standard the data follows."
+      "description": "schemaGov conformance level claimed, per SPEC section 4. Distinct from conformsTo, which names an external standard the data follows."
     },
     "profileEndpoint": {
       "type": "array",
@@ -59,7 +59,7 @@
           },
           "profile": {
             "type": "string",
-            "description": "Which gov-schema profile this endpoint serves.",
+            "description": "Which schemaGov profile this endpoint serves.",
             "enum": [
               "core",
               "org",
@@ -115,7 +115,7 @@
     },
     "inLanguage": {
       "type": "array",
-      "description": "The language(s) this publisher's gov-schema data is published in.",
+      "description": "The language(s) this publisher's schemaGov data is published in.",
       "items": {
         "type": "string"
       }

@@ -3,20 +3,20 @@
 Extends the [`_core` Popolo crosswalk](../../crosswalks/popolo.md), which maps Person,
 Organization, Membership, and Area. This file covers only what the `org` profile adds.
 
-| Popolo | gov-schema | Notes |
+| Popolo | schemaGov | Notes |
 |---|---|---|
 | `Post` | `gs:Post` | Direct equivalent. Both are an office independent of its holder. |
 | `Post.label` | `roleName` | |
 | `Post.organization_id` | `memberOf` | Required in both. |
-| `Post.area_id` | `representsJurisdiction` | Popolo `Area` conflates territory and constituency; gov-schema points at a Jurisdiction. |
-| `Post.role` | `roleClassification` | Popolo's `role` is free text; gov-schema constrains it to a mechanism code list. |
+| `Post.area_id` | `representsJurisdiction` | Popolo `Area` conflates territory and constituency; schemaGov points at a Jurisdiction. |
+| `Post.role` | `roleClassification` | Popolo's `role` is free text; schemaGov constrains it to a mechanism code list. |
 | `Membership.post_id` | `post` on the `_core` Role | The link that turns Roles into a succession. |
 | — | `vacantSince` | **No Popolo equivalent.** Popolo represents a vacancy as a Post with no current Membership, which is indistinguishable from incomplete data. |
 | — | `termDuration`, `maximumTermCount` | **No Popolo equivalent.** |
 
 ## W3C Organization Ontology
 
-| ORG | gov-schema |
+| ORG | schemaGov |
 |---|---|
 | `org:Post` | `gs:Post` |
 | `org:Membership` | `schema:OrganizationRole` (`_core`) |
