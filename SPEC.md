@@ -1,6 +1,6 @@
-# gov-schema specification
+# schemaGov specification
 
-gov-schema is a **profile**, not a new standard. It describes government entities —
+schemaGov is a **profile**, not a new standard. It describes government entities —
 organizations, legislation, meetings, service requests, budgets, contracts — by combining
 schema.org with the domain standards that already won in each area, and it mints new terms
 only where nothing suitable exists.
@@ -77,7 +77,7 @@ there.
 
 schema.org covers roughly half of this domain. Where it has no types — 311, budget,
 procurement — a mature open standard already exists and is in production across many
-countries. gov-schema takes that standard as the **source model** and defines a schema.org
+countries. schemaGov takes that standard as the **source model** and defines a schema.org
 **projection** for discovery and general-purpose consumers.
 
 Forcing a budget into `MonetaryGrant` yields something neither a search engine nor a budget
@@ -136,7 +136,7 @@ publishers in different countries.
 ## 3. Repository layout
 
 - `context/v1/context.jsonld` — the @context every instance imports; immutable once published
-- `vocabulary/govschema.ttl` — gs: terms, each subClassOf/subPropertyOf a schema.org term
+- `vocabulary/schemagov.ttl` — gs: terms, each subClassOf/subPropertyOf a schema.org term
 - `profiles/_core/` — Jurisdiction · Organization · Person · Role · Identifier
 - `profiles/{org,code,meetings,requests,budget,procurement,catalog,alerts,permits,elections,services}/` — one directory per [domain profile](/profiles/)
 - `examples/example-city/` — one coherent, cross-linked fixture set
@@ -163,7 +163,7 @@ Two independent tiers.
 **Shape** — JSON Schema 2020-12. Required fields, types, enums, `$ref` across profiles. This
 is what publishers run in CI.
 
-**Semantics** — SHACL over expanded JSON-LD, in `shapes/gov-schema.shapes.ttl`, run by
+**Semantics** — SHACL over expanded JSON-LD, in `shapes/schemaGov.shapes.ttl`, run by
 `tools/shacl.py`, which also guards that no code-list value expands into a namespace where it
 is not defined. Checks what a reference resolves **to**, which JSON Schema structurally
 cannot see: a Role pointing at an Organization instead of a Person, `areaServed` pointing at a

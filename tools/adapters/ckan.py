@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert a real CKAN portal into the gov-schema catalog profile.
+"""Convert a real CKAN portal into the schemaGov catalog profile.
 
 CKAN powers most national and municipal open-data portals, and DCAT-AP is the metadata
 model behind them. This adapter reads a live CKAN API and projects it.
@@ -22,7 +22,7 @@ import urllib.parse
 import urllib.request
 from collections import defaultdict
 
-UA = "gov-schema-adapter/1.0 (+https://schema.govfresh.com)"
+UA = "schemaGov-adapter/1.0 (+https://schema.govfresh.com)"
 
 # Portal theme label -> EU data-theme code. Portals rarely use the EU codes directly.
 # Confidence is recorded because a wrong theme is worse than an absent one.
@@ -76,7 +76,7 @@ def fetch(url):
 def pick_title(pkg):
     """CKAN carries both a plain title and a per-language map.
 
-    gov-schema has one `name` plus `inLanguage`, so a genuinely multilingual dataset
+    schemaGov has one `name` plus `inLanguage`, so a genuinely multilingual dataset
     loses its other titles here. That is a real limitation, reported when it bites -
     and on data.gov.ie it does not: title_translated carries only English.
     """
@@ -256,7 +256,7 @@ def main():
         for k, n in sorted(notes.items(), key=lambda x: -x[1]):
             print(f"    {k:56} {n}x")
     if gaps:
-        print("\n  values and fields with no gov-schema mapping:")
+        print("\n  values and fields with no schemaGov mapping:")
         for k, n in sorted(gaps.items(), key=lambda x: -x[1]):
             print(f"    {k:56} {n}x")
     return 0

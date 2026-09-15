@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert Democracy Club UK election data into the gov-schema elections profile.
+"""Convert Democracy Club UK election data into the schemaGov elections profile.
 
 Democracy Club publishes every UK election - 42,000 ballots - with the voting system,
 seats contested, candidacies, parties and declared results. The UK runs several electoral
@@ -19,7 +19,7 @@ import urllib.request
 from collections import defaultdict
 
 API = "https://candidates.democracyclub.org.uk/api/next"
-UA = "gov-schema-adapter/1.0 (schema.govfresh.com)"
+UA = "schemaGov-adapter/1.0 (schema.govfresh.com)"
 
 # UK system names -> the profile's ElectoralSystem code list.
 SYSTEMS = {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert a real Legistar instance into the gov-schema meetings profile.
+"""Convert a real Legistar instance into the schemaGov meetings profile.
 
 Legistar (Granicus) runs the legislative record for a large share of North American
 cities. Its Web API is public and unauthenticated for most clients.
@@ -21,7 +21,7 @@ import urllib.request
 from collections import defaultdict
 
 API = "https://webapi.legistar.com/v1"
-UA = "gov-schema-adapter/1.0 (+https://schema.govfresh.com)"
+UA = "schemaGov-adapter/1.0 (+https://schema.govfresh.com)"
 
 # Legistar vote vocabularies are configured per client, so these are the common values
 # rather than a closed set. Anything unrecognised is reported, never guessed.
@@ -299,7 +299,7 @@ def main():
         for k, n in sorted(notes.items(), key=lambda x: -x[1]):
             print(f"    {k:58} {n}x")
     if gaps:
-        print("\n  values with no gov-schema mapping:")
+        print("\n  values with no schemaGov mapping:")
         for k, n in sorted(gaps.items(), key=lambda x: -x[1]):
             print(f"    {k:58} {n}x")
     return 0

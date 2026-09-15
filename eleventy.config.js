@@ -9,7 +9,7 @@ import { linkifyTerms } from './_lib/standards.js'
 
 // The JSON-LD context is the one place that already says, authoritatively,
 // whether a term is a real schema.org type/property (mapped to schema:) or
-// one gov-schema mints itself (mapped to gs:) — reusing it here means a
+// one schemaGov mints itself (mapped to gs:) — reusing it here means a
 // term only ever links to schema.org's own reference page when the
 // published data would actually expand there too, never a guess based on
 // how the word is capitalized.
@@ -47,12 +47,12 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ './public/': '/' })
 
   // --- the namespace itself ------------------------------------------------
-  // These are not documentation. Every published gov-schema document pins these
+  // These are not documentation. Every published schemaGov document pins these
   // exact URLs in its @context and $id, and SPEC section 6 makes them immutable.
   // If a path here changes, previously published data stops resolving.
   eleventyConfig.addPassthroughCopy({ './context/v1/': '/v1/' })
   eleventyConfig.addPassthroughCopy({ './profiles/_core/schema/': '/v1/_core/' })
-  eleventyConfig.addPassthroughCopy({ './vocabulary/govschema.ttl': '/v1/govschema.ttl' })
+  eleventyConfig.addPassthroughCopy({ './vocabulary/schemagov.ttl': '/v1/schemagov.ttl' })
   eleventyConfig.addPassthroughCopy({ './profiles/org/schema/': '/v1/org/' })
   eleventyConfig.addPassthroughCopy({ './profiles/_core/codelists/': '/v1/codelists/' })
   eleventyConfig.addPassthroughCopy({ './profiles/org/codelists/': '/v1/codelists/' })
@@ -194,7 +194,7 @@ export default async function (eleventyConfig) {
   // have one) so the anchor link and the TOC entry always agree on the
   // same id. Renders the link icon as an inline fill="currentColor" SVG
   // (same technique as brand-mark.html) rather than a Font Awesome
-  // ligature, since gov-schema doesn't load an icon font.
+  // ligature, since schemaGov doesn't load an icon font.
   const slugify = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
   const LINK_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>'
 

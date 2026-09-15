@@ -10,21 +10,21 @@ python3 tools/adapters/ckan.py --url https://data.gov.ie --rows 60 \
 
 ## What it found
 
-### A semantic collision in gov-schema's own context
+### A semantic collision in schemaGov's own context
 
 The portal carries `conforms_to: "swagger 2.0, Akoma Ntoso"` — the DCAT meaning of
-`dct:conformsTo`, *an external standard the data follows*. gov-schema was using the same term
+`dct:conformsTo`, *an external standard the data follows*. schemaGov was using the same term
 for its **conformance level**, with values like `"standard"`.
 
 Because the context typed it `@id`, `"standard"` expanded to a **relative IRI resolved against
 the local filesystem**:
 
 ```
-dcterms:conformsTo -> file:///Users/.../gov-schema/standard
+dcterms:conformsTo -> file:///Users/.../schemaGov/standard
 ```
 
 Fixed by splitting the two meanings: `conformanceLevel` (`gs:conformanceLevel`) for the
-gov-schema level, `conformsTo` (`dct:conformsTo`) restored to its DCAT meaning.
+schemaGov level, `conformsTo` (`dct:conformsTo`) restored to its DCAT meaning.
 
 ### Every code-list value was landing in the wrong namespace
 
@@ -34,7 +34,7 @@ Investigating the above exposed a systematic fault. **23 properties, 54 distinct
 
 JSON Schema validated it. SHACL passed it. Both check structure, not where a token lands; only
 RDF expansion reveals it. Each property now carries a scoped `@vocab` so values resolve into
-the gov-schema term namespace that already publishes them:
+the schemaGov term namespace that already publishes them:
 
 ```
 governmentLevel: "municipal"  ->  https://schema.govfresh.com/v1/level/municipal
@@ -48,7 +48,7 @@ nulled inside each scoped context.
 `tools/shacl.py` gained a guard that fails the build if any code-list value expands into
 schema.org, verified against a deliberate regression.
 
-### Fields the portal carries that gov-schema did not
+### Fields the portal carries that schemaGov did not
 
 Added after the first run reported them: `applicableLegislation`, `hvdCategory`,
 `highValueDataset`, `spatialReferenceSystem`, `conformsTo`, `provenanceStatement`.
@@ -67,12 +67,12 @@ silently assume WGS84.
 
 ## A claim of mine the data corrected
 
-After the first probe I wrote that gov-schema "cannot represent a bilingual publisher" because
+After the first probe I wrote that schemaGov "cannot represent a bilingual publisher" because
 data.gov.ie publishes English and Irish. **The wider sample shows otherwise:** `title_translated`
 carries only English in 59 of 60 datasets, and **0 of 60 have a real Irish title**. The field
 exists, the capability is unused.
 
-The structural limitation is real — gov-schema has one `name` plus `inLanguage`, so a genuinely
+The structural limitation is real — schemaGov has one `name` plus `inLanguage`, so a genuinely
 multilingual dataset would lose its other titles, and the adapter reports it when it happens.
 But it is not evidenced as urgent by this publisher, and the earlier claim overstated it.
 

@@ -2,7 +2,7 @@
 
 ## What this is
 
-gov-schema is a shared format for publishing government data - organizations, laws, meetings,
+schemaGov is a shared format for publishing government data - organizations, laws, meetings,
 budgets, and services - so it means the same thing wherever it's used. It's built on
 [schema.org](/standards/schema-org/), extended with established open standards where it has
 nothing to offer, rather than inventing a new vocabulary from scratch.
@@ -23,18 +23,18 @@ unusable.
 
 ## Maintainers
 
-gov-schema is maintained by [GovFresh](https://govfresh.com).
+schemaGov is maintained by [GovFresh](https://govfresh.com).
 
 ## How to contribute
 
-gov-schema is developed in the open on GitHub. Report a problem or suggest a change by
-[opening an issue](https://github.com/govfresh/gov-schema/issues/new), or propose a change
+schemaGov is developed in the open on GitHub. Report a problem or suggest a change by
+[opening an issue](https://github.com/govfresh/schemaGov/issues/new), or propose a change
 directly with a pull request.
 
 ## License
 
 The specification, vocabulary, schemas, and documentation are published under
-[CC0 1.0](https://github.com/govfresh/gov-schema/blob/main/LICENSE), a public-domain
+[CC0 1.0](https://github.com/govfresh/schemaGov/blob/main/LICENSE), a public-domain
 dedication: any government, vendor, or project can use, adapt, or redistribute it without
-asking permission or crediting gov-schema. The tooling - the site and validators - is
-[MIT](https://github.com/govfresh/gov-schema/blob/main/LICENSE-CODE).
+asking permission or crediting schemaGov. The tooling - the site and validators - is
+[MIT](https://github.com/govfresh/schemaGov/blob/main/LICENSE-CODE).

@@ -1,12 +1,12 @@
 # Fiscal Data Package crosswalk
 
 The [Fiscal Data Package](https://specs.frictionlessdata.io/fiscal-data-package/) (Open
-Knowledge / OpenSpending) remains the source model. gov-schema is a schema.org projection of
+Knowledge / OpenSpending) remains the source model. schemaGov is a schema.org projection of
 it — publishers should keep producing the FDP and reference it from `distribution`.
 
 ## Package level
 
-| Fiscal Data Package | gov-schema |
+| Fiscal Data Package | schemaGov |
 |---|---|
 | `name`, `title` | `name` |
 | `description` | `description` |
@@ -18,10 +18,10 @@ it — publishers should keep producing the FDP and reference it from `distribut
 
 ## Measures and dimensions
 
-FDP describes a tabular budget through a `mapping` of measures and dimensions. gov-schema
+FDP describes a tabular budget through a `mapping` of measures and dimensions. schemaGov
 turns each row into a `BudgetLine`.
 
-| FDP concept | gov-schema |
+| FDP concept | schemaGov |
 |---|---|
 | measure `amount` | `amount.value` |
 | measure `currency` | `amount.currency` (required per line) |
@@ -38,20 +38,20 @@ turns each row into a `BudgetLine`.
 
 ## Where the two differ
 
-**FDP carries the classification as a bare code; gov-schema carries administrative
+**FDP carries the classification as a bare code; schemaGov carries administrative
 classification as a reference.** A department name as text cannot be joined to anything. An
 `@id` pointing at a `GovernmentOrganization` connects the budget to the org chart, the
 officeholders, and the meetings.
 
-**FDP is a table; gov-schema is a graph.** FDP rows are independent; gov-schema lines nest
+**FDP is a table; schemaGov is a graph.** FDP rows are independent; schemaGov lines nest
 through `isPartOf`/`hasPart` and the validator checks that parents equal the sum of their
 children.
 
-**gov-schema requires currency per line.** FDP allows it as a package-level measure.
+**schemaGov requires currency per line.** FDP allows it as a package-level measure.
 
 ## Classification standards
 
-Neither COFOG nor GFSM is defined by gov-schema; both are enumerated at their top level as
+Neither COFOG nor GFSM is defined by schemaGov; both are enumerated at their top level as
 `DefinedTermSet`s for validation convenience, with full subcodes accepted as values.
 
 - **COFOG** — UN Classification of the Functions of Government. Three levels: division (`07`),

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Semantic validation of gov-schema instance data (SPEC section 4, tier two).
+"""Semantic validation of schemaGov instance data (SPEC section 4, tier two).
 
 JSON Schema validates document shape; tools/validate.py checks that every reference
 resolves. Neither can check what a reference resolves TO. A Role pointing at an
@@ -15,7 +15,7 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SHAPES = ROOT / "shapes" / "gov-schema.shapes.ttl"
+SHAPES = ROOT / "shapes" / "schemaGov.shapes.ttl"
 CONTEXT = ROOT / "context" / "v1" / "context.jsonld"
 
 
@@ -75,13 +75,13 @@ def main(argv):
         if tail and tail[0].islower() and tail not in DAYS:
             leaked.setdefault(str(pr).rsplit("/", 1)[-1], set()).add(tail)
     if leaked:
-        print(f"gov-schema shacl: {len(paths)} file(s), {len(data)} triples")
+        print(f"schemaGov shacl: {len(paths)} file(s), {len(data)} triples")
         print(f"\n{sum(len(v) for v in leaked.values())} code-list value(s) expanded into "
               f"the schema.org namespace, where they are not defined:")
         for prop in sorted(leaked):
             print(f"  - {prop}: {', '.join(sorted(leaked[prop]))}")
         print("\n  Give the property a scoped @vocab in context/v1/context.jsonld so its "
-              "values\n  resolve into the gov-schema term namespace.")
+              "values\n  resolve into the schemaGov term namespace.")
         return 1
 
 
@@ -96,7 +96,7 @@ def main(argv):
     )
 
     print(
-        f"gov-schema shacl: {len(paths)} file(s), {len(data)} triples, "
+        f"schemaGov shacl: {len(paths)} file(s), {len(data)} triples, "
         f"{len(set(data.subjects()))} subjects"
     )
     if conforms:

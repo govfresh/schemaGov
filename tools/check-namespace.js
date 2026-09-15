@@ -41,7 +41,7 @@ for (const f of fs.readdirSync(exDir).filter((f) => f.endsWith('.jsonld'))) {
   if (typeof ctx === 'string') expected.add(ctx)
 }
 
-expected.add(`${BASE}/v1/govschema.ttl`)
+expected.add(`${BASE}/v1/schemagov.ttl`)
 
 let failed = 0
 const sorted = [...expected].sort()

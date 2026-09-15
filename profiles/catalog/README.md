@@ -5,13 +5,13 @@
 ## The gap this closes
 
 Seven well-modelled profiles are useless if nobody can find the URLs. Before this profile,
-**nothing in gov-schema told a consumer where a government's data lived** — you had to already
+**nothing in schemaGov told a consumer where a government's data lived** — you had to already
 know, which means discovery happened by email.
 
 ## The manifest
 
-`PublisherManifest` is served at **`/.well-known/gov-schema.json`** (RFC 8615) and is the only
-document in gov-schema with a fixed, conventional location. Everything else is discovered
+`PublisherManifest` is served at **`/.well-known/schemaGov.json`** (RFC 8615) and is the only
+document in schemaGov with a fixed, conventional location. Everything else is discovered
 through it.
 
 It declares who publishes, which jurisdiction they cover, which spec version they target,
@@ -29,10 +29,10 @@ DCAT-AP across the EU, DCAT-US in the States, and the basis of most national ope
 — and schema.org `DataCatalog` is what **Google Dataset Search consumes**. So this projection
 has a real consumer today rather than a hypothetical one.
 
-`conformsToProfile` links a catalogue entry to the gov-schema profile it serves. That is the
+`conformsToProfile` links a catalogue entry to the schemaGov profile it serves. That is the
 bridge that matters: someone arriving through an open-data portal finds the structured data,
 not just a CSV export of it. The fixtures show a budget dataset offering three distributions —
-the gov-schema profile, the Fiscal Data Package, and a CSV — which is exactly the layering
+the schemaGov profile, the Fiscal Data Package, and a CSV — which is exactly the layering
 SPEC §1.4 asks for.
 
 ## Two fields worth insisting on

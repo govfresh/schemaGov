@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Convert real OCDS data into the gov-schema procurement profile.
+"""Convert real OCDS data into the schemaGov procurement profile.
 
-OCDS publishes a *release stream* (events); the gov-schema procurement profile models
+OCDS publishes a *release stream* (events); the schemaGov procurement profile models
 the *compiled record* (current state). This adapter compiles releases by ocid, then
 projects them.
 
@@ -23,7 +23,7 @@ import urllib.request
 from collections import defaultdict
 
 BASE = "https://example.org/id"          # overridden by --base
-UA = "gov-schema-adapter/1.0 (+https://schema.govfresh.com)"
+UA = "schemaGov-adapter/1.0 (+https://schema.govfresh.com)"
 
 # OCDS fields the profile deliberately does not carry, so they are not reported as gaps.
 KNOWN_UNMAPPED = {
@@ -291,7 +291,7 @@ def main():
           f"{len(orgs)} organization(s), {len(parties)} part(ies)")
     print(f"  written to {out}/")
     if gaps:
-        print("\n  source fields with no gov-schema mapping:")
+        print("\n  source fields with no schemaGov mapping:")
         for k, n in sorted(gaps.items(), key=lambda x: -x[1]):
             print(f"    {k:42} {n}x")
     return 0

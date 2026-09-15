@@ -1,6 +1,6 @@
 {
-  "name": "gov-schema",
-  "short_name": "gov-schema",
+  "name": "schemaGov",
+  "short_name": "schemaGov",
   "description": "A shared vocabulary for government operations, built as a profile of schema.org and established open standards.",
   "start_url": "/",
   "display": "browser",

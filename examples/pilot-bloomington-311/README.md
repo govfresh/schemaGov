@@ -10,7 +10,7 @@ python3 tools/adapters/open311.py --url https://bloomington.in.gov/crm/open311/v
 
 60 service requests, 63 services in the catalogue.
 
-The `requests` profile carries the strongest opinion in gov-schema — that reporter privacy is
+The `requests` profile carries the strongest opinion in schemaGov — that reporter privacy is
 a schema concern, enforced by a validator that fails the build on personal data. This is the
 test of that opinion against a real 311 feed.
 

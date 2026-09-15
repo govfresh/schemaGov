@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/catalog/dataset.schema.json",
   "title": "Dataset",
-  "description": "One published dataset, aligned with DCAT and expressed as a schema.org Dataset. Every gov-schema profile a publisher serves should also appear here as a dataset, so that a consumer arriving through an open-data portal finds the structured data rather than only a CSV of it.",
+  "description": "One published dataset, aligned with DCAT and expressed as a schema.org Dataset. Every schemaGov profile a publisher serves should also appear here as a dataset, so that a consumer arriving through an open-data portal finds the structured data rather than only a CSV of it.",
   "standards": [
     "dcat"
   ],
@@ -132,7 +132,7 @@
     },
     "conformsToProfile": {
       "type": "string",
-      "description": "The gov-schema profile this dataset serves, where it serves one. This is what links an open-data catalogue entry to structured gov-schema data.",
+      "description": "The schemaGov profile this dataset serves, where it serves one. This is what links an open-data catalogue entry to structured schemaGov data.",
       "enum": [
         "core",
         "org",

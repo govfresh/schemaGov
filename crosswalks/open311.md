@@ -1,12 +1,12 @@
 # Open311 GeoReport v2 crosswalk
 
-Open311 remains the source model. gov-schema is a schema.org projection of it for discovery
+Open311 remains the source model. schemaGov is a schema.org projection of it for discovery
 and for joining 311 data to the rest of a government's published record — it is not a
 replacement, and a publisher should keep serving their Open311 endpoint.
 
 ## Service List — `GET /services.json`
 
-| Open311 | gov-schema |
+| Open311 | schemaGov |
 |---|---|
 | `service_code` | `serviceCode` |
 | `service_name` | `name` |
@@ -20,7 +20,7 @@ replacement, and a publisher should keep serving their Open311 endpoint.
 
 Each Open311 `attribute` becomes a `schema:PropertyValueSpecification` in `requestAttribute`.
 
-| Open311 attribute | gov-schema |
+| Open311 attribute | schemaGov |
 |---|---|
 | `code` | `valueName` |
 | `description` | `name` |
@@ -35,7 +35,7 @@ Each Open311 `attribute` becomes a `schema:PropertyValueSpecification` in `reque
 
 ## Service Request — `GET /requests.json`
 
-| Open311 | gov-schema |
+| Open311 | schemaGov |
 |---|---|
 | `service_request_id` | `serviceRequestId` |
 | `status` | `requestStatus` (refined; see mapping below) |
@@ -54,12 +54,12 @@ Each Open311 `attribute` becomes a `schema:PropertyValueSpecification` in `reque
 
 ### Status mapping
 
-| gov-schema | Open311 |
+| schemaGov | Open311 |
 |---|---|
 | `open`, `inProgress`, `onHold` | `open` |
 | `closed`, `rejected`, `duplicate` | `closed` |
 
-Round-tripping is lossy in one direction only: Open311 → gov-schema yields `open` or
+Round-tripping is lossy in one direction only: Open311 → schemaGov yields `open` or
 `closed`, never the finer terms.
 
 ## Fields deliberately not mapped
@@ -67,11 +67,11 @@ Round-tripping is lossy in one direction only: Open311 → gov-schema yields `op
 `email`, `first_name`, `last_name`, `phone`, `device_id`, `account_id`, `api_key`.
 
 These exist in the Open311 **POST** payload — the submission — and have no place in published
-output. gov-schema has no fields for them and the validator rejects documents that carry
+output. schemaGov has no fields for them and the validator rejects documents that carry
 them. See the privacy section of the [profile README](../profiles/requests/README.md).
 
 ## Endpoints without a schema equivalent
 
 `GET /tokens/:token.json` (submission-time id lookup) and the `jurisdiction_id` query
-parameter are protocol concerns, not data. In gov-schema the jurisdiction is a first-class
+parameter are protocol concerns, not data. In schemaGov the jurisdiction is a first-class
 entity: a request points at it with `jurisdiction`.

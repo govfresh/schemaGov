@@ -1,4 +1,4 @@
-# gov-schema
+# schemaGov
 
 A shared vocabulary for government operations — organizations, legislation, meetings,
 service requests, budgets, and contracts — built as a **profile of schema.org combined with
@@ -10,8 +10,8 @@ convention is built in.
 ## The idea
 
 schema.org covers about half of what a government publishes. Where it fits — organizations,
-legislation, meetings — gov-schema uses it directly. Where it has nothing — 311, budgets,
-procurement — a mature open standard already exists, so gov-schema adopts that as the source
+legislation, meetings — schemaGov uses it directly. Where it has nothing — 311, budgets,
+procurement — a mature open standard already exists, so schemaGov adopts that as the source
 model and defines a schema.org projection for discovery.
 
 | Domain | schema.org | Source standard |
@@ -55,7 +55,7 @@ tools/validate.py shape + reference-integrity checker
 ## Site
 
 The published site at `https://schema.govfresh.com` is **not just documentation** — it is the
-namespace resolution endpoint. Every published gov-schema document pins URLs under
+namespace resolution endpoint. Every published schemaGov document pins URLs under
 `/v1/`, and SPEC section 6 makes them immutable. `tools/check-namespace.js` verifies that
 every such URL resolves in the built site, and CI fails the build if one does not.
 
@@ -63,7 +63,7 @@ Built with [Eleventy](https://www.11ty.dev), following the ScanGov 11ty conventi
 with the `lf-ui` layer (Bootstrap 5.3.2). Reference pages are generated from the JSON Schemas
 and code lists themselves, so the documentation cannot drift from what the validator enforces.
 
-Beyond the profiles, the site documents every external standard gov-schema profiles against
+Beyond the profiles, the site documents every external standard schemaGov profiles against
 (schema.org, Popolo, OCDS, and the rest) on its own page under `/standards/`, explains the
 project itself under `/about/`, and is fully searchable from `/search/` — one index covering
 every profile, field, code list, term, and standard, built at generation time from the same

@@ -1,13 +1,13 @@
 # Open Contracting Data Standard crosswalk
 
-[OCDS](https://standard.open-contracting.org) remains the source model. gov-schema is a
+[OCDS](https://standard.open-contracting.org) remains the source model. schemaGov is a
 schema.org projection for discovery and for joining contracts to budgets, organizations, and
 the decisions that authorised them. Publishers should keep producing OCDS releases and
 records.
 
 ## Structure
 
-| OCDS | gov-schema |
+| OCDS | schemaGov |
 |---|---|
 | `ocid` | `ocid` — carried unchanged, including the publisher prefix |
 | Record (compiled) | `ContractingProcess` |
@@ -18,7 +18,7 @@ records.
 
 ## Tender
 
-| OCDS `tender` | gov-schema |
+| OCDS `tender` | schemaGov |
 |---|---|
 | `id` | `tenderId` |
 | `title` / `description` | `title` / `description` |
@@ -37,7 +37,7 @@ records.
 
 ## Award and contract
 
-| OCDS | gov-schema |
+| OCDS | schemaGov |
 |---|---|
 | `awards[].id` | `awardId` |
 | `awards[].status` / `date` / `value` | `status` / `date` / `value` |
@@ -52,18 +52,18 @@ records.
 ## Parties and identifiers
 
 OCDS identifies organizations with `identifier.scheme` + `identifier.id`, where scheme comes
-from the [org-id.guide](https://org-id.guide) register. gov-schema carries the same pair as
+from the [org-id.guide](https://org-id.guide) register. schemaGov carries the same pair as
 `propertyID` + `value` on a `PropertyValue`, so the mapping is mechanical:
 
 ```
 OCDS        {"scheme": "US-EIN", "id": "84-3921776"}
-gov-schema  {"@type": "PropertyValue", "propertyID": "org-id:US-EIN", "value": "84-3921776"}
+schemaGov  {"@type": "PropertyValue", "propertyID": "org-id:US-EIN", "value": "84-3921776"}
 ```
 
 ## Deliberate differences
 
 **Government participants are not parties.** OCDS puts every organization in `parties[]`.
-gov-schema references `_core` GovernmentOrganizations for the buyer and procuring entity
+schemaGov references `_core` GovernmentOrganizations for the buyer and procuring entity
 instead, so a department is not simultaneously an org-chart entity and a procurement party
 with separate identifiers.
 

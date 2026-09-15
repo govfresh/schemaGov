@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert Socrata-published building permits into the gov-schema permits profile.
+"""Convert Socrata-published building permits into the schemaGov permits profile.
 
 Socrata runs the open-data portal for a large share of US cities, but each city defines
 its own permit schema, so field maps are per city rather than generic. Two are built in,
@@ -25,7 +25,7 @@ import urllib.parse
 import urllib.request
 from collections import defaultdict
 
-UA = "gov-schema-adapter/1.0 (schema.govfresh.com)"
+UA = "schemaGov-adapter/1.0 (schema.govfresh.com)"
 
 CITIES = {
     "seattle": {

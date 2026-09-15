@@ -192,7 +192,7 @@ def main():
             continue
         warnings.append(f"D  {prop}: <{iri}> is not declared in any code list")
 
-    print(f"gov-schema audit-jsonld: {len(fixtures)} fixture(s), {len(mapping)} term(s), "
+    print(f"schemaGov audit-jsonld: {len(fixtures)} fixture(s), {len(mapping)} term(s), "
           f"{len(declared)} declared code-list term(s)")
 
     if warnings:

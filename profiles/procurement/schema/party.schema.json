@@ -15,7 +15,7 @@
     },
     "@type": {
       "const": "Organization",
-      "description": "Always `Organization`, a real schema.org type - `Party` is gov-schema's name for this role, not a minted type schema.org needs to know about."
+      "description": "Always `Organization`, a real schema.org type - `Party` is schemaGov's name for this role, not a minted type schema.org needs to know about."
     },
     "name": {
       "type": "string",

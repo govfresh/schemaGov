@@ -1,4 +1,4 @@
-// The external standards gov-schema profiles against — kept outside
+// The external standards schemaGov profiles against — kept outside
 // _data/ deliberately: Eleventy treats every _data/*.js file's default
 // export as global template data, and a file with more than one export
 // (the STANDARDS array, the linkifyTerms function) gets exposed as its
@@ -12,7 +12,7 @@ export const STANDARDS = [
     aliases: [],
     org: 'schema.org community (Google, Microsoft, Yahoo, Yandex)',
     url: 'https://schema.org',
-    description: 'The general-purpose vocabulary gov-schema is a profile of; every domain projects into it.',
+    description: 'The general-purpose vocabulary schemaGov is a profile of; every domain projects into it.',
   },
   {
     slug: 'wikidata',
@@ -20,7 +20,7 @@ export const STANDARDS = [
     aliases: [],
     org: 'Wikimedia Foundation',
     url: 'https://www.wikidata.org/wiki/Wikidata:Identifiers',
-    description: 'A free knowledge base whose stable identifiers (QIDs) let gov-schema records join up with any other dataset that also cites Wikidata.',
+    description: 'A free knowledge base whose stable identifiers (QIDs) let schemaGov records join up with any other dataset that also cites Wikidata.',
   },
   {
     slug: 'akoma-ntoso',
@@ -156,7 +156,7 @@ const TERMS = STANDARDS.flatMap((std) => [std.name, ...std.aliases].map((term) =
 
 /**
  * Wraps the first mention of any standard's name or alias in plain text
- * with a link to that standard's own gov-schema page. Escapes the input
+ * with a link to that standard's own schemaGov page. Escapes the input
  * first — callers pass raw text, not markup, same contract as before.
  */
 export function linkifyTerms(text) {

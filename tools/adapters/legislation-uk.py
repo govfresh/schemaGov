@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Convert legislation.gov.uk into the gov-schema code profile.
+"""Convert legislation.gov.uk into the schemaGov code profile.
 
 legislation.gov.uk is the UK statute book, published as CLML with ELI-style identifiers
 and consolidated ("revised") texts. The code profile makes the strongest claims in
-gov-schema - that schema.org's ELI-derived vocabulary does nearly all the work, that the
+schemaGov - that schema.org's ELI-derived vocabulary does nearly all the work, that the
 FRBR work/expression split is real, and that document structure belongs to Akoma Ntoso
 rather than here. This is the test of those claims.
 
@@ -21,7 +21,7 @@ import xml.etree.ElementTree as ET
 from collections import defaultdict
 
 SITE = "https://www.legislation.gov.uk"
-UA = "gov-schema-adapter/1.0 (schema.govfresh.com)"
+UA = "schemaGov-adapter/1.0 (schema.govfresh.com)"
 NS = {"l": "http://www.legislation.gov.uk/namespaces/legislation",
       "ukm": "http://www.legislation.gov.uk/namespaces/metadata",
       "dc": "http://purl.org/dc/elements/1.1/"}

@@ -5,8 +5,8 @@
     "height": 155,
     "size": "short"
   },
-  "title": "gov-schema",
-  "titleShort": "gov-schema",
+  "title": "schemaGov",
+  "titleShort": "schemaGov",
   "description": "A shared format that helps governments organize, manage, and publish clear, computer-readable data about their organizations, laws, meetings, budgets, and services.",
   "url": "https://schema.govfresh.com",
   "namespace": "https://schema.govfresh.com/v1/",
@@ -14,22 +14,22 @@
   "version": "1.0.0-draft",
   "org": "GovFresh",
   "org-url": "https://govfresh.com",
-  "repo": "https://github.com/govfresh/gov-schema",
+  "repo": "https://github.com/govfresh/schemaGov",
   "date": "%B %-d, %Y",
   "timezone": "America/Los_Angeles",
   "securityExpires": "2027-01-01T00:00:00.000Z",
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "licenseName": "CC0 1.0",
   "feedback": {
-    "text": "Help make gov-schema better:",
-    "link": "https://github.com/govfresh/gov-schema/issues/new",
+    "text": "Help make schemaGov better:",
+    "link": "https://github.com/govfresh/schemaGov/issues/new",
     "link_text": "Open an issue"
   },
   "cta_banner": {
     "links": [
       {
         "text": "Submit issue",
-        "url": "https://github.com/govfresh/gov-schema/issues/new",
+        "url": "https://github.com/govfresh/schemaGov/issues/new",
         "icon": "fa-lightbulb"
       }
     ]

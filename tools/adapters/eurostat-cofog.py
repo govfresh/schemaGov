@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert Eurostat COFOG government expenditure into the gov-schema budget profile.
+"""Convert Eurostat COFOG government expenditure into the schemaGov budget profile.
 
 Eurostat publishes general government expenditure by function for every EU member
 state, using COFOG - the same classification the budget profile adopted. That makes it
@@ -24,7 +24,7 @@ from collections import defaultdict
 
 API = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_exp"
        "?format=JSON&lang=en&sector=S13&na_item=TE")
-UA = "gov-schema-adapter/1.0 (schema.govfresh.com)"
+UA = "schemaGov-adapter/1.0 (schema.govfresh.com)"
 
 # Eurostat unit codes carry a multiplier the amount itself does not.
 UNITS = {"MIO_EUR": ("EUR", 1_000_000), "MIO_NAC": (None, 1_000_000),
