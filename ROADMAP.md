@@ -530,8 +530,11 @@ nine profiles of self-authored fixtures never surfaced - see
 [examples/pilot-uk-contracts/README.md](examples/pilot-uk-contracts/README.md). More adapters
 (CKAN, Open311, Legistar) would find more, and are worth more than new profiles.
 
-**Confirmed by the pilot, not yet fixed:** real portals carry per-language titles
-(`title_translated: {"en": ..., "ga": ...}` on data.gov.ie), an EU High Value Dataset category,
-a spatial reference system (`srs`), and `applicable_legislation` linking a dataset to an ELI
-URI - a `catalog` to `code` join this profile does not model. schemaGov currently carries a
-single `name` plus `inLanguage`, which cannot represent a bilingual publisher.
+**What the pilot found, and where it stands:** `applicableLegislation`, `hvdCategory`,
+`highValueDataset`, `spatialReferenceSystem`, `conformsTo` and `provenanceStatement` were added to
+`catalog` after the first run (see [examples/pilot-ie-datasets/README.md](examples/pilot-ie-datasets/README.md)).
+The bilingual-publisher concern was retracted by the wider sample: `title_translated` carries only
+English in 59 of 60 datasets and none has a real Irish title. schemaGov still has one `name` plus
+`inLanguage`, so a genuinely multilingual dataset would lose its other titles. That is a known
+limitation, not yet evidenced as urgent. Still unmapped: `collection_name` (55 of 60 datasets, a
+dataset-series grouping) and `rights` (1 of 60).
