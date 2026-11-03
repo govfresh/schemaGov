@@ -1,6 +1,6 @@
 # Plan: per-term web pages for the schemaGov vocabulary
 
-Status: planned, not started. Written 2026-10-05.
+Status: built on branch `per-term-pages` (2026-11-03). Written 2026-10-05.
 
 Counts below are as of 2026-10-05. The org refinement (`PLAN-org-refinement.md`) and the later
 `fees` profile will add terms. Regenerate the counts before starting. Building this before `fees`
@@ -70,3 +70,26 @@ code-list set pages use the same combined rendering where a set shares a name wi
 
 Next step: regenerate the term counts (they changed after the org refinement added four code-list
 values), then start at step 1.
+
+## What was built
+
+- `_data/vocabulary.js` reads `vocabulary/schemagov.ttl` with `n3` and groups terms by lowercase
+  name. 250 terms (30 classes, 178 properties, 42 code-list sets) in 203 groups; 47 groups
+  differ only by case.
+- `content/term.njk` now renders every term, replacing the code-list-only template. One page per
+  group, written at every spelling, with `og:url` and the sitemap pointing at one canonical
+  spelling. Each page embeds JSON-LD and links to the Turtle file. The per-value pages
+  (`term-value.njk`) are unchanged.
+- The vocabulary index lists all classes and properties; search covers every term.
+- `tools/check-namespace.js` now checks every vocabulary IRI resolves and that case-colliding
+  pages are byte-identical (proved on a case-sensitive volume, including a deliberate failure).
+- `tools/check-vocabulary.py` (`npm run check:vocabulary`, also in CI) fails if a used `gs:` term is
+  not defined.
+
+The audit found problems the plan predicted:
+- 14 code-list sets had pages but were not declared in the `.ttl`. Declared.
+- 10 alert terms in the context (`sender`, `sent`, `references`, `incident`, `resource`,
+  `category`, `event`, `senderName`, `geocode`, `circle`) were used but undefined. Defined from
+  the alerts schema.
+- The budget SHACL shape tested `gs:isPartOf` but documents use `schema:isPartOf`, so the rule
+  never fired. Fixed, with an invalid fixture proving it now does.

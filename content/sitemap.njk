@@ -5,6 +5,8 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for p in collections.all %}
+{%- if not p.data.canonicalUrl or p.data.canonicalUrl == p.url %}
   <url><loc>{{ site.url }}{{ p.url }}</loc></url>
+{%- endif %}
 {%- endfor %}
 </urlset>

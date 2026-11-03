@@ -76,6 +76,65 @@ gs:OrganizationClassification a schema:DefinedTermSet ;
     schema:name "Government organization classification" ;
     rdfs:comment "Aligned with Popolo Organization.classification and W3C ORG." .
 
+# Code lists whose sets had pages but were not declared here. Declared so that every
+# code list page has a matching definition in this file.
+
+gs:ConformanceLevel a schema:DefinedTermSet ;
+    schema:name "Conformance level" ;
+    rdfs:comment "The level of schemaGov a publisher has finished. There are three levels, so a government can publish something useful right away instead of finishing every field on day one. schemaGov checks each claim — it never just takes your word for it." .
+
+gs:DecisionResult a schema:DefinedTermSet ;
+    schema:name "Decision result" ;
+    rdfs:comment "What a body decided. Agenda items and votes share this list, so both kinds of outcome use the same terms. No result recorded means it hasn't been decided yet, which is different from deciding to take no action." .
+
+gs:BudgetDirection a schema:DefinedTermSet ;
+    schema:name "Budget direction" ;
+    rdfs:comment "Whether a budget line is money coming in, money going out, or a financing move. This is required on every line, because a number alone doesn't tell you which way the money flows." .
+
+gs:AwardStatus a schema:DefinedTermSet ;
+    schema:name "Award status" ;
+    rdfs:comment "The state of a decision to award a contract, following OCDS." .
+
+gs:ContractStatus a schema:DefinedTermSet ;
+    schema:name "Contract status" ;
+    rdfs:comment "The state of a signed agreement, following OCDS. 'Terminated' and 'cancelled' differ. One started and ended early. The other never started." .
+
+gs:TenderStatus a schema:DefinedTermSet ;
+    schema:name "Tender status" ;
+    rdfs:comment "The stage a solicitation has reached, following OCDS. Kept apart from award and contract status, since 'active' means something different at each stage." .
+
+gs:AccessRights a schema:DefinedTermSet ;
+    schema:name "Access rights" ;
+    rdfs:comment "Whether the data itself, not just its listing, is available. Publishing details about restricted data is fine. Not saying it's restricted is not." .
+
+gs:AlertScope a schema:DefinedTermSet ;
+    schema:name "Alert scope" ;
+    rdfs:comment "Who the alert is meant to reach, using the same codes as CAP 1.2 (OASIS). This field is required because sending a restricted or private alert to a public endpoint defeats the whole point of marking it that way." .
+
+gs:AlertStatus a schema:DefinedTermSet ;
+    schema:name "Alert status" ;
+    rdfs:comment "What this alert message is for, using the same codes as CAP 1.2 (OASIS). Never show anything but 'actual' to the public as a real warning — publishing a test or drill without this field is dangerous, which is why it's required." .
+
+gs:Certainty a schema:DefinedTermSet ;
+    schema:name "Certainty" ;
+    rdfs:comment "How sure the sender is that the event will happen, or already did. Shown next to severity, so people can tell a shaky guess apart from something confirmed." .
+
+gs:MessageType a schema:DefinedTermSet ;
+    schema:name "Message type" ;
+    rdfs:comment "What this alert message does, using the same codes as CAP 1.2 (OASIS). An update or cancel message must point back to the alert it replaces, or people will see the old and new warning side by side." .
+
+gs:Severity a schema:DefinedTermSet ;
+    schema:name "Severity" ;
+    rdfs:comment "How serious the threat to life or property is, using the same codes as CAP 1.2 (OASIS)." .
+
+gs:Urgency a schema:DefinedTermSet ;
+    schema:name "Urgency" ;
+    rdfs:comment "How soon people need to act, using the same codes as CAP 1.2 (OASIS). Combined with severity and certainty, this tells a receiving system whether to interrupt someone right now." .
+
+gs:ElectionStatus a schema:DefinedTermSet ;
+    schema:name "Election status" ;
+    rdfs:comment "Whether an election is coming up, already happened, or didn't happen as planned. Cancelled and postponed elections stay on the record. An election that was called and then didn't happen is still part of the history." .
+
 #################  org profile  #################
 
 gs:Post a rdfs:Class ;
@@ -625,6 +684,26 @@ gs:headline a rdf:Property ; schema:domainIncludes gs:AlertInfo ; schema:rangeIn
 gs:areaDescription a rdf:Property ; schema:domainIncludes gs:AlertArea ; schema:rangeIncludes schema:Text ; rdfs:label "area description" .
 gs:geometry a rdf:Property ; schema:domainIncludes gs:AlertArea ; schema:rangeIncludes schema:URL ;
     rdfs:label "geometry" ; rdfs:comment "URL of a GeoJSON polygon (RFC 7946, WGS84). Referenced, never embedded." .
+gs:sender a rdf:Property ; schema:domainIncludes gs:Alert ; schema:rangeIncludes schema:GovernmentOrganization ;
+    rdfs:label "sender" ; rdfs:comment "The government organization issuing the alert. Required: an unattributed warning cannot be trusted or verified." .
+gs:sent a rdf:Property ; schema:domainIncludes gs:Alert ; schema:rangeIncludes schema:DateTime ;
+    rdfs:label "sent" ; rdfs:comment "When the alert was sent. CAP sent: a full date-time with offset." .
+gs:references a rdf:Property ; schema:domainIncludes gs:Alert ; schema:rangeIncludes gs:Alert ;
+    rdfs:label "references" ; rdfs:comment "Earlier alerts this one supersedes, as resolvable references. Where the superseded alert is outside the published window, use referencesIdentifier instead." .
+gs:incident a rdf:Property ; schema:domainIncludes gs:Alert ; schema:rangeIncludes schema:Text ;
+    rdfs:label "incident" ; rdfs:comment "CAP incidents: groups alerts about the same event." .
+gs:resource a rdf:Property ; schema:domainIncludes gs:Alert ; schema:rangeIncludes schema:Thing ;
+    rdfs:label "resource" ; rdfs:comment "Supporting files: maps, audio, translations." .
+gs:category a rdf:Property ; schema:domainIncludes gs:AlertInfo ; schema:rangeIncludes schema:DefinedTerm ;
+    rdfs:label "category" ; rdfs:comment "CAP category of the event, such as met, fire or health. Taken from the AlertCategory code list." .
+gs:event a rdf:Property ; schema:domainIncludes gs:AlertInfo ; schema:rangeIncludes schema:Text ;
+    rdfs:label "event" ; rdfs:comment "Short event type, for example a boil water notice." .
+gs:senderName a rdf:Property ; schema:domainIncludes gs:AlertInfo ; schema:rangeIncludes schema:Text ;
+    rdfs:label "sender name" ; rdfs:comment "Human-readable name of the issuer." .
+gs:geocode a rdf:Property ; schema:domainIncludes gs:AlertArea ; schema:rangeIncludes schema:PropertyValue ;
+    rdfs:label "geocode" ; rdfs:comment "Scheme-qualified area codes, for example SAME or UGC in the US." .
+gs:circle a rdf:Property ; schema:domainIncludes gs:AlertArea ; schema:rangeIncludes schema:Text ;
+    rdfs:label "circle" ; rdfs:comment "CAP circle: 'lat,lon radiusKm'." .
 gs:relatedAlert a rdf:Property ; schema:domainIncludes gs:ServiceRequest ; schema:rangeIncludes gs:Alert ;
     rdfs:label "related alert" ;
     rdfs:comment "An alert this service request relates to. A service disruption is both: the disruption is an alert, reports about it are requests." .

@@ -165,6 +165,14 @@
       "parentOrganization": {
         "@id": "https://invalid.example/id/organization/unit-root-b"
       }
+    },
+    {
+      "@id": "https://invalid.example/id/budget-line/line-part-of-org",
+      "@type": "BudgetLine",
+      "name": "Line whose parent is an organization",
+      "isPartOf": {
+        "@id": "https://invalid.example/id/organization/unit-ok"
+      }
     }
   ]
 }

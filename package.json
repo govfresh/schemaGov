@@ -8,7 +8,8 @@
     "start": "npx @11ty/eleventy --serve --quiet",
     "validate": "python3 tools/validate.py examples/example-gov",
     "check:namespace": "node tools/check-namespace.js",
-    "check": "npm run build && npm run check:namespace && npm run check:context && npm run audit:jsonld && npm run validate && npm run validate:shacl && npm run validate:invalid && npm run validate:pilot",
+    "check:vocabulary": "python3 tools/check-vocabulary.py",
+    "check": "npm run build && npm run check:namespace && npm run check:vocabulary && npm run check:context && npm run audit:jsonld && npm run validate && npm run validate:shacl && npm run validate:invalid && npm run validate:pilot",
     "validate:invalid": "python3 tools/check-invalid.py",
     "validate:shacl": "python3 tools/shacl.py examples/example-gov",
     "validate:pilot": "python3 tools/validate.py examples/pilot-uk-contracts && python3 tools/shacl.py examples/pilot-uk-contracts && python3 tools/validate.py examples/pilot-ie-datasets && python3 tools/shacl.py examples/pilot-ie-datasets && python3 tools/validate.py examples/pilot-seattle-meetings && python3 tools/shacl.py examples/pilot-seattle-meetings && python3 tools/validate.py examples/pilot-nws-alerts && python3 tools/shacl.py examples/pilot-nws-alerts && python3 tools/validate.py examples/pilot-eurostat-budget && python3 tools/shacl.py examples/pilot-eurostat-budget && python3 tools/validate.py examples/pilot-uk-legislation && python3 tools/shacl.py examples/pilot-uk-legislation && python3 tools/validate.py examples/pilot-bloomington-311 && python3 tools/shacl.py examples/pilot-bloomington-311 && python3 tools/validate.py examples/pilot-seattle-permits && python3 tools/shacl.py examples/pilot-seattle-permits && python3 tools/validate.py examples/pilot-chicago-permits && python3 tools/shacl.py examples/pilot-chicago-permits && python3 tools/validate.py examples/pilot-uk-elections && python3 tools/shacl.py examples/pilot-uk-elections && python3 tools/validate.py examples/pilot-govuk-services && python3 tools/shacl.py examples/pilot-govuk-services && python3 tools/validate.py examples/pilot-nyc-capital && python3 tools/shacl.py examples/pilot-nyc-capital && python3 tools/validate.py examples/pilot-govuk-assessments && python3 tools/shacl.py examples/pilot-govuk-assessments",
@@ -20,7 +21,8 @@
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-navigation": "^1.0.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "markdown-it": "^14.1.0"
+    "markdown-it": "^14.1.0",
+    "n3": "^2.13.12"
   },
   "license": "CC0-1.0 AND MIT"
 }
