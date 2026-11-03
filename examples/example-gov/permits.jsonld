@@ -2,7 +2,7 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/permit/BLD-2025-0417",
+      "@id": "https://example.gov/id/permit/BLD-2025-0417",
       "@type": "GovernmentPermit",
       "permitNumber": "BLD-2025-0417",
       "name": "Ground-floor housing conversion, 118 Alder Street",
@@ -11,11 +11,11 @@
       "permitStatus": "issued",
       "workType": "changeOfUse",
       "issuedBy": {
-        "@id": "https://example-city.gov/id/organization/public-works",
+        "@id": "https://example.gov/id/organization/public-works",
         "name": "Public Works Department"
       },
       "validIn": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       },
       "applicationDate": "2025-07-14",
@@ -44,7 +44,7 @@
         }
       },
       "applicant": {
-        "@id": "https://example-city.gov/id/party/alder-street-holdings",
+        "@id": "https://example.gov/id/party/alder-street-holdings",
         "name": "Alder Street Holdings LLC"
       },
       "declaredValue": {
@@ -62,12 +62,12 @@
         "Construction hours limited to 07:00-18:00 Monday to Saturday."
       ],
       "relatedLegislation": {
-        "@id": "https://example-city.gov/id/legislation/municipal-code/17.40",
+        "@id": "https://example.gov/id/legislation/municipal-code/17.40",
         "name": "Chapter 17.40 — Commercial Zones"
       }
     },
     {
-      "@id": "https://example-city.gov/id/permit/PLN-2025-0092",
+      "@id": "https://example.gov/id/permit/PLN-2025-0092",
       "@type": "GovernmentPermit",
       "permitNumber": "PLN-2025-0092",
       "name": "Rear extension, 44 Riverside Way",
@@ -76,11 +76,11 @@
       "permitStatus": "refused",
       "workType": "extension",
       "issuedBy": {
-        "@id": "https://example-city.gov/id/organization/planning-commission",
+        "@id": "https://example.gov/id/organization/planning-commission",
         "name": "Planning Commission"
       },
       "validIn": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "applicationDate": "2025-05-30",
       "decisionDate": "2025-08-11",
@@ -108,30 +108,30 @@
         "Refused: the proposed massing exceeds the rear envelope permitted under ECMC 17.20.060."
       ],
       "relatedLegislation": {
-        "@id": "https://example-city.gov/id/legislation/municipal-code/title-17",
+        "@id": "https://example.gov/id/legislation/municipal-code/title-17",
         "name": "Title 17 — Zoning"
       }
     },
     {
-      "@id": "https://example-city.gov/id/permit/BUS-2025-1188",
+      "@id": "https://example.gov/id/permit/BUS-2025-1188",
       "@type": "GovernmentPermit",
       "permitNumber": "BUS-2025-1188",
       "name": "Business licence — Northgate Paving LLC",
       "permitType": "business",
       "permitStatus": "issued",
       "issuedBy": {
-        "@id": "https://example-city.gov/id/organization/city-government",
+        "@id": "https://example.gov/id/organization/city-government",
         "name": "Example City Government"
       },
       "validIn": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "applicationDate": "2025-01-08",
       "decisionDate": "2025-01-15",
       "validFrom": "2025-01-15",
       "validUntil": "2026-01-14",
       "applicant": {
-        "@id": "https://example-city.gov/id/party/northgate-paving",
+        "@id": "https://example.gov/id/party/northgate-paving",
         "name": "Northgate Paving LLC"
       },
       "fee": {
@@ -141,7 +141,7 @@
       }
     },
     {
-      "@id": "https://example-city.gov/id/permit/BLD-2025-0603",
+      "@id": "https://example.gov/id/permit/BLD-2025-0603",
       "@type": "GovernmentPermit",
       "permitNumber": "BLD-2025-0603",
       "name": "Roof replacement, District 4",
@@ -150,10 +150,10 @@
       "permitStatus": "completed",
       "workType": "repair",
       "issuedBy": {
-        "@id": "https://example-city.gov/id/organization/public-works"
+        "@id": "https://example.gov/id/organization/public-works"
       },
       "validIn": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "applicationDate": "2025-03-02",
       "decisionDate": "2025-03-19",
@@ -180,7 +180,7 @@
       }
     },
     {
-      "@id": "https://example-city.gov/id/party/alder-street-holdings",
+      "@id": "https://example.gov/id/party/alder-street-holdings",
       "@type": "Organization",
       "name": "Alder Street Holdings LLC",
       "identifier": [

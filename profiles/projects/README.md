@@ -127,7 +127,7 @@ generates, and `result` is for actions. So `produces` is minted.
 ```json
 {
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
-  "@id": "https://example-city.gov/id/project/website-refresh",
+  "@id": "https://example.gov/id/project/website-refresh",
   "@type": "Project",
   "name": "Website refresh",
   "status": "active"
@@ -141,20 +141,20 @@ generates, and `result` is for actions. So `produces` is minted.
 ```json
 {
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
-  "@id": "https://example-city.gov/id/project/pothole-reporting-redesign",
+  "@id": "https://example.gov/id/project/pothole-reporting-redesign",
   "@type": "Project",
   "name": "Pothole reporting redesign",
   "status": "active",
   "phase": {"@id": "https://schema.govfresh.com/v1/dsphase/public-beta"},
   "startDate": "2026-01-15",
   "expectedEndDate": "2026-12-15",
-  "parentOrganization": {"@id": "https://example-city.gov/id/organization/public-works"},
-  "member": [{"@id": "https://example-city.gov/id/organization/city-government"}],
-  "produces": [{"@id": "https://example-city.gov/id/service/pothole"}]
+  "parentOrganization": {"@id": "https://example.gov/id/organization/public-works"},
+  "member": [{"@id": "https://example.gov/id/organization/city-government"}],
+  "produces": [{"@id": "https://example.gov/id/service/pothole"}]
 }
 ```
 
-[`examples/example-city/projects.jsonld`](../../examples/example-city/projects.jsonld) holds
+[`examples/example-gov/projects.jsonld`](../../examples/example-gov/projects.jsonld) holds
 six projects: a digital service with milestones and an update, a programme with its own
 scheme, a capital project, a completed project, a cancelled one, and a minimal one.
 

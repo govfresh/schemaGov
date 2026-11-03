@@ -28,10 +28,10 @@ SITE = ROOT / "_site"
 PUBLISHED = "https://schema.govfresh.com"
 
 FIXTURES = [
-    "examples/example-city/organizations.jsonld",
-    "examples/example-city/meetings.jsonld",
-    "examples/example-city/budget.jsonld",
-    "examples/example-city/projects.jsonld",
+    "examples/example-gov/organizations.jsonld",
+    "examples/example-gov/meetings.jsonld",
+    "examples/example-gov/budget.jsonld",
+    "examples/example-gov/projects.jsonld",
     "examples/pilot-uk-contracts/procurement.jsonld",
     "examples/pilot-ie-datasets/catalog.jsonld",
 ]

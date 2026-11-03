@@ -2,7 +2,7 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/jurisdiction/us",
+      "@id": "https://example.gov/id/jurisdiction/us",
       "@type": "Country",
       "name": "United States of America",
       "governmentLevel": "national",
@@ -25,7 +25,7 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/jurisdiction/us-ca",
+      "@id": "https://example.gov/id/jurisdiction/us-ca",
       "@type": "State",
       "name": "California",
       "governmentLevel": "regional",
@@ -42,19 +42,19 @@
         }
       ],
       "containedInPlace": {
-        "@id": "https://example-city.gov/id/jurisdiction/us",
+        "@id": "https://example.gov/id/jurisdiction/us",
         "name": "United States of America"
       }
     },
     {
-      "@id": "https://example-city.gov/id/jurisdiction/example-city",
+      "@id": "https://example.gov/id/jurisdiction/example-city",
       "@type": "City",
       "name": "Example City",
       "alternateName": [
         "City of Example"
       ],
       "governmentLevel": "municipal",
-      "url": "https://example-city.gov",
+      "url": "https://example.gov",
       "identifier": [
         {
           "@type": "PropertyValue",
@@ -68,7 +68,7 @@
         }
       ],
       "containedInPlace": {
-        "@id": "https://example-city.gov/id/jurisdiction/us-ca",
+        "@id": "https://example.gov/id/jurisdiction/us-ca",
         "name": "California"
       },
       "geo": {
@@ -84,18 +84,18 @@
       "timeZone": "America/Los_Angeles",
       "jurisdictionOf": [
         {
-          "@id": "https://example-city.gov/id/organization/city-government",
+          "@id": "https://example.gov/id/organization/city-government",
           "name": "Example City Government"
         }
       ],
       "boundary": [
         {
-          "@id": "https://example-city.gov/id/boundary/example-city/current"
+          "@id": "https://example.gov/id/boundary/example-city/current"
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/jurisdiction/example-city/district-2",
+      "@id": "https://example.gov/id/jurisdiction/example-city/district-2",
       "@type": "AdministrativeArea",
       "name": "District 2",
       "governmentLevel": "submunicipal",
@@ -107,23 +107,23 @@
         }
       ],
       "containedInPlace": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       },
       "boundary": [
         {
-          "@id": "https://example-city.gov/id/boundary/district-2/2012"
+          "@id": "https://example.gov/id/boundary/district-2/2012"
         },
         {
-          "@id": "https://example-city.gov/id/boundary/district-2/2023"
+          "@id": "https://example.gov/id/boundary/district-2/2023"
         },
         {
-          "@id": "https://example-city.gov/id/boundary/district-2/2023-display"
+          "@id": "https://example.gov/id/boundary/district-2/2023-display"
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/jurisdiction/example-city/district-1",
+      "@id": "https://example.gov/id/jurisdiction/example-city/district-1",
       "@type": "AdministrativeArea",
       "name": "District 1",
       "governmentLevel": "submunicipal",
@@ -135,12 +135,12 @@
         }
       ],
       "containedInPlace": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       }
     },
     {
-      "@id": "https://example-city.gov/id/jurisdiction/example-city/district-3",
+      "@id": "https://example.gov/id/jurisdiction/example-city/district-3",
       "@type": "AdministrativeArea",
       "name": "District 3",
       "governmentLevel": "submunicipal",
@@ -152,12 +152,12 @@
         }
       ],
       "containedInPlace": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       }
     },
     {
-      "@id": "https://example-city.gov/id/jurisdiction/example-city/district-4",
+      "@id": "https://example.gov/id/jurisdiction/example-city/district-4",
       "@type": "AdministrativeArea",
       "name": "District 4",
       "governmentLevel": "submunicipal",
@@ -169,12 +169,12 @@
         }
       ],
       "containedInPlace": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       }
     },
     {
-      "@id": "https://example-city.gov/id/jurisdiction/example-city/district-5",
+      "@id": "https://example.gov/id/jurisdiction/example-city/district-5",
       "@type": "AdministrativeArea",
       "name": "District 5",
       "governmentLevel": "submunicipal",
@@ -186,7 +186,7 @@
         }
       ],
       "containedInPlace": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       }
     }

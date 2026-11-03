@@ -7,6 +7,13 @@
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",
+      "@id": "gs:orgclass/government",
+      "termCode": "government",
+      "name": "Government",
+      "description": "The whole-of-government body at the top of an organization tree, such as a city, county, state or national government. It has no parent. Its legislature, executive and departments sit beneath it."
+    },
+    {
+      "@type": "DefinedTerm",
       "@id": "gs:orgclass/legislature",
       "termCode": "legislature",
       "name": "Legislature",
@@ -67,6 +74,27 @@
       "termCode": "enterprise",
       "name": "Public enterprise",
       "description": "A business the government owns, like a utility, transit operator, or port authority."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/division",
+      "termCode": "division",
+      "name": "Division",
+      "description": "A unit inside a department or agency, below the level that answers to the executive."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/bureau",
+      "termCode": "bureau",
+      "name": "Bureau",
+      "description": "A unit inside a department or agency. Governments use bureau, division and section differently; pick the one that matches how the government itself describes the unit."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/authority",
+      "termCode": "authority",
+      "name": "Authority",
+      "description": "A body created by statute to run a function with its own governing board and often its own revenue, such as a housing, transit or water authority."
     }
   ]
 }

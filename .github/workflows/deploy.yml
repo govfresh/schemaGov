@@ -51,12 +51,12 @@ jobs:
         run: python3 tools/audit-jsonld.py
 
       - name: Validate examples (shape, references, conformance)
-        run: python3 tools/validate.py examples/example-city
+        run: python3 tools/validate.py examples/example-gov
 
       # Tier two of SPEC section 4: checks what a reference resolves TO,
       # which JSON Schema structurally cannot see.
       - name: Validate examples (SHACL semantics)
-        run: python3 tools/shacl.py examples/example-city
+        run: python3 tools/shacl.py examples/example-gov
 
       # Passing data proves nothing if a validator accepts everything. This runs a fixture
       # that is wrong on purpose and fails unless every fault is flagged.

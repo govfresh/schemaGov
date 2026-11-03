@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.govfresh.com/v1/context.jsonld",
+  "@graph": [
+    {
+      "@id": "https://example.gov/id/directory/organization",
+      "@type": "DataFeed",
+      "name": "Example City organizational directory",
+      "description": "Every government body, office, and officeholder for Example City, with the facilities they occupy.",
+      "url": "https://example.gov/id/directory/organization",
+      "publisher": {"@id": "https://example.gov/id/organization/city-government", "name": "Example City Government"},
+      "about": {"@id": "https://example.gov/id/jurisdiction/example-city", "name": "Example City"},
+      "dateModified": "2025-09-06",
+      "conformanceLevel": ["standard"],
+      "inLanguage": ["en-US", "es-US"],
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "numberOfItems": 14,
+      "dataFeedElement": [
+        {"@id": "https://example.gov/id/organization/city-government"},
+        {"@id": "https://example.gov/id/organization/city-council"},
+        {"@id": "https://example.gov/id/organization/planning-commission"},
+        {"@id": "https://example.gov/id/organization/public-works"},
+        {"@id": "https://example.gov/id/post/mayor"},
+        {"@id": "https://example.gov/id/post/city-manager"},
+        {"@id": "https://example.gov/id/post/councilmember-d2"},
+        {"@id": "https://example.gov/id/post/councilmember-d5"},
+        {"@id": "https://example.gov/id/post/planning-commission-chair"},
+        {"@id": "https://example.gov/id/person/jane-smith"},
+        {"@id": "https://example.gov/id/person/john-doe"},
+        {"@id": "https://example.gov/id/person/maria-garcia"},
+        {"@id": "https://example.gov/id/person/robert-johnson"},
+        {"@id": "https://example.gov/id/person/alan-reyes"}
+      ]
+    }
+  ]
+}

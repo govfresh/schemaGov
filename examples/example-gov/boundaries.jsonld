@@ -2,11 +2,11 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/boundary/example-city/current",
+      "@id": "https://example.gov/id/boundary/example-city/current",
       "@type": "Boundary",
       "name": "Example City municipal boundary, from 2018",
       "boundaryOf": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       },
       "validFrom": "2018-07-01",
@@ -21,7 +21,7 @@
       "geometry": {
         "@type": "Geometry",
         "geometryType": "MultiPolygon",
-        "contentUrl": "https://example-city.gov/geo/city-boundary-2018.geojson",
+        "contentUrl": "https://example.gov/geo/city-boundary-2018.geojson",
         "encodingFormat": "application/geo+json",
         "sourceReferenceSystem": "epsg:2229",
         "simplified": false,
@@ -29,11 +29,11 @@
       }
     },
     {
-      "@id": "https://example-city.gov/id/boundary/district-2/2012",
+      "@id": "https://example.gov/id/boundary/district-2/2012",
       "@type": "Boundary",
       "name": "District 2, 2012 apportionment",
       "boundaryOf": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city/district-2",
+        "@id": "https://example.gov/id/jurisdiction/example-city/district-2",
         "name": "District 2"
       },
       "validFrom": "2012-01-01",
@@ -42,7 +42,7 @@
       "geometry": {
         "@type": "Geometry",
         "geometryType": "Polygon",
-        "contentUrl": "https://example-city.gov/geo/district-2-2012.geojson",
+        "contentUrl": "https://example.gov/geo/district-2-2012.geojson",
         "encodingFormat": "application/geo+json",
         "sourceReferenceSystem": "epsg:2229",
         "simplified": false,
@@ -50,23 +50,23 @@
       }
     },
     {
-      "@id": "https://example-city.gov/id/boundary/district-2/2023",
+      "@id": "https://example.gov/id/boundary/district-2/2023",
       "@type": "Boundary",
       "name": "District 2, 2023 apportionment",
       "boundaryOf": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city/district-2",
+        "@id": "https://example.gov/id/jurisdiction/example-city/district-2",
         "name": "District 2"
       },
       "validFrom": "2023-01-01",
       "authoritative": true,
       "supersedes": {
-        "@id": "https://example-city.gov/id/boundary/district-2/2012",
+        "@id": "https://example.gov/id/boundary/district-2/2012",
         "name": "District 2, 2012 apportionment"
       },
       "geometry": {
         "@type": "Geometry",
         "geometryType": "Polygon",
-        "contentUrl": "https://example-city.gov/geo/district-2-2023.geojson",
+        "contentUrl": "https://example.gov/geo/district-2-2023.geojson",
         "encodingFormat": "application/geo+json",
         "sourceReferenceSystem": "epsg:2229",
         "simplified": false,
@@ -74,19 +74,19 @@
       }
     },
     {
-      "@id": "https://example-city.gov/id/boundary/district-2/2023-display",
+      "@id": "https://example.gov/id/boundary/district-2/2023-display",
       "@type": "Boundary",
       "name": "District 2, 2023 apportionment (display generalisation)",
       "description": "A simplified rendering for web mapping. NOT the legal boundary - do not use it to decide whether an address falls inside the district.",
       "boundaryOf": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city/district-2"
+        "@id": "https://example.gov/id/jurisdiction/example-city/district-2"
       },
       "validFrom": "2023-01-01",
       "authoritative": false,
       "geometry": {
         "@type": "Geometry",
         "geometryType": "Polygon",
-        "contentUrl": "https://example-city.gov/geo/district-2-2023-simplified.geojson",
+        "contentUrl": "https://example.gov/geo/district-2-2023-simplified.geojson",
         "encodingFormat": "application/geo+json",
         "sourceReferenceSystem": "epsg:2229",
         "simplified": true,

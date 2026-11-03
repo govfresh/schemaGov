@@ -116,7 +116,7 @@ temporal validity that makes historical accuracy possible:
 "boundary": {
   "@type": "Geometry",
   "geometryType": "MultiPolygon",
-  "contentUrl": "https://example-city.gov/geo/district-2-2022.geojson",
+  "contentUrl": "https://example.gov/geo/district-2-2022.geojson",
   "encodingFormat": "application/geo+json",
   "validFrom": "2022-01-01",
   "validUntil": "2031-12-31",        // absent means current

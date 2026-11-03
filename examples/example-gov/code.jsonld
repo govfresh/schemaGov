@@ -2,16 +2,16 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/legislation/municipal-code",
+      "@id": "https://example.gov/id/legislation/municipal-code",
       "@type": "Legislation",
       "name": "Example City Municipal Code",
       "description": "The consolidated body of city ordinances currently in force.",
-      "url": "https://example-city.gov/municipal-code",
+      "url": "https://example.gov/municipal-code",
       "legislationType": "code",
       "codificationLevel": "code",
       "legislationIdentifier": "ECMC",
       "legislationJurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       },
       "legislationLegalForce": "InForce",
@@ -22,13 +22,13 @@
       ],
       "hasPart": [
         {
-          "@id": "https://example-city.gov/id/legislation/municipal-code/title-17",
+          "@id": "https://example.gov/id/legislation/municipal-code/title-17",
           "name": "Title 17 \u2014 Zoning"
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/legislation/municipal-code/title-17",
+      "@id": "https://example.gov/id/legislation/municipal-code/title-17",
       "@type": "Legislation",
       "name": "Title 17 \u2014 Zoning",
       "legislationType": "code",
@@ -36,22 +36,22 @@
       "legislationIdentifier": "ECMC Title 17",
       "position": 17,
       "legislationJurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "legislationLegalForce": "InForce",
       "isPartOf": {
-        "@id": "https://example-city.gov/id/legislation/municipal-code",
+        "@id": "https://example.gov/id/legislation/municipal-code",
         "name": "Example City Municipal Code"
       },
       "hasPart": [
         {
-          "@id": "https://example-city.gov/id/legislation/municipal-code/17.40",
+          "@id": "https://example.gov/id/legislation/municipal-code/17.40",
           "name": "Chapter 17.40 \u2014 Commercial Zones"
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/legislation/municipal-code/17.40",
+      "@id": "https://example.gov/id/legislation/municipal-code/17.40",
       "@type": "Legislation",
       "name": "Chapter 17.40 \u2014 Commercial Zones",
       "legislationType": "code",
@@ -59,24 +59,24 @@
       "legislationIdentifier": "ECMC 17.40",
       "position": 40,
       "legislationJurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "legislationLegalForce": "InForce",
       "legislationDateVersion": "2025-06-15",
       "isPartOf": {
-        "@id": "https://example-city.gov/id/legislation/municipal-code/title-17",
+        "@id": "https://example.gov/id/legislation/municipal-code/title-17",
         "name": "Title 17 \u2014 Zoning"
       },
       "legislationConsolidates": [
         {
-          "@id": "https://example-city.gov/id/legislation/ordinance/2025-15",
+          "@id": "https://example.gov/id/legislation/ordinance/2025-15",
           "name": "Ordinance 2025-15"
         }
       ],
       "encoding": [
         {
           "@type": "LegislationObject",
-          "contentUrl": "https://example-city.gov/municipal-code/17.40.xml",
+          "contentUrl": "https://example.gov/municipal-code/17.40.xml",
           "encodingFormat": "application/akn+xml",
           "legislationLegalValue": "OfficialLegalValue",
           "conformanceLevel": "http://docs.oasis-open.org/legaldocml/ns/akn/3.0",
@@ -85,7 +85,7 @@
         },
         {
           "@type": "LegislationObject",
-          "contentUrl": "https://example-city.gov/municipal-code/17.40.html",
+          "contentUrl": "https://example.gov/municipal-code/17.40.html",
           "encodingFormat": "text/html",
           "legislationLegalValue": "UnofficialLegalValue",
           "inLanguage": "en-US"
@@ -93,22 +93,22 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/legislation/ordinance/2025-15",
+      "@id": "https://example.gov/id/legislation/ordinance/2025-15",
       "@type": "Legislation",
       "name": "Ordinance No. 2025-15",
       "description": "An ordinance amending the commercial zone regulations to permit ground-floor housing.",
-      "url": "https://example-city.gov/ordinances/2025-15",
+      "url": "https://example.gov/ordinances/2025-15",
       "legislationType": "ordinance",
       "legislationIdentifier": "2025-15",
       "legislationJurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "legislationPassedBy": {
-        "@id": "https://example-city.gov/id/organization/city-council",
+        "@id": "https://example.gov/id/organization/city-council",
         "name": "Example City Council"
       },
       "enactedAt": {
-        "@id": "https://example-city.gov/id/meeting/council-2025-06-15",
+        "@id": "https://example.gov/id/meeting/council-2025-06-15",
         "name": "City Council meeting, 15 June 2025"
       },
       "legislationDate": "2025-06-15",
@@ -117,20 +117,20 @@
       "datePublished": "2025-06-20",
       "legislationAmends": [
         {
-          "@id": "https://example-city.gov/id/legislation/municipal-code/17.40",
+          "@id": "https://example.gov/id/legislation/municipal-code/17.40",
           "name": "Chapter 17.40 \u2014 Commercial Zones"
         }
       ],
       "legislationRepeals": [
         {
-          "@id": "https://example-city.gov/id/legislation/ordinance/2020-08",
+          "@id": "https://example.gov/id/legislation/ordinance/2020-08",
           "name": "Ordinance 2020-08"
         }
       ],
       "encoding": [
         {
           "@type": "LegislationObject",
-          "contentUrl": "https://example-city.gov/ordinances/2025-15.pdf",
+          "contentUrl": "https://example.gov/ordinances/2025-15.pdf",
           "encodingFormat": "application/pdf",
           "legislationLegalValue": "AuthoritativeLegalValue",
           "inLanguage": "en-US"
@@ -143,34 +143,34 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/legislation/ordinance/2020-08",
+      "@id": "https://example.gov/id/legislation/ordinance/2020-08",
       "@type": "Legislation",
       "name": "Ordinance No. 2020-08",
       "description": "Superseded commercial zone regulations.",
       "legislationType": "ordinance",
       "legislationIdentifier": "2020-08",
       "legislationJurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "legislationDate": "2020-03-10",
       "legislationLegalForce": "NotInForce"
     },
     {
-      "@id": "https://example-city.gov/id/legislation/ordinance/2025-20",
+      "@id": "https://example.gov/id/legislation/ordinance/2025-20",
       "@type": "Legislation",
       "name": "Ordinance No. 2025-20",
       "description": "The annual appropriation ordinance adopting the FY2026 budget.",
       "legislationType": "ordinance",
       "legislationIdentifier": "2025-20",
       "legislationJurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "legislationPassedBy": {
-        "@id": "https://example-city.gov/id/organization/city-council",
+        "@id": "https://example.gov/id/organization/city-council",
         "name": "Example City Council"
       },
       "enactedAt": {
-        "@id": "https://example-city.gov/id/meeting/council-2025-06-15",
+        "@id": "https://example.gov/id/meeting/council-2025-06-15",
         "name": "City Council meeting, 15 June 2025"
       },
       "legislationDate": "2025-06-15",

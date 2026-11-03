@@ -2,11 +2,11 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/alert/2025-water-011",
+      "@id": "https://example.gov/id/alert/2025-water-011",
       "@type": "Alert",
       "alertIdentifier": "EXC-2025-WATER-011",
       "sender": {
-        "@id": "https://example-city.gov/id/organization/public-works",
+        "@id": "https://example.gov/id/organization/public-works",
         "name": "Public Works Department"
       },
       "sent": "2025-08-14T06:12:00-07:00",
@@ -37,7 +37,7 @@
           "onset": "2025-08-14T02:40:00-07:00",
           "expires": "2025-08-17T12:00:00-07:00",
           "senderName": "Example City Public Works",
-          "web": "https://example-city.gov/alerts/2025-water-011",
+          "web": "https://example.gov/alerts/2025-water-011",
           "contact": "+1-555-0311"
         },
         {
@@ -68,7 +68,7 @@
           "@type": "AlertArea",
           "areaDescription": "District 2, north of 4th Street",
           "jurisdiction": {
-            "@id": "https://example-city.gov/id/jurisdiction/example-city/district-2",
+            "@id": "https://example.gov/id/jurisdiction/example-city/district-2",
             "name": "District 2"
           },
           "geometry": {
@@ -112,11 +112,11 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/alert/2025-water-012",
+      "@id": "https://example.gov/id/alert/2025-water-012",
       "@type": "Alert",
       "alertIdentifier": "EXC-2025-WATER-012",
       "sender": {
-        "@id": "https://example-city.gov/id/organization/public-works"
+        "@id": "https://example.gov/id/organization/public-works"
       },
       "sent": "2025-08-16T15:30:00-07:00",
       "alertStatus": "actual",
@@ -125,7 +125,7 @@
       "incident": "EXC-2025-MAIN-BREAK-4TH",
       "references": [
         {
-          "@id": "https://example-city.gov/id/alert/2025-water-011",
+          "@id": "https://example.gov/id/alert/2025-water-011",
           "name": "Boil water notice, District 2"
         }
       ],
@@ -158,7 +158,7 @@
           "@type": "AlertArea",
           "areaDescription": "District 2, north of 4th Street",
           "jurisdiction": {
-            "@id": "https://example-city.gov/id/jurisdiction/example-city/district-2",
+            "@id": "https://example.gov/id/jurisdiction/example-city/district-2",
             "name": "District 2"
           }
         }

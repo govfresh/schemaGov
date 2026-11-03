@@ -28,7 +28,7 @@ the property name repeats inside it to carry the value:
   "@type": "OrganizationRole",
   "roleName": "Mayor",
   "startDate": "2023-01-01",
-  "member": {"@id": "https://example-city.gov/id/person/jane-smith"}
+  "member": {"@id": "https://example.gov/id/person/jane-smith"}
 }
 ```
 

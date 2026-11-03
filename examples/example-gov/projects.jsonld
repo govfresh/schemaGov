@@ -2,16 +2,16 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/organization/state-university",
+      "@id": "https://example.gov/id/organization/state-university",
       "@type": "Organization",
       "name": "Example State University"
     },
     {
-      "@id": "https://example-city.gov/id/project/pothole-reporting-redesign",
+      "@id": "https://example.gov/id/project/pothole-reporting-redesign",
       "@type": "Project",
       "name": "Pothole reporting redesign",
       "description": "Rebuild the online pothole reporting form so residents can report a pothole in under a minute from a phone.",
-      "url": "https://example-city.gov/projects/pothole-reporting-redesign",
+      "url": "https://example.gov/projects/pothole-reporting-redesign",
       "status": "active",
       "phase": {
         "@id": "https://schema.govfresh.com/v1/dsphase/public-beta",
@@ -21,209 +21,209 @@
       "startDate": "2026-01-15",
       "expectedEndDate": "2026-12-15",
       "parentOrganization": {
-        "@id": "https://example-city.gov/id/organization/public-works"
+        "@id": "https://example.gov/id/organization/public-works"
       },
       "member": [
         {
-          "@id": "https://example-city.gov/id/organization/city-government"
+          "@id": "https://example.gov/id/organization/city-government"
         }
       ],
       "produces": [
         {
-          "@id": "https://example-city.gov/id/service/pothole",
+          "@id": "https://example.gov/id/service/pothole",
           "name": "Pothole repair"
         }
       ],
       "dateModified": "2026-09-30"
     },
     {
-      "@id": "https://example-city.gov/id/project/pothole-reporting-redesign/milestone/discovery-complete",
+      "@id": "https://example.gov/id/project/pothole-reporting-redesign/milestone/discovery-complete",
       "@type": "Milestone",
       "name": "Discovery complete",
       "description": "Research with residents and 311 staff finished.",
       "about": {
-        "@id": "https://example-city.gov/id/project/pothole-reporting-redesign"
+        "@id": "https://example.gov/id/project/pothole-reporting-redesign"
       },
       "status": "met",
       "dueDate": "2026-03-01",
       "dateMet": "2026-03-04"
     },
     {
-      "@id": "https://example-city.gov/id/project/pothole-reporting-redesign/milestone/private-beta",
+      "@id": "https://example.gov/id/project/pothole-reporting-redesign/milestone/private-beta",
       "@type": "Milestone",
       "name": "Private beta",
       "description": "Invited residents start using the new form.",
       "about": {
-        "@id": "https://example-city.gov/id/project/pothole-reporting-redesign"
+        "@id": "https://example.gov/id/project/pothole-reporting-redesign"
       },
       "status": "met",
       "dueDate": "2026-05-01",
       "dateMet": "2026-05-06"
     },
     {
-      "@id": "https://example-city.gov/id/project/pothole-reporting-redesign/milestone/public-beta",
+      "@id": "https://example.gov/id/project/pothole-reporting-redesign/milestone/public-beta",
       "@type": "Milestone",
       "name": "Public beta",
       "description": "Open to all residents.",
       "about": {
-        "@id": "https://example-city.gov/id/project/pothole-reporting-redesign"
+        "@id": "https://example.gov/id/project/pothole-reporting-redesign"
       },
       "status": "met",
       "dueDate": "2026-07-15",
       "dateMet": "2026-07-18"
     },
     {
-      "@id": "https://example-city.gov/id/project/pothole-reporting-redesign/milestone/live",
+      "@id": "https://example.gov/id/project/pothole-reporting-redesign/milestone/live",
       "@type": "Milestone",
       "name": "Live",
       "description": "Old form retired and the new form is the default.",
       "about": {
-        "@id": "https://example-city.gov/id/project/pothole-reporting-redesign"
+        "@id": "https://example.gov/id/project/pothole-reporting-redesign"
       },
       "status": "scheduled",
       "dueDate": "2026-12-15"
     },
     {
-      "@id": "https://example-city.gov/id/project/pothole-reporting-redesign/update/2026-09",
+      "@id": "https://example.gov/id/project/pothole-reporting-redesign/update/2026-09",
       "@type": "Article",
       "name": "September update: public beta results",
       "description": "Four weeks of public beta: 1,900 reports submitted, median completion time 52 seconds.",
       "datePublished": "2026-09-30",
-      "url": "https://example-city.gov/projects/pothole-reporting-redesign/updates/2026-09",
+      "url": "https://example.gov/projects/pothole-reporting-redesign/updates/2026-09",
       "author": {
-        "@id": "https://example-city.gov/id/organization/city-government"
+        "@id": "https://example.gov/id/organization/city-government"
       },
       "about": {
-        "@id": "https://example-city.gov/id/project/pothole-reporting-redesign"
+        "@id": "https://example.gov/id/project/pothole-reporting-redesign"
       }
     },
     {
-      "@id": "https://example-city.gov/id/scheme/programme-stage",
+      "@id": "https://example.gov/id/scheme/programme-stage",
       "@type": "DefinedTermSet",
       "name": "Programme stage",
       "description": "Stages used by Example City for multi-year programmes. Defined by the city, not by schemaGov.",
       "hasDefinedTerm": [
         {
-          "@id": "https://example-city.gov/id/scheme/programme-stage/setup"
+          "@id": "https://example.gov/id/scheme/programme-stage/setup"
         },
         {
-          "@id": "https://example-city.gov/id/scheme/programme-stage/implementation"
+          "@id": "https://example.gov/id/scheme/programme-stage/implementation"
         },
         {
-          "@id": "https://example-city.gov/id/scheme/programme-stage/embedding"
+          "@id": "https://example.gov/id/scheme/programme-stage/embedding"
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/scheme/programme-stage/setup",
+      "@id": "https://example.gov/id/scheme/programme-stage/setup",
       "@type": "DefinedTerm",
       "termCode": "setup",
       "name": "Set up",
       "position": 1,
-      "inDefinedTermSet": "https://example-city.gov/id/scheme/programme-stage"
+      "inDefinedTermSet": "https://example.gov/id/scheme/programme-stage"
     },
     {
-      "@id": "https://example-city.gov/id/scheme/programme-stage/implementation",
+      "@id": "https://example.gov/id/scheme/programme-stage/implementation",
       "@type": "DefinedTerm",
       "termCode": "implementation",
       "name": "Implementation",
       "position": 2,
-      "inDefinedTermSet": "https://example-city.gov/id/scheme/programme-stage"
+      "inDefinedTermSet": "https://example.gov/id/scheme/programme-stage"
     },
     {
-      "@id": "https://example-city.gov/id/scheme/programme-stage/embedding",
+      "@id": "https://example.gov/id/scheme/programme-stage/embedding",
       "@type": "DefinedTerm",
       "termCode": "embedding",
       "name": "Embedding",
       "position": 3,
-      "inDefinedTermSet": "https://example-city.gov/id/scheme/programme-stage"
+      "inDefinedTermSet": "https://example.gov/id/scheme/programme-stage"
     },
     {
-      "@id": "https://example-city.gov/id/project/open-data-programme",
+      "@id": "https://example.gov/id/project/open-data-programme",
       "@type": "Project",
       "name": "Open data programme",
       "description": "Publish the city's priority datasets as open data and train departments to keep them current.",
       "status": "active",
       "phase": {
-        "@id": "https://example-city.gov/id/scheme/programme-stage/implementation"
+        "@id": "https://example.gov/id/scheme/programme-stage/implementation"
       },
       "startDate": "2025-07-01",
       "expectedEndDate": "2027-06-30",
       "parentOrganization": {
-        "@id": "https://example-city.gov/id/organization/city-government"
+        "@id": "https://example.gov/id/organization/city-government"
       },
       "member": [
         {
-          "@id": "https://example-city.gov/id/organization/public-works"
+          "@id": "https://example.gov/id/organization/public-works"
         },
         {
-          "@id": "https://example-city.gov/id/organization/planning-commission"
+          "@id": "https://example.gov/id/organization/planning-commission"
         },
         {
-          "@id": "https://example-city.gov/id/organization/state-university",
+          "@id": "https://example.gov/id/organization/state-university",
           "name": "Example State University"
         }
       ],
       "funder": [
         {
-          "@id": "https://example-city.gov/id/organization/city-council"
+          "@id": "https://example.gov/id/organization/city-council"
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/scheme/capital-project-stage",
+      "@id": "https://example.gov/id/scheme/capital-project-stage",
       "@type": "DefinedTermSet",
       "name": "Capital project stage",
       "description": "Stages used by the Example City capital programme. Defined by the city, not by schemaGov.",
       "hasDefinedTerm": [
         {
-          "@id": "https://example-city.gov/id/scheme/capital-project-stage/design"
+          "@id": "https://example.gov/id/scheme/capital-project-stage/design"
         },
         {
-          "@id": "https://example-city.gov/id/scheme/capital-project-stage/procurement"
+          "@id": "https://example.gov/id/scheme/capital-project-stage/procurement"
         },
         {
-          "@id": "https://example-city.gov/id/scheme/capital-project-stage/construction"
+          "@id": "https://example.gov/id/scheme/capital-project-stage/construction"
         },
         {
-          "@id": "https://example-city.gov/id/scheme/capital-project-stage/close-out"
+          "@id": "https://example.gov/id/scheme/capital-project-stage/close-out"
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/scheme/capital-project-stage/design",
+      "@id": "https://example.gov/id/scheme/capital-project-stage/design",
       "@type": "DefinedTerm",
       "termCode": "design",
       "name": "Design",
       "position": 1,
-      "inDefinedTermSet": "https://example-city.gov/id/scheme/capital-project-stage"
+      "inDefinedTermSet": "https://example.gov/id/scheme/capital-project-stage"
     },
     {
-      "@id": "https://example-city.gov/id/scheme/capital-project-stage/procurement",
+      "@id": "https://example.gov/id/scheme/capital-project-stage/procurement",
       "@type": "DefinedTerm",
       "termCode": "procurement",
       "name": "Procurement",
       "position": 2,
-      "inDefinedTermSet": "https://example-city.gov/id/scheme/capital-project-stage"
+      "inDefinedTermSet": "https://example.gov/id/scheme/capital-project-stage"
     },
     {
-      "@id": "https://example-city.gov/id/scheme/capital-project-stage/construction",
+      "@id": "https://example.gov/id/scheme/capital-project-stage/construction",
       "@type": "DefinedTerm",
       "termCode": "construction",
       "name": "Construction",
       "position": 3,
-      "inDefinedTermSet": "https://example-city.gov/id/scheme/capital-project-stage"
+      "inDefinedTermSet": "https://example.gov/id/scheme/capital-project-stage"
     },
     {
-      "@id": "https://example-city.gov/id/scheme/capital-project-stage/close-out",
+      "@id": "https://example.gov/id/scheme/capital-project-stage/close-out",
       "@type": "DefinedTerm",
       "termCode": "close-out",
       "name": "Close-out",
       "position": 4,
-      "inDefinedTermSet": "https://example-city.gov/id/scheme/capital-project-stage"
+      "inDefinedTermSet": "https://example.gov/id/scheme/capital-project-stage"
     },
     {
-      "@id": "https://example-city.gov/id/project/riverside-bridge",
+      "@id": "https://example.gov/id/project/riverside-bridge",
       "@type": "Project",
       "name": "Riverside Bridge replacement",
       "description": "Replace the Riverside Bridge deck and bearings and widen the footpath.",
@@ -236,67 +236,67 @@
       ],
       "status": "active",
       "phase": {
-        "@id": "https://example-city.gov/id/scheme/capital-project-stage/construction"
+        "@id": "https://example.gov/id/scheme/capital-project-stage/construction"
       },
       "startDate": "2024-03-01",
       "expectedEndDate": "2027-05-31",
       "parentOrganization": {
-        "@id": "https://example-city.gov/id/organization/public-works"
+        "@id": "https://example.gov/id/organization/public-works"
       },
       "funder": [
         {
-          "@id": "https://example-city.gov/id/organization/city-government"
+          "@id": "https://example.gov/id/organization/city-government"
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/project/riverside-bridge/milestone/design-complete",
+      "@id": "https://example.gov/id/project/riverside-bridge/milestone/design-complete",
       "@type": "Milestone",
       "name": "Design complete",
       "description": "Final design approved.",
       "about": {
-        "@id": "https://example-city.gov/id/project/riverside-bridge"
+        "@id": "https://example.gov/id/project/riverside-bridge"
       },
       "status": "met",
       "dueDate": "2024-12-01",
       "dateMet": "2024-12-12"
     },
     {
-      "@id": "https://example-city.gov/id/project/riverside-bridge/milestone/contract-award",
+      "@id": "https://example.gov/id/project/riverside-bridge/milestone/contract-award",
       "@type": "Milestone",
       "name": "Construction contract awarded",
       "description": "Contract signed with the selected contractor.",
       "about": {
-        "@id": "https://example-city.gov/id/project/riverside-bridge"
+        "@id": "https://example.gov/id/project/riverside-bridge"
       },
       "status": "met",
       "dueDate": "2025-06-01",
       "dateMet": "2025-05-28"
     },
     {
-      "@id": "https://example-city.gov/id/project/riverside-bridge/milestone/substantial-completion",
+      "@id": "https://example.gov/id/project/riverside-bridge/milestone/substantial-completion",
       "@type": "Milestone",
       "name": "Substantial completion",
       "description": "Bridge open to traffic.",
       "about": {
-        "@id": "https://example-city.gov/id/project/riverside-bridge"
+        "@id": "https://example.gov/id/project/riverside-bridge"
       },
       "status": "scheduled",
       "dueDate": "2027-03-31"
     },
     {
-      "@id": "https://example-city.gov/id/project/led-streetlight-retrofit",
+      "@id": "https://example.gov/id/project/led-streetlight-retrofit",
       "@type": "Project",
       "name": "LED streetlight retrofit",
       "status": "completed",
       "startDate": "2023-02-01",
       "endDate": "2025-04-30",
       "parentOrganization": {
-        "@id": "https://example-city.gov/id/organization/public-works"
+        "@id": "https://example.gov/id/organization/public-works"
       }
     },
     {
-      "@id": "https://example-city.gov/id/project/parking-structure-expansion",
+      "@id": "https://example.gov/id/project/parking-structure-expansion",
       "@type": "Project",
       "name": "Parking structure expansion",
       "description": "Add two levels to the Civic Centre parking structure. Cancelled after the council withdrew funding.",
@@ -305,11 +305,11 @@
       "expectedEndDate": "2026-09-01",
       "endDate": "2025-11-18",
       "parentOrganization": {
-        "@id": "https://example-city.gov/id/organization/public-works"
+        "@id": "https://example.gov/id/organization/public-works"
       }
     },
     {
-      "@id": "https://example-city.gov/id/project/website-refresh",
+      "@id": "https://example.gov/id/project/website-refresh",
       "@type": "Project",
       "name": "Website refresh",
       "status": "active"

@@ -83,8 +83,8 @@ npm run check      # build + namespace check + example validation
 python3 tools/validate.py                  # reference integrity, no dependencies
 pip install jsonschema referencing         # adds JSON Schema shape checking
 pip install pyshacl rdflib                 # adds SHACL semantic checking
-python3 tools/validate.py examples/example-city
-python3 tools/shacl.py examples/example-city
+python3 tools/validate.py examples/example-gov
+python3 tools/shacl.py examples/example-gov
 npm run check                              # all of the above, as CI runs it
 ```
 

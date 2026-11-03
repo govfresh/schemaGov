@@ -1,0 +1,170 @@
+{
+  "@context": "https://schema.govfresh.com/v1/context.jsonld",
+  "@graph": [
+    {
+      "@id": "https://invalid.example/id/jurisdiction/place",
+      "@type": "AdministrativeArea",
+      "name": "A place",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "place"
+        }
+      ]
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-ok",
+      "@type": "GovernmentOrganization",
+      "name": "unit-ok",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "unit-ok"
+        }
+      ],
+      "organizationClassification": "government"
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-child-ok",
+      "@type": "GovernmentOrganization",
+      "name": "unit-child-ok",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "unit-child-ok"
+        }
+      ],
+      "organizationClassification": "department",
+      "parentOrganization": {
+        "@id": "https://invalid.example/id/organization/unit-ok"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-root-b",
+      "@type": "GovernmentOrganization",
+      "name": "unit-root-b",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "unit-root-b"
+        }
+      ],
+      "organizationClassification": "government"
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-child-of-b",
+      "@type": "GovernmentOrganization",
+      "name": "unit-child-of-b",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "unit-child-of-b"
+        }
+      ],
+      "organizationClassification": "department",
+      "parentOrganization": {
+        "@id": "https://invalid.example/id/organization/unit-root-b"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-bad-class",
+      "@type": "GovernmentOrganization",
+      "name": "unit-bad-class",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "unit-bad-class"
+        }
+      ],
+      "organizationClassification": "random-department-kind"
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-parent-is-place",
+      "@type": "GovernmentOrganization",
+      "name": "unit-parent-is-place",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "unit-parent-is-place"
+        }
+      ],
+      "organizationClassification": "department",
+      "parentOrganization": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-cycle-a",
+      "@type": "GovernmentOrganization",
+      "name": "unit-cycle-a",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "unit-cycle-a"
+        }
+      ],
+      "organizationClassification": "department",
+      "parentOrganization": {
+        "@id": "https://invalid.example/id/organization/unit-cycle-b"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-cycle-b",
+      "@type": "GovernmentOrganization",
+      "name": "unit-cycle-b",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "unit-cycle-b"
+        }
+      ],
+      "organizationClassification": "department",
+      "parentOrganization": {
+        "@id": "https://invalid.example/id/organization/unit-cycle-a"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-lists-wrong-parent",
+      "@type": "GovernmentOrganization",
+      "name": "unit-lists-wrong-parent",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "unit-lists-wrong-parent"
+        }
+      ],
+      "organizationClassification": "department",
+      "department": [
+        {
+          "@id": "https://invalid.example/id/organization/unit-child-of-b"
+        }
+      ]
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-government-with-parent",
+      "@type": "GovernmentOrganization",
+      "name": "unit-government-with-parent",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "unit-government-with-parent"
+        }
+      ],
+      "organizationClassification": "government",
+      "parentOrganization": {
+        "@id": "https://invalid.example/id/organization/unit-root-b"
+      }
+    }
+  ]
+}

@@ -47,7 +47,7 @@ UNSPSC, the EU data-theme vocabulary, org-id.guide, CAP (OASIS), OCDS (Open Cont
 Partnership), DCAT (W3C), Popolo, and Akoma Ntoso (OASIS). The `local:` identifier convention
 exists precisely so a publisher's own register is never misrepresented as one of these.
 
-Example data in `examples/example-city/` is fictional. Data in `examples/pilot-uk-contracts/`
+Example data in `examples/example-gov/` is fictional. Data in `examples/pilot-uk-contracts/`
 and `examples/pilot-ie-datasets/` is derived from public open-government sources — UK
 Contracts Finder and data.gov.ie — which publish under their own open terms; it is included
 as conversion evidence, and those publishers remain the source of record.
