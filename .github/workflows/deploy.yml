@@ -39,6 +39,11 @@ jobs:
       - name: Check namespace URLs resolve
         run: node tools/check-namespace.js
 
+      # Every gs: term the context, schemas and shapes use must be defined in the
+      # vocabulary, because the per-term pages are built from it.
+      - name: Check used terms are defined
+        run: python3 tools/check-vocabulary.py
+
       # Proves a published document parses by FETCHING its @context over HTTP, the path
       # a real consumer takes - our other tools inline the local file and would not
       # notice a missing or stale published context.

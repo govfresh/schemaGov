@@ -2,6 +2,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { STANDARDS } from '../_lib/standards.js'
 import profilesData from './profiles.js'
+import vocabularyData from './vocabulary.js'
 
 const navData = JSON.parse(await fs.readFile(path.join(import.meta.dirname, 'nav.json'), 'utf8'))
 
@@ -28,11 +29,23 @@ export default async function () {
     }
     entries.push({ title: b.name, url: `/profiles/${b.slug}/`, body: body.join(' ') })
 
-    for (const c of b.codelists) {
-      const termBody = [c.description]
-      for (const t of c.terms) termBody.push(t.code, t.name, t.description)
-      entries.push({ title: c.name, url: `/v1/${c.termSegment}/`, body: termBody.join(' ') })
+  }
+
+  // Every vocabulary term (class, property, code list) has a page. A code list's own values
+  // are searchable too, so `fptp` still finds ElectoralSystem. Names that differ only by
+  // letter case share one page and so one entry.
+  const vocabulary = await vocabularyData()
+  for (const g of vocabulary.groups) {
+    const body = []
+    for (const m of g.members) {
+      body.push(m.local, m.label, m.comment)
+      if (m.codelist) {
+        body.push(m.codelist.name, m.codelist.description)
+        for (const t of m.codelist.terms) body.push(t.code, t.name, t.description)
+      }
     }
+    const title = g.members.find((m) => m.codelist)?.codelist.name || g.title
+    entries.push({ title, url: `/v1/${g.canonical}/`, body: body.join(' ') })
   }
 
   for (const std of STANDARDS) {

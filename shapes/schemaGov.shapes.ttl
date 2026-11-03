@@ -186,7 +186,7 @@ gs:BudgetLineShape a sh:NodeShape ;
         sh:message "administrativeClassification must point at the organization that spends the money, not carry a department name as text." ] ;
 
     sh:property [
-        sh:path gs:isPartOf ;
+        sh:path schema:isPartOf ;
         sh:class gs:BudgetLine ;
         sh:message "A budget line's parent must be another budget line." ] .
 

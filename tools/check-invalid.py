@@ -28,6 +28,7 @@ FAULTS = {
     "project/phase-wrong-scheme": "phase claims a scheme that does not list it",
     "project/owner-is-place": "responsible organization is a place",
     "project/ms-about-org": "milestone is about an organization",
+    "budget-line/line-part-of-org": "budget line whose parent is not a budget line",
     "organization/unit-bad-class": "classification outside the code list",
     "organization/unit-parent-is-place": "parentOrganization points at a jurisdiction",
     "organization/unit-cycle-a": "parentOrganization cycle",
