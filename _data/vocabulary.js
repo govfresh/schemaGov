@@ -22,6 +22,9 @@ const PREDICATES = {
   'https://schema.org/rangeIncludes': 'rangeIncludes',
   'https://schema.org/name': 'label',
 }
+/** Escapes the characters that matter in HTML text. Apostrophes are left alone. */
+const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
 const KIND_ORDER = { set: 0, class: 1, property: 2 }
 const KIND_LABEL = { set: 'Code list', class: 'Class', property: 'Property' }
 
@@ -142,6 +145,7 @@ export default async function () {
         kindLabel: KIND_LABEL[kind],
         label: n.label || local,
         comment: n.comment || '',
+        commentHtml: escapeHtml(n.comment || ''),
         subClassOf: n.subClassOf || [],
         subPropertyOf: n.subPropertyOf || [],
         inverseOf: n.inverseOf || [],

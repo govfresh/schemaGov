@@ -15,7 +15,7 @@ description: The terms and categories schemaGov defines itself, for concepts no 
         {% for g in vocabulary.groups %}{% for m in g.members %}{% if m.kind == kind.k %}
         <tr>
           <td><a href="/v1/{{ g.canonical }}/#{{ m.kind }}-{{ m.local }}"><code>{{ m.local }}</code></a></td>
-          <td class="small">{{ m.comment | escape | linkifyTerms | inlineCode(profiles.built) | safe }}</td>
+          <td class="small">{{ m.commentHtml | linkifyTerms | inlineCode(profiles.built) | safe }}</td>
         </tr>
         {% endif %}{% endfor %}{% endfor %}
       </tbody>
