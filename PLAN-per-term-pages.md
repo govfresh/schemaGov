@@ -55,10 +55,18 @@ code-list set pages use the same combined rendering where a set shares a name wi
 6. **Size.** About 200 new pages and one new dependency. The data file and template are small. The
    collision handling and the checks are the real work.
 
-## Decisions needed before starting
+## Decisions (settled 2026-11-03)
 
-- **Collision approach:** combined page at every spelling (recommended), or leave case-colliding
-  terms without pages and document them.
-- **`n3` dependency:** acceptable, or write a small reader for this file's format.
-- **Cheaper alternative:** one `/vocabulary/terms/` page with an anchor per term. About a tenth of
-  the work, but the IRIs would still not dereference.
+- **Collision approach: one combined page, written at every spelling.** It is the only option that
+  keeps every IRI resolving on every OS and makes the page content identical whichever spelling
+  wins. Leaving collided terms without pages would leave 47 groups of IRIs dead, including
+  `Post`, `Election` and `Project`-related terms that publishers are most likely to look up.
+- **`n3` dependency: yes, as a dev dependency.** `schemagov.ttl` is simple (no blank nodes or
+  collections), but a hand-written reader would be one more thing to maintain and could quietly
+  misread a comment or a multi-line string. `n3` is small and widely used, and the repo already
+  depends on a real RDF parser (`rdflib`) in its Python checks.
+- **Scope: full per-term pages, not the single `/vocabulary/terms/` page.** The anchor page is
+  about a tenth of the work, but the term IRIs would still not load, which is the actual problem.
+
+Next step: regenerate the term counts (they changed after the org refinement added four code-list
+values), then start at step 1.
