@@ -2,32 +2,32 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/contracting-process/2025-pw-014",
+      "@id": "https://example.gov/id/contracting-process/2025-pw-014",
       "@type": "ContractingProcess",
       "ocid": "ocds-example-2025-pw-014",
       "name": "Street resurfacing programme, FY2026",
       "buyer": {
-        "@id": "https://example-city.gov/id/organization/city-government",
+        "@id": "https://example.gov/id/organization/city-government",
         "name": "Example City Government"
       },
       "jurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       },
       "budgetLine": [
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-street-maintenance",
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-street-maintenance",
           "name": "Street maintenance programme"
         }
       ],
       "dateModified": "2025-09-01",
       "party": [
         {
-          "@id": "https://example-city.gov/id/party/northgate-paving",
+          "@id": "https://example.gov/id/party/northgate-paving",
           "name": "Northgate Paving LLC"
         },
         {
-          "@id": "https://example-city.gov/id/party/valley-surfacing",
+          "@id": "https://example.gov/id/party/valley-surfacing",
           "name": "Valley Surfacing Co."
         }
       ],
@@ -60,7 +60,7 @@
           "currency": "USD"
         },
         "procuringEntity": {
-          "@id": "https://example-city.gov/id/organization/public-works",
+          "@id": "https://example.gov/id/organization/public-works",
           "name": "Public Works Department"
         },
         "tenderPeriodStart": "2025-07-07",
@@ -69,7 +69,7 @@
         "numberOfTenderers": 2,
         "submissionMethodDetails": "Sealed bids delivered to the City Clerk, opened publicly.",
         "document": [
-          "https://example-city.gov/procurement/PW-2025-014/ifb.pdf"
+          "https://example.gov/procurement/PW-2025-014/ifb.pdf"
         ]
       },
       "award": [
@@ -86,14 +86,14 @@
           },
           "supplier": [
             {
-              "@id": "https://example-city.gov/id/party/northgate-paving",
+              "@id": "https://example.gov/id/party/northgate-paving",
               "name": "Northgate Paving LLC"
             }
           ],
           "contractPeriodStart": "2025-09-15",
           "contractPeriodEnd": "2026-04-30",
           "document": [
-            "https://example-city.gov/procurement/PW-2025-014/award.pdf"
+            "https://example.gov/procurement/PW-2025-014/award.pdf"
           ]
         }
       ],
@@ -118,32 +118,32 @@
             "currency": "USD"
           },
           "document": [
-            "https://example-city.gov/procurement/PW-2025-014/contract.pdf"
+            "https://example.gov/procurement/PW-2025-014/contract.pdf"
           ]
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/contracting-process/2025-gg-003",
+      "@id": "https://example.gov/id/contracting-process/2025-gg-003",
       "@type": "ContractingProcess",
       "ocid": "ocds-example-2025-gg-003",
       "name": "Emergency structural assessment, City Hall",
       "buyer": {
-        "@id": "https://example-city.gov/id/organization/city-government"
+        "@id": "https://example.gov/id/organization/city-government"
       },
       "jurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "budgetLine": [
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-general-government",
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-general-government",
           "name": "General government"
         }
       ],
       "dateModified": "2025-08-20",
       "party": [
         {
-          "@id": "https://example-city.gov/id/party/meridian-consulting",
+          "@id": "https://example.gov/id/party/meridian-consulting",
           "name": "Meridian Consulting Group"
         }
       ],
@@ -169,7 +169,7 @@
           "currency": "USD"
         },
         "procuringEntity": {
-          "@id": "https://example-city.gov/id/organization/city-government"
+          "@id": "https://example.gov/id/organization/city-government"
         },
         "numberOfTenderers": 1
       },
@@ -186,7 +186,7 @@
           },
           "supplier": [
             {
-              "@id": "https://example-city.gov/id/party/meridian-consulting",
+              "@id": "https://example.gov/id/party/meridian-consulting",
               "name": "Meridian Consulting Group"
             }
           ]
@@ -213,7 +213,7 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/party/northgate-paving",
+      "@id": "https://example.gov/id/party/northgate-paving",
       "@type": "Organization",
       "name": "Northgate Paving LLC",
       "identifier": [
@@ -236,7 +236,7 @@
       }
     },
     {
-      "@id": "https://example-city.gov/id/party/valley-surfacing",
+      "@id": "https://example.gov/id/party/valley-surfacing",
       "@type": "Organization",
       "name": "Valley Surfacing Co.",
       "identifier": [
@@ -251,7 +251,7 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/party/meridian-consulting",
+      "@id": "https://example.gov/id/party/meridian-consulting",
       "@type": "Organization",
       "name": "Meridian Consulting Group",
       "identifier": [

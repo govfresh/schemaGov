@@ -2,18 +2,18 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/election/2022-general",
+      "@id": "https://example.gov/id/election/2022-general",
       "@type": "Election",
       "name": "Example City general election, 2022",
       "electionDate": "2022-11-08",
       "electionType": "general",
       "electionStatus": "completed",
       "administeredBy": {
-        "@id": "https://example-city.gov/id/organization/city-government",
+        "@id": "https://example.gov/id/organization/city-government",
         "name": "Example City Government"
       },
       "jurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       },
       "registeredVoters": 41200,
@@ -27,18 +27,18 @@
       ],
       "contest": [
         {
-          "@id": "https://example-city.gov/id/contest/2022-mayor"
+          "@id": "https://example.gov/id/contest/2022-mayor"
         },
         {
-          "@id": "https://example-city.gov/id/contest/2022-council-d2"
+          "@id": "https://example.gov/id/contest/2022-council-d2"
         },
         {
-          "@id": "https://example-city.gov/id/contest/2022-measure-a"
+          "@id": "https://example.gov/id/contest/2022-measure-a"
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/election/2026-d5-special",
+      "@id": "https://example.gov/id/election/2026-d5-special",
       "@type": "Election",
       "name": "Example City District 5 special election, 2026",
       "description": "Called to fill the District 5 council vacancy.",
@@ -46,30 +46,30 @@
       "electionType": "special",
       "electionStatus": "scheduled",
       "administeredBy": {
-        "@id": "https://example-city.gov/id/organization/city-government"
+        "@id": "https://example.gov/id/organization/city-government"
       },
       "jurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "contest": [
         {
-          "@id": "https://example-city.gov/id/contest/2026-council-d5"
+          "@id": "https://example.gov/id/contest/2026-council-d5"
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/contest/2022-mayor",
+      "@id": "https://example.gov/id/contest/2022-mayor",
       "@type": "Contest",
       "name": "Mayor",
       "election": {
-        "@id": "https://example-city.gov/id/election/2022-general",
+        "@id": "https://example.gov/id/election/2022-general",
         "name": "Example City general election, 2022"
       },
       "contestType": "office",
       "electoralSystem": "fptp",
       "seatsToFill": 1,
       "post": {
-        "@id": "https://example-city.gov/id/post/mayor",
+        "@id": "https://example.gov/id/post/mayor",
         "name": "Mayor"
       },
       "validVotes": 23880,
@@ -78,13 +78,13 @@
       "candidacy": [
         {
           "@type": "Candidacy",
-          "@id": "https://example-city.gov/id/candidacy/2022-mayor-smith",
+          "@id": "https://example.gov/id/candidacy/2022-mayor-smith",
           "candidate": {
-            "@id": "https://example-city.gov/id/person/jane-smith",
+            "@id": "https://example.gov/id/person/jane-smith",
             "name": "Jane Smith"
           },
           "party": {
-            "@id": "https://example-city.gov/id/party/civic-alliance",
+            "@id": "https://example.gov/id/party/civic-alliance",
             "name": "Civic Alliance"
           },
           "ballotName": "Jane Smith",
@@ -95,13 +95,13 @@
         },
         {
           "@type": "Candidacy",
-          "@id": "https://example-city.gov/id/candidacy/2022-mayor-reyes",
+          "@id": "https://example.gov/id/candidacy/2022-mayor-reyes",
           "candidate": {
-            "@id": "https://example-city.gov/id/person/alan-reyes",
+            "@id": "https://example.gov/id/person/alan-reyes",
             "name": "Alan Reyes"
           },
           "party": {
-            "@id": "https://example-city.gov/id/party/riverside-independents",
+            "@id": "https://example.gov/id/party/riverside-independents",
             "name": "Riverside Independents"
           },
           "ballotName": "Alan Reyes",
@@ -113,21 +113,21 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/contest/2022-council-d2",
+      "@id": "https://example.gov/id/contest/2022-council-d2",
       "@type": "Contest",
       "name": "Councilmember, District 2",
       "election": {
-        "@id": "https://example-city.gov/id/election/2022-general"
+        "@id": "https://example.gov/id/election/2022-general"
       },
       "contestType": "office",
       "electoralSystem": "fptp",
       "seatsToFill": 1,
       "post": {
-        "@id": "https://example-city.gov/id/post/councilmember-d2",
+        "@id": "https://example.gov/id/post/councilmember-d2",
         "name": "Councilmember"
       },
       "representsJurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city/district-2",
+        "@id": "https://example.gov/id/jurisdiction/example-city/district-2",
         "name": "District 2"
       },
       "validVotes": 4611,
@@ -136,13 +136,13 @@
       "candidacy": [
         {
           "@type": "Candidacy",
-          "@id": "https://example-city.gov/id/candidacy/2022-d2-garcia",
+          "@id": "https://example.gov/id/candidacy/2022-d2-garcia",
           "candidate": {
-            "@id": "https://example-city.gov/id/person/maria-garcia",
+            "@id": "https://example.gov/id/person/maria-garcia",
             "name": "Maria Garcia"
           },
           "party": {
-            "@id": "https://example-city.gov/id/party/civic-alliance",
+            "@id": "https://example.gov/id/party/civic-alliance",
             "name": "Civic Alliance"
           },
           "ballotName": "Maria Garcia",
@@ -153,9 +153,9 @@
         },
         {
           "@type": "Candidacy",
-          "@id": "https://example-city.gov/id/candidacy/2022-d2-oliveira",
+          "@id": "https://example.gov/id/candidacy/2022-d2-oliveira",
           "candidate": {
-            "@id": "https://example-city.gov/id/person/tomas-oliveira",
+            "@id": "https://example.gov/id/person/tomas-oliveira",
             "name": "Tomás Oliveira"
           },
           "ballotName": "Tomás Oliveira",
@@ -167,12 +167,12 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/contest/2022-measure-a",
+      "@id": "https://example.gov/id/contest/2022-measure-a",
       "@type": "Contest",
       "name": "Measure A — street maintenance bond",
       "description": "Authorising $24,000,000 in general obligation bonds for street resurfacing.",
       "election": {
-        "@id": "https://example-city.gov/id/election/2022-general"
+        "@id": "https://example.gov/id/election/2022-general"
       },
       "contestType": "ballotMeasure",
       "electoralSystem": "fptp",
@@ -195,27 +195,27 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/contest/2026-council-d5",
+      "@id": "https://example.gov/id/contest/2026-council-d5",
       "@type": "Contest",
       "name": "Councilmember, District 5",
       "election": {
-        "@id": "https://example-city.gov/id/election/2026-d5-special",
+        "@id": "https://example.gov/id/election/2026-d5-special",
         "name": "Example City District 5 special election, 2026"
       },
       "contestType": "office",
       "electoralSystem": "fptp",
       "seatsToFill": 1,
       "post": {
-        "@id": "https://example-city.gov/id/post/councilmember-d5",
+        "@id": "https://example.gov/id/post/councilmember-d5",
         "name": "Councilmember"
       },
       "representsJurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city/district-5",
+        "@id": "https://example.gov/id/jurisdiction/example-city/district-5",
         "name": "District 5"
       }
     },
     {
-      "@id": "https://example-city.gov/id/party/civic-alliance",
+      "@id": "https://example.gov/id/party/civic-alliance",
       "@type": "PoliticalParty",
       "name": "Civic Alliance",
       "identifier": [
@@ -227,7 +227,7 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/party/riverside-independents",
+      "@id": "https://example.gov/id/party/riverside-independents",
       "@type": "PoliticalParty",
       "name": "Riverside Independents",
       "identifier": [

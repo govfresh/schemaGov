@@ -1,0 +1,360 @@
+{
+  "@context": "https://schema.govfresh.com/v1/context.jsonld",
+  "@graph": [
+    {
+      "@id": "https://example.gov/id/organization/city-government",
+      "@type": "GovernmentOrganization",
+      "name": "Example City Government",
+      "organizationClassification": "government",
+      "governmentLevel": "municipal",
+      "url": "https://example.gov",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "city-government"
+        }
+      ],
+      "areaServed": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      },
+      "foundingDate": "1950-03-15",
+      "knowsLanguage": [
+        "en-US",
+        "es-US"
+      ],
+      "timeZone": "America/Los_Angeles",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 City Hall Drive",
+        "addressLocality": "Example City",
+        "addressRegion": "CA",
+        "postalCode": "90210",
+        "addressCountry": "US"
+      },
+      "subOrganization": [
+        {
+          "@id": "https://example.gov/id/organization/city-council",
+          "name": "Example City Council"
+        }
+      ],
+      "department": [
+        {
+          "@id": "https://example.gov/id/organization/community-development"
+        },
+        {
+          "@id": "https://example.gov/id/organization/public-works",
+          "name": "Public Works Department"
+        }
+      ],
+      "member": [
+        {
+          "@type": "OrganizationRole",
+          "@id": "https://example.gov/id/role/mayor-2023",
+          "roleName": "Mayor",
+          "startDate": "2023-01-01",
+          "member": {
+            "@id": "https://example.gov/id/person/jane-smith",
+            "name": "Jane Smith"
+          },
+          "post": {
+            "@id": "https://example.gov/id/post/mayor"
+          }
+        },
+        {
+          "@type": "EmployeeRole",
+          "@id": "https://example.gov/id/role/city-manager-2021",
+          "roleName": "City Manager",
+          "startDate": "2021-06-14",
+          "member": {
+            "@id": "https://example.gov/id/person/john-doe",
+            "name": "John Doe"
+          },
+          "post": {
+            "@id": "https://example.gov/id/post/city-manager"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "@id": "https://example.gov/id/role/mayor-2019",
+          "roleName": "Mayor",
+          "startDate": "2019-01-01",
+          "endDate": "2022-12-31",
+          "post": {
+            "@id": "https://example.gov/id/post/mayor"
+          },
+          "member": {
+            "@id": "https://example.gov/id/person/alan-reyes",
+            "name": "Alan Reyes"
+          }
+        }
+      ],
+      "location": {
+        "@id": "https://example.gov/id/facility/city-hall",
+        "name": "Example City Hall"
+      }
+    },
+    {
+      "@id": "https://example.gov/id/organization/city-council",
+      "@type": "GovernmentOrganization",
+      "name": "Example City Council",
+      "organizationClassification": "legislature",
+      "governmentLevel": "municipal",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "city-council"
+        }
+      ],
+      "areaServed": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      },
+      "parentOrganization": {
+        "@id": "https://example.gov/id/organization/city-government"
+      },
+      "subOrganization": [
+        {
+          "@id": "https://example.gov/id/organization/planning-commission",
+          "name": "Planning Commission"
+        }
+      ],
+      "member": [
+        {
+          "@type": "OrganizationRole",
+          "@id": "https://example.gov/id/role/councilmember-d2-2022",
+          "roleName": "Councilmember",
+          "startDate": "2022-01-03",
+          "member": {
+            "@id": "https://example.gov/id/person/maria-garcia",
+            "name": "Maria Garcia"
+          },
+          "representsJurisdiction": {
+            "@id": "https://example.gov/id/jurisdiction/example-city/district-2",
+            "name": "District 2"
+          },
+          "post": {
+            "@id": "https://example.gov/id/post/councilmember-d2"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "@id": "https://example.gov/id/role/councilmember-d1-2022",
+          "roleName": "Councilmember",
+          "startDate": "2022-01-03",
+          "post": {
+            "@id": "https://example.gov/id/post/councilmember-d1"
+          },
+          "member": {
+            "@id": "https://example.gov/id/person/priya-nair",
+            "name": "Priya Nair"
+          },
+          "representsJurisdiction": {
+            "@id": "https://example.gov/id/jurisdiction/example-city/district-1",
+            "name": "District 1"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "@id": "https://example.gov/id/role/councilmember-d3-2022",
+          "roleName": "Councilmember",
+          "startDate": "2022-01-03",
+          "post": {
+            "@id": "https://example.gov/id/post/councilmember-d3"
+          },
+          "member": {
+            "@id": "https://example.gov/id/person/tomas-oliveira",
+            "name": "Tomás Oliveira"
+          },
+          "representsJurisdiction": {
+            "@id": "https://example.gov/id/jurisdiction/example-city/district-3",
+            "name": "District 3"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "@id": "https://example.gov/id/role/councilmember-d4-2022",
+          "roleName": "Councilmember",
+          "startDate": "2022-01-03",
+          "post": {
+            "@id": "https://example.gov/id/post/councilmember-d4"
+          },
+          "member": {
+            "@id": "https://example.gov/id/person/aisha-bello",
+            "name": "Aisha Bello"
+          },
+          "representsJurisdiction": {
+            "@id": "https://example.gov/id/jurisdiction/example-city/district-4",
+            "name": "District 4"
+          }
+        }
+      ],
+      "location": {
+        "@id": "https://example.gov/id/facility/council-chambers",
+        "name": "Council Chambers"
+      }
+    },
+    {
+      "@id": "https://example.gov/id/organization/planning-commission",
+      "@type": "GovernmentOrganization",
+      "name": "Planning Commission",
+      "description": "Reviews and makes recommendations on planning and zoning matters.",
+      "organizationClassification": "commission",
+      "governmentLevel": "municipal",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "planning-commission"
+        }
+      ],
+      "areaServed": {
+        "@id": "https://example.gov/id/jurisdiction/example-city"
+      },
+      "parentOrganization": {
+        "@id": "https://example.gov/id/organization/city-council"
+      },
+      "member": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Chair",
+          "startDate": "2024-02-01",
+          "member": {
+            "@id": "https://example.gov/id/person/robert-johnson",
+            "name": "Robert Johnson"
+          },
+          "post": {
+            "@id": "https://example.gov/id/post/planning-commission-chair"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/organization/public-works",
+      "@type": "GovernmentOrganization",
+      "name": "Public Works Department",
+      "description": "Responsible for city infrastructure, utilities, and maintenance.",
+      "organizationClassification": "department",
+      "governmentLevel": "municipal",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "public-works"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "erp-org-unit",
+          "value": "4100"
+        }
+      ],
+      "areaServed": {
+        "@id": "https://example.gov/id/jurisdiction/example-city"
+      },
+      "parentOrganization": {
+        "@id": "https://example.gov/id/organization/city-government"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "public enquiries",
+          "telephone": "+1-555-0100",
+          "email": "publicworks@example.gov",
+          "availableLanguage": [
+            "en-US",
+            "es-US"
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/organization/community-development",
+      "@type": "GovernmentOrganization",
+      "name": "Community Development Department",
+      "description": "Land use, building, and environmental health services.",
+      "organizationClassification": "department",
+      "governmentLevel": "municipal",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "community-development"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "erp-org-unit",
+          "value": "3000"
+        }
+      ],
+      "areaServed": {
+        "@id": "https://example.gov/id/jurisdiction/example-city"
+      },
+      "parentOrganization": {
+        "@id": "https://example.gov/id/organization/city-government"
+      },
+      "url": "https://example.gov/departments/community-development",
+      "department": [
+        {
+          "@id": "https://example.gov/id/organization/planning"
+        },
+        {
+          "@id": "https://example.gov/id/organization/environmental-health"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/organization/planning",
+      "@type": "GovernmentOrganization",
+      "name": "Planning Division",
+      "description": "Long-range planning and development review.",
+      "organizationClassification": "division",
+      "governmentLevel": "municipal",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "planning"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "erp-org-unit",
+          "value": "3100"
+        }
+      ],
+      "areaServed": {
+        "@id": "https://example.gov/id/jurisdiction/example-city"
+      },
+      "parentOrganization": {
+        "@id": "https://example.gov/id/organization/community-development"
+      }
+    },
+    {
+      "@id": "https://example.gov/id/organization/environmental-health",
+      "@type": "GovernmentOrganization",
+      "name": "Environmental Health Division",
+      "description": "Food facility inspection and public health permitting.",
+      "organizationClassification": "division",
+      "governmentLevel": "municipal",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "environmental-health"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "erp-org-unit",
+          "value": "3200"
+        }
+      ],
+      "areaServed": {
+        "@id": "https://example.gov/id/jurisdiction/example-city"
+      },
+      "parentOrganization": {
+        "@id": "https://example.gov/id/organization/community-development"
+      }
+    }
+  ]
+}

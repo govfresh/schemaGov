@@ -36,5 +36,5 @@ work is a validator that fails in CI.
 
 ```bash
 pip install pyshacl rdflib
-python3 tools/shacl.py examples/example-city
+python3 tools/shacl.py examples/example-gov
 ```

@@ -2,14 +2,14 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/service/birth-certificate",
+      "@id": "https://example.gov/id/service/birth-certificate",
       "@type": "GovernmentService",
       "name": "Order a copy of a birth certificate",
       "alternateName": [
         "Birth record request"
       ],
       "description": "Order a certified copy of a birth registered in Example City.",
-      "url": "https://example-city.gov/services/birth-certificate",
+      "url": "https://example.gov/services/birth-certificate",
       "serviceCode": "VIT-001",
       "serviceType": "Vital records",
       "serviceStatus": "active",
@@ -23,11 +23,11 @@
         "certified copy"
       ],
       "provider": {
-        "@id": "https://example-city.gov/id/organization/city-government",
+        "@id": "https://example.gov/id/organization/city-government",
         "name": "Example City Government"
       },
       "areaServed": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       },
       "eligibility": {
@@ -35,7 +35,7 @@
         "audienceType": "The person named on the record, a parent, a legal guardian, or a legal representative",
         "requiredMinAge": 18,
         "geographicArea": {
-          "@id": "https://example-city.gov/id/jurisdiction/example-city"
+          "@id": "https://example.gov/id/jurisdiction/example-city"
         },
         "eligibilityCriteria": "Applicants under 18 may apply with a parent or guardian co-signing. Proof of relationship is required for third-party applicants."
       },
@@ -74,7 +74,7 @@
       "availableChannel": [
         {
           "@type": "ServiceChannel",
-          "serviceUrl": "https://example-city.gov/services/birth-certificate/apply",
+          "serviceUrl": "https://example.gov/services/birth-certificate/apply",
           "servicePhone": {
             "@type": "ContactPoint",
             "telephone": "+1-555-0142"
@@ -89,9 +89,9 @@
       "availableAtLocation": [
         {
           "@type": "ServiceAtLocation",
-          "@id": "https://example-city.gov/id/service-at-location/birth-certificate-city-hall",
+          "@id": "https://example.gov/id/service-at-location/birth-certificate-city-hall",
           "location": {
-            "@id": "https://example-city.gov/id/facility/city-hall",
+            "@id": "https://example.gov/id/facility/city-hall",
             "name": "Example City Hall"
           },
           "appointmentRequired": false,
@@ -118,7 +118,7 @@
       "dateModified": "2026-08-14"
     },
     {
-      "@id": "https://example-city.gov/id/service/business-registration",
+      "@id": "https://example.gov/id/service/business-registration",
       "@type": "GovernmentService",
       "name": "Register a business",
       "description": "Register a new business operating within the city and obtain a business licence.",
@@ -130,10 +130,10 @@
         "employment"
       ],
       "provider": {
-        "@id": "https://example-city.gov/id/organization/city-government"
+        "@id": "https://example.gov/id/organization/city-government"
       },
       "areaServed": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "eligibility": {
         "@type": "PeopleAudience",
@@ -168,13 +168,13 @@
         "es-US"
       ],
       "relatedLegislation": {
-        "@id": "https://example-city.gov/id/legislation/municipal-code/title-17",
+        "@id": "https://example.gov/id/legislation/municipal-code/title-17",
         "name": "Title 17 — Zoning"
       },
       "dateModified": "2026-07-02"
     },
     {
-      "@id": "https://example-city.gov/id/service/winter-shelter",
+      "@id": "https://example.gov/id/service/winter-shelter",
       "@type": "GovernmentService",
       "name": "Winter emergency shelter",
       "description": "Overnight shelter operated during declared cold-weather periods.",
@@ -186,10 +186,10 @@
         "health"
       ],
       "provider": {
-        "@id": "https://example-city.gov/id/organization/city-government"
+        "@id": "https://example.gov/id/organization/city-government"
       },
       "areaServed": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "eligibility": {
         "@type": "PeopleAudience",

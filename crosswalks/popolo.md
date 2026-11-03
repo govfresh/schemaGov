@@ -9,7 +9,7 @@ without loss.
 |---|---|---|
 | `Person` | `schema:Person` | Identity only in both. |
 | `Organization` | `schema:GovernmentOrganization` | |
-| `Organization.classification` | `gs:organizationClassification` | Code list in `profiles/_core/codelists/`. |
+| `Organization.classification` | `gs:organizationClassification` | Code list in `profiles/_core/codelists/`. Popolo's field is free text; schemaGov constrains it. `government` (a root body) is a schemaGov addition. |
 | `Membership` | `schema:OrganizationRole` | The central mapping. Both bind one person to one organization for one time span. |
 | `Membership.role` | `schema:roleName` | |
 | `Membership.start_date` / `end_date` | `schema:startDate` / `endDate` | |

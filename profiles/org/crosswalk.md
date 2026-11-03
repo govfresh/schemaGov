@@ -27,6 +27,26 @@ Organization, Membership, and Area. This file covers only what the `org` profile
 ORG models a Post as held by at most one agent at a time, which matches this profile. It has
 no vacancy or term-limit concept either.
 
+## Organization structure
+
+| Concept | schemaGov | Source |
+|---|---|---|
+| Government body | `GovernmentOrganization` | schema.org |
+| Parent | `parentOrganization` | schema.org; Popolo `parent_id`; ORG `subOrganizationOf` |
+| Child | `subOrganization`, `department` | schema.org. Derived from the parent link, not authoritative |
+| Kind of body | `organizationClassification` | **schemaGov code list**, aligned with Popolo `classification` and ORG `OrganizationalUnit` / `FormalOrganization` |
+| Territory governed | `areaServed` pointing at a Jurisdiction | schema.org; Popolo `area_id` |
+| Source-system codes | `identifier` with `propertyID` | schema.org `PropertyValue`; Popolo `identifiers` |
+| Funding, sponsorship | `funder`, `sponsor` | schema.org |
+| Membership, affiliation | `memberOf`, `affiliation` | schema.org; ORG `memberOf` |
+| General link | not defined | ORG `linkedTo` is available if needed |
+| Appointing body | `Post.roleClassification: "appointed"` | schemaGov. No Popolo or ORG equivalent |
+| Second, administrative parent | not defined | Gap in schema.org, ORG and Popolo |
+
+`organizationClassification` is where schemaGov adds meaning. schema.org has no property for the
+kind of government body, and Popolo's `classification` is free text. The code list makes it
+checkable. A `government` value marks the root of a tree and is a schemaGov addition.
+
 ## Where publishers get this wrong
 
 **Modelling the office as a Person property.** `jobTitle` on a Person cannot express a
@@ -39,3 +59,12 @@ the reason the Post exists.
 **Treating an ex officio seat as a separate appointment.** Use `roleClassification:
 "exOfficio"` — the holder is determined by another Post, so recording it as `appointed`
 misstates who decides.
+
+**Letting the name or depth decide the kind.** Calling every second-level body a department
+because that is how another government draws its chart. Set the classification from what the body
+is.
+
+**Using a page URL as `@id`.** The page moves; the body does not. Put the page in `url`.
+
+**Treating a source-system code as identity.** The same ERP code can appear in more than one
+branch. Keep it in `identifier` with its `propertyID`.

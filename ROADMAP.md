@@ -85,6 +85,31 @@ Contests, candidates, results, polling places.
 | `consultations` | — | Comment periods, petitions, participatory budgeting. Couples to `meetings` and `code`. |
 | `indicators` | SDMX | Performance and SDG reporting. `Observation` and `StatisticalVariable` exist. |
 
+## Organization structure refinement — DONE
+
+Made the existing org model explicit before the `fees` profile depends on it. Reused what was
+already there rather than adding a property: `organizationClassification` stays the one place to
+say what kind of body something is (no `organizationType`), and `parentOrganization` stays the
+canonical hierarchy link.
+
+- **Classification:** added `government` (root of a tree, no parent), `division`, `bureau` and
+  `authority`. Backward compatible; no existing value changed. `program`, `board` and `district`
+  were left out on purpose: a program is usually a service, and a board is already a `legislature`
+  or `commission`.
+- **Validation:** the validator now rejects a parent that is a jurisdiction, a parent cycle, a
+  `government` with a parent, and a `department` / `subOrganization` list that disagrees with the
+  child's own `parentOrganization`. New invalid fixtures in `examples/_invalid/organizations.jsonld`.
+- **Docs:** `profiles/org/README.md` gains "Organization structure" (hierarchy, `@id` vs `url` vs
+  `identifier`, public vs administrative structure, relationships, decision guide). Both
+  crosswalks updated.
+- **Fixture:** `examples/example-city` renamed `examples/example-gov` (the set will grow beyond
+  cities) and its domain `example.gov`; the org tree is now three levels. The example root changed
+  from `executive` to `government`.
+- **Not done, on purpose:** no `gs:OrganizationRelationship` (existing terms cover most cases; the
+  "appoints" gap is recorded), no second administrative-parent property, and no Marin pilot (no
+  source data in the repo yet).
+- **Follow-up:** `gs:fee` ("Fee charged for a permit") needs reconciling with the fees profile.
+
 ## Extend, don't add
 
 - **Payroll and salaries** → extend `org`. `Role` already has `baseSalary` and `salaryCurrency`.

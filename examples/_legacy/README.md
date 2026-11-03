@@ -15,4 +15,4 @@ for reference and is **not conformant**. Three problems motivated the current de
 3. **Entities inlined rather than referenced** — `{"@type":"City","name":"Example City"}`
    appears seven times as a stub copy. See SPEC §1.2.
 
-The conformant equivalent is `examples/example-city/`.
+The conformant equivalent is `examples/example-gov/`.

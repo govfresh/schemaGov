@@ -2,17 +2,17 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/budget/fy2026-approved",
+      "@id": "https://example.gov/id/budget/fy2026-approved",
       "@type": "Budget",
       "name": "Example City FY2026 approved budget",
       "description": "The adopted annual operating budget for fiscal year 2026.",
-      "url": "https://example-city.gov/budget/fy2026",
+      "url": "https://example.gov/budget/fy2026",
       "publisher": {
-        "@id": "https://example-city.gov/id/organization/city-government",
+        "@id": "https://example.gov/id/organization/city-government",
         "name": "Example City Government"
       },
       "about": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       },
       "budgetPhase": "approved",
@@ -26,19 +26,19 @@
         "currency": "USD"
       },
       "adoptedBy": {
-        "@id": "https://example-city.gov/id/organization/city-council",
+        "@id": "https://example.gov/id/organization/city-council",
         "name": "Example City Council"
       },
       "enactedAt": {
-        "@id": "https://example-city.gov/id/meeting/council-2025-06-15",
+        "@id": "https://example.gov/id/meeting/council-2025-06-15",
         "name": "City Council meeting, 15 June 2025"
       },
       "legislation": {
-        "@id": "https://example-city.gov/id/legislation/ordinance/2025-20",
+        "@id": "https://example.gov/id/legislation/ordinance/2025-20",
         "name": "Ordinance No. 2025-20"
       },
       "supersedes": {
-        "@id": "https://example-city.gov/id/budget/fy2026-proposed",
+        "@id": "https://example.gov/id/budget/fy2026-proposed",
         "name": "Example City FY2026 proposed budget"
       },
       "conformanceLevel": [
@@ -51,61 +51,61 @@
       "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "budgetLine": [
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/rev-property-tax"
+          "@id": "https://example.gov/id/budget-line/fy2026/rev-property-tax"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/rev-state-grants"
+          "@id": "https://example.gov/id/budget-line/fy2026/rev-state-grants"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/rev-fees"
+          "@id": "https://example.gov/id/budget-line/fy2026/rev-fees"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-public-works"
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-public-works"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-street-maintenance"
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-street-maintenance"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-waste"
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-waste"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-pw-admin"
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-pw-admin"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-police"
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-police"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-parks"
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-parks"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-general-government"
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-general-government"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-debt-interest"
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-debt-interest"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/fin-capital-reserve"
+          "@id": "https://example.gov/id/budget-line/fy2026/fin-capital-reserve"
         }
       ],
       "distribution": [
         {
           "@type": "DataDownload",
           "name": "FY2026 approved budget, Fiscal Data Package",
-          "contentUrl": "https://example-city.gov/budget/fy2026/datapackage.json",
+          "contentUrl": "https://example.gov/budget/fy2026/datapackage.json",
           "encodingFormat": "application/json"
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/budget/fy2026-proposed",
+      "@id": "https://example.gov/id/budget/fy2026-proposed",
       "@type": "Budget",
       "name": "Example City FY2026 proposed budget",
       "description": "The city manager's proposed budget, superseded by the approved budget on 15 June 2025. Retained so the two phases can be compared.",
       "publisher": {
-        "@id": "https://example-city.gov/id/organization/city-government"
+        "@id": "https://example.gov/id/organization/city-government"
       },
       "about": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "budgetPhase": "proposed",
       "fiscalYear": "FY2026",
@@ -120,11 +120,11 @@
       "dateModified": "2025-04-28"
     },
     {
-      "@id": "https://example-city.gov/id/budget-line/fy2026/rev-property-tax",
+      "@id": "https://example.gov/id/budget-line/fy2026/rev-property-tax",
       "@type": "BudgetLine",
       "name": "Property tax",
       "budget": {
-        "@id": "https://example-city.gov/id/budget/fy2026-approved",
+        "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
       },
       "amount": {
@@ -137,11 +137,11 @@
       "position": 1
     },
     {
-      "@id": "https://example-city.gov/id/budget-line/fy2026/rev-state-grants",
+      "@id": "https://example.gov/id/budget-line/fy2026/rev-state-grants",
       "@type": "BudgetLine",
       "name": "State and federal grants",
       "budget": {
-        "@id": "https://example-city.gov/id/budget/fy2026-approved",
+        "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
       },
       "amount": {
@@ -154,11 +154,11 @@
       "position": 2
     },
     {
-      "@id": "https://example-city.gov/id/budget-line/fy2026/rev-fees",
+      "@id": "https://example.gov/id/budget-line/fy2026/rev-fees",
       "@type": "BudgetLine",
       "name": "Fees, fines and charges",
       "budget": {
-        "@id": "https://example-city.gov/id/budget/fy2026-approved",
+        "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
       },
       "amount": {
@@ -171,11 +171,11 @@
       "position": 3
     },
     {
-      "@id": "https://example-city.gov/id/budget-line/fy2026/exp-public-works",
+      "@id": "https://example.gov/id/budget-line/fy2026/exp-public-works",
       "@type": "BudgetLine",
       "name": "Public Works",
       "budget": {
-        "@id": "https://example-city.gov/id/budget/fy2026-approved",
+        "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
       },
       "amount": {
@@ -187,28 +187,28 @@
       "functionalClassification": "04",
       "economicClassification": "22",
       "administrativeClassification": {
-        "@id": "https://example-city.gov/id/organization/public-works",
+        "@id": "https://example.gov/id/organization/public-works",
         "name": "Public Works Department"
       },
       "position": 4,
       "hasPart": [
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-street-maintenance"
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-street-maintenance"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-waste"
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-waste"
         },
         {
-          "@id": "https://example-city.gov/id/budget-line/fy2026/exp-pw-admin"
+          "@id": "https://example.gov/id/budget-line/fy2026/exp-pw-admin"
         }
       ]
     },
     {
-      "@id": "https://example-city.gov/id/budget-line/fy2026/exp-street-maintenance",
+      "@id": "https://example.gov/id/budget-line/fy2026/exp-street-maintenance",
       "@type": "BudgetLine",
       "name": "Street maintenance programme",
       "budget": {
-        "@id": "https://example-city.gov/id/budget/fy2026-approved",
+        "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
       },
       "amount": {
@@ -220,22 +220,22 @@
       "functionalClassification": "04.5",
       "economicClassification": "22",
       "administrativeClassification": {
-        "@id": "https://example-city.gov/id/organization/public-works",
+        "@id": "https://example.gov/id/organization/public-works",
         "name": "Public Works Department"
       },
       "programClassification": "PW-STREETS",
       "isPartOf": {
-        "@id": "https://example-city.gov/id/budget-line/fy2026/exp-public-works",
+        "@id": "https://example.gov/id/budget-line/fy2026/exp-public-works",
         "name": "Public Works"
       },
       "position": 1
     },
     {
-      "@id": "https://example-city.gov/id/budget-line/fy2026/exp-waste",
+      "@id": "https://example.gov/id/budget-line/fy2026/exp-waste",
       "@type": "BudgetLine",
       "name": "Waste and recycling collection",
       "budget": {
-        "@id": "https://example-city.gov/id/budget/fy2026-approved",
+        "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
       },
       "amount": {
@@ -247,22 +247,22 @@
       "functionalClassification": "05.1",
       "economicClassification": "22",
       "administrativeClassification": {
-        "@id": "https://example-city.gov/id/organization/public-works",
+        "@id": "https://example.gov/id/organization/public-works",
         "name": "Public Works Department"
       },
       "programClassification": "PW-WASTE",
       "isPartOf": {
-        "@id": "https://example-city.gov/id/budget-line/fy2026/exp-public-works",
+        "@id": "https://example.gov/id/budget-line/fy2026/exp-public-works",
         "name": "Public Works"
       },
       "position": 2
     },
     {
-      "@id": "https://example-city.gov/id/budget-line/fy2026/exp-pw-admin",
+      "@id": "https://example.gov/id/budget-line/fy2026/exp-pw-admin",
       "@type": "BudgetLine",
       "name": "Public Works administration",
       "budget": {
-        "@id": "https://example-city.gov/id/budget/fy2026-approved",
+        "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
       },
       "amount": {
@@ -274,22 +274,22 @@
       "functionalClassification": "04",
       "economicClassification": "21",
       "administrativeClassification": {
-        "@id": "https://example-city.gov/id/organization/public-works",
+        "@id": "https://example.gov/id/organization/public-works",
         "name": "Public Works Department"
       },
       "programClassification": "PW-ADMIN",
       "isPartOf": {
-        "@id": "https://example-city.gov/id/budget-line/fy2026/exp-public-works",
+        "@id": "https://example.gov/id/budget-line/fy2026/exp-public-works",
         "name": "Public Works"
       },
       "position": 3
     },
     {
-      "@id": "https://example-city.gov/id/budget-line/fy2026/exp-police",
+      "@id": "https://example.gov/id/budget-line/fy2026/exp-police",
       "@type": "BudgetLine",
       "name": "Police services",
       "budget": {
-        "@id": "https://example-city.gov/id/budget/fy2026-approved",
+        "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
       },
       "amount": {
@@ -303,11 +303,11 @@
       "position": 5
     },
     {
-      "@id": "https://example-city.gov/id/budget-line/fy2026/exp-parks",
+      "@id": "https://example.gov/id/budget-line/fy2026/exp-parks",
       "@type": "BudgetLine",
       "name": "Parks and recreation",
       "budget": {
-        "@id": "https://example-city.gov/id/budget/fy2026-approved",
+        "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
       },
       "amount": {
@@ -321,11 +321,11 @@
       "position": 6
     },
     {
-      "@id": "https://example-city.gov/id/budget-line/fy2026/exp-general-government",
+      "@id": "https://example.gov/id/budget-line/fy2026/exp-general-government",
       "@type": "BudgetLine",
       "name": "General government",
       "budget": {
-        "@id": "https://example-city.gov/id/budget/fy2026-approved",
+        "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
       },
       "amount": {
@@ -337,17 +337,17 @@
       "functionalClassification": "01.1",
       "economicClassification": "21",
       "administrativeClassification": {
-        "@id": "https://example-city.gov/id/organization/city-government",
+        "@id": "https://example.gov/id/organization/city-government",
         "name": "Example City Government"
       },
       "position": 7
     },
     {
-      "@id": "https://example-city.gov/id/budget-line/fy2026/exp-debt-interest",
+      "@id": "https://example.gov/id/budget-line/fy2026/exp-debt-interest",
       "@type": "BudgetLine",
       "name": "Debt service \u2014 interest",
       "budget": {
-        "@id": "https://example-city.gov/id/budget/fy2026-approved",
+        "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
       },
       "amount": {
@@ -361,11 +361,11 @@
       "position": 8
     },
     {
-      "@id": "https://example-city.gov/id/budget-line/fy2026/fin-capital-reserve",
+      "@id": "https://example.gov/id/budget-line/fy2026/fin-capital-reserve",
       "@type": "BudgetLine",
       "name": "Transfer to capital reserve",
       "budget": {
-        "@id": "https://example-city.gov/id/budget/fy2026-approved",
+        "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
       },
       "amount": {

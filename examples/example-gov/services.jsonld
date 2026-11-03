@@ -2,11 +2,11 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/service/pothole",
+      "@id": "https://example.gov/id/service/pothole",
       "@type": "GovernmentService",
       "name": "Pothole repair",
       "description": "Report a pothole or damaged road surface on a city-maintained street.",
-      "url": "https://example-city.gov/services/pothole",
+      "url": "https://example.gov/services/pothole",
       "serviceCode": "ROAD-001",
       "serviceType": "Streets",
       "keywords": [
@@ -17,17 +17,17 @@
       ],
       "isRealtime": true,
       "provider": {
-        "@id": "https://example-city.gov/id/organization/public-works",
+        "@id": "https://example.gov/id/organization/public-works",
         "name": "Public Works Department"
       },
       "areaServed": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city",
+        "@id": "https://example.gov/id/jurisdiction/example-city",
         "name": "Example City"
       },
       "availableChannel": [
         {
           "@type": "ServiceChannel",
-          "serviceUrl": "https://example-city.gov/report/pothole",
+          "serviceUrl": "https://example.gov/report/pothole",
           "servicePhone": {
             "@type": "ContactPoint",
             "telephone": "+1-555-0311"
@@ -81,11 +81,11 @@
       "serviceStatus": "active"
     },
     {
-      "@id": "https://example-city.gov/id/service/streetlight",
+      "@id": "https://example.gov/id/service/streetlight",
       "@type": "GovernmentService",
       "name": "Streetlight outage",
       "description": "Report a streetlight that is out, flickering, or damaged.",
-      "url": "https://example-city.gov/services/streetlight",
+      "url": "https://example.gov/services/streetlight",
       "serviceCode": "LIGHT-002",
       "serviceType": "Streets",
       "keywords": [
@@ -95,15 +95,15 @@
       ],
       "isRealtime": true,
       "provider": {
-        "@id": "https://example-city.gov/id/organization/public-works"
+        "@id": "https://example.gov/id/organization/public-works"
       },
       "areaServed": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "availableChannel": [
         {
           "@type": "ServiceChannel",
-          "serviceUrl": "https://example-city.gov/report/streetlight",
+          "serviceUrl": "https://example.gov/report/streetlight",
           "processingTime": "P10D",
           "availableLanguage": [
             "en-US",
@@ -124,11 +124,11 @@
       "serviceStatus": "active"
     },
     {
-      "@id": "https://example-city.gov/id/service/illegal-dumping",
+      "@id": "https://example.gov/id/service/illegal-dumping",
       "@type": "GovernmentService",
       "name": "Illegal dumping",
       "description": "Report waste dumped on public land.",
-      "url": "https://example-city.gov/services/illegal-dumping",
+      "url": "https://example.gov/services/illegal-dumping",
       "serviceCode": "SAN-004",
       "serviceType": "Sanitation",
       "keywords": [
@@ -139,15 +139,15 @@
       ],
       "isRealtime": false,
       "provider": {
-        "@id": "https://example-city.gov/id/organization/public-works"
+        "@id": "https://example.gov/id/organization/public-works"
       },
       "areaServed": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city"
+        "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "availableChannel": [
         {
           "@type": "ServiceChannel",
-          "serviceUrl": "https://example-city.gov/report/dumping",
+          "serviceUrl": "https://example.gov/report/dumping",
           "processingTime": "P3D"
         }
       ],

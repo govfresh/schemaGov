@@ -2,12 +2,12 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/post/mayor",
+      "@id": "https://example.gov/id/post/mayor",
       "@type": "Post",
       "roleName": "Mayor",
       "description": "Head of the city executive, directly elected to a four-year term.",
       "memberOf": {
-        "@id": "https://example-city.gov/id/organization/city-government",
+        "@id": "https://example.gov/id/organization/city-government",
         "name": "Example City Government"
       },
       "roleClassification": "elected",
@@ -23,38 +23,38 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/post/city-manager",
+      "@id": "https://example.gov/id/post/city-manager",
       "@type": "Post",
       "roleName": "City Manager",
       "description": "Chief administrative officer, appointed by and serving at the pleasure of the Council.",
       "memberOf": {
-        "@id": "https://example-city.gov/id/organization/city-government"
+        "@id": "https://example.gov/id/organization/city-government"
       },
       "roleClassification": "appointed"
     },
     {
-      "@id": "https://example-city.gov/id/post/councilmember-d2",
+      "@id": "https://example.gov/id/post/councilmember-d2",
       "@type": "Post",
       "roleName": "Councilmember",
       "memberOf": {
-        "@id": "https://example-city.gov/id/organization/city-council",
+        "@id": "https://example.gov/id/organization/city-council",
         "name": "Example City Council"
       },
       "roleClassification": "elected",
       "numberedPosition": 2,
       "termDuration": "P4Y",
       "representsJurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city/district-2",
+        "@id": "https://example.gov/id/jurisdiction/example-city/district-2",
         "name": "District 2"
       }
     },
     {
-      "@id": "https://example-city.gov/id/post/councilmember-d5",
+      "@id": "https://example.gov/id/post/councilmember-d5",
       "@type": "Post",
       "roleName": "Councilmember",
       "description": "Seat vacated on resignation; a special election is scheduled.",
       "memberOf": {
-        "@id": "https://example-city.gov/id/organization/city-council"
+        "@id": "https://example.gov/id/organization/city-council"
       },
       "roleClassification": "elected",
       "numberedPosition": 5,
@@ -62,61 +62,61 @@
       "vacantSince": "2025-04-30"
     },
     {
-      "@id": "https://example-city.gov/id/post/planning-commission-chair",
+      "@id": "https://example.gov/id/post/planning-commission-chair",
       "@type": "Post",
       "roleName": "Chair",
       "memberOf": {
-        "@id": "https://example-city.gov/id/organization/planning-commission",
+        "@id": "https://example.gov/id/organization/planning-commission",
         "name": "Planning Commission"
       },
       "roleClassification": "volunteer",
       "termDuration": "P2Y"
     },
     {
-      "@id": "https://example-city.gov/id/post/councilmember-d1",
+      "@id": "https://example.gov/id/post/councilmember-d1",
       "@type": "Post",
       "roleName": "Councilmember",
       "memberOf": {
-        "@id": "https://example-city.gov/id/organization/city-council",
+        "@id": "https://example.gov/id/organization/city-council",
         "name": "Example City Council"
       },
       "roleClassification": "elected",
       "numberedPosition": 1,
       "termDuration": "P4Y",
       "representsJurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city/district-1",
+        "@id": "https://example.gov/id/jurisdiction/example-city/district-1",
         "name": "District 1"
       }
     },
     {
-      "@id": "https://example-city.gov/id/post/councilmember-d3",
+      "@id": "https://example.gov/id/post/councilmember-d3",
       "@type": "Post",
       "roleName": "Councilmember",
       "memberOf": {
-        "@id": "https://example-city.gov/id/organization/city-council",
+        "@id": "https://example.gov/id/organization/city-council",
         "name": "Example City Council"
       },
       "roleClassification": "elected",
       "numberedPosition": 3,
       "termDuration": "P4Y",
       "representsJurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city/district-3",
+        "@id": "https://example.gov/id/jurisdiction/example-city/district-3",
         "name": "District 3"
       }
     },
     {
-      "@id": "https://example-city.gov/id/post/councilmember-d4",
+      "@id": "https://example.gov/id/post/councilmember-d4",
       "@type": "Post",
       "roleName": "Councilmember",
       "memberOf": {
-        "@id": "https://example-city.gov/id/organization/city-council",
+        "@id": "https://example.gov/id/organization/city-council",
         "name": "Example City Council"
       },
       "roleClassification": "elected",
       "numberedPosition": 4,
       "termDuration": "P4Y",
       "representsJurisdiction": {
-        "@id": "https://example-city.gov/id/jurisdiction/example-city/district-4",
+        "@id": "https://example.gov/id/jurisdiction/example-city/district-4",
         "name": "District 4"
       }
     }

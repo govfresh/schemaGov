@@ -13,7 +13,7 @@
     "@id": {
       "type": "string",
       "format": "iri",
-      "description": "This organization's own dereferenceable identifier."
+      "description": "This organization's stable identifier for the entity, not the address of its current web page. It must not change when the website is reorganized or the organization is renamed. Put the public page in `url` and source-system codes in `identifier`."
     },
     "@type": {
       "const": "GovernmentOrganization",
@@ -57,8 +57,9 @@
     },
     "organizationClassification": {
       "type": "string",
-      "description": "termCode from the `OrganizationClassification` code list.",
+      "description": "termCode from the `OrganizationClassification` code list. Describes what kind of body this is. It does not set hierarchy (`parentOrganization` does), is never inferred from depth in the tree or from the name, and is not a separate class: every value is a `GovernmentOrganization`.",
       "enum": [
+        "government",
         "legislature",
         "executive",
         "department",
@@ -67,7 +68,10 @@
         "commission",
         "court",
         "office",
-        "enterprise"
+        "enterprise",
+        "division",
+        "bureau",
+        "authority"
       ]
     },
     "governmentLevel": {
@@ -90,21 +94,21 @@
     },
     "parentOrganization": {
       "$ref": "reference.schema.json",
-      "description": "The body this organization reports to or operates under."
+      "description": "The body this organization reports to or operates under. This is the canonical hierarchy link: names and `organizationClassification` do not establish hierarchy. A `government` has none. Must point at another organization, never at a `Jurisdiction`."
     },
     "subOrganization": {
       "type": "array",
       "items": {
         "$ref": "reference.schema.json"
       },
-      "description": "Bodies constituted under this one, including committees and commissions."
+      "description": "Bodies constituted under this one, including committees and commissions. A derived view of `parentOrganization`: each child must name this body as its parent."
     },
     "department": {
       "type": "array",
       "items": {
         "$ref": "reference.schema.json"
       },
-      "description": "Operating units. Use `subOrganization` for bodies with their own constitution, `department` for units of this body's administration."
+      "description": "Operating units. Use `subOrganization` for bodies with their own constitution, `department` for units of this body's administration. A derived view of `parentOrganization`: each child must name this body as its parent."
     },
     "member": {
       "type": "array",

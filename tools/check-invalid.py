@@ -28,8 +28,13 @@ FAULTS = {
     "project/phase-wrong-scheme": "phase claims a scheme that does not list it",
     "project/owner-is-place": "responsible organization is a place",
     "project/ms-about-org": "milestone is about an organization",
+    "organization/unit-bad-class": "classification outside the code list",
+    "organization/unit-parent-is-place": "parentOrganization points at a jurisdiction",
+    "organization/unit-cycle-a": "parentOrganization cycle",
+    "organization/unit-lists-wrong-parent": "lists a child that names a different parent",
+    "organization/unit-government-with-parent": "a government (root) that has a parent",
 }
-CLEAN = ["project/ok", "organization/o"]
+CLEAN = ["project/ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok"]
 
 
 def run(tool):

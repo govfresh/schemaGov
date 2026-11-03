@@ -2,12 +2,12 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/facility/city-hall",
+      "@id": "https://example.gov/id/facility/city-hall",
       "@type": "CityHall",
       "name": "Example City Hall",
-      "url": "https://example-city.gov/city-hall",
+      "url": "https://example.gov/city-hall",
       "identifier": [{"@type":"PropertyValue","propertyID":"gs:local","value":"city-hall"}],
-      "containedInPlace": {"@id": "https://example-city.gov/id/jurisdiction/example-city", "name": "Example City"},
+      "containedInPlace": {"@id": "https://example.gov/id/jurisdiction/example-city", "name": "Example City"},
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "123 City Hall Drive",
@@ -26,11 +26,11 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/facility/council-chambers",
+      "@id": "https://example.gov/id/facility/council-chambers",
       "@type": "LegislativeBuilding",
       "name": "Council Chambers",
       "description": "Meeting room within City Hall where the City Council and its commissions convene.",
-      "containedInPlace": {"@id": "https://example-city.gov/id/facility/city-hall", "name": "Example City Hall"},
+      "containedInPlace": {"@id": "https://example.gov/id/facility/city-hall", "name": "Example City Hall"},
       "publicAccess": true,
       "maximumAttendeeCapacity": 120
     }

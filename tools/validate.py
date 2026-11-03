@@ -10,7 +10,7 @@ Two independent checks:
                   matters most here: the profile forbids inlining copies of entities, so
                   a dangling reference is the characteristic failure mode.
 
-Usage:  python3 tools/validate.py [examples/example-city ...]
+Usage:  python3 tools/validate.py [examples/example-gov ...]
 """
 import json
 import pathlib
@@ -105,7 +105,7 @@ def collect_refs(node, path, out):
 
 
 def main(argv):
-    targets = argv[1:] or ["examples/example-city"]
+    targets = argv[1:] or ["examples/example-gov"]
     paths = []
     for t in targets:
         p = ROOT / t
@@ -405,6 +405,8 @@ def main(argv):
         r"[\w.+-]+@[\w-]+\.[\w.]+"                    # email
         r"|\b(?:\+?\d[\d ().-]{7,}\d)\b"             # phone-like run of digits
     )
+    # A street block range such as "1300 -1400 block" is a run of digits, not a phone number.
+    NUMBER_RANGE = re.compile(r"\d{1,5}\s*-\s*\d{1,5}")
 
     def _decimals(v):
         s = str(v)
@@ -427,7 +429,7 @@ def main(argv):
                     f"{COORD_PRECISION_LIMIT} places is about a metre")
 
         desc = node.get("description") or ""
-        if CONTACT_IN_TEXT.search(desc):
+        if any(not NUMBER_RANGE.fullmatch(m.group(0)) for m in CONTACT_IN_TEXT.finditer(desc)):
             warnings.append(
                 f"{nid}: description appears to contain a phone number or email address\n"
                 f"    free text is written by the public and is not covered by the field\n"
@@ -660,6 +662,59 @@ def main(argv):
                     f"entry per profile"
                 )
             seen[prof] = ep.get("url")
+
+    # --- organization hierarchy ----------------------------------------------
+    # parentOrganization is the canonical direction. subOrganization and department are
+    # derived views of the same relationship, so they must agree with it, or the two
+    # directions drift apart and a consumer cannot tell which to believe.
+    def _ts(node):
+        v = node.get("@type")
+        return set(v if isinstance(v, list) else [v])
+
+    org_nodes = {i: n for i, n in entities.items() if "GovernmentOrganization" in _ts(n)}
+
+    def _ref(v):
+        return v.get("@id") if isinstance(v, dict) else None
+
+    for oid, o in org_nodes.items():
+        pid = _ref(o.get("parentOrganization"))
+        if pid:
+            parent = entities.get(pid)
+            if parent is not None and "GovernmentOrganization" not in _ts(parent):
+                errors.append(
+                    f"parentOrganization is not an organization: {oid}\n"
+                    f"    {pid} is typed {sorted(_ts(parent))}; a jurisdiction is a place, not a parent body"
+                )
+            if o.get("organizationClassification") == "government":
+                errors.append(
+                    f"a 'government' is the root of its tree and has no parent: {oid}\n"
+                    f"    parentOrganization is {pid}"
+                )
+        for key in ("subOrganization", "department"):
+            for child in o.get(key) or []:
+                cid = _ref(child)
+                c = org_nodes.get(cid)
+                if c is None:
+                    continue
+                cpid = _ref(c.get("parentOrganization"))
+                if cpid and cpid != oid:
+                    errors.append(
+                        f"hierarchy disagrees: {oid} lists {cid} under {key}\n"
+                        f"    but {cid} names {cpid} as its parentOrganization"
+                    )
+                elif not cpid:
+                    warnings.append(
+                        f"{cid} is listed under {key} of {oid} but declares no parentOrganization"
+                    )
+
+    for oid in org_nodes:
+        seen, cur = {oid}, _ref(org_nodes[oid].get("parentOrganization"))
+        while cur and cur in org_nodes:
+            if cur in seen:
+                errors.append(f"parentOrganization cycle through {oid}")
+                break
+            seen.add(cur)
+            cur = _ref(org_nodes[cur].get("parentOrganization"))
 
     # --- conformance levels ---------------------------------------------------
     # SPEC section 4 defines three levels; documents declare one with conformanceLevel.

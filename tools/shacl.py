@@ -8,7 +8,7 @@ Organization instead of a Person is valid JSON, resolves cleanly, and is wrong.
 This expands the examples to RDF and runs the SHACL shapes in shapes/ over them.
 
 Requires: pip install pyshacl rdflib
-Usage:    python3 tools/shacl.py [examples/example-city ...]
+Usage:    python3 tools/shacl.py [examples/example-gov ...]
 """
 import json
 import pathlib
@@ -52,7 +52,7 @@ def main(argv):
         print("shacl: SKIPPED - pip install pyshacl rdflib")
         return 0
 
-    targets = argv[1:] or ["examples/example-city"]
+    targets = argv[1:] or ["examples/example-gov"]
     paths = []
     for t in targets:
         p = ROOT / t

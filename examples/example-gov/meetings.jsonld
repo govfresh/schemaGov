@@ -2,16 +2,16 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/meeting/council-regular",
+      "@id": "https://example.gov/id/meeting/council-regular",
       "@type": "EventSeries",
       "name": "Example City Council regular meetings",
       "description": "Regular sittings of the City Council, open to the public.",
       "organizer": {
-        "@id": "https://example-city.gov/id/organization/city-council",
+        "@id": "https://example.gov/id/organization/city-council",
         "name": "Example City Council"
       },
       "location": {
-        "@id": "https://example-city.gov/id/facility/council-chambers",
+        "@id": "https://example.gov/id/facility/council-chambers",
         "name": "Council Chambers"
       },
       "eventAttendanceMode": "MixedEventAttendanceMode",
@@ -31,19 +31,19 @@
       }
     },
     {
-      "@id": "https://example-city.gov/id/meeting/council-2025-06-15",
+      "@id": "https://example.gov/id/meeting/council-2025-06-15",
       "@type": "Meeting",
       "name": "City Council meeting, 15 June 2025",
       "organizer": {
-        "@id": "https://example-city.gov/id/organization/city-council",
+        "@id": "https://example.gov/id/organization/city-council",
         "name": "Example City Council"
       },
       "superEvent": {
-        "@id": "https://example-city.gov/id/meeting/council-regular",
+        "@id": "https://example.gov/id/meeting/council-regular",
         "name": "Example City Council regular meetings"
       },
       "location": {
-        "@id": "https://example-city.gov/id/facility/council-chambers",
+        "@id": "https://example.gov/id/facility/council-chambers",
         "name": "Council Chambers"
       },
       "startDate": "2025-06-15T19:00:00-07:00",
@@ -51,71 +51,71 @@
       "eventStatus": "EventScheduled",
       "eventAttendanceMode": "MixedEventAttendanceMode",
       "isAccessibleForFree": true,
-      "agendaDocument": "https://example-city.gov/meetings/2025-06-15/agenda.pdf",
-      "minutes": "https://example-city.gov/meetings/2025-06-15/minutes.pdf",
+      "agendaDocument": "https://example.gov/meetings/2025-06-15/agenda.pdf",
+      "minutes": "https://example.gov/meetings/2025-06-15/minutes.pdf",
       "recording": [
         {
           "@type": "VideoObject",
           "name": "Council meeting video, 15 June 2025",
-          "contentUrl": "https://example-city.gov/meetings/2025-06-15/video.mp4",
+          "contentUrl": "https://example.gov/meetings/2025-06-15/video.mp4",
           "encodingFormat": "video/mp4",
           "duration": "PT2H20M"
         }
       ],
       "attendee": [
         {
-          "@id": "https://example-city.gov/id/person/maria-garcia",
+          "@id": "https://example.gov/id/person/maria-garcia",
           "name": "Maria Garcia"
         },
         {
-          "@id": "https://example-city.gov/id/person/priya-nair",
+          "@id": "https://example.gov/id/person/priya-nair",
           "name": "Priya Nair"
         },
         {
-          "@id": "https://example-city.gov/id/person/tomas-oliveira",
+          "@id": "https://example.gov/id/person/tomas-oliveira",
           "name": "Tom\u00e1s Oliveira"
         },
         {
-          "@id": "https://example-city.gov/id/person/aisha-bello",
+          "@id": "https://example.gov/id/person/aisha-bello",
           "name": "Aisha Bello"
         }
       ],
       "agendaItem": [
         {
           "@type": "AgendaItem",
-          "@id": "https://example-city.gov/id/meeting/council-2025-06-15/item-1",
+          "@id": "https://example.gov/id/meeting/council-2025-06-15/item-1",
           "name": "Approval of minutes, 11 May 2025",
           "position": 1,
           "result": "adopted"
         },
         {
           "@type": "AgendaItem",
-          "@id": "https://example-city.gov/id/meeting/council-2025-06-15/item-2",
+          "@id": "https://example.gov/id/meeting/council-2025-06-15/item-2",
           "name": "Ordinance 2025-15 \u2014 ground-floor housing in commercial zones, second reading",
           "description": "Second reading and adoption of an ordinance amending Chapter 17.40.",
           "position": 2,
           "result": "adopted",
           "about": [
             {
-              "@id": "https://example-city.gov/id/legislation/ordinance/2025-15",
+              "@id": "https://example.gov/id/legislation/ordinance/2025-15",
               "name": "Ordinance No. 2025-15"
             }
           ],
           "attachment": [
-            "https://example-city.gov/meetings/2025-06-15/staff-report-2025-15.pdf"
+            "https://example.gov/meetings/2025-06-15/staff-report-2025-15.pdf"
           ],
           "voteEvent": [
             {
               "@type": "VoteEvent",
-              "@id": "https://example-city.gov/id/meeting/council-2025-06-15/item-2/vote-1",
+              "@id": "https://example.gov/id/meeting/council-2025-06-15/item-2/vote-1",
               "name": "Motion to adopt Ordinance 2025-15",
               "startDate": "2025-06-15T20:42:00-07:00",
               "organizer": {
-                "@id": "https://example-city.gov/id/organization/city-council"
+                "@id": "https://example.gov/id/organization/city-council"
               },
               "about": [
                 {
-                  "@id": "https://example-city.gov/id/legislation/ordinance/2025-15",
+                  "@id": "https://example.gov/id/legislation/ordinance/2025-15",
                   "name": "Ordinance No. 2025-15"
                 }
               ],
@@ -139,7 +139,7 @@
                 {
                   "@type": "Vote",
                   "voter": {
-                    "@id": "https://example-city.gov/id/person/maria-garcia",
+                    "@id": "https://example.gov/id/person/maria-garcia",
                     "name": "Maria Garcia"
                   },
                   "option": "yes"
@@ -147,7 +147,7 @@
                 {
                   "@type": "Vote",
                   "voter": {
-                    "@id": "https://example-city.gov/id/person/priya-nair",
+                    "@id": "https://example.gov/id/person/priya-nair",
                     "name": "Priya Nair"
                   },
                   "option": "yes"
@@ -155,7 +155,7 @@
                 {
                   "@type": "Vote",
                   "voter": {
-                    "@id": "https://example-city.gov/id/person/aisha-bello",
+                    "@id": "https://example.gov/id/person/aisha-bello",
                     "name": "Aisha Bello"
                   },
                   "option": "yes"
@@ -163,7 +163,7 @@
                 {
                   "@type": "Vote",
                   "voter": {
-                    "@id": "https://example-city.gov/id/person/tomas-oliveira",
+                    "@id": "https://example.gov/id/person/tomas-oliveira",
                     "name": "Tom\u00e1s Oliveira"
                   },
                   "option": "no"
@@ -174,35 +174,35 @@
         },
         {
           "@type": "AgendaItem",
-          "@id": "https://example-city.gov/id/meeting/council-2025-06-15/item-3",
+          "@id": "https://example.gov/id/meeting/council-2025-06-15/item-3",
           "name": "Special election to fill the District 5 vacancy",
           "position": 3,
           "result": "deferred"
         },
         {
           "@type": "AgendaItem",
-          "@id": "https://example-city.gov/id/meeting/council-2025-06-15/item-4",
+          "@id": "https://example.gov/id/meeting/council-2025-06-15/item-4",
           "name": "Ordinance 2025-20 \u2014 FY2026 annual appropriation",
           "position": 4,
           "result": "adopted",
           "about": [
             {
-              "@id": "https://example-city.gov/id/legislation/ordinance/2025-20",
+              "@id": "https://example.gov/id/legislation/ordinance/2025-20",
               "name": "Ordinance No. 2025-20"
             }
           ],
           "voteEvent": [
             {
               "@type": "VoteEvent",
-              "@id": "https://example-city.gov/id/meeting/council-2025-06-15/item-4/vote-1",
+              "@id": "https://example.gov/id/meeting/council-2025-06-15/item-4/vote-1",
               "name": "Motion to adopt the FY2026 appropriation ordinance",
               "startDate": "2025-06-15T21:05:00-07:00",
               "organizer": {
-                "@id": "https://example-city.gov/id/organization/city-council"
+                "@id": "https://example.gov/id/organization/city-council"
               },
               "about": [
                 {
-                  "@id": "https://example-city.gov/id/legislation/ordinance/2025-20"
+                  "@id": "https://example.gov/id/legislation/ordinance/2025-20"
                 }
               ],
               "result": "passed",
@@ -221,7 +221,7 @@
                 {
                   "@type": "Vote",
                   "voter": {
-                    "@id": "https://example-city.gov/id/person/maria-garcia",
+                    "@id": "https://example.gov/id/person/maria-garcia",
                     "name": "Maria Garcia"
                   },
                   "option": "yes"
@@ -229,7 +229,7 @@
                 {
                   "@type": "Vote",
                   "voter": {
-                    "@id": "https://example-city.gov/id/person/priya-nair",
+                    "@id": "https://example.gov/id/person/priya-nair",
                     "name": "Priya Nair"
                   },
                   "option": "yes"
@@ -237,7 +237,7 @@
                 {
                   "@type": "Vote",
                   "voter": {
-                    "@id": "https://example-city.gov/id/person/aisha-bello",
+                    "@id": "https://example.gov/id/person/aisha-bello",
                     "name": "Aisha Bello"
                   },
                   "option": "yes"
@@ -245,7 +245,7 @@
                 {
                   "@type": "Vote",
                   "voter": {
-                    "@id": "https://example-city.gov/id/person/tomas-oliveira",
+                    "@id": "https://example.gov/id/person/tomas-oliveira",
                     "name": "Tom\u00e1s Oliveira"
                   },
                   "option": "yes"
@@ -257,17 +257,17 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/meeting/council-2025-07-09",
+      "@id": "https://example.gov/id/meeting/council-2025-07-09",
       "@type": "Meeting",
       "name": "City Council meeting, 9 July 2025",
       "organizer": {
-        "@id": "https://example-city.gov/id/organization/city-council"
+        "@id": "https://example.gov/id/organization/city-council"
       },
       "superEvent": {
-        "@id": "https://example-city.gov/id/meeting/council-regular"
+        "@id": "https://example.gov/id/meeting/council-regular"
       },
       "location": {
-        "@id": "https://example-city.gov/id/facility/council-chambers"
+        "@id": "https://example.gov/id/facility/council-chambers"
       },
       "startDate": "2025-07-09T19:00:00-07:00",
       "eventStatus": "EventCancelled",

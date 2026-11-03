@@ -35,7 +35,7 @@ for (const profile of fs.readdirSync(profilesDir)) {
 }
 
 // Every @context actually used by the examples
-const exDir = path.join(ROOT, 'examples/example-city')
+const exDir = path.join(ROOT, 'examples/example-gov')
 for (const f of fs.readdirSync(exDir).filter((f) => f.endsWith('.jsonld'))) {
   const ctx = JSON.parse(fs.readFileSync(path.join(exDir, f), 'utf8'))['@context']
   if (typeof ctx === 'string') expected.add(ctx)

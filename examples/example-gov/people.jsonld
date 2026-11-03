@@ -2,12 +2,12 @@
   "@context": "https://schema.govfresh.com/v1/context.jsonld",
   "@graph": [
     {
-      "@id": "https://example-city.gov/id/person/jane-smith",
+      "@id": "https://example.gov/id/person/jane-smith",
       "@type": "Person",
       "name": "Jane Smith",
       "givenName": "Jane",
       "familyName": "Smith",
-      "email": "mayor@example-city.gov",
+      "email": "mayor@example.gov",
       "identifier": [
         {
           "@type": "PropertyValue",
@@ -17,15 +17,15 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/person/john-doe",
+      "@id": "https://example.gov/id/person/john-doe",
       "@type": "Person",
       "name": "John Doe",
       "givenName": "John",
       "familyName": "Doe",
-      "email": "manager@example-city.gov"
+      "email": "manager@example.gov"
     },
     {
-      "@id": "https://example-city.gov/id/person/maria-garcia",
+      "@id": "https://example.gov/id/person/maria-garcia",
       "@type": "Person",
       "name": "Maria Garcia",
       "givenName": "Maria",
@@ -36,33 +36,33 @@
       ]
     },
     {
-      "@id": "https://example-city.gov/id/person/robert-johnson",
+      "@id": "https://example.gov/id/person/robert-johnson",
       "@type": "Person",
       "name": "Robert Johnson"
     },
     {
-      "@id": "https://example-city.gov/id/person/alan-reyes",
+      "@id": "https://example.gov/id/person/alan-reyes",
       "@type": "Person",
       "name": "Alan Reyes",
       "givenName": "Alan",
       "familyName": "Reyes"
     },
     {
-      "@id": "https://example-city.gov/id/person/priya-nair",
+      "@id": "https://example.gov/id/person/priya-nair",
       "@type": "Person",
       "name": "Priya Nair",
       "givenName": "Priya",
       "familyName": "Nair"
     },
     {
-      "@id": "https://example-city.gov/id/person/tomas-oliveira",
+      "@id": "https://example.gov/id/person/tomas-oliveira",
       "@type": "Person",
       "name": "Tom\u00e1s Oliveira",
       "givenName": "Tom\u00e1s",
       "familyName": "Oliveira"
     },
     {
-      "@id": "https://example-city.gov/id/person/aisha-bello",
+      "@id": "https://example.gov/id/person/aisha-bello",
       "@type": "Person",
       "name": "Aisha Bello",
       "givenName": "Aisha",

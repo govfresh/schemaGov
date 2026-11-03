@@ -6,11 +6,11 @@
   "scripts": {
     "build": "npx @11ty/eleventy --quiet",
     "start": "npx @11ty/eleventy --serve --quiet",
-    "validate": "python3 tools/validate.py examples/example-city",
+    "validate": "python3 tools/validate.py examples/example-gov",
     "check:namespace": "node tools/check-namespace.js",
     "check": "npm run build && npm run check:namespace && npm run check:context && npm run audit:jsonld && npm run validate && npm run validate:shacl && npm run validate:invalid && npm run validate:pilot",
     "validate:invalid": "python3 tools/check-invalid.py",
-    "validate:shacl": "python3 tools/shacl.py examples/example-city",
+    "validate:shacl": "python3 tools/shacl.py examples/example-gov",
     "validate:pilot": "python3 tools/validate.py examples/pilot-uk-contracts && python3 tools/shacl.py examples/pilot-uk-contracts && python3 tools/validate.py examples/pilot-ie-datasets && python3 tools/shacl.py examples/pilot-ie-datasets && python3 tools/validate.py examples/pilot-seattle-meetings && python3 tools/shacl.py examples/pilot-seattle-meetings && python3 tools/validate.py examples/pilot-nws-alerts && python3 tools/shacl.py examples/pilot-nws-alerts && python3 tools/validate.py examples/pilot-eurostat-budget && python3 tools/shacl.py examples/pilot-eurostat-budget && python3 tools/validate.py examples/pilot-uk-legislation && python3 tools/shacl.py examples/pilot-uk-legislation && python3 tools/validate.py examples/pilot-bloomington-311 && python3 tools/shacl.py examples/pilot-bloomington-311 && python3 tools/validate.py examples/pilot-seattle-permits && python3 tools/shacl.py examples/pilot-seattle-permits && python3 tools/validate.py examples/pilot-chicago-permits && python3 tools/shacl.py examples/pilot-chicago-permits && python3 tools/validate.py examples/pilot-uk-elections && python3 tools/shacl.py examples/pilot-uk-elections && python3 tools/validate.py examples/pilot-govuk-services && python3 tools/shacl.py examples/pilot-govuk-services && python3 tools/validate.py examples/pilot-nyc-capital && python3 tools/shacl.py examples/pilot-nyc-capital && python3 tools/validate.py examples/pilot-govuk-assessments && python3 tools/shacl.py examples/pilot-govuk-assessments",
     "check:context": "python3 tools/check-context.py",
     "audit:jsonld": "python3 tools/audit-jsonld.py",

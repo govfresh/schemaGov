@@ -49,7 +49,7 @@ Cross-entity links MUST be reference objects carrying `@id` and at most `@type` 
 as display hints:
 
 ```json
-"parentOrganization": {"@id": "https://example-city.gov/id/organization/city-government"}
+"parentOrganization": {"@id": "https://example.gov/id/organization/city-government"}
 ```
 
 An inlined copy is a second, unversioned assertion of the entity that will drift from the
@@ -141,7 +141,7 @@ publishers in different countries.
 - `vocabulary/schemagov.ttl` — gs: terms, each tied to schema.org by subclass or by the types it applies to
 - `profiles/_core/` — Jurisdiction · Organization · Person · Role · Identifier
 - `profiles/{org,code,meetings,requests,budget,procurement,catalog,alerts,permits,elections,services,projects}/` — one directory per [domain profile](/profiles/)
-- `examples/example-city/` — one coherent, cross-linked fixture set
+- `examples/example-gov/` — one coherent, cross-linked fixture set
 - `examples/_invalid/` — deliberately broken fixtures; `tools/check-invalid.py` fails unless each fault is caught
 - `crosswalks/` — mapping tables to the standards being profiled
 - `shapes/` — SHACL, for semantic validation
