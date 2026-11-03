@@ -10,49 +10,49 @@
       "@id": "gs:orgclass/government",
       "termCode": "government",
       "name": "Government",
-      "description": "The whole-of-government body at the top of an organization tree, such as a city, county, state or national government. It has no parent. Its legislature, executive and departments sit beneath it."
+      "description": "The body at the top of a government, such as a city, county, state or national government. It has no parent. Its council, executive and departments sit under it."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:orgclass/legislature",
       "termCode": "legislature",
       "name": "Legislature",
-      "description": "An elected group that debates and decides: a council, assembly, parliament, or board of supervisors."
+      "description": "An elected group that debates and decides, like a council, assembly, parliament or board of supervisors."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:orgclass/executive",
       "termCode": "executive",
       "name": "Executive",
-      "description": "The head of government's own office: the mayor's office, a cabinet, or a city manager's office."
+      "description": "The office of the head of government, like a mayor's office, a cabinet or a city manager's office."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:orgclass/department",
       "termCode": "department",
       "name": "Department",
-      "description": "A unit that delivers services under the executive."
+      "description": "A unit that provides services under the executive."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:orgclass/agency",
       "termCode": "agency",
       "name": "Agency",
-      "description": "A body with power the executive has handed off, often at arm's length from it."
+      "description": "A body that has been given power by the executive, often working at arm's length from it."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:orgclass/committee",
       "termCode": "committee",
       "name": "Committee",
-      "description": "A smaller group inside a legislature or board, usually focused on one subject."
+      "description": "A small group inside a legislature or board, usually focused on one subject."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:orgclass/commission",
       "termCode": "commission",
       "name": "Commission",
-      "description": "An appointed body that reviews, advises, or acts like a court on specific matters."
+      "description": "An appointed body that reviews, advises or rules on set matters."
     },
     {
       "@type": "DefinedTerm",
@@ -73,28 +73,28 @@
       "@id": "gs:orgclass/enterprise",
       "termCode": "enterprise",
       "name": "Public enterprise",
-      "description": "A business the government owns, like a utility, transit operator, or port authority."
+      "description": "A business the government owns, like a utility, a transit operator or a port."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:orgclass/division",
       "termCode": "division",
       "name": "Division",
-      "description": "A unit inside a department or agency, below the level that answers to the executive."
+      "description": "A unit inside a department or agency. It sits below the level that reports to the executive."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:orgclass/bureau",
       "termCode": "bureau",
       "name": "Bureau",
-      "description": "A unit inside a department or agency. Governments use bureau, division and section differently; pick the one that matches how the government itself describes the unit."
+      "description": "A unit inside a department or agency. Governments use bureau, division and section in different ways. Use the word the government itself uses."
     },
     {
       "@type": "DefinedTerm",
       "@id": "gs:orgclass/authority",
       "termCode": "authority",
       "name": "Authority",
-      "description": "A body created by statute to run a function with its own governing board and often its own revenue, such as a housing, transit or water authority."
+      "description": "A body set up by law to run one job. It often has its own board and its own income, like a housing, transit or water authority."
     }
   ]
 }
