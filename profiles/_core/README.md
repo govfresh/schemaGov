@@ -1,7 +1,7 @@
 # `_core` profile
 
-The entities every other profile references. Getting these wrong propagates into all six
-domains, which is why `_core` is built and validated before anything else.
+The entities every other profile references. Getting these wrong propagates into every
+other profile, which is why `_core` is built and validated before anything else.
 
 | Schema | Type | Purpose |
 |---|---|---|

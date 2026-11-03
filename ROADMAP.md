@@ -20,6 +20,19 @@ claim against the level it asserts, and rejects unknown levels.
 
 ---
 
+## Open work (as of 2026-11-03)
+
+- **A pilot for the org model.** Run the organization structure against a real county's data
+  (County of Marin) once the export is available. Needs an adapter and committed source data.
+- **`catalog` leftovers from the Irish portal pilot:** `collection_name` (55 of 60 datasets, a
+  dataset series; check DCAT `inSeries` and schema.org `isPartOf` first) and `rights` (1 of 60).
+- **Multilingual titles.** One `name` plus `inLanguage` today. Wait for a publisher that has them.
+- **Readability backlog.** `python3 scripts/readability.py` lists 111 vocabulary descriptions above
+  grade 9. It is not part of `npm run check`. Many are one-line definitions that score high because
+  they use words like "legislature", so treat the list as a prompt, not a target.
+- **`gs:fee`** ("Fee charged for a permit") needs reconciling with any fees profile.
+- **Tier two profiles** below, each after a real pilot.
+
 ## 1. Tier one
 
 ### `catalog` — discovery — **DONE**
@@ -44,7 +57,7 @@ is COVID-shaped — `quarantineGuidelines`, `gettingTestedInfo`, `travelBans`,
 CAP has all of it and is the international standard (IPAWS in the US, EU-Alert, and national
 systems worldwide). Project into `SpecialAnnouncement` for discovery only.
 
-### `permits` — permits and licences
+### `permits` — permits and licences — **DONE**
 **Depends on:** `_core`, `code` · **schema.org:** `GovernmentPermit` (a real skeleton)
 
 Building permits and business licences are the highest-volume records most governments hold.
@@ -67,7 +80,7 @@ Three things Legistar does not publish are now recorded rather than assumed: no
 untimezoned fields), and no resolvable location or jurisdiction. See
 [examples/pilot-seattle-meetings/README.md](examples/pilot-seattle-meetings/README.md).
 
-### `elections`
+### `elections` — **DONE**
 **Depends on:** `org` · **Standard:** NIST SP 1500-100, VIP
 
 Closes a loop already open in the built data: `org` records `roleClassification: "elected"`
@@ -80,7 +93,6 @@ Contests, candidates, results, polling places.
 
 | Profile | Standard | Note |
 |---|---|---|
-| `services` | Open Referral / HSDS | The service catalogue beyond 311 reporting: *how do I get a birth certificate*. `GovernmentService` already in use by `requests`. |
 | `grants` | IATI, 360Giving | Money **out** to third parties, distinct from procurement. `MonetaryGrant` exists. |
 | `consultations` | — | Comment periods, petitions, participatory budgeting. Couples to `meetings` and `code`. |
 | `indicators` | SDMX | Performance and SDG reporting. `Observation` and `StatisticalVariable` exist. |
@@ -217,7 +229,7 @@ built.
 
 ---
 
-## Publication path — **partly done**
+## Publication path — **DONE**
 
 **Verified.** `tools/check-context.py` serves the built site over local HTTP, rewrites the
 `@context` to that origin, and parses fixtures **by fetching the context** rather than
@@ -226,18 +238,12 @@ inlining it - then asserts the result is isomorphic to the inlined parse. It is 
 published site, and a *stale deploy* where the served context has drifted from the source
 file. Before this, no test had ever exercised the path a real consumer takes.
 
-**Still outstanding, and it needs you:**
+**Live and checked (2026-11-03).** `schema.govfresh.com` resolves and the site is deployed.
+`/v1/context.jsonld` is served as `application/ld+json` with `access-control-allow-origin: *`, so
+a strict JSON-LD processor and a browser can both fetch it. The Turtle file is served as
+`text/turtle`. Every vocabulary term resolves (`check-namespace.js`, which runs in CI).
 
-- `schema.govfresh.com` does not resolve. Every fixture and both pilots declare
-  `https://schema.govfresh.com/v1/context.jsonld` as their `@context`, so today a standard
-  JSON-LD processor fails on all of them. DNS plus a deploy.
-- The `Content-Type` GitHub Pages serves for `.jsonld` is still unverified. The local test
-  server sends `application/ld+json` deliberately, so it isolates the document/context path
-  rather than masking a MIME problem. If Pages serves `application/octet-stream`, strict
-  processors will reject the context and it will look like a data fault. Test this
-  immediately after the first deploy.
-
-## JSON-LD audit — findings open
+## JSON-LD audit — **DONE**
 
 `tools/audit-jsonld.py` (`npm run audit:jsonld`) uses PyLD, the reference JSON-LD processor,
 to check the class of fault that passes both validation tiers. It is wired into `npm run check` and CI now that its failures are resolved; the remaining
@@ -289,8 +295,9 @@ still warns.
 **Term dereferencing — RESOLVED.** Individual term IRIs used to 404. Published documents
 expand `governmentLevel: "municipal"` into `.../v1/level/municipal`, and that pointed at
 nothing on the live site. 229 term pages are now generated, one per declared term, and
-`check-namespace.js` covers every one - 259 URLs checked, up from 46. A term that stops
-resolving now fails the build.
+`check-namespace.js` covers every one. A term that stops resolving now fails the build.
+Classes, properties and code-list sets (250 terms) have their own pages too; see
+[PLAN-per-term-pages.md](PLAN-per-term-pages.md).
 
 **Note on check E's design.** rdflib's graph canonicalisation reports non-isomorphic for
 graphs differing only in blank-node labelling when a document has many similar blank nodes.
@@ -520,18 +527,21 @@ profiles usable by someone other than their author.
 1. catalog                                        DONE
 2. alerts                                         DONE
 3. one adapter + one real pilot publisher         DONE (OCDS -> UK Contracts Finder)
-4. permits                                        highest-volume records
-5. elections                                      closes the org loop
+4. permits                                        DONE
+5. elections                                      DONE
 6. tier two, reprioritised by what the pilot taught
 ```
 
-Steps 0-3 are complete. The UK Contracts Finder pilot found two schema errors in minutes that
+Steps 0-5 are complete. The UK Contracts Finder pilot found two schema errors in minutes that
 nine profiles of self-authored fixtures never surfaced - see
 [examples/pilot-uk-contracts/README.md](examples/pilot-uk-contracts/README.md). More adapters
 (CKAN, Open311, Legistar) would find more, and are worth more than new profiles.
 
-**Confirmed by the pilot, not yet fixed:** real portals carry per-language titles
-(`title_translated: {"en": ..., "ga": ...}` on data.gov.ie), an EU High Value Dataset category,
-a spatial reference system (`srs`), and `applicable_legislation` linking a dataset to an ELI
-URI - a `catalog` to `code` join this profile does not model. schemaGov currently carries a
-single `name` plus `inLanguage`, which cannot represent a bilingual publisher.
+**What the pilot found, and where it stands:** `applicableLegislation`, `hvdCategory`,
+`highValueDataset`, `spatialReferenceSystem`, `conformsTo` and `provenanceStatement` were added to
+`catalog` after the first run (see [examples/pilot-ie-datasets/README.md](examples/pilot-ie-datasets/README.md)).
+The bilingual-publisher concern was retracted by the wider sample: `title_translated` carries only
+English in 59 of 60 datasets and none has a real Irish title. schemaGov still has one `name` plus
+`inLanguage`, so a genuinely multilingual dataset would lose its other titles. That is a known
+limitation, not yet evidenced as urgent. Still unmapped: `collection_name` (55 of 60 datasets, a
+dataset-series grouping) and `rights` (1 of 60).
