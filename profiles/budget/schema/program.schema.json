@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.govfresh.com/v1/budget/program.schema.json",
+  "title": "Program",
+  "description": "An ongoing or defined government activity, administered by a government organization to achieve a public purpose, such as road maintenance or adult mental health. A program is persistent: it appears in many budgets across many fiscal years while a `BudgetLine` belongs to one. It is not an organization, not a bounded `Project` that ends, and not a `GovernmentService` a person can apply for. schema.org has no equivalent, so `gs:Program` is minted.",
+  "standards": [
+    "fiscal-data-package"
+  ],
+  "type": "object",
+  "properties": {
+    "@context": {},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This program's own stable identifier. It does not change from one fiscal year to the next."
+    },
+    "@type": {
+      "const": "Program",
+      "description": "Always `Program`."
+    },
+    "name": {
+      "type": "string",
+      "description": "The program's name, e.g. 'Street Maintenance'."
+    },
+    "alternateName": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Other names the program is known by."
+    },
+    "description": {
+      "type": "string",
+      "description": "What the program does and who it is for."
+    },
+    "url": {
+      "type": "string",
+      "format": "iri",
+      "description": "A page about this program."
+    },
+    "identifier": {
+      "type": "array",
+      "items": {
+        "$ref": "../_core/identifier.schema.json"
+      },
+      "description": "Scheme-qualified identifiers, such as the program code in a budget system. A code is only unique within that system."
+    },
+    "administeredBy": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `GovernmentOrganization` that runs this program."
+    },
+    "sourceDataset": {
+      "type": "string",
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "name"
+  ],
+  "additionalProperties": true
+}

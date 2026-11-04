@@ -30,7 +30,7 @@ turns each row into a `BudgetLine`.
 | dimension `functional-classification` | `functionalClassification` (COFOG) |
 | dimension `economic-classification` | `economicClassification` (GFSM) |
 | dimension `administrative-classification` | `administrativeClassification` → an organization reference |
-| dimension `activity` / programme | `programClassification` |
+| dimension `activity` / programme | `program` (a reference to a `Program`), or `programClassification` (the code as text) when there is no Program entity |
 | dimension `fin-source` | `fund` (a reference to a `Fund`), or `fundSource` (text) when there is no Fund entity |
 | dimension `geo-source` | via the budget's `about` |
 | dimension `date` | `startDate` / `endDate` |

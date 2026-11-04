@@ -207,6 +207,26 @@
       "administeredBy": {
         "@id": "https://invalid.example/id/jurisdiction/place"
       }
+    },
+    {
+      "@id": "https://invalid.example/id/budget-line/line-program-is-fund",
+      "@type": "BudgetLine",
+      "name": "Line whose program is a fund",
+      "program": {
+        "@id": "https://invalid.example/id/fund/no-name"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/program/no-name",
+      "@type": "Program"
+    },
+    {
+      "@id": "https://invalid.example/id/program/administered-by-place",
+      "@type": "Program",
+      "name": "Program administered by a place",
+      "administeredBy": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      }
     }
   ]
 }

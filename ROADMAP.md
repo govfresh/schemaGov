@@ -141,6 +141,16 @@ widening it from elections to funds, so no second property was minted. `example-
 and lines using both forms. The audit that checks every used term is defined, and the invalid
 fixtures, cover the new types. Backward compatible: all additions are optional. Next: `Program`.
 
+## Programs — DONE
+
+Third step of [PLAN-org-budget-model.md](PLAN-org-budget-model.md). Added `gs:Program`, a persistent
+government activity that appears across fiscal years (schema.org has none), and `BudgetLine.program`
+to reference it. `programClassification` stays as the publisher's own code. `administeredBy` now
+also covers programs. A program is not an organization, not a bounded Project and not a service;
+the budget, services and org READMEs say so. `example-gov` shows one Street Maintenance program
+referenced from FY2026 and FY2027 budget lines. Backward compatible: all additions are optional.
+This completes the plan; open questions about fund types and program nesting stay deferred.
+
 ## Extend, don't add
 
 - **Payroll and salaries** → extend `org`. `Role` already has `baseSalary` and `salaryCurrency`.

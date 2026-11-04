@@ -443,6 +443,11 @@
     "Budget": "gs:Budget",
     "BudgetLine": "gs:BudgetLine",
     "Fund": "gs:Fund",
+    "Program": "gs:Program",
+    "program": {
+      "@id": "gs:program",
+      "@type": "@id"
+    },
     "fund": {
       "@id": "gs:fund",
       "@type": "@id"

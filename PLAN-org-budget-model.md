@@ -1,6 +1,7 @@
 # Plan: organization and budget model update (mission, service area, Fund, Program)
 
-Status: planned, not started. Reviewed against `main` on 2026-11-03.
+Status: implemented in three steps (mission and service areas, Fund, Program), 2026-11-03.
+Reviewed against `main` on 2026-11-03.
 
 Goal: let schemaGov describe an organization's mission, a service-area grouping, and the durable
 things a budget points at (organization, fund, program), without minting anything the model already

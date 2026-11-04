@@ -199,7 +199,9 @@ defined. Revisit when a profile needs it.
 ### Keep structure and services apart
 
 A service, permit, program or fee is not an organizational unit, even when a government's website
-lists it under a department. Model it as its own entity and point at the owning organization:
+lists it under a department. Model it as its own entity and point at the owning organization. A
+program is a `gs:Program` (see the `budget` profile), linked to its organization with
+`administeredBy`:
 
 ```
 Environmental Health Division    GovernmentOrganization
