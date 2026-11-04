@@ -168,7 +168,8 @@
       },
       "direction": "revenue",
       "economicClassification": "14",
-      "position": 3
+      "position": 3,
+      "fundSource": "Building Inspection Fund"
     },
     {
       "@id": "https://example.gov/id/budget-line/fy2026/exp-public-works",
@@ -201,7 +202,12 @@
         {
           "@id": "https://example.gov/id/budget-line/fy2026/exp-pw-admin"
         }
-      ]
+      ],
+      "fund": {
+        "@id": "https://example.gov/id/fund/1000",
+        "name": "General Fund"
+      },
+      "fundSource": "General Fund"
     },
     {
       "@id": "https://example.gov/id/budget-line/fy2026/exp-street-maintenance",
@@ -345,7 +351,7 @@
     {
       "@id": "https://example.gov/id/budget-line/fy2026/exp-debt-interest",
       "@type": "BudgetLine",
-      "name": "Debt service \u2014 interest",
+      "name": "Debt service — interest",
       "budget": {
         "@id": "https://example.gov/id/budget/fy2026-approved",
         "name": "FY2026 approved budget"
@@ -376,6 +382,40 @@
       "direction": "financing",
       "economicClassification": "31",
       "position": 9
+    },
+    {
+      "@id": "https://example.gov/id/fund/1000",
+      "@type": "Fund",
+      "name": "General Fund",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "erp-fund-code",
+          "value": "1000"
+        }
+      ],
+      "description": "The city's main operating fund. It pays for services that have no dedicated source of money.",
+      "administeredBy": {
+        "@id": "https://example.gov/id/organization/city-government",
+        "name": "Example City Government"
+      }
+    },
+    {
+      "@id": "https://example.gov/id/fund/2080",
+      "@type": "Fund",
+      "name": "Building Inspection Fund",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "erp-fund-code",
+          "value": "2080"
+        }
+      ],
+      "description": "A special revenue fund. Building permit fees pay into it, and it pays for inspections.",
+      "administeredBy": {
+        "@id": "https://example.gov/id/organization/community-development",
+        "name": "Community Development Department"
+      }
     }
   ]
 }

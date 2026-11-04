@@ -58,8 +58,9 @@ changed and why.
   account or grouping a government uses to account for resources that are restricted, designated or
   otherwise managed for particular purposes. Have an accounting reader check the wording.
 - Properties, all reused where possible: `name`, `alternateName`, `description`, `url`,
-  `identifier` (required, scheme-qualified, like other entities), and `gs:administeredBy` (the
-  widened existing property).
+  `identifier` (optional, scheme-qualified; `@id` and `name` are the required fields, since a named
+  fund such as a general fund may have no code), and `gs:administeredBy` (the widened existing
+  property).
 - New `profiles/budget/schema/fund.schema.json`, and `Fund` in the type-to-schema mapping near
   the top of `tools/validate.py`.
 - No `fundClassification` in v1.
@@ -128,7 +129,7 @@ New terms: `mission`, `Fund`, `fund`, `Program`, `program`. `administeredBy` alr
   `npm run audit:jsonld`.
 - JSON Schema, SHACL shapes, and `tools/validate.py` mappings as above.
 - Tests: add to `examples/_invalid/` and `tools/check-invalid.py`: `fund` pointing at an
-  organization, `program` pointing at a fund, and a Fund with no identifier. Add a valid case
+  organization, `program` pointing at a fund, and a Fund with no name. Add a valid case
   with both `fundSource` text and a `fund` reference on the same line.
 
 ### 15. Generic examples (in `examples/example-gov`)

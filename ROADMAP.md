@@ -132,6 +132,15 @@ core READMEs document leadership as Post + Role + Person (elected and appointed)
 jurisdiction plus a boundary, and contact details and buildings. Backward compatible: one optional
 property and one new code-list value. Next: `Fund` and `BudgetLine.fund`, then `Program`.
 
+## Funds — DONE
+
+Second step of [PLAN-org-budget-model.md](PLAN-org-budget-model.md). Added `gs:Fund`, a persistent
+financial account (schema.org has none), and `BudgetLine.fund` to reference it. `fundSource` stays
+as source-system text. Reused the existing `gs:administeredBy` for the responsible organization,
+widening it from elections to funds, so no second property was minted. `example-gov` has two funds
+and lines using both forms. The audit that checks every used term is defined, and the invalid
+fixtures, cover the new types. Backward compatible: all additions are optional. Next: `Program`.
+
 ## Extend, don't add
 
 - **Payroll and salaries** → extend `org`. `Role` already has `baseSalary` and `salaryCurrency`.

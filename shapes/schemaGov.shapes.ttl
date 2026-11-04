@@ -120,6 +120,11 @@ gs:LegislationShape a sh:NodeShape ;
     sh:targetClass schema:Legislation ;
 
     sh:property [
+        sh:path gs:fund ;
+        sh:class gs:Fund ;
+        sh:message "fund must point at a Fund. Use fundSource for fund names that are only text." ] ;
+
+    sh:property [
         sh:path schema:isPartOf ;
         sh:class schema:Legislation ;
         sh:message "isPartOf must point at another piece of Legislation." ] ;
@@ -189,6 +194,14 @@ gs:BudgetLineShape a sh:NodeShape ;
         sh:path schema:isPartOf ;
         sh:class gs:BudgetLine ;
         sh:message "A budget line's parent must be another budget line." ] .
+
+gs:FundShape a sh:NodeShape ;
+    sh:targetClass gs:Fund ;
+
+    sh:property [
+        sh:path gs:administeredBy ;
+        sh:class schema:GovernmentOrganization ;
+        sh:message "A fund's administeredBy must be a government organization." ] .
 
 #############################  Procurement  #############################
 

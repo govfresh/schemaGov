@@ -442,6 +442,11 @@
     },
     "Budget": "gs:Budget",
     "BudgetLine": "gs:BudgetLine",
+    "Fund": "gs:Fund",
+    "fund": {
+      "@id": "gs:fund",
+      "@type": "@id"
+    },
     "budgetPhase": {
       "@id": "gs:budgetPhase",
       "@type": "@vocab",

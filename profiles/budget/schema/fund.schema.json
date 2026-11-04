@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.govfresh.com/v1/budget/fund.schema.json",
+  "title": "Fund",
+  "description": "A financial account or grouping a government uses to account for resources that are restricted, designated or otherwise managed for particular purposes. A fund is persistent: it appears in many budgets across many fiscal years, while a `BudgetLine` belongs to one budget. schema.org has no equivalent, so `gs:Fund` is minted.",
+  "standards": [
+    "fiscal-data-package"
+  ],
+  "type": "object",
+  "properties": {
+    "@context": {},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This fund's own stable identifier. It does not change from one fiscal year to the next."
+    },
+    "@type": {
+      "const": "Fund",
+      "description": "Always `Fund`."
+    },
+    "name": {
+      "type": "string",
+      "description": "The fund's official name, e.g. 'Building Inspection Fund'."
+    },
+    "alternateName": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Other names the fund is known by."
+    },
+    "description": {
+      "type": "string",
+      "description": "What the fund is for and how it is used."
+    },
+    "url": {
+      "type": "string",
+      "format": "iri",
+      "description": "A page about this fund."
+    },
+    "identifier": {
+      "type": "array",
+      "items": {
+        "$ref": "../_core/identifier.schema.json"
+      },
+      "description": "Scheme-qualified identifiers, such as the fund number in the government's accounting system. A fund number is only unique within that system."
+    },
+    "administeredBy": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `GovernmentOrganization` responsible for this fund."
+    },
+    "sourceDataset": {
+      "type": "string",
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "name"
+  ],
+  "additionalProperties": true
+}
