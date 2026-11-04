@@ -80,7 +80,11 @@
     },
     "fundSource": {
       "type": "string",
-      "description": "The fund or financing source, where the publisher tracks them."
+      "description": "The fund or financing source as text from the source system, where there is no `Fund` entity to point at. Use `fund` for a reference to a persistent fund. Both may be present."
+    },
+    "fund": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The persistent `Fund` this line draws on. A fund is a durable entity that appears in many budgets; this line belongs to one. `fundSource` stays valid for datasets that have no Fund entity."
     },
     "position": {
       "type": "integer",

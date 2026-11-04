@@ -49,6 +49,7 @@ SCHEMA_FOR = {
     "GovernmentService": "service.schema.json",
     "Budget": "budget.schema.json",
     "BudgetLine": "budget-line.schema.json",
+    "Fund": "fund.schema.json",
     "ContractingProcess": "contracting-process.schema.json",
     "Organization": "party.schema.json",
     "PublisherManifest": "manifest.schema.json",

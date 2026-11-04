@@ -187,6 +187,26 @@
       ],
       "organizationClassification": "department",
       "mission": 42
+    },
+    {
+      "@id": "https://invalid.example/id/budget-line/line-fund-is-org",
+      "@type": "BudgetLine",
+      "name": "Line whose fund is an organization",
+      "fund": {
+        "@id": "https://invalid.example/id/organization/unit-ok"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/fund/no-name",
+      "@type": "Fund"
+    },
+    {
+      "@id": "https://invalid.example/id/fund/administered-by-place",
+      "@type": "Fund",
+      "name": "Fund administered by a place",
+      "administeredBy": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      }
     }
   ]
 }

@@ -379,6 +379,17 @@ gs:BudgetLine a rdfs:Class ;
     rdfs:comment "One allocated amount within a budget, classified along the Fiscal Data Package dimensions." ;
     rdfs:subClassOf schema:Intangible .
 
+gs:Fund a rdfs:Class ;
+    rdfs:label "Fund" ;
+    rdfs:comment "A financial account or grouping a government uses to account for resources that are restricted, designated or otherwise managed for particular purposes, such as a general fund or a building inspection fund. A fund is a persistent entity: it appears in many budgets across many fiscal years, which a text value on a budget line cannot express. schema.org has no equivalent." ;
+    rdfs:subClassOf schema:Intangible .
+
+gs:fund a rdf:Property ;
+    rdfs:label "fund" ;
+    rdfs:comment "The persistent Fund a budget line draws on, as a reference. Use fundSource instead when the publisher has only a source-system name and no Fund entity." ;
+    schema:domainIncludes gs:BudgetLine ;
+    schema:rangeIncludes gs:Fund .
+
 gs:budgetPhase a rdf:Property ;
     rdfs:label "budget phase" ;
     rdfs:comment "Where in the budget cycle a figure comes from: proposed, approved, adjusted or executed. The field publishers most often omit and the one that matters most, since a figure without its phase is not comparable to any other figure." ;
@@ -429,7 +440,7 @@ gs:programClassification a rdf:Property ;
 
 gs:fundSource a rdf:Property ;
     rdfs:label "fund source" ;
-    rdfs:comment "The fund or financing source a line draws on." ;
+    rdfs:comment "The fund or financing source a line draws on, as text from the source system. Use fund for a reference to a persistent Fund entity." ;
     schema:domainIncludes gs:BudgetLine ;
     schema:rangeIncludes schema:Text .
 
@@ -893,9 +904,9 @@ gs:electionType a rdf:Property ; schema:domainIncludes gs:Election ; schema:rang
     rdfs:label "election type" .
 gs:electionStatus a rdf:Property ; schema:domainIncludes gs:Election ; schema:rangeIncludes schema:DefinedTerm ;
     rdfs:label "election status" .
-gs:administeredBy a rdf:Property ; schema:domainIncludes gs:Election ; schema:rangeIncludes schema:GovernmentOrganization ;
+gs:administeredBy a rdf:Property ; schema:domainIncludes gs:Election, gs:Fund ; schema:rangeIncludes schema:GovernmentOrganization ;
     rdfs:label "administered by" ;
-    rdfs:comment "The body running the election, which is frequently not the body being elected." .
+    rdfs:comment "The organization that runs or manages this. For an election, the body running it, which is frequently not the body being elected. For a fund, the body responsible for it." .
 gs:contest a rdf:Property ; schema:domainIncludes gs:Election ; schema:rangeIncludes gs:Contest ;
     rdfs:label "contest" .
 gs:contestType a rdf:Property ; schema:domainIncludes gs:Contest ; schema:rangeIncludes schema:DefinedTerm ;

@@ -46,6 +46,49 @@ enumerated, and publishers may use full subcodes such as `04.5` or `07.3.1` as t
 `administrativeClassification` points at an organization rather than carrying a department
 name as text, so budget lines join directly to the `org` profile.
 
+## Funds: a durable entity, not a text value
+
+A government tracks money by **fund**: a general fund, a building inspection fund, a road fund.
+A fund has a number, an official name, a purpose, and a body responsible for it. It also appears in
+many budgets over many years. A text value such as `"fundSource": "General Fund"` cannot carry any
+of that, and cannot be joined to anything.
+
+So there are two ways to say it, with different jobs:
+
+| Property | Use it for |
+|---|---|
+| `fund` | A reference to a persistent `Fund` entity. |
+| `fundSource` | The fund name as text from the source system, when there is no Fund entity to point at. |
+
+Both stay valid, and a line may carry both. A simple dataset can keep using `fundSource`. Nothing
+is removed.
+
+```json
+{
+  "@id": "https://example.gov/id/fund/2080",
+  "@type": "Fund",
+  "name": "Building Inspection Fund",
+  "identifier": [{"@type": "PropertyValue", "propertyID": "erp-fund-code", "value": "2080"}],
+  "description": "A special revenue fund. Building permit fees pay into it, and it pays for inspections.",
+  "administeredBy": {"@id": "https://example.gov/id/organization/community-development"}
+}
+```
+
+A fund code is only unique inside the accounting system that issued it, so give `identifier` a
+`propertyID`. The fund's `@id` is its own stable identity and does not change between fiscal years.
+
+### What is durable and what belongs to one budget
+
+```
+Budget                                (one period)
+  └── BudgetLine                      (one amount, in one budget)
+        ├── administrativeClassification → GovernmentOrganization   (durable)
+        └── fund                     → Fund                         (durable)
+```
+
+The organization and the fund last across budgets. A `BudgetLine` belongs to a single budget and
+points at them. See `examples/example-gov/budget.jsonld`.
+
 ## Currency is required on every amount
 
 Not inherited from the budget. Amounts get copied out of their document, and a figure that
