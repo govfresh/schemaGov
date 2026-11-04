@@ -46,6 +46,17 @@ enumerated, and publishers may use full subcodes such as `04.5` or `07.3.1` as t
 `administrativeClassification` points at an organization rather than carrying a department
 name as text, so budget lines join directly to the `org` profile.
 
+## Budget, line, program and fund
+
+Four things, with different lifetimes:
+
+- **Budget:** a government's financial plan for one period.
+- **BudgetLine:** one amount, or one grouping, within one budget.
+- **Program:** a persistent activity that appears in many budgets (next section).
+- **Fund:** a persistent financial account that appears in many budgets.
+
+The organization, program and fund are durable. A line belongs to one budget.
+
 ## Funds: a durable entity, not a text value
 
 A government tracks money by **fund**: a general fund, a building inspection fund, a road fund.
@@ -83,11 +94,50 @@ A fund code is only unique inside the accounting system that issued it, so give 
 Budget                                (one period)
   └── BudgetLine                      (one amount, in one budget)
         ├── administrativeClassification → GovernmentOrganization   (durable)
+        ├── program                  → Program                      (durable)
         └── fund                     → Fund                         (durable)
 ```
 
-The organization and the fund last across budgets. A `BudgetLine` belongs to a single budget and
+The organization, the program and the fund last across budgets. A `BudgetLine` belongs to a single budget and
 points at them. See `examples/example-gov/budget.jsonld`.
+
+## Programs: the activity a budget pays for
+
+A **program** is an ongoing activity a government organizes, runs or funds: Street Maintenance,
+Adult Mental Health, Library Operations. It lasts for years. A budget line for it is written fresh
+each fiscal year, so if the program were only a code on each line, there would be nothing that
+stays the same across years.
+
+| Property | Use it for |
+|---|---|
+| `program` | A reference to a persistent `Program` entity. |
+| `programClassification` | The publisher's own program or activity code, as text, when there is no Program entity. |
+
+Both stay valid, and a line may carry both. The Program has one `@id` for good. Its budget lines
+in FY2026, FY2027 and FY2028 all point at it, so the three years can be followed as one thing.
+A `Program` has a name and an optional description, identifiers and `administeredBy` (the
+organization that runs it).
+
+```
+Public Works Department (organization)
+   └── Street Maintenance (Program, administeredBy the department)
+         ├── FY2026 BudgetLine ── program
+         └── FY2027 BudgetLine ── program
+```
+
+### Program, Service and Project
+
+| | What it is | Example |
+|---|---|---|
+| **Program** | An activity government organizes, manages, runs or funds. | Road Maintenance, Elections Administration |
+| **Service** | Something a person or business can request, apply for or receive. | Apply for a building permit, get a library card |
+| **Project** | Bounded work with an end. | Replace the Main Street bridge, rebuild a service |
+
+An organization administers programs. A program may be delivered to the public through services.
+Not every program is a service, and not every budget program should be published as one. A
+program is also not an organization, even when a directory lists it under a department: a program
+sits beside the organization tree, linked by `administeredBy`. schemaGov does not yet define a
+direct link from a program to its services.
 
 ## Currency is required on every amount
 

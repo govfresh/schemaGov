@@ -76,7 +76,11 @@
     },
     "programClassification": {
       "type": "string",
-      "description": "The publisher's own programme or activity code."
+      "description": "The publisher's own programme or activity code, as text. Use `program` for a reference to a persistent program. Both may be present."
+    },
+    "program": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The persistent `Program` this line funds. A program is a durable activity that appears in many budgets; this line belongs to one. `programClassification` stays valid for datasets that have no Program entity."
     },
     "fundSource": {
       "type": "string",

@@ -234,7 +234,15 @@
         "@id": "https://example.gov/id/budget-line/fy2026/exp-public-works",
         "name": "Public Works"
       },
-      "position": 1
+      "position": 1,
+      "program": {
+        "@id": "https://example.gov/id/program/street-maintenance",
+        "name": "Street Maintenance"
+      },
+      "fund": {
+        "@id": "https://example.gov/id/fund/1000",
+        "name": "General Fund"
+      }
     },
     {
       "@id": "https://example.gov/id/budget-line/fy2026/exp-waste",
@@ -415,6 +423,75 @@
       "administeredBy": {
         "@id": "https://example.gov/id/organization/community-development",
         "name": "Community Development Department"
+      }
+    },
+    {
+      "@id": "https://example.gov/id/program/street-maintenance",
+      "@type": "Program",
+      "name": "Street Maintenance",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "erp-program-code",
+          "value": "PW-STREETS"
+        }
+      ],
+      "description": "Repairs and resurfaces city streets, and fills potholes.",
+      "administeredBy": {
+        "@id": "https://example.gov/id/organization/public-works",
+        "name": "Public Works Department"
+      }
+    },
+    {
+      "@id": "https://example.gov/id/budget/fy2027-proposed",
+      "@type": "Budget",
+      "name": "Example City FY2027 proposed budget",
+      "description": "The city manager's proposed budget for fiscal year 2027. The Street Maintenance program appears here under the same identity as in FY2026.",
+      "publisher": {
+        "@id": "https://example.gov/id/organization/city-government"
+      },
+      "about": {
+        "@id": "https://example.gov/id/jurisdiction/example-city"
+      },
+      "budgetPhase": "proposed",
+      "fiscalYear": "FY2027",
+      "startDate": "2026-07-01",
+      "endDate": "2027-06-30",
+      "currency": "USD",
+      "budgetLine": [
+        {
+          "@id": "https://example.gov/id/budget-line/fy2027/exp-street-maintenance"
+        }
+      ],
+      "dateModified": "2026-04-27"
+    },
+    {
+      "@id": "https://example.gov/id/budget-line/fy2027/exp-street-maintenance",
+      "@type": "BudgetLine",
+      "name": "Street maintenance programme",
+      "budget": {
+        "@id": "https://example.gov/id/budget/fy2027-proposed",
+        "name": "FY2027 proposed budget"
+      },
+      "amount": {
+        "@type": "MonetaryAmount",
+        "value": 8300000,
+        "currency": "USD"
+      },
+      "direction": "expenditure",
+      "functionalClassification": "04.5",
+      "economicClassification": "22",
+      "administrativeClassification": {
+        "@id": "https://example.gov/id/organization/public-works",
+        "name": "Public Works Department"
+      },
+      "program": {
+        "@id": "https://example.gov/id/program/street-maintenance",
+        "name": "Street Maintenance"
+      },
+      "fund": {
+        "@id": "https://example.gov/id/fund/1000",
+        "name": "General Fund"
       }
     }
   ]

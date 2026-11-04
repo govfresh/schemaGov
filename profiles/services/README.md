@@ -57,6 +57,18 @@ A service and a location are independent: one office delivers many services, one
 from many offices, and the opening hours belong to the pairing rather than to either alone.
 HSDS models this as a separate entity and so does this profile.
 
+## A service is not a program
+
+A **service** is something a person or business can request, apply for, receive or complete:
+apply for a building permit, get a library card. A **program** (`gs:Program`, in the `budget`
+profile) is an activity a government organizes, runs or funds: Road Maintenance, Library
+Operations. Programs appear in budgets. Services appear in this catalogue. Conceptually an
+organization administers a program, and a program may be delivered through services.
+
+Do not publish every budget program as a `GovernmentService`. Most programs, like street
+maintenance, are not something a resident applies for. This profile does not define a program to
+service link yet. See `profiles/budget/README.md`.
+
 ## Relationship to `requests`
 
 Both profiles describe `schema:GovernmentService`. **This is the canonical, fuller
