@@ -34,6 +34,7 @@ no vacancy or term-limit concept either.
 | Government body | `GovernmentOrganization` | schema.org |
 | Parent | `parentOrganization` | schema.org; Popolo `parent_id`; ORG `subOrganizationOf` |
 | Child | `subOrganization`, `department` | schema.org. Derived from the parent link, not authoritative |
+| Mission statement | `mission` | **schemaGov (`gs:mission`).** No schema.org or Popolo equivalent. The closest is W3C ORG `org:purpose`, which is a looser statement of what an organization is for |
 | Kind of body | `organizationClassification` | **schemaGov code list**, aligned with Popolo `classification` and ORG `OrganizationalUnit` / `FormalOrganization` |
 | Territory governed | `areaServed` pointing at a Jurisdiction | schema.org; Popolo `area_id` |
 | Source-system codes | `identifier` with `propertyID` | schema.org `PropertyValue`; Popolo `identifiers` |
@@ -45,7 +46,7 @@ no vacancy or term-limit concept either.
 
 `organizationClassification` is where schemaGov adds meaning. schema.org has no property for the
 kind of government body, and Popolo's `classification` is free text. The code list makes it
-checkable. A `government` value marks the root of a tree and is a schemaGov addition.
+checkable. `government` (the root of a tree) and `serviceArea` (a grouping of departments) are schemaGov additions.
 
 ## Where publishers get this wrong
 

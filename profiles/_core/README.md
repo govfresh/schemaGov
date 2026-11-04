@@ -41,6 +41,23 @@ The repetition is deliberate, not a mistake.
 enormously by country. A publisher SHOULD map a local tier onto the closest term and carry
 the local name in `alternateName`, rather than requesting a new term.
 
+## Districts: a jurisdiction and its boundary
+
+A district (a council district, a supervisorial district) is a **jurisdiction**, not a special
+kind of entity. Give it its own `AdministrativeArea` with its own `@id`. Keep its shape in a
+separate `Boundary` that points back at it. A boundary changes when districts are redrawn. The
+district's identity does not, so records about it stay attached to the same `@id`. A Post that is
+elected from a district points at it with `representsJurisdiction`. See
+`examples/example-gov/jurisdictions.jsonld` and `boundaries.jsonld`.
+
+## Contact details and buildings
+
+Use the schema.org properties already on the organization: `address` (a `PostalAddress`),
+`contactPoint` (telephone, email, languages), `url`, and `location` for the `Facility` it
+occupies. The organization points at the building; the building never points back with an
+organization property. Do not add per-organization contact fields. See
+`examples/example-gov/organizations.jsonld` and `facilities.jsonld`.
+
 ## `subOrganization` vs `department`
 
 Use `subOrganization` for bodies with their own constitution — councils, committees,

@@ -137,6 +137,13 @@ gs:ElectionStatus a schema:DefinedTermSet ;
 
 #################  org profile  #################
 
+gs:mission a rdf:Property ;
+    rdfs:label "mission" ;
+    rdfs:comment "The formally stated mission or purpose of an organization, as the organization itself words it. Kept apart from description, which is a general overview: source documents usually carry both, and merging them loses which one is the official statement." ;
+    schema:domainIncludes schema:GovernmentOrganization ;
+    schema:rangeIncludes schema:Text .
+
+
 gs:Post a rdfs:Class ;
     rdfs:label "Post" ;
     rdfs:comment "An office that exists independently of whoever holds it. A schema:Role binds a person to an organization for a time span, but when nobody holds the office there is no Role and the office still exists. Equivalent to Popolo Post. schema.org has no such concept." ;
