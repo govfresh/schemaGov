@@ -173,6 +173,20 @@
       "isPartOf": {
         "@id": "https://invalid.example/id/organization/unit-ok"
       }
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-bad-mission",
+      "@type": "GovernmentOrganization",
+      "name": "Mission as a number",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "unit-bad-mission"
+        }
+      ],
+      "organizationClassification": "department",
+      "mission": 42
     }
   ]
 }

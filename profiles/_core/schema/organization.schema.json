@@ -34,6 +34,10 @@
       "type": "string",
       "description": "A plain-language description of the organization."
     },
+    "mission": {
+      "type": "string",
+      "description": "The organization's formally stated mission or purpose, as it words it. Optional. Kept apart from `description`, which is a general overview."
+    },
     "url": {
       "type": "string",
       "format": "iri",
@@ -71,7 +75,8 @@
         "enterprise",
         "division",
         "bureau",
-        "authority"
+        "authority",
+        "serviceArea"
       ]
     },
     "governmentLevel": {

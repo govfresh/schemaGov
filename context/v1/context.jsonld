@@ -78,6 +78,7 @@
       "@id": "schema:endDate",
       "@type": "schema:Date"
     },
+    "mission": "gs:mission",
     "foundingDate": {
       "@id": "schema:foundingDate",
       "@type": "schema:Date"

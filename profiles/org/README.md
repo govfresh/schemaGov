@@ -73,14 +73,68 @@ Jurisdiction: Example City
 GovernmentOrganization: Example City Government          (government)
         │
         ├── City Council                                  (legislature)
-        ├── Community Development Department              (department)
-        │       ├── Planning Division                     (division)
-        │       └── Environmental Health Division         (division)
-        └── Public Works Department                       (department)
+        └── Community Services                            (serviceArea)
+                ├── Community Development Department      (department)
+                │       ├── Planning Division             (division)
+                │       └── Environmental Health Division (division)
+                └── Public Works Department               (department)
 ```
+
+A **service area** is a grouping of related departments, such as public safety or health and human
+services. It is still a `GovernmentOrganization`, with `organizationClassification: "serviceArea"`,
+and `parentOrganization` places it in the tree. Not every government has them, so a department
+can sit directly under the government. There is no `ServiceArea` class.
 
 Staff, budgets, services, contracts and fees belong to the organization, never to the
 jurisdiction. The full working example is `examples/example-gov/organizations.jsonld`.
+
+### Mission and description
+
+`mission` is the organization's formally stated mission or purpose, in its own words.
+`description` is a general overview. Source documents usually carry both, so keep them apart:
+merging them loses which one is the official statement. Both are optional.
+
+```json
+{
+  "@type": "GovernmentOrganization",
+  "name": "Community Development Department",
+  "mission": "Guide how land is used and keep buildings and food businesses safe.",
+  "description": "Handles planning, building permits and environmental health."
+}
+```
+
+schema.org has no mission property, so `mission` is a schemaGov term (`gs:mission`).
+
+### Leadership: offices, not name fields
+
+Who leads an organization is a **Post** (the office), held through a **Role** by a **Person**.
+Do not put a name in a field such as `director: "Jane Smith"`. That loses the office, and loses who
+held it before.
+
+```
+Organization ── Post ── Role ── Person
+```
+
+**Elected officials.** A council seat is a Post held through an `OrganizationRole`. A seat elected
+from a district points at that district with `representsJurisdiction`:
+
+```
+City Council
+   └── Post: Councilmember, District 2
+         ├── representsJurisdiction → District 2 (an AdministrativeArea)
+         └── OrganizationRole → Person
+```
+
+**Appointed leaders.** A department head is the same pattern, with an `EmployeeRole`:
+
+```
+Public Works Department
+   └── Post: Director
+         └── EmployeeRole → Person
+```
+
+When the director changes, close the old Role with `endDate` and open a new one. The Post and the
+department stay the same. Working examples: `examples/example-gov/posts.jsonld` and `people.jsonld`.
 
 ### Hierarchy
 
@@ -159,6 +213,7 @@ Environmental Health Division    GovernmentOrganization
 ```
 A government body or unit inside one?       → GovernmentOrganization
 Does it have a parent?                      → parentOrganization (none for the government itself)
+A group of related departments?             → organizationClassification: serviceArea
 What kind of body is it?                    → organizationClassification
 Does it have a code in another system?      → identifier, with propertyID
 Does it have a public page?                 → url (not @id)

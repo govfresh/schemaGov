@@ -122,6 +122,16 @@ canonical hierarchy link.
   source data in the repo yet).
 - **Follow-up:** `gs:fee` ("Fee charged for a permit") needs reconciling with the fees profile.
 
+## Mission and service areas — DONE
+
+First step of [PLAN-org-budget-model.md](PLAN-org-budget-model.md). Added `mission` (a stated
+mission, kept apart from `description`; schema.org has no equivalent) and the `serviceArea`
+organization classification (a grouping of departments; still a `GovernmentOrganization`, no new
+class). `example-gov` now shows government, service area, department, division. The org and
+core READMEs document leadership as Post + Role + Person (elected and appointed), districts as a
+jurisdiction plus a boundary, and contact details and buildings. Backward compatible: one optional
+property and one new code-list value. Next: `Fund` and `BudgetLine.fund`, then `Program`.
+
 ## Extend, don't add
 
 - **Payroll and salaries** → extend `org`. `Role` already has `baseSalary` and `salaryCurrency`.

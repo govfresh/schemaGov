@@ -95,6 +95,13 @@
       "termCode": "authority",
       "name": "Authority",
       "description": "A body set up by law to run one job. It often has its own board and its own income, like a housing, transit or water authority."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:orgclass/serviceArea",
+      "termCode": "serviceArea",
+      "name": "Service area",
+      "description": "A group of related departments under one government, such as public safety or health and human services. It is a grouping of bodies, not a body that delivers services itself."
     }
   ]
 }

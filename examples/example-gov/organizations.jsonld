@@ -41,11 +41,7 @@
       ],
       "department": [
         {
-          "@id": "https://example.gov/id/organization/community-development"
-        },
-        {
-          "@id": "https://example.gov/id/organization/public-works",
-          "name": "Public Works Department"
+          "@id": "https://example.gov/id/organization/community-services"
         }
       ],
       "member": [
@@ -93,7 +89,8 @@
       "location": {
         "@id": "https://example.gov/id/facility/city-hall",
         "name": "Example City Hall"
-      }
+      },
+      "mission": "Serve the residents of Example City with open, fair and effective government."
     },
     {
       "@id": "https://example.gov/id/organization/city-council",
@@ -254,7 +251,7 @@
         "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "parentOrganization": {
-        "@id": "https://example.gov/id/organization/city-government"
+        "@id": "https://example.gov/id/organization/community-services"
       },
       "contactPoint": [
         {
@@ -266,6 +263,36 @@
             "en-US",
             "es-US"
           ]
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/organization/community-services",
+      "@type": "GovernmentOrganization",
+      "name": "Community Services",
+      "description": "Groups the departments that build, maintain and regulate the physical city.",
+      "mission": "Keep the city safe, clean and well maintained, and help it grow in a planned way.",
+      "organizationClassification": "serviceArea",
+      "governmentLevel": "municipal",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "community-services"
+        }
+      ],
+      "areaServed": {
+        "@id": "https://example.gov/id/jurisdiction/example-city"
+      },
+      "parentOrganization": {
+        "@id": "https://example.gov/id/organization/city-government"
+      },
+      "department": [
+        {
+          "@id": "https://example.gov/id/organization/community-development"
+        },
+        {
+          "@id": "https://example.gov/id/organization/public-works"
         }
       ]
     },
@@ -292,7 +319,7 @@
         "@id": "https://example.gov/id/jurisdiction/example-city"
       },
       "parentOrganization": {
-        "@id": "https://example.gov/id/organization/city-government"
+        "@id": "https://example.gov/id/organization/community-services"
       },
       "url": "https://example.gov/departments/community-development",
       "department": [
@@ -302,7 +329,8 @@
         {
           "@id": "https://example.gov/id/organization/environmental-health"
         }
-      ]
+      ],
+      "mission": "Guide how land is used and keep buildings and food businesses safe."
     },
     {
       "@id": "https://example.gov/id/organization/planning",
