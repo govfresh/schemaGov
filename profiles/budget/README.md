@@ -20,6 +20,10 @@ approved, adjusted, and executed are four different numbers for the same line, a
 publisher who ships "the budget" without saying which one has published something that cannot
 be used.
 
+A fifth value, `planned`, is for the figures a multi-year plan shows for future years that
+nobody has put forward for adoption yet, such as the later years of a capital improvement
+program. It is not a Fiscal Data Package value.
+
 `budgetPhase` is therefore required on every Budget. `supersedes` links a phase to the one it
 revises, and both are retained — comparing a proposal against what was actually approved, and
 approved against what was actually spent, is most of what budget transparency is for.

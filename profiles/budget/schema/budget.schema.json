@@ -53,7 +53,8 @@
         "proposed",
         "approved",
         "adjusted",
-        "executed"
+        "executed",
+        "planned"
       ]
     },
     "fiscalYear": {

@@ -3,7 +3,7 @@
   "@id": "https://schema.govfresh.com/v1/BudgetPhase",
   "@type": "DefinedTermSet",
   "name": "Budget phase",
-  "description": "Where a figure sits in the budget cycle, as the Fiscal Data Package defines it. Publishers skip this field more than any other. But it matters most: a proposed figure and an executed figure for the same line are different numbers. Comparing them without knowing which is which gives you nonsense.",
+  "description": "Where a figure sits in the budget cycle. The first four values are the Fiscal Data Package's; planned is added for future years in a multi-year plan. Publishers skip this field more than any other. But it matters most: a proposed figure and an executed figure for the same line are different numbers. Comparing them without knowing which is which gives you nonsense.",
   "hasDefinedTerm": [
     {
       "@type": "DefinedTerm",
@@ -32,6 +32,13 @@
       "termCode": "executed",
       "name": "Executed",
       "description": "What was actually spent or received. Usually final only after an audit."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:phase/planned",
+      "termCode": "planned",
+      "name": "Planned",
+      "description": "A figure for a later year in a multi-year plan, like a capital plan. It is shown for planning. No one has asked for it to be adopted yet. The Fiscal Data Package has no value for it."
     }
   ]
 }
