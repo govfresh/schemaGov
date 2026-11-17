@@ -403,7 +403,7 @@ gs:fund a rdf:Property ;
 
 gs:budgetPhase a rdf:Property ;
     rdfs:label "budget phase" ;
-    rdfs:comment "Where in the budget cycle a figure comes from: proposed, approved, adjusted or executed. The field publishers most often omit and the one that matters most, since a figure without its phase is not comparable to any other figure." ;
+    rdfs:comment "Where in the budget cycle a figure comes from: proposed, approved, adjusted, executed or planned. The field publishers most often omit and the one that matters most, since a figure without its phase is not comparable to any other figure." ;
     schema:domainIncludes gs:Budget, gs:BudgetLine ;
     schema:rangeIncludes schema:DefinedTerm .
 

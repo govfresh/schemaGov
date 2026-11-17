@@ -50,7 +50,8 @@
         "proposed",
         "approved",
         "adjusted",
-        "executed"
+        "executed",
+        "planned"
       ]
     },
     "direction": {

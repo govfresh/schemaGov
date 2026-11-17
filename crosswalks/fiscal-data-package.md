@@ -49,6 +49,10 @@ children.
 
 **schemaGov requires currency per line.** FDP allows it as a package-level measure.
 
+**schemaGov adds a budget phase for future years.** FDP's `phase` dimension has no value for a
+figure that a multi-year plan shows for a later year and that has not been put forward for
+adoption. schemaGov adds `planned` for it. A `planned` line has no FDP equivalent.
+
 ## Classification standards
 
 Neither COFOG nor GFSM is defined by schemaGov; both are enumerated at their top level as
