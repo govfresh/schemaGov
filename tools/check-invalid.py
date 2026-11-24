@@ -49,6 +49,8 @@ FAULTS = {
     "policy/bad-type": "legislationType outside the code list",
     "policy/dangling-citation": "citation points at an entity that does not exist",
     "policy/bad-date": "malformed effective date",
+    "policy/bad-date-month": "effective date with a month outside 01-12",
+    "policy/bad-date-short-year": "effective date as an ambiguous two-digit-year string",
     "policy/passed-by-place": "approving body is a jurisdiction",
     "policy/citation-is-org": "citation points at an organization",
     "policy/term-bad-set": "definition belongs to something that is not a term set",
@@ -73,7 +75,7 @@ FAULTS = {
     "statistics/area-in-org": "statistical area contained in an organization",
 }
 CLEAN = ["project/ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
-         "policy/clean-top", "policy/clean-part", "policy/term-ok",
+         "policy/clean-top", "policy/clean-part", "policy/term-ok", "policy/partial-date-ok",
          "statistics/ok", "statistics/ok-period", "statistics/ok-no-uncertainty", "statistics/area-ok",
          "statistics/var-ok"]
 
