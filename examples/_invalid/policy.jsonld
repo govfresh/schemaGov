@@ -135,6 +135,36 @@
       "legislationDateOfApplicability": "April 1"
     },
     {
+      "@id": "https://invalid.example/id/policy/bad-date-month",
+      "@type": "Legislation",
+      "name": "bad-date-month",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "legislationDateOfApplicability": "2005-13"
+    },
+    {
+      "@id": "https://invalid.example/id/policy/bad-date-short-year",
+      "@type": "Legislation",
+      "name": "bad-date-short-year",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "legislationDateOfApplicability": "02-07-17"
+    },
+    {
+      "@id": "https://invalid.example/id/policy/partial-date-ok",
+      "@type": "Legislation",
+      "name": "partial-date-ok",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "legislationDateOfApplicability": "2005-01"
+    },
+    {
       "@id": "https://invalid.example/id/policy/passed-by-place",
       "@type": "Legislation",
       "name": "passed-by-place",

@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.govfresh.com/v1/context.jsonld",
+  "@graph": [
+    {
+      "@id": "https://www.marincounty.gov/id/jurisdiction/county-of-marin",
+      "@type": "AdministrativeArea",
+      "name": "County of Marin",
+      "governmentLevel": "subregional",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "county-of-marin"
+        }
+      ]
+    }
+  ]
+}

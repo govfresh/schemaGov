@@ -120,18 +120,18 @@
     },
     "legislationDate": {
       "type": "string",
-      "format": "date",
-      "description": "Date of adoption or signature."
+      "pattern": "^\\d{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\\d|3[01]))?)?$",
+      "description": "Date of adoption or signature. Accepts `YYYY`, `YYYY-MM` or `YYYY-MM-DD`: many sources give only a year or month, and a day must not be invented."
     },
     "legislationDateOfApplicability": {
       "type": "string",
-      "format": "date",
-      "description": "When it becomes applicable, which can differ from entry into force."
+      "pattern": "^\\d{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\\d|3[01]))?)?$",
+      "description": "When it becomes applicable, which can differ from entry into force. Accepts `YYYY`, `YYYY-MM` or `YYYY-MM-DD`: many sources give only a year or month, and a day must not be invented."
     },
     "legislationDateVersion": {
       "type": "string",
-      "format": "date",
-      "description": "The point in time this description of the legislation is valid for. This is how consolidated codes express versioning, and the hardest part of publishing a municipal code correctly."
+      "pattern": "^\\d{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\\d|3[01]))?)?$",
+      "description": "The point in time this description of the legislation is valid for. This is how consolidated codes express versioning, and the hardest part of publishing a municipal code correctly. Accepts `YYYY`, `YYYY-MM` or `YYYY-MM-DD`: many sources give only a year or month, and a day must not be invented."
     },
     "version": {
       "type": [

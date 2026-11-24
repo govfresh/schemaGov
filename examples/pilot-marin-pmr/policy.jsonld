@@ -1,0 +1,214 @@
+{
+  "@context": "https://schema.govfresh.com/v1/context.jsonld",
+  "@graph": [
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/personnel-management-regulations",
+      "@type": "Legislation",
+      "legislationIdentifier": "PMR",
+      "name": "Personnel Management Regulations",
+      "codificationLevel": "code",
+      "legislationType": "regulation",
+      "legislationJurisdiction": {
+        "@id": "https://www.marincounty.gov/id/jurisdiction/county-of-marin",
+        "name": "County of Marin"
+      },
+      "publisher": {
+        "@id": "https://www.marincounty.gov/id/organization/human-resources",
+        "name": "County of Marin Human Resources"
+      },
+      "url": "https://www.hr.marincounty.gov/regulations-policies-procedures/personnel-management-regulations/all-personnel-management-regulations"
+    },
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/personnel-management-regulations/part-2",
+      "@type": "Legislation",
+      "legislationIdentifier": "Section 2",
+      "name": "Personnel Conduct and Standards of Employment",
+      "codificationLevel": "part",
+      "position": 2,
+      "isPartOf": {
+        "@id": "https://www.marincounty.gov/id/regulation/personnel-management-regulations"
+      },
+      "legislationType": "regulation"
+    },
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/pmr-23",
+      "@type": "Legislation",
+      "legislationIdentifier": "PMR 23",
+      "name": "Electronic Media",
+      "codificationLevel": "chapter",
+      "legislationType": "regulation",
+      "position": 3,
+      "isPartOf": {
+        "@id": "https://www.marincounty.gov/id/regulation/personnel-management-regulations/part-2"
+      },
+      "legislationDateOfApplicability": "2005-01",
+      "version": "0"
+    },
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/pmr-27",
+      "@type": "Legislation",
+      "legislationIdentifier": "PMR 27",
+      "name": "Telework Policy",
+      "codificationLevel": "chapter",
+      "legislationType": "regulation",
+      "position": 6,
+      "isPartOf": {
+        "@id": "https://www.marincounty.gov/id/regulation/personnel-management-regulations/part-2"
+      },
+      "hasPart": [
+        {
+          "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.1"
+        },
+        {
+          "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.2"
+        },
+        {
+          "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.3"
+        },
+        {
+          "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.4"
+        },
+        {
+          "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.5"
+        },
+        {
+          "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.6"
+        },
+        {
+          "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.7"
+        },
+        {
+          "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.8"
+        },
+        {
+          "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.9"
+        }
+      ],
+      "legislationDateOfApplicability": "2006-07-30",
+      "version": "0"
+    },
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.1",
+      "@type": "Legislation",
+      "legislationIdentifier": "27.1",
+      "name": "Definitions",
+      "codificationLevel": "section",
+      "position": 1,
+      "isPartOf": {
+        "@id": "https://www.marincounty.gov/id/regulation/pmr-27"
+      },
+      "legislationType": "regulation"
+    },
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.2",
+      "@type": "Legislation",
+      "legislationIdentifier": "27.2",
+      "name": "Eligibility",
+      "codificationLevel": "section",
+      "position": 2,
+      "isPartOf": {
+        "@id": "https://www.marincounty.gov/id/regulation/pmr-27"
+      },
+      "legislationType": "regulation"
+    },
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.3",
+      "@type": "Legislation",
+      "legislationIdentifier": "27.3",
+      "name": "Authorization Forms and Approval Process",
+      "codificationLevel": "section",
+      "position": 3,
+      "isPartOf": {
+        "@id": "https://www.marincounty.gov/id/regulation/pmr-27"
+      },
+      "citation": [
+        {
+          "@id": "https://www.marincounty.gov/id/regulation/pmr-27"
+        }
+      ],
+      "legislationType": "regulation"
+    },
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.4",
+      "@type": "Legislation",
+      "legislationIdentifier": "27.4",
+      "name": "General Telework Requirements and Considerations",
+      "codificationLevel": "section",
+      "position": 4,
+      "isPartOf": {
+        "@id": "https://www.marincounty.gov/id/regulation/pmr-27"
+      },
+      "legislationType": "regulation"
+    },
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.5",
+      "@type": "Legislation",
+      "legislationIdentifier": "27.5",
+      "name": "Telework Office Use and Equipment",
+      "codificationLevel": "section",
+      "position": 5,
+      "isPartOf": {
+        "@id": "https://www.marincounty.gov/id/regulation/pmr-27"
+      },
+      "citation": [
+        {
+          "@id": "https://www.marincounty.gov/id/regulation/pmr-27"
+        }
+      ],
+      "legislationType": "regulation"
+    },
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.6",
+      "@type": "Legislation",
+      "legislationIdentifier": "27.6",
+      "name": "Health, Safety and Risk Management",
+      "codificationLevel": "section",
+      "position": 6,
+      "isPartOf": {
+        "@id": "https://www.marincounty.gov/id/regulation/pmr-27"
+      },
+      "citation": [
+        {
+          "@id": "https://www.marincounty.gov/id/regulation/pmr-27"
+        }
+      ],
+      "legislationType": "regulation"
+    },
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.7",
+      "@type": "Legislation",
+      "legislationIdentifier": "27.7",
+      "name": "Other County Rules While Teleworking",
+      "codificationLevel": "section",
+      "position": 7,
+      "isPartOf": {
+        "@id": "https://www.marincounty.gov/id/regulation/pmr-27"
+      },
+      "legislationType": "regulation"
+    },
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.8",
+      "@type": "Legislation",
+      "legislationIdentifier": "27.8",
+      "name": "Travel Expenses",
+      "codificationLevel": "section",
+      "position": 8,
+      "isPartOf": {
+        "@id": "https://www.marincounty.gov/id/regulation/pmr-27"
+      },
+      "legislationType": "regulation"
+    },
+    {
+      "@id": "https://www.marincounty.gov/id/regulation/pmr-27/27.9",
+      "@type": "Legislation",
+      "legislationIdentifier": "27.9",
+      "name": "Training",
+      "codificationLevel": "section",
+      "position": 9,
+      "isPartOf": {
+        "@id": "https://www.marincounty.gov/id/regulation/pmr-27"
+      },
+      "legislationType": "regulation"
+    }
+  ]
+}
