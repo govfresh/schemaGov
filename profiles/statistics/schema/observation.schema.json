@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/statistics/observation.schema.json",
   "title": "Observation",
-  "description": "One statistical value: a measured variable, about a place or other subject, for a date or period, with a value and the dataset it came from. This is schema.org `Observation`, used as is. `Observation` is a subtype of `QuantitativeValue`, so `value`, `unitText`, `minValue` and `maxValue` come with it.",
+  "description": "One statistical value: a measured variable, about a place or other subject, for a date or period, with a value (or, for an open-ended figure, a one-sided bound) and the dataset it came from. This is schema.org `Observation`, used as is. `Observation` is a subtype of `QuantitativeValue`, so `value`, `unitText`, `minValue` and `maxValue` come with it.",
   "standards": [
     "schema-org"
   ],
@@ -38,7 +38,7 @@
     },
     "value": {
       "type": "number",
-      "description": "The value. A count, a rate or a median, in the unit the variable and `unitText` state. A suppressed or missing value is not an observation: omit it."
+      "description": "The value. A count, a rate or a median, in the unit the variable and `unitText` state. Required unless the source gives only a bound (`minValue` or `maxValue`), as with an open-ended median such as '$250,000 or more'. Then omit `value` rather than put in the stand-in number. A suppressed or missing value is not an observation: omit it."
     },
     "unitText": {
       "type": "string",
@@ -60,7 +60,7 @@
     },
     "marginOfError": {
       "type": "object",
-      "description": "Optional. Present only when the source publishes one. A `QuantitativeValue` in the same unit as `value`.",
+      "description": "Optional. Present only when the source publishes one, and only on an observation that has a `value`: a one-sided bound has no margin of error. A `QuantitativeValue` in the same unit as `value`.",
       "properties": {
         "@type": {
           "const": "QuantitativeValue"
@@ -117,11 +117,11 @@
     },
     "minValue": {
       "type": "number",
-      "description": "Optional lower bound of the stated interval."
+      "description": "A lower bound. With `value`, it is the lower end of an interval estimate. Without `value`, it is a one-sided bound: the true figure is this or more (a top-coded figure such as median income '$250,000 or more', `minValue: 250000`)."
     },
     "maxValue": {
       "type": "number",
-      "description": "Optional upper bound of the stated interval."
+      "description": "An upper bound. With `value`, it is the upper end of an interval estimate. Without `value`, it is a one-sided bound: the true figure is this or less (a bottom-coded figure)."
     },
     "measurementMethod": {
       "type": "string",
@@ -138,9 +138,30 @@
     "@type",
     "observationAbout",
     "variableMeasured",
-    "value",
     "sourceDataset"
   ],
+  "anyOf": [
+    {
+      "required": [
+        "value"
+      ]
+    },
+    {
+      "required": [
+        "minValue"
+      ]
+    },
+    {
+      "required": [
+        "maxValue"
+      ]
+    }
+  ],
+  "dependentRequired": {
+    "marginOfError": [
+      "value"
+    ]
+  },
   "oneOf": [
     {
       "required": [

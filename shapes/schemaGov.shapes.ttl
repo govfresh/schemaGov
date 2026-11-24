@@ -536,9 +536,9 @@ gs:ObservationShape a sh:NodeShape ;
         sh:message "sourceDataset must point at a Dataset." ] ;
     sh:property [
         sh:path schema:value ;
-        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:maxCount 1 ;
         sh:or ( [ sh:datatype xsd:integer ] [ sh:datatype xsd:decimal ] [ sh:datatype xsd:double ] ) ;
-        sh:message "An observation needs one numeric value." ] ;
+        sh:message "An observation's value must be numeric." ] ;
     sh:property [
         sh:path schema:minValue ;
         sh:lessThanOrEquals schema:maxValue ;
@@ -547,6 +547,25 @@ gs:ObservationShape a sh:NodeShape ;
         sh:path schema:marginOfError ;
         sh:class schema:QuantitativeValue ;
         sh:message "marginOfError must be a QuantitativeValue." ] ;
+    sh:sparql [
+        sh:message "An observation needs a value, or a one-sided bound (minValue or maxValue) when the source is open-ended." ;
+        sh:prefixes schema: ;
+        sh:select """
+            SELECT $this WHERE {
+              FILTER NOT EXISTS { $this <https://schema.org/value> ?v }
+              FILTER NOT EXISTS { $this <https://schema.org/minValue> ?lo }
+              FILTER NOT EXISTS { $this <https://schema.org/maxValue> ?hi }
+            }
+        """ ] ;
+    sh:sparql [
+        sh:message "An observation with no value cannot have a marginOfError: a one-sided bound has none." ;
+        sh:prefixes schema: ;
+        sh:select """
+            SELECT $this WHERE {
+              $this <https://schema.org/marginOfError> ?m .
+              FILTER NOT EXISTS { $this <https://schema.org/value> ?v }
+            }
+        """ ] ;
     sh:sparql [
         sh:message "An observation takes exactly one of observationDate and observationPeriod." ;
         sh:prefixes schema: ;

@@ -311,6 +311,23 @@
       "unitText": "persons",
       "observationDate": "2023-07-01",
       "sourceDataset": "https://example.gov/id/dataset/population-estimates"
+    },
+    {
+      "@id": "https://example.gov/id/observation/statistical-area-0101/median-household-income/2020-2024",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://example.gov/id/area/statistical-area-0101",
+        "name": "Statistical area 0101"
+      },
+      "variableMeasured": {
+        "@id": "https://example.gov/id/statistical-variable/median-household-income",
+        "name": "Median household income"
+      },
+      "minValue": 250000,
+      "unitText": "USD",
+      "observationPeriod": "2020/2024",
+      "sourceDataset": "https://example.gov/id/dataset/community-survey-2024",
+      "measurementMethod": "survey estimate"
     }
   ]
 }
