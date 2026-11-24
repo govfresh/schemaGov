@@ -43,13 +43,20 @@ formula. Both are the source's rules, applied by the publisher, not by schemaGov
 
 ## Test result
 
-A throwaway converter (kept outside the repo) mapped the ten variables at three geography
-levels: a county, a place and a tract, giving 30 observations. All passed JSON Schema and
-SHACL, including a tract value with no margin of error.
+A throwaway converter (kept outside the repo) pulled the ten variables from the live ACS
+2019-2023 API at three geography levels, a county, a place and a tract (all in one U.S. state,
+chosen arbitrarily). That gave 30 observations. All passed JSON Schema and SHACL.
 
-**The numbers in that run were synthetic.** The Census data API now requires a registered key,
-so only variable labels were checked live. The shape of the response (estimate and margin
-columns, sentinels) was reproduced. A run with real values is still to do.
+What the real data showed:
+
+- The county's **total population has no margin of error**: the Census controls that estimate,
+  so the margin is the sentinel `-555555555`. The observation is valid without one, which is the
+  case the profile requires.
+- Margins for the 65+ sum and for the two shares have to be calculated by the publisher
+  (square root of summed squares, and the proportion formula). They are not in the API response.
+- No value was suppressed in these three areas, so the omission rule was not exercised.
+- The API allows at most 50 variables per request, so a converter must batch (an estimate and a
+  margin count as two).
 
 ## Not representable
 

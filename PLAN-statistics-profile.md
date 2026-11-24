@@ -1,6 +1,6 @@
 # Plan: statistics profile (reviewed against `main`, 2026-11-24)
 
-Status: **Stage 2 implemented on branch `statistics-profile` (2026-11-24); `npm run check` passes.** Not committed. One open item: the Census test used synthetic values (see Outcome).
+Status: **Stage 2 implemented on branch `statistics-profile` (2026-11-24); `npm run check` passes.** Census test re-run on live ACS data (see Outcome).
 
 Goal: let a publisher state a statistical measure, about a defined population or subject, for a geographic area and period, with a value, unit, source dataset and optional uncertainty. Nothing in the model is specific to Marin or to the U.S. Census Bureau.
 
@@ -130,8 +130,8 @@ Area:
 
 **Delivered:** `profiles/statistics/` (README, three schemas, `area-type` code list); `examples/example-gov/statistics.jsonld` (3 datasets' worth of cases: series, subset, estimate with bounds, statistical area plus overlapping community area); `examples/_invalid/statistics.jsonld` with 17 faults and 5 clean nodes; `crosswalks/census-acs.md`, `crosswalks/sdmx.md`; registration in `validate.py`, `profiles.js`, SPEC, README, ROADMAP (`indicators` row removed).
 
-**Census test.** All ten mapped ACS variable IDs and labels were checked against the live 2023 5-year variable list. Conversion at county, place and tract produced 30 observations that pass JSON Schema and SHACL, including a tract value with no margin of error. **The values were synthetic**: the Census data API needs a registered key, which was not created. To finish: get a key, run the converter (kept in the session scratchpad, not in the repo) against real values, and add the result to the crosswalk.
+**Census test.** All ten mapped ACS variable IDs and labels were checked against the live 2023 5-year variable list. A throwaway converter (outside the repo) then pulled real ACS 2019-2023 values at county, place and tract: 30 observations, all passing JSON Schema and SHACL. One real case exercised the optional-uncertainty rule: the county total population has no computable margin. Findings are in `crosswalks/census-acs.md`.
 
 **Still unmodelled:** suppression reasons, quality flags, weights and sample size, a `Household` universe.
 
-**Not done:** the Marin acceptance test (belongs in `marin-data`); a pilot (decision 4).
+**Not done:** the Marin acceptance test (belongs in `marin-data`); a pilot (decision 4); suppressed values were not seen in the three test areas.
