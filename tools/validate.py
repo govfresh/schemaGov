@@ -19,7 +19,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CORE = ROOT / "profiles" / "_core" / "schema"
-PROFILE_DIRS = [ROOT / "profiles" / d / "schema" for d in ("_core", "org", "code", "meetings", "requests", "budget", "procurement", "catalog", "alerts", "permits", "elections", "services", "projects")]
+PROFILE_DIRS = [ROOT / "profiles" / d / "schema" for d in ("_core", "org", "code", "meetings", "requests", "budget", "procurement", "catalog", "alerts", "permits", "elections", "services", "projects", "policy")]
 
 # @type -> schema file. Roles are validated where they are nested, not standalone.
 SCHEMA_FOR = {
@@ -41,6 +41,8 @@ SCHEMA_FOR = {
     "Post": "post.schema.json",
     "DataFeed": "directory.schema.json",
     "Legislation": "legislation.schema.json",
+    "DefinedTerm": "definition.schema.json",
+    "DefinedTermSet": "definition.schema.json",
     "Meeting": "meeting.schema.json",
     "EventSeries": "meeting.schema.json",
     "ServiceRequest": "service-request.schema.json",
@@ -338,7 +340,7 @@ def main(argv):
             if not name:
                 # Lifecycle schemes and updates are checked by the SHACL shapes, not by a
                 # JSON Schema, so they are not worth a note each.
-                if not set(types) <= {"DefinedTerm", "DefinedTermSet", "Article"}:
+                if not set(types) <= {"Article"}:
                     notes.append(f"no schema mapped for @type {types} ({nid})")
                 continue
             # Two profiles define service.schema.json for the same type; the
@@ -717,6 +719,58 @@ def main(argv):
                 break
             seen.add(cur)
             cur = _ref(org_nodes[cur].get("parentOrganization"))
+
+    # --- legislation hierarchy -----------------------------------------------
+    # isPartOf is the canonical direction; hasPart is the derived view and must agree with
+    # it. A part may omit legislationJurisdiction and inherit it from its parent, so every
+    # chain has to reach a node that declares one - or a provision has no jurisdiction at all.
+    leg_nodes = {i: n for i, n in entities.items() if "Legislation" in _ts(n)}
+
+    for lid, n in leg_nodes.items():
+        pid = _ref(n.get("isPartOf"))
+        if pid:
+            parent = entities.get(pid)
+            if parent is not None and "Legislation" not in _ts(parent):
+                errors.append(
+                    f"isPartOf is not legislation: {lid}\n"
+                    f"    {pid} is typed {sorted(_ts(parent))}"
+                )
+        for child in n.get("hasPart") or []:
+            c = leg_nodes.get(_ref(child))
+            if c is None:
+                continue
+            cpid = _ref(c.get("isPartOf"))
+            if cpid and cpid != lid:
+                errors.append(
+                    f"hierarchy disagrees: {lid} lists {_ref(child)} under hasPart\n"
+                    f"    but {_ref(child)} names {cpid} as its isPartOf"
+                )
+
+    for lid in leg_nodes:
+        seen, cur = {lid}, lid
+        while True:
+            node = leg_nodes.get(cur)
+            if node is None:
+                break
+            if node.get("legislationJurisdiction"):
+                break
+            nxt = _ref(node.get("isPartOf"))
+            if not nxt:
+                break  # the shape check reports a top-level work with no jurisdiction
+            if nxt in seen:
+                errors.append(f"isPartOf cycle through {lid}")
+                break
+            seen.add(nxt)
+            cur = nxt
+
+    for lid, n in leg_nodes.items():
+        applic, adopted = n.get("legislationDateOfApplicability"), n.get("legislationDate")
+        if applic and adopted and str(applic) < str(adopted):
+            warnings.append(
+                f"effective before adopted: {lid}\n"
+                f"    legislationDateOfApplicability {applic} is earlier than legislationDate {adopted} "
+                f"(legitimate for a retroactive text, so a warning)"
+            )
 
     # --- conformance levels ---------------------------------------------------
     # SPEC section 4 defines three levels; documents declare one with conformanceLevel.

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.govfresh.com/v1/policy/definition.schema.json",
+  "title": "Definition",
+  "description": "A defined term, or the set of terms a document defines. A `DefinedTerm` is addressable, so other entities can point at it, and it links back to the provision that defines it.",
+  "standards": [
+    "schema-org"
+  ],
+  "type": "object",
+  "properties": {
+    "@context": {},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "The term's or set's own dereferenceable identifier."
+    },
+    "@type": {
+      "enum": [
+        "DefinedTerm",
+        "DefinedTermSet"
+      ],
+      "description": "`DefinedTerm` for one term, `DefinedTermSet` for the collection of terms one document defines. The same two types also describe code lists and lifecycle schemes."
+    },
+    "name": {
+      "type": "string",
+      "description": "The term as written, e.g. 'Transfer'."
+    },
+    "description": {
+      "type": "string",
+      "description": "The definition, in the source's own words. Do not summarise or rewrite it."
+    },
+    "termCode": {
+      "type": "string",
+      "description": "A short, stable code for the term, if the source or publisher uses one."
+    },
+    "inDefinedTermSet": {
+      "description": "The `DefinedTermSet` this term belongs to.",
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "iri"
+        },
+        {
+          "$ref": "../_core/reference.schema.json"
+        }
+      ]
+    },
+    "hasDefinedTerm": {
+      "type": "array",
+      "items": {
+        "$ref": "../_core/reference.schema.json"
+      },
+      "description": "On a `DefinedTermSet`, the terms it contains."
+    },
+    "subjectOf": {
+      "type": "array",
+      "items": {
+        "$ref": "../_core/reference.schema.json"
+      },
+      "description": "The provision, a piece of `Legislation`, that defines this term. This is how a definition stays tied to the authoritative text. Real schema.org property: a `CreativeWork` about this thing."
+    },
+    "position": {
+      "type": "integer",
+      "description": "Ordering among siblings."
+    },
+    "alternateName": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Other forms of the term the source gives, e.g. a plural or an abbreviation."
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "name"
+  ],
+  "additionalProperties": true
+}

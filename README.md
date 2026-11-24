@@ -28,6 +28,7 @@ model and defines a schema.org projection for discovery.
 | Elections | *projection only* | NIST SP 1500-100, VIP |
 | Services | `GovernmentService`, `PeopleAudience` | Open Referral / HSDS |
 | Projects | `gs:Project` (subclass of `Project`), `gs:Milestone`, `Article` | OC4IDS, OCDS, GOV.UK Service Manual |
+| Policy | `Legislation` (reused from `code`), `DefinedTerm` | ELI, schema.org |
 
 ## Two rules that shape everything
 
@@ -46,7 +47,7 @@ context/v1/       the @context every document imports
 vocabulary/       gs: terms, each mapped onto a schema.org term
 profiles/_core/   Jurisdiction · Organization · Person · Role · Identifier
 profiles/…        org · code · meetings · requests · budget · procurement ·
-                   catalog · alerts · permits · elections · services
+                   catalog · alerts · permits · elections · services · projects · policy
 examples/         a coherent, cross-linked fixture set, plus real-publisher pilots
 crosswalks/       mapping tables to the standards being profiled
 shapes/           SHACL, for semantic validation

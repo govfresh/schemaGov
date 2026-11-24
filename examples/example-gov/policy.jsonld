@@ -1,0 +1,273 @@
+{
+  "@context": "https://schema.govfresh.com/v1/context.jsonld",
+  "@graph": [
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual",
+      "@type": "Legislation",
+      "name": "Administrative Policy Manual",
+      "description": "The City's administrative policies, grouped by subject.",
+      "url": "https://example.gov/policies",
+      "legislationType": "policy",
+      "codificationLevel": "code",
+      "legislationIdentifier": "APM",
+      "legislationJurisdiction": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      },
+      "publisher": {
+        "@id": "https://example.gov/id/organization/city-government",
+        "name": "Example City Government"
+      },
+      "legislationLegalForce": "InForce",
+      "hasPart": [
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/group-2",
+          "name": "Group 2: Conduct and Standards"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual/group-2",
+      "@type": "Legislation",
+      "legislationType": "policy",
+      "codificationLevel": "part",
+      "legislationIdentifier": "Group 2",
+      "position": 2,
+      "isPartOf": {
+        "@id": "https://example.gov/id/policy/admin-policy-manual"
+      },
+      "name": "Group 2: Conduct and Standards",
+      "hasPart": [
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/ap-23"
+        },
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual/ap-23",
+      "@type": "Legislation",
+      "legislationType": "regulation",
+      "codificationLevel": "chapter",
+      "legislationIdentifier": "AP 23",
+      "position": 23,
+      "isPartOf": {
+        "@id": "https://example.gov/id/policy/admin-policy-manual/group-2"
+      },
+      "name": "AP 23: Information Security"
+    },
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27",
+      "@type": "Legislation",
+      "legislationType": "regulation",
+      "codificationLevel": "chapter",
+      "legislationIdentifier": "AP 27",
+      "position": 27,
+      "isPartOf": {
+        "@id": "https://example.gov/id/policy/admin-policy-manual/group-2"
+      },
+      "name": "AP 27: Telework Policy",
+      "hasPart": [
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.1"
+        },
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2"
+        },
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.3"
+        }
+      ],
+      "description": "Sets out when and how employees may work away from a City worksite.",
+      "url": "https://example.gov/policies/ap-27",
+      "legislationDate": "2025-03-04",
+      "legislationDateOfApplicability": "2025-04-01",
+      "legislationDateVersion": "2025-03-04",
+      "version": "2",
+      "legislationPassedBy": {
+        "@id": "https://example.gov/id/organization/city-council",
+        "name": "Example City Council"
+      },
+      "legislationResponsible": {
+        "@id": "https://example.gov/id/organization/city-government"
+      },
+      "creator": [
+        {
+          "@id": "https://example.gov/id/organization/community-services",
+          "name": "Community Services"
+        }
+      ],
+      "publisher": {
+        "@id": "https://example.gov/id/organization/city-government",
+        "name": "Example City Government"
+      },
+      "legislationLegalForce": "InForce",
+      "citation": [
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/ap-23",
+          "name": "AP 23: Information Security"
+        },
+        {
+          "@id": "https://example.gov/id/legislation/ordinance/2025-15",
+          "name": "Ordinance No. 2025-15"
+        },
+        "State Government Code section 12945.2",
+        "Form HR-14, Telework Agreement"
+      ],
+      "encoding": [
+        {
+          "@type": "LegislationObject",
+          "contentUrl": "https://example.gov/policies/ap-27.html",
+          "encodingFormat": "text/html",
+          "legislationLegalValue": "AuthoritativeLegalValue",
+          "inLanguage": "en-US"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.1",
+      "@type": "Legislation",
+      "legislationType": "policy",
+      "codificationLevel": "section",
+      "legislationIdentifier": "27.1",
+      "position": 1,
+      "isPartOf": {
+        "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27"
+      },
+      "text": "This policy sets the conditions under which an employee may work away from a City worksite.",
+      "name": "Purpose"
+    },
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2",
+      "@type": "Legislation",
+      "legislationType": "policy",
+      "codificationLevel": "section",
+      "legislationIdentifier": "27.2",
+      "position": 2,
+      "isPartOf": {
+        "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27"
+      },
+      "text": "An employee is eligible to telework when all of the following apply:",
+      "name": "Eligibility",
+      "hasPart": [
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.a"
+        },
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.b"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.a",
+      "@type": "Legislation",
+      "legislationType": "policy",
+      "codificationLevel": "subsection",
+      "legislationIdentifier": "(a)",
+      "position": 1,
+      "isPartOf": {
+        "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2"
+      },
+      "text": "The employee's supervisor has approved the arrangement in writing.",
+      "hasPart": [
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.a.1"
+        },
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.a.2"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.a.1",
+      "@type": "Legislation",
+      "legislationType": "policy",
+      "codificationLevel": "paragraph",
+      "legislationIdentifier": "(1)",
+      "position": 1,
+      "isPartOf": {
+        "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.a"
+      },
+      "text": "The approval states the days on which the employee will telework.",
+      "hasPart": [
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.a.1.i"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.a.1.i",
+      "@type": "Legislation",
+      "legislationType": "policy",
+      "codificationLevel": "paragraph",
+      "legislationIdentifier": "(i)",
+      "position": 1,
+      "isPartOf": {
+        "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.a.1"
+      },
+      "text": "Days may be changed only with the supervisor's written agreement."
+    },
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.a.2",
+      "@type": "Legislation",
+      "legislationType": "policy",
+      "codificationLevel": "paragraph",
+      "legislationIdentifier": "(2)",
+      "position": 2,
+      "isPartOf": {
+        "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.a"
+      },
+      "text": "The approval is reviewed at least once a year."
+    },
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2.b",
+      "@type": "Legislation",
+      "legislationType": "policy",
+      "codificationLevel": "subsection",
+      "legislationIdentifier": "(b)",
+      "position": 2,
+      "isPartOf": {
+        "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.2"
+      },
+      "text": "The employee has completed the training required by AP 23."
+    },
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.3",
+      "@type": "Legislation",
+      "legislationType": "policy",
+      "codificationLevel": "section",
+      "legislationIdentifier": "27.3",
+      "position": 3,
+      "isPartOf": {
+        "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27"
+      },
+      "text": "In this policy, \"Telework\" means performing regular duties at an approved location other than the City worksite.",
+      "name": "Definitions"
+    },
+    {
+      "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/definitions",
+      "@type": "DefinedTermSet",
+      "name": "AP 27 definitions",
+      "hasDefinedTerm": [
+        {
+          "@id": "https://example.gov/id/policy/term/telework"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/policy/term/telework",
+      "@type": "DefinedTerm",
+      "name": "Telework",
+      "termCode": "telework",
+      "description": "Performing regular duties at an approved location other than the City worksite.",
+      "inDefinedTermSet": "https://example.gov/id/policy/admin-policy-manual/ap-27/definitions",
+      "subjectOf": [
+        {
+          "@id": "https://example.gov/id/policy/admin-policy-manual/ap-27/27.3"
+        }
+      ]
+    }
+  ]
+}

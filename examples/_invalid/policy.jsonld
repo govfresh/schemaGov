@@ -1,0 +1,211 @@
+{
+  "@context": "https://schema.govfresh.com/v1/context.jsonld",
+  "@graph": [
+    {
+      "@id": "https://invalid.example/id/policy/clean-top",
+      "@type": "Legislation",
+      "name": "clean-top",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "hasPart": [
+        {
+          "@id": "https://invalid.example/id/policy/clean-part"
+        }
+      ]
+    },
+    {
+      "@id": "https://invalid.example/id/policy/clean-part",
+      "@type": "Legislation",
+      "legislationIdentifier": "(a)",
+      "legislationType": "policy",
+      "isPartOf": {
+        "@id": "https://invalid.example/id/policy/clean-top"
+      },
+      "text": "x"
+    },
+    {
+      "@id": "https://invalid.example/id/policy/no-label",
+      "@type": "Legislation",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/policy/no-jurisdiction",
+      "@type": "Legislation",
+      "name": "no-jurisdiction",
+      "legislationType": "policy"
+    },
+    {
+      "@id": "https://invalid.example/id/policy/part-of-org",
+      "@type": "Legislation",
+      "name": "part-of-org",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "isPartOf": {
+        "@id": "https://invalid.example/id/organization/unit-root-b"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/policy/cycle-a",
+      "@type": "Legislation",
+      "name": "cycle-a",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "isPartOf": {
+        "@id": "https://invalid.example/id/policy/cycle-b"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/policy/cycle-b",
+      "@type": "Legislation",
+      "name": "cycle-b",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "isPartOf": {
+        "@id": "https://invalid.example/id/policy/cycle-a"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/policy/lists-wrong-parent",
+      "@type": "Legislation",
+      "name": "lists-wrong-parent",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "hasPart": [
+        {
+          "@id": "https://invalid.example/id/policy/wrong-parent-child"
+        }
+      ]
+    },
+    {
+      "@id": "https://invalid.example/id/policy/wrong-parent-child",
+      "@type": "Legislation",
+      "name": "wrong-parent-child",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "isPartOf": {
+        "@id": "https://invalid.example/id/policy/other-work"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/policy/bad-type",
+      "@type": "Legislation",
+      "name": "bad-type",
+      "legislationType": "personnelRegulation",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/policy/dangling-citation",
+      "@type": "Legislation",
+      "name": "dangling-citation",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "citation": [
+        {
+          "@id": "https://invalid.example/id/policy/missing"
+        }
+      ]
+    },
+    {
+      "@id": "https://invalid.example/id/policy/bad-date",
+      "@type": "Legislation",
+      "name": "bad-date",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "legislationDateOfApplicability": "April 1"
+    },
+    {
+      "@id": "https://invalid.example/id/policy/passed-by-place",
+      "@type": "Legislation",
+      "name": "passed-by-place",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "legislationPassedBy": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/policy/citation-is-org",
+      "@type": "Legislation",
+      "name": "citation-is-org",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      },
+      "citation": [
+        {
+          "@id": "https://invalid.example/id/organization/unit-root-b"
+        }
+      ]
+    },
+    {
+      "@id": "https://invalid.example/id/policy/term-set",
+      "@type": "DefinedTermSet",
+      "name": "set"
+    },
+    {
+      "@id": "https://invalid.example/id/policy/term-ok",
+      "@type": "DefinedTerm",
+      "name": "term-ok",
+      "inDefinedTermSet": "https://invalid.example/id/policy/term-set",
+      "subjectOf": [
+        {
+          "@id": "https://invalid.example/id/policy/other-work"
+        }
+      ]
+    },
+    {
+      "@id": "https://invalid.example/id/policy/term-bad-set",
+      "@type": "DefinedTerm",
+      "name": "term-bad-set",
+      "inDefinedTermSet": "https://invalid.example/id/policy/other-work"
+    },
+    {
+      "@id": "https://invalid.example/id/policy/term-subject-org",
+      "@type": "DefinedTerm",
+      "name": "term-subject-org",
+      "inDefinedTermSet": "https://invalid.example/id/policy/term-set",
+      "subjectOf": [
+        {
+          "@id": "https://invalid.example/id/organization/unit-root-b"
+        }
+      ]
+    },
+    {
+      "@id": "https://invalid.example/id/policy/term-no-name",
+      "@type": "DefinedTerm",
+      "inDefinedTermSet": "https://invalid.example/id/policy/term-set"
+    },
+    {
+      "@id": "https://invalid.example/id/policy/other-work",
+      "@type": "Legislation",
+      "name": "other-work",
+      "legislationType": "policy",
+      "legislationJurisdiction": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      }
+    }
+  ]
+}
