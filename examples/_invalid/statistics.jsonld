@@ -254,7 +254,12 @@
     {
       "@id": "https://invalid.example/id/statistics/area-no-type",
       "@type": "Place",
-      "name": "An area"
+      "name": "An area",
+      "geoOverlaps": [
+        {
+          "@id": "https://invalid.example/id/statistics/area-other"
+        }
+      ]
     },
     {
       "@id": "https://invalid.example/id/statistics/area-bad-type",
@@ -298,6 +303,24 @@
       "@id": "https://invalid.example/id/statistics/target-var",
       "@type": "StatisticalVariable",
       "name": "Target variable"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/facility-place-ok",
+      "@type": "Place",
+      "name": "A creek",
+      "alternateName": [
+        "The creek"
+      ],
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "creek"
+        }
+      ],
+      "containedInPlace": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      }
     }
   ]
 }

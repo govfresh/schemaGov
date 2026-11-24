@@ -69,7 +69,7 @@ FAULTS = {
     "statistics/dataset-is-org": "sourceDataset points at an organization",
     "statistics/variable-is-place": "variableMeasured points at a place",
     "statistics/var-no-name": "variable with no name",
-    "statistics/area-no-type": "statistical area with no areaType",
+    "statistics/area-no-type": "Place with no areaType that carries a statistical-area property",
     "statistics/area-bad-type": "areaType outside the code list",
     "statistics/area-governed": "statistical area with a governing organization",
     "statistics/area-in-org": "statistical area contained in an organization",
@@ -77,7 +77,7 @@ FAULTS = {
 CLEAN = ["project/ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
          "policy/clean-top", "policy/clean-part", "policy/term-ok", "policy/partial-date-ok",
          "statistics/ok", "statistics/ok-period", "statistics/ok-no-uncertainty", "statistics/area-ok",
-         "statistics/var-ok"]
+         "statistics/var-ok", "statistics/facility-place-ok"]
 
 
 def run(tool):

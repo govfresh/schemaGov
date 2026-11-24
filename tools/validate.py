@@ -21,6 +21,10 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 CORE = ROOT / "profiles" / "_core" / "schema"
 PROFILE_DIRS = [ROOT / "profiles" / d / "schema" for d in ("_core", "org", "code", "meetings", "requests", "budget", "procurement", "catalog", "alerts", "permits", "elections", "services", "projects", "policy", "statistics")]
 
+# Properties only a statistical area or jurisdiction has. A Place carrying one of these
+# without an areaType is a statistical area missing its areaType, not a facility.
+AREA_ONLY_PROPERTIES = ("boundary", "geoOverlaps", "containsPlace", "jurisdictionOf", "governmentLevel")
+
 # @type -> schema file. Roles are validated where they are nested, not standalone.
 SCHEMA_FOR = {
     "AdministrativeArea": "jurisdiction.schema.json",
@@ -340,6 +344,19 @@ def main(argv):
                 checked += 1
                 continue
             name = next((SCHEMA_FOR[t] for t in types if t in SCHEMA_FOR), None)
+            if name == "place.schema.json" and "areaType" not in node:
+                # A plain Place is either a statistical area (it declares areaType) or a
+                # facility (facility.schema.json lists Place as a type). Without areaType it
+                # is a facility. Nothing in a bare Place tells the two apart, so a statistical
+                # area that forgot its areaType is caught only when it carries a property
+                # that no facility has.
+                name = "facility.schema.json"
+                area_only = [k for k in AREA_ONLY_PROPERTIES if k in node]
+                if area_only:
+                    errors.append(
+                        f"{nid}\n    (root): a Place without areaType is read as a facility, "
+                        f"but it carries {', '.join(area_only)}, which belong to a statistical "
+                        f"area; add areaType")
             if not name:
                 # Lifecycle schemes and updates are checked by the SHACL shapes, not by a
                 # JSON Schema, so they are not worth a note each.
