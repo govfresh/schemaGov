@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schema.govfresh.com/v1/code/legislation.schema.json",
   "title": "Legislation",
-  "description": "A law, ordinance, resolution, or a numbered part of a code.",
+  "description": "A law, ordinance, resolution, policy or procedure, or a numbered part of any of them - down to an individual provision.",
   "standards": [
     "eli",
     "akoma-ntoso"
@@ -27,6 +27,10 @@
       "type": "string",
       "description": "A plain-language summary of what the law does."
     },
+    "text": {
+      "type": "string",
+      "description": "The authoritative wording of this part, exactly as the source states it, with no summarising or rewriting. For a provision this is the provision's own text; the text of its sub-parts belongs on those sub-parts, not repeated here. Tables and inline markup stay in the source file listed under `encoding`. Real schema.org `CreativeWork` property."
+    },
     "url": {
       "type": "string",
       "format": "iri",
@@ -45,7 +49,21 @@
     },
     "legislationType": {
       "type": "string",
-      "description": "termCode from the `LegislationType` code list."
+      "description": "termCode from the `LegislationType` code list.",
+      "enum": [
+        "code",
+        "ordinance",
+        "resolution",
+        "bylaw",
+        "act",
+        "regulation",
+        "decree",
+        "directive",
+        "policy",
+        "procedure",
+        "motion",
+        "charter"
+      ]
     },
     "codificationLevel": {
       "type": "string",
@@ -81,6 +99,21 @@
       "$ref": "../_core/reference.schema.json",
       "description": "The `GovernmentOrganization` that administers or enforces it, when different from the body that passed it."
     },
+    "legislationCountersignedBy": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `GovernmentOrganization` or `Person` whose countersignature or approval the text needed, when that is a different party from `legislationPassedBy`."
+    },
+    "creator": {
+      "type": "array",
+      "items": {
+        "$ref": "../_core/reference.schema.json"
+      },
+      "description": "Who prepared the text, when the source says so. A `GovernmentOrganization` or `Person`, by reference."
+    },
+    "publisher": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The organization that issues and publishes this text."
+    },
     "enactedAt": {
       "$ref": "../_core/reference.schema.json",
       "description": "The `Meeting` at which it was adopted. This is the join to the meetings profile, and the reason the two are built together."
@@ -99,6 +132,13 @@
       "type": "string",
       "format": "date",
       "description": "The point in time this description of the legislation is valid for. This is how consolidated codes express versioning, and the hardest part of publishing a municipal code correctly."
+    },
+    "version": {
+      "type": [
+        "string",
+        "number"
+      ],
+      "description": "The revision number or label the source gives this text, e.g. `3` or `Rev. 2`. Do not infer one that the source does not state. Real schema.org `CreativeWork` property."
     },
     "legislationLegalForce": {
       "type": "string",
@@ -197,6 +237,20 @@
       },
       "description": "Subject keywords. Not `schema:about`, which ranges over `Thing` and is for references to entities - free-text strings there expand as relative IRIs."
     },
+    "citation": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "../_core/reference.schema.json"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "description": "What this part cites. Use `{\"@id\": ...}` when the target is a structured entity you can point at, internal or external. When the target is not available as an entity - a statute, a labour agreement, a form - keep the citation exactly as written, as a string. Never invent an IRI for something unresolved."
+    },
     "sourceDataset": {
       "type": "string",
       "format": "iri",
@@ -206,9 +260,39 @@
   "required": [
     "@id",
     "@type",
-    "name",
-    "legislationType",
-    "legislationJurisdiction"
+    "legislationType"
   ],
-  "additionalProperties": true
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "anyOf": [
+        {
+          "required": [
+            "name"
+          ]
+        },
+        {
+          "required": [
+            "legislationIdentifier"
+          ]
+        }
+      ],
+      "description": "A provision with no heading is identified by its number or label (`27.2`, `(a)`). Do not invent a name for it."
+    },
+    {
+      "if": {
+        "not": {
+          "required": [
+            "isPartOf"
+          ]
+        }
+      },
+      "then": {
+        "required": [
+          "legislationJurisdiction"
+        ]
+      },
+      "description": "Jurisdiction is declared on a top-level work. A part inherits it from the chain of `isPartOf` and may omit it."
+    }
+  ]
 }

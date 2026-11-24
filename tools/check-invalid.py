@@ -41,8 +41,22 @@ FAULTS = {
     "organization/unit-cycle-a": "parentOrganization cycle",
     "organization/unit-lists-wrong-parent": "lists a child that names a different parent",
     "organization/unit-government-with-parent": "a government (root) that has a parent",
+    "policy/no-label": "provision with neither a name nor an identifier",
+    "policy/no-jurisdiction": "top-level work with no jurisdiction",
+    "policy/part-of-org": "isPartOf points at an organization",
+    "policy/cycle-a": "isPartOf cycle",
+    "policy/lists-wrong-parent": "lists a child that names a different parent",
+    "policy/bad-type": "legislationType outside the code list",
+    "policy/dangling-citation": "citation points at an entity that does not exist",
+    "policy/bad-date": "malformed effective date",
+    "policy/passed-by-place": "approving body is a jurisdiction",
+    "policy/citation-is-org": "citation points at an organization",
+    "policy/term-bad-set": "definition belongs to something that is not a term set",
+    "policy/term-subject-org": "definition's source is an organization",
+    "policy/term-no-name": "definition with no name",
 }
-CLEAN = ["project/ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok"]
+CLEAN = ["project/ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
+         "policy/clean-top", "policy/clean-part", "policy/term-ok"]
 
 
 def run(tool):

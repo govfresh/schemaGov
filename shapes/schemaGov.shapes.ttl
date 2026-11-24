@@ -144,6 +144,21 @@ gs:LegislationShape a sh:NodeShape ;
         sh:class gs:Meeting ;
         sh:message "enactedAt must point at the Meeting where the legislation was adopted." ] ;
 
+    sh:property [
+        sh:path schema:hasPart ;
+        sh:class schema:Legislation ;
+        sh:message "hasPart must point at Legislation - the next tier down." ] ;
+
+    sh:property [
+        sh:path schema:citation ;
+        sh:or (
+            [ sh:nodeKind sh:Literal ]
+            [ sh:class schema:Legislation ]
+            [ sh:class schema:CreativeWork ]
+            [ sh:class schema:DigitalDocument ]
+        ) ;
+        sh:message "citation must be the citation as written (text), or point at a piece of Legislation or a document. An unresolved citation stays text; do not invent an IRI for it." ] ;
+
     sh:sparql [
         sh:message "Legislation must not be part of itself, directly or transitively." ;
         sh:select """
@@ -151,6 +166,21 @@ gs:LegislationShape a sh:NodeShape ;
               $this <https://schema.org/isPartOf>+ $this .
             }
         """ ] .
+
+#############################  Definitions  #############################
+
+gs:DefinedTermShape a sh:NodeShape ;
+    sh:targetClass schema:DefinedTerm ;
+
+    sh:property [
+        sh:path schema:inDefinedTermSet ;
+        sh:class schema:DefinedTermSet ;
+        sh:message "inDefinedTermSet must point at a DefinedTermSet." ] ;
+
+    sh:property [
+        sh:path schema:subjectOf ;
+        sh:class schema:Legislation ;
+        sh:message "A definition's subjectOf must point at the piece of Legislation (the provision) that defines it." ] .
 
 #############################  Meetings and votes  #############################
 

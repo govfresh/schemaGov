@@ -63,6 +63,20 @@
     },
     {
       "@type": "DefinedTerm",
+      "@id": "gs:legtype/policy",
+      "termCode": "policy",
+      "name": "Policy",
+      "description": "A statement of how an organization intends to act, adopted by that organization rather than enacted as law."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:legtype/procedure",
+      "termCode": "procedure",
+      "name": "Procedure",
+      "description": "The steps an organization follows to carry out a policy or regulation."
+    },
+    {
+      "@type": "DefinedTerm",
       "@id": "gs:legtype/motion",
       "termCode": "motion",
       "name": "Motion",
