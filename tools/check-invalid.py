@@ -57,7 +57,9 @@ FAULTS = {
     "policy/term-subject-org": "definition's source is an organization",
     "policy/term-no-name": "definition with no name",
     "statistics/no-variable": "observation with no measured variable",
-    "statistics/no-value": "observation with no value",
+    "statistics/no-value": "observation with neither a value nor a bound",
+    "statistics/moe-no-value": "margin of error on a bound-only observation",
+    "statistics/only-moe": "margin of error with no value and no bound",
     "statistics/no-dataset": "observation with no source dataset",
     "statistics/both-time": "both observationDate and observationPeriod",
     "statistics/no-time": "neither observationDate nor observationPeriod",
@@ -77,7 +79,8 @@ FAULTS = {
 CLEAN = ["project/ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
          "policy/clean-top", "policy/clean-part", "policy/term-ok", "policy/partial-date-ok",
          "statistics/ok", "statistics/ok-period", "statistics/ok-no-uncertainty", "statistics/area-ok",
-         "statistics/var-ok", "statistics/facility-place-ok"]
+         "statistics/var-ok", "statistics/facility-place-ok", "statistics/bound-only-ok",
+         "statistics/bound-max-only-ok"]
 
 
 def run(tool):

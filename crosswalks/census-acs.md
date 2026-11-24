@@ -19,7 +19,7 @@ and label below was checked against that release's published variable list.
 | `median-household-income` | households | `B19013_001E` | direct, inflation-adjusted dollars of the release year |
 | `poverty-rate` | people with poverty status determined | `S1701_C03_001E` | direct percent (subject table) |
 | `median-gross-rent` | renter-occupied units | `B25064_001E` | direct |
-| `rent-burden-rate` | renter households | `B25070_007E`–`010E` over `B25070_001E` | share of rent at 30% or more of income |
+| `rent-burden-rate` | renter households | `B25070_007E`–`010E` over `B25070_001E` | share of rent at 30% or more of income. Denominator is **all** renter households (see below) |
 | `disability-rate` | civilian noninstitutionalized people | `S1810_C03_001E` | direct percent (subject table) |
 | `households-without-internet-rate` | households | `B28002_013E` over `B28002_001E` | share with no internet access |
 
@@ -37,7 +37,8 @@ formula. Both are the source's rules, applied by the publisher, not by schemaGov
 | `2019-2023` 5-year | `observationPeriod` `2019/2023` |
 | Release | a `Dataset`; the observation's `sourceDataset` |
 | County, place, tract GEOID | the area's `identifier`; county and place are `Jurisdiction`s, a tract is a `Place` with `areaType: statistical-area` |
-| Margin sentinel `-555555555` (not computable) | `marginOfError` omitted; the observation is still valid |
+| Margin sentinel `-555555555` (not computable, or controlled) | `marginOfError` omitted; the observation is still valid |
+| Margin sentinel `-333333333` (open-ended median) | a one-sided bound: `minValue` set to the stand-in minus 1, no `value`, no `marginOfError` |
 | Other negative sentinels, null | the observation is omitted |
 | Tract, place, county nesting | `containedInPlace`; a place and a tract may overlap, so use `geoOverlaps` |
 
@@ -57,6 +58,26 @@ What the real data showed:
 - No value was suppressed in these three areas, so the omission rule was not exercised.
 - The API allows at most 50 variables per request, so a converter must batch (an estimate and a
   margin count as two).
+
+## What a real import showed (a county's full ACS import)
+
+- **Open-ended medians.** The ACS publishes some medians as "or more": median household income
+  `$250,000+` and median gross rent `$3,500+`. The file stores `250001` and `3501` with margin code
+  `-333333333`. Those are stand-ins, not estimates. Record a bound: `minValue: 250000` (or `3500`),
+  no `value`, no margin of error. Subtract 1 from the stored number. Only treat a value as
+  open-ended when the source number equals the cap plus 1 and the margin code is `-333333333`. The
+  wealthiest places are the ones that hit the cap, so leaving these out drops exactly the
+  places a comparison most needs.
+- **Rent burden denominator.** `B25070_001E` counts every renter household, including those whose
+  gross rent as a share of income is "Not computed" (`B25070_011E`). The Census's own published
+  rent-burden percentage leaves those households out. This crosswalk uses all renter households, so
+  a figure built from it reads slightly lower than the Census's. A publisher who wants the Census
+  figure subtracts `B25070_011E` from the denominator, and says so in the variable's description.
+- **`-555555555` inside a derived margin.** For a margin that cannot be computed because the
+  estimate is controlled, count the missing margin as 0 when adding margins in a sum. Do not drop the
+  cell or the whole margin.
+- **No key for the summary files.** The table-based summary files at
+  `www2.census.gov/programs-surveys/acs/summary_file/` need no API key. The API does need one.
 
 ## Not representable
 

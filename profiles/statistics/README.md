@@ -26,7 +26,7 @@ Observation ─ variableMeasured ─▶ StatisticalVariable   what was measured,
 | Span of an estimate | `observationPeriod` (ISO 8601 interval, `2020/2024`) | schema.org |
 | Margin of error | `marginOfError` (a `QuantitativeValue`) | schema.org |
 | Confidence level | `additionalProperty` on the margin, `propertyID: confidenceLevel`, 0 to 1 | schema.org |
-| Interval bounds | `minValue`, `maxValue` | schema.org |
+| Interval bounds, or a one-sided bound for an open-ended value | `minValue`, `maxValue` | schema.org |
 | Source | `sourceDataset` | existing schemaGov |
 | Area with no governing authority | `Place` + `areaType` | schema.org + existing pattern |
 | Containment, overlap | `containedInPlace`, `containsPlace`, `geoOverlaps` | schema.org |
@@ -53,6 +53,13 @@ for a jurisdiction. Nothing else was minted.
 - **Uncertainty is optional.** A source that publishes none yields a valid observation.
   When there is a margin, it is a non-negative `QuantitativeValue` in the observation's unit,
   and a `confidenceLevel` must be between 0 and 1 (`0.9` is 90%).
+- **Open-ended values are bounds.** Some sources cap a figure and publish it as "or more": median
+  household income of "$250,000+". The number the source stores is a stand-in, not an estimate.
+  Publish a one-sided bound instead: `minValue: 250000` with no `value` (use `maxValue` for "or
+  less"). An observation needs `value`, or at least one of `minValue` and `maxValue`. With a
+  `value`, the two bounds are the ends of an interval estimate. Without one, a bound says "this or
+  more", and a consumer that reads only `value` correctly finds nothing. A bound-only observation
+  has no `marginOfError`, since there is no estimate to be uncertain about.
 - **Provenance is a reference.** `sourceDataset` names the `Dataset`. Publisher, release and
   version come from the dataset, so nothing is repeated per observation.
 - **Governed and non-governed areas.** A `Jurisdiction` has an organization and a
@@ -71,8 +78,8 @@ that a community area overlaps.
 
 ## What it cannot represent
 
-- **Suppressed or top-coded values.** A suppressed value is omitted, so the reason is lost.
-  Annotation and quality flags have no home.
+- **Suppression reasons, quality flags and annotations.** A suppressed value is omitted, so the
+  reason is lost, and the flags a source attaches to a value have no home.
 - **A universe with no schema.org class.** `Household` does not exist, so such variables omit
   `populationType` and state the universe in `description`.
 - **Weights, sample size and survey design.** Not modelled. Link to the source methodology
