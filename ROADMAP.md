@@ -24,8 +24,9 @@ claim against the level it asserts, and rejects unknown levels.
 
 - **A pilot for the org model.** Run the organization structure against a real county's data
   (County of Marin) once the export is available. Needs an adapter and committed source data.
-- **`catalog` leftovers from the Irish portal pilot:** `collection_name` (55 of 60 datasets, a
-  dataset series; check DCAT `inSeries` and schema.org `isPartOf` first) and `rights` (1 of 60).
+- **`catalog` leftovers from the Irish portal pilot:** `rights` (1 of 60). `collection_name` was
+  checked and is a harvest-source key, not a dataset series, so it is closed. Real dataset
+  series (DCAT `inSeries`) stay unmodelled until a publisher has them.
 - **Multilingual titles.** One `name` plus `inLanguage` today. Wait for a publisher that has them.
 - **Readability backlog.** `python3 scripts/readability.py` lists 111 vocabulary descriptions above
   grade 9. It is not part of `npm run check`. Many are one-line definitions that score high because
@@ -571,5 +572,5 @@ nine profiles of self-authored fixtures never surfaced - see
 The bilingual-publisher concern was retracted by the wider sample: `title_translated` carries only
 English in 59 of 60 datasets and none has a real Irish title. schemaGov still has one `name` plus
 `inLanguage`, so a genuinely multilingual dataset would lose its other titles. That is a known
-limitation, not yet evidenced as urgent. Still unmapped: `collection_name` (55 of 60 datasets, a
-dataset-series grouping) and `rights` (1 of 60).
+limitation, not yet evidenced as urgent. Still unmapped: `rights` (1 of 60). `collection_name`
+turned out to be a harvest-source key, not a series.
