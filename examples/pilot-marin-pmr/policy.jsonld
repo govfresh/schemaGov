@@ -40,7 +40,9 @@
       "position": 3,
       "isPartOf": {
         "@id": "https://www.marincounty.gov/id/regulation/personnel-management-regulations/part-2"
-      }
+      },
+      "legislationDateOfApplicability": "2005-01",
+      "version": "0"
     },
     {
       "@id": "https://www.marincounty.gov/id/regulation/pmr-27",

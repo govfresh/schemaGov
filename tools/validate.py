@@ -784,7 +784,9 @@ def main(argv):
 
     for lid, n in leg_nodes.items():
         applic, adopted = n.get("legislationDateOfApplicability"), n.get("legislationDate")
-        if applic and adopted and str(applic) < str(adopted):
+        # Dates may be partial (YYYY, YYYY-MM): compare only to the precision both give.
+        width = min(len(str(applic or "")), len(str(adopted or "")))
+        if applic and adopted and str(applic)[:width] < str(adopted)[:width]:
             warnings.append(
                 f"effective before adopted: {lid}\n"
                 f"    legislationDateOfApplicability {applic} is earlier than legislationDate {adopted} "
