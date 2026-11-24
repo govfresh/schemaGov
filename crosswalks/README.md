@@ -15,6 +15,8 @@ standard onto the schemaGov representation, in both directions where possible.
 | `open311.md` | Open311 GeoReport v2 | service requests | drafted |
 | `fiscal-data-package.md` | Fiscal Data Package, COFOG, GFSM 2014 | budgets | drafted |
 | `ocds.md` | Open Contracting Data Standard | procurement | drafted |
+| `census-acs.md` | U.S. Census Bureau American Community Survey | statistics (a source system) | tested |
+| `sdmx.md` | SDMX 2.1 / 3.0, RDF Data Cube | statistics | drafted |
 | `project-management.md` | OC4IDS, OCDS milestones, GDS Service Manual | projects | draft |
 
 A crosswalk is authoritative about the *mapping*, never about the other standard. Where the

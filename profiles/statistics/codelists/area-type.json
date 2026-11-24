@@ -1,0 +1,58 @@
+{
+  "@context": "https://schema.govfresh.com/v1/context.jsonld",
+  "@id": "https://schema.govfresh.com/v1/StatisticalAreaType",
+  "@type": "DefinedTermSet",
+  "name": "Statistical area type",
+  "description": "What kind of area something is when it has no governing authority of its own. Worded to work in any country. A national agency's own name for the tier (census tract, output area, IRIS) goes in an identifier or alternateName, not a new term.",
+  "hasDefinedTerm": [
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:areatype/statistical-area",
+      "termCode": "statistical-area",
+      "name": "Statistical area",
+      "description": "An area drawn by a statistical agency to tabulate data, such as a census tract or output area."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:areatype/designated-place",
+      "termCode": "designated-place",
+      "name": "Designated place",
+      "description": "A named, populated place that a statistical agency recognises but that is not a governed municipality."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:areatype/postal-area",
+      "termCode": "postal-area",
+      "name": "Postal area",
+      "description": "An area derived from postal delivery codes."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:areatype/neighborhood",
+      "termCode": "neighborhood",
+      "name": "Neighborhood",
+      "description": "A locally recognised neighbourhood."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:areatype/planning-area",
+      "termCode": "planning-area",
+      "name": "Planning area",
+      "description": "An area a government uses for planning, with no governing body of its own."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:areatype/service-area",
+      "termCode": "service-area",
+      "name": "Service area",
+      "description": "The area a service, facility or programme covers, where that is not a jurisdiction."
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "gs:areatype/community-area",
+      "termCode": "community-area",
+      "name": "Community area",
+      "description": "A government-defined grouping of neighbourhoods or statistical areas used to report community data."
+    }
+  ]
+}

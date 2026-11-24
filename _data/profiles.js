@@ -24,6 +24,7 @@ const IMPLEMENTED = [
   { dir: 'services', slug: 'services', name: 'Service catalogue', source: 'schema.org, Open Referral / HSDS', description: 'How the services a government offers are described so residents can find and understand them.' },
   { dir: 'projects', slug: 'projects', name: 'Projects and initiatives', source: 'schema.org, OC4IDS, OCDS, GOV.UK Service Manual', description: 'How government projects are described, from where they stand in their lifecycle to their milestones and what they deliver.' },
   { dir: 'policy', slug: 'policy', name: 'Policies and regulations', source: 'schema.org, ELI', description: 'How a government\'s own policies, regulations and procedures are described, down to each numbered provision, so their text and structure can be found and cited.' },
+  { dir: 'statistics', slug: 'statistics', name: 'Statistics', source: 'schema.org, SDMX, DCAT', description: 'How statistics about people, places and communities are published, so a figure keeps its definition, area, period, uncertainty and source.' },
 ]
 const PLANNED = []
 

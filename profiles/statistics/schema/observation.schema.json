@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.govfresh.com/v1/statistics/observation.schema.json",
+  "title": "Observation",
+  "description": "One statistical value: a measured variable, about a place or other subject, for a date or period, with a value and the dataset it came from. This is schema.org `Observation`, used as is. `Observation` is a subtype of `QuantitativeValue`, so `value`, `unitText`, `minValue` and `maxValue` come with it.",
+  "standards": [
+    "schema-org"
+  ],
+  "$defs": {
+    "isoDate": {
+      "type": "string",
+      "pattern": "^\\d{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\\d|3[01]))?)?$"
+    },
+    "isoInterval": {
+      "type": "string",
+      "pattern": "^\\d{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\\d|3[01]))?)?/\\d{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\\d|3[01]))?)?$"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "@context": {},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This observation's own dereferenceable identifier."
+    },
+    "@type": {
+      "const": "Observation",
+      "description": "Always `Observation`, a real schema.org type."
+    },
+    "observationAbout": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "WHERE or WHO this describes: a `Jurisdiction`, a statistical area (`Place`), or any other entity schemaGov represents. Always a reference, never a copy."
+    },
+    "variableMeasured": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "WHAT was measured: a `StatisticalVariable`. The population subset (age 65+, female) lives in the variable, so there is no per-subset property on the observation."
+    },
+    "value": {
+      "type": "number",
+      "description": "The value. A count, a rate or a median, in the unit the variable and `unitText` state. A suppressed or missing value is not an observation: omit it."
+    },
+    "unitText": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The unit in words: `persons`, `percent`, `USD`, `years`."
+    },
+    "unitCode": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The unit as a UN/CEFACT code, where one exists."
+    },
+    "observationDate": {
+      "$ref": "#/$defs/isoDate",
+      "description": "WHEN, for a point in time or a single calendar period: `2024`, `2024-06`, `2024-06-30`. Use this OR `observationPeriod`, never both."
+    },
+    "observationPeriod": {
+      "$ref": "#/$defs/isoInterval",
+      "description": "WHEN, for an estimate pooled over a span: an ISO 8601 interval, `2020/2024`. A five-year estimate is a period, not a point on its last day."
+    },
+    "marginOfError": {
+      "type": "object",
+      "description": "Optional. Present only when the source publishes one. A `QuantitativeValue` in the same unit as `value`.",
+      "properties": {
+        "@type": {
+          "const": "QuantitativeValue"
+        },
+        "value": {
+          "type": "number",
+          "minimum": 0
+        },
+        "additionalProperty": {
+          "type": "array",
+          "description": "Carries the confidence level, as a `PropertyValue` with `propertyID` `confidenceLevel` and a value between 0 and 1 (0.9 is 90%).",
+          "items": {
+            "type": "object",
+            "properties": {
+              "@type": {
+                "const": "PropertyValue"
+              },
+              "propertyID": {
+                "type": "string"
+              },
+              "value": {}
+            },
+            "required": [
+              "@type",
+              "propertyID",
+              "value"
+            ],
+            "if": {
+              "properties": {
+                "propertyID": {
+                  "const": "confidenceLevel"
+                }
+              },
+              "required": [
+                "propertyID"
+              ]
+            },
+            "then": {
+              "properties": {
+                "value": {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "maximum": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "@type",
+        "value"
+      ]
+    },
+    "minValue": {
+      "type": "number",
+      "description": "Optional lower bound of the stated interval."
+    },
+    "maxValue": {
+      "type": "number",
+      "description": "Optional upper bound of the stated interval."
+    },
+    "measurementMethod": {
+      "type": "string",
+      "description": "Optional. How it was obtained: `survey estimate`, `administrative count`, `census`."
+    },
+    "sourceDataset": {
+      "type": "string",
+      "format": "iri",
+      "description": "The `Dataset` that produced this value. Publisher, version and release date are read from the dataset, never copied here."
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "observationAbout",
+    "variableMeasured",
+    "value",
+    "sourceDataset"
+  ],
+  "oneOf": [
+    {
+      "required": [
+        "observationDate"
+      ]
+    },
+    {
+      "required": [
+        "observationPeriod"
+      ]
+    }
+  ],
+  "additionalProperties": true
+}

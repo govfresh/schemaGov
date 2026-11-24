@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.govfresh.com/v1/statistics/place.schema.json",
+  "title": "Statistical or community area",
+  "description": "A geographic area with no governing authority of its own: a statistical area, neighbourhood, planning area, service area, postal area. This is plain schema.org `Place`. A `Jurisdiction` is governed territory and has an organization; this has neither. Both can have `Boundary` records and be the subject of an `Observation`.",
+  "standards": [
+    "schema-org"
+  ],
+  "type": "object",
+  "properties": {
+    "@context": {},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This area's own dereferenceable identifier."
+    },
+    "@type": {
+      "const": "Place",
+      "description": "Always `Place`, a real schema.org type. Not `AdministrativeArea`: that is reserved for jurisdictions."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The area's name or label."
+    },
+    "alternateName": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "areaType": {
+      "type": "string",
+      "description": "termCode from the `StatisticalAreaType` code list.",
+      "enum": [
+        "statistical-area",
+        "designated-place",
+        "postal-area",
+        "neighborhood",
+        "planning-area",
+        "service-area",
+        "community-area"
+      ]
+    },
+    "containedInPlace": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The area or jurisdiction this lies wholly within. Strict containment only."
+    },
+    "containsPlace": {
+      "type": "array",
+      "items": {
+        "$ref": "../_core/reference.schema.json"
+      },
+      "description": "Areas wholly within this one."
+    },
+    "geoOverlaps": {
+      "type": "array",
+      "items": {
+        "$ref": "../_core/reference.schema.json"
+      },
+      "description": "Areas that partly overlap this one without either containing the other."
+    },
+    "geo": {
+      "type": "object",
+      "description": "schema.org `GeoCoordinates` or `GeoShape`."
+    },
+    "boundary": {
+      "type": "array",
+      "items": {
+        "$ref": "../_core/reference.schema.json"
+      },
+      "description": "`Boundary` records for this area, including superseded ones. Statistical areas are redrawn on a schedule, so the date matters."
+    },
+    "identifier": {
+      "type": "array",
+      "description": "Scheme-qualified identifiers: a statistical agency's geographic code, for example.",
+      "items": {
+        "$ref": "../_core/identifier.schema.json"
+      }
+    },
+    "sameAs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      }
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "name",
+    "areaType"
+  ],
+  "not": {
+    "anyOf": [
+      {
+        "required": [
+          "jurisdictionOf"
+        ]
+      },
+      {
+        "required": [
+          "governmentLevel"
+        ]
+      }
+    ]
+  },
+  "additionalProperties": true
+}

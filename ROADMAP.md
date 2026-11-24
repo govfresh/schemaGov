@@ -95,7 +95,6 @@ Contests, candidates, results, polling places.
 |---|---|---|
 | `grants` | IATI, 360Giving | Money **out** to third parties, distinct from procurement. `MonetaryGrant` exists. |
 | `consultations` | — | Comment periods, petitions, participatory budgeting. Couples to `meetings` and `code`. |
-| `indicators` | SDMX | Performance and SDG reporting. `Observation` and `StatisticalVariable` exist. |
 
 ## Organization structure refinement — DONE
 

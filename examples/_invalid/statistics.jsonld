@@ -1,0 +1,303 @@
+{
+  "@context": "https://schema.govfresh.com/v1/context.jsonld",
+  "@graph": [
+    {
+      "@id": "https://invalid.example/id/statistics/ds-ok",
+      "@type": "Dataset",
+      "name": "ok",
+      "publisher": {
+        "@id": "https://invalid.example/id/statistics/org"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "contentUrl": "https://invalid.example/d.csv",
+          "encodingFormat": "text/csv"
+        }
+      ]
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/org",
+      "@type": "GovernmentOrganization",
+      "name": "Org",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "o"
+        }
+      ],
+      "governmentLevel": "municipal"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/var-ok",
+      "@type": "StatisticalVariable",
+      "name": "A variable"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/area-ok",
+      "@type": "Place",
+      "name": "An area",
+      "areaType": "statistical-area"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/ok",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/area-ok"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/var-ok"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok",
+      "observationDate": "2024"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/ok-period",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/area-ok"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/var-ok"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok",
+      "observationPeriod": "2019/2023"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/ok-no-uncertainty",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/area-ok"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/var-ok"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok",
+      "observationDate": "2024"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/no-variable",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok",
+      "observationDate": "2024"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/no-value",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/target-var"
+      },
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok",
+      "observationDate": "2024"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/no-dataset",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/target-var"
+      },
+      "value": 10,
+      "observationDate": "2024"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/both-time",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/target-var"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok",
+      "observationDate": "2024",
+      "observationPeriod": "2019/2023"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/no-time",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/target-var"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/bad-period",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/target-var"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok",
+      "observationPeriod": "2019-2023"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/backwards-period",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/target-var"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok",
+      "observationPeriod": "2023/2019"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/bad-moe",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/target-var"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok",
+      "observationDate": "2024",
+      "marginOfError": {
+        "@type": "QuantitativeValue",
+        "value": -5
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/bad-confidence",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/target-var"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok",
+      "observationDate": "2024",
+      "marginOfError": {
+        "@type": "QuantitativeValue",
+        "value": 5,
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "confidenceLevel",
+            "value": 90
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/bad-bounds",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/target-var"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok",
+      "observationDate": "2024",
+      "minValue": 20,
+      "maxValue": 5
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/dataset-is-org",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/target-var"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/org",
+      "observationDate": "2024"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/variable-is-place",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://invalid.example/id/statistics/target-area"
+      },
+      "variableMeasured": {
+        "@id": "https://invalid.example/id/statistics/area-other"
+      },
+      "value": 10,
+      "sourceDataset": "https://invalid.example/id/statistics/ds-ok",
+      "observationDate": "2024"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/var-no-name",
+      "@type": "StatisticalVariable"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/area-no-type",
+      "@type": "Place",
+      "name": "An area"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/area-bad-type",
+      "@type": "Place",
+      "name": "An area",
+      "areaType": "county"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/area-governed",
+      "@type": "Place",
+      "name": "An area",
+      "areaType": "statistical-area",
+      "jurisdictionOf": [
+        {
+          "@id": "https://invalid.example/id/statistics/org"
+        }
+      ]
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/area-in-org",
+      "@type": "Place",
+      "name": "An area",
+      "areaType": "statistical-area",
+      "containedInPlace": {
+        "@id": "https://invalid.example/id/statistics/org"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/area-other",
+      "@type": "Place",
+      "name": "Another area",
+      "areaType": "statistical-area"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/target-area",
+      "@type": "Place",
+      "name": "Target area",
+      "areaType": "statistical-area"
+    },
+    {
+      "@id": "https://invalid.example/id/statistics/target-var",
+      "@type": "StatisticalVariable",
+      "name": "Target variable"
+    }
+  ]
+}

@@ -140,7 +140,7 @@ publishers in different countries.
 - `context/v1/context.jsonld` — the @context every instance imports; immutable once published
 - `vocabulary/schemagov.ttl` — gs: terms, each tied to schema.org by subclass or by the types it applies to
 - `profiles/_core/` — Jurisdiction · Organization · Person · Role · Identifier
-- `profiles/{org,code,meetings,requests,budget,procurement,catalog,alerts,permits,elections,services,projects,policy}/` — one directory per [domain profile](/profiles/)
+- `profiles/{org,code,meetings,requests,budget,procurement,catalog,alerts,permits,elections,services,projects,policy,statistics}/` — one directory per [domain profile](/profiles/)
 - `examples/example-gov/` — one coherent, cross-linked fixture set
 - `examples/_invalid/` — deliberately broken fixtures; `tools/check-invalid.py` fails unless each fault is caught
 - `crosswalks/` — mapping tables to the standards being profiled
@@ -218,8 +218,9 @@ Every profile in the table above is specified, implemented, and validating.
 | `services` | `GovernmentService` | [schema.org](/standards/schema-org/), [Open Referral / HSDS](/standards/open-referral-hsds/) | <span class="badge text-bg-success">implemented</span> |
 | `projects` | `gs:Project` (subclass of `Project`), `gs:Milestone`, `Article` | [schema.org](/standards/schema-org/), [OC4IDS](/standards/oc4ids/), [OCDS](/standards/ocds/), [GOV.UK Service Manual](/standards/gds-service-manual/) | <span class="badge text-bg-success">implemented</span> |
 | `policy` | `Legislation` (reused from `code`), `DefinedTerm` | [schema.org](/standards/schema-org/), [ELI](/standards/eli/) | <span class="badge text-bg-success">implemented</span> |
+| `statistics` | `Observation`, `StatisticalVariable`, `Place` (statistical areas) | [schema.org](/standards/schema-org/), [SDMX](/standards/sdmx/) | <span class="badge text-bg-success">implemented</span> |
 
-All fourteen profiles are implemented. `_core` is the shared dependency every other profile
+All fifteen profiles are implemented. `_core` is the shared dependency every other profile
 builds on; `code` and `meetings` are coupled (agenda items cite legislation, votes occur at
 meetings), and `procurement` cites `budget` lines. `requests` depends on no other profile,
 which is also why it tends to be the easiest first one for a publisher to adopt: most

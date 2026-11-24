@@ -103,6 +103,14 @@ export const STANDARDS = [
     description: 'A standard for publishing data about every stage of a public contracting process, from planning through award to implementation.',
   },
   {
+    slug: 'sdmx',
+    name: 'SDMX',
+    aliases: ['Statistical Data and Metadata eXchange'],
+    org: 'BIS, ECB, Eurostat, IMF, OECD, UN, World Bank',
+    url: 'https://sdmx.org',
+    description: 'The international standard for exchanging statistical data and its definitions. schemaGov maps to it rather than adopting it, because schema.org Observation is the smaller model.',
+  },
+  {
     slug: 'dcat',
     name: 'DCAT / DCAT-AP',
     aliases: [],

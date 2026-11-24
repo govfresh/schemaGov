@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.govfresh.com/v1/statistics/statistical-variable.schema.json",
+  "title": "StatisticalVariable",
+  "description": "A reusable definition of what is measured, independent of any source: 'Population age 65+', 'Median household income'. This is schema.org `StatisticalVariable`. A source's own code (a census table cell, a national-statistics series ID) is a mapping, not the identifier: it goes in a crosswalk, or in `identifier` with its scheme named.",
+  "standards": [
+    "schema-org"
+  ],
+  "type": "object",
+  "properties": {
+    "@context": {},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This variable's own dereferenceable identifier. Never a source's code."
+    },
+    "@type": {
+      "const": "StatisticalVariable",
+      "description": "Always `StatisticalVariable`, a real schema.org type."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The variable's plain-language name."
+    },
+    "description": {
+      "type": "string",
+      "description": "What exactly is counted or calculated, including the universe it covers (people, households, occupied housing units)."
+    },
+    "populationType": {
+      "type": "string",
+      "description": "The kind of thing counted, as a schema.org class: `Person`. Optional, because schema.org has no class for every universe (households, for one)."
+    },
+    "measuredProperty": {
+      "type": "string",
+      "format": "iri",
+      "description": "The property measured, as an IRI from any vocabulary. Optional."
+    },
+    "statType": {
+      "type": "string",
+      "description": "The statistic: `count`, `median`, `mean`, `percent`. Optional."
+    },
+    "measurementDenominator": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "For a rate or share, the `StatisticalVariable` it is a share of."
+    },
+    "additionalProperty": {
+      "type": "array",
+      "description": "The dimensions that define this subset of the population, one `PropertyValue` each. Age 65 and over is `{propertyID: age, minValue: 65, unitText: year}`; female is `{propertyID: gender, value: Female}`. Use `value` for a category and `minValue`/`maxValue` for a range. schemaGov defines no dimension vocabulary: publishers reuse the same `propertyID` for the same dimension.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "@type": {
+            "const": "PropertyValue"
+          },
+          "propertyID": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          },
+          "minValue": {
+            "type": "number"
+          },
+          "maxValue": {
+            "type": "number"
+          },
+          "unitText": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "@type",
+          "propertyID"
+        ],
+        "anyOf": [
+          {
+            "required": [
+              "value"
+            ]
+          },
+          {
+            "required": [
+              "minValue"
+            ]
+          },
+          {
+            "required": [
+              "maxValue"
+            ]
+          }
+        ]
+      }
+    },
+    "identifier": {
+      "type": "array",
+      "description": "Scheme-qualified identifiers for this variable in other systems.",
+      "items": {
+        "$ref": "../_core/identifier.schema.json"
+      }
+    },
+    "sameAs": {
+      "type": "array",
+      "description": "The same variable defined elsewhere, such as a Data Commons or SDMX definition.",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      }
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "name"
+  ],
+  "additionalProperties": true
+}
