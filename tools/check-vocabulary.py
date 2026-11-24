@@ -9,7 +9,7 @@ Checks:
      shapes/schemaGov.shapes.ttl is declared in vocabulary/schemagov.ttl
   2. every code list set (profiles/*/codelists) is declared there as a schema:DefinedTermSet
   3. no two terms differ only by letter case without being listed (informational: those
-     share one page, see PLAN-per-term-pages.md)
+     share one page, rendered by content/term.njk)
 
 Usage:  python3 tools/check-vocabulary.py
 Requires: pip install rdflib

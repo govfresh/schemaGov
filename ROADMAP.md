@@ -124,7 +124,7 @@ canonical hierarchy link.
 
 ## Mission and service areas — DONE
 
-First step of [PLAN-org-budget-model.md](PLAN-org-budget-model.md). Added `mission` (a stated
+First step of the org and budget model. Added `mission` (a stated
 mission, kept apart from `description`; schema.org has no equivalent) and the `serviceArea`
 organization classification (a grouping of departments; still a `GovernmentOrganization`, no new
 class). `example-gov` now shows government, service area, department, division. The org and
@@ -134,7 +134,7 @@ property and one new code-list value. Next: `Fund` and `BudgetLine.fund`, then `
 
 ## Funds — DONE
 
-Second step of [PLAN-org-budget-model.md](PLAN-org-budget-model.md). Added `gs:Fund`, a persistent
+Second step of the org and budget model. Added `gs:Fund`, a persistent
 financial account (schema.org has none), and `BudgetLine.fund` to reference it. `fundSource` stays
 as source-system text. Reused the existing `gs:administeredBy` for the responsible organization,
 widening it from elections to funds, so no second property was minted. `example-gov` has two funds
@@ -143,7 +143,7 @@ fixtures, cover the new types. Backward compatible: all additions are optional. 
 
 ## Programs — DONE
 
-Third step of [PLAN-org-budget-model.md](PLAN-org-budget-model.md). Added `gs:Program`, a persistent
+Third step of the org and budget model. Added `gs:Program`, a persistent
 government activity that appears across fiscal years (schema.org has none), and `BudgetLine.program`
 to reference it. `programClassification` stays as the publisher's own code. `administeredBy` now
 also covers programs. A program is not an organization, not a bounded Project and not a service;
@@ -325,8 +325,7 @@ still warns.
 expand `governmentLevel: "municipal"` into `.../v1/level/municipal`, and that pointed at
 nothing on the live site. 229 term pages are now generated, one per declared term, and
 `check-namespace.js` covers every one. A term that stops resolving now fails the build.
-Classes, properties and code-list sets (250 terms) have their own pages too; see
-[PLAN-per-term-pages.md](PLAN-per-term-pages.md).
+Classes, properties and code-list sets (250 terms) have their own pages too (`_data/vocabulary.js`, `content/term.njk`).
 
 **Note on check E's design.** rdflib's graph canonicalisation reports non-isomorphic for
 graphs differing only in blank-node labelling when a document has many similar blank nodes.
