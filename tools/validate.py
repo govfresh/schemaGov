@@ -19,7 +19,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CORE = ROOT / "profiles" / "_core" / "schema"
-PROFILE_DIRS = [ROOT / "profiles" / d / "schema" for d in ("_core", "org", "code", "meetings", "requests", "budget", "procurement", "catalog", "alerts", "permits", "elections", "services", "projects", "policy")]
+PROFILE_DIRS = [ROOT / "profiles" / d / "schema" for d in ("_core", "org", "code", "meetings", "requests", "budget", "procurement", "catalog", "alerts", "permits", "elections", "services", "projects", "policy", "statistics")]
 
 # @type -> schema file. Roles are validated where they are nested, not standalone.
 SCHEMA_FOR = {
@@ -65,6 +65,9 @@ SCHEMA_FOR = {
     "PoliticalParty": "political-party.schema.json",
     "Project": "project.schema.json",
     "Milestone": "milestone.schema.json",
+    "Observation": "observation.schema.json",
+    "StatisticalVariable": "statistical-variable.schema.json",
+    "Place": "place.schema.json",
 }
 
 
@@ -465,6 +468,22 @@ def main(argv):
                 f"request marked duplicate without saying of what: {nid}\n"
                 f"    set duplicateOf; a status note naming the other request cannot be followed"
             )
+
+    # --- statistics --------------------------------------------------------------
+    # observationPeriod is an ISO 8601 interval ("2020/2024"). The pattern is checked by the
+    # JSON Schema; the order of its two ends is not something a pattern can say.
+    for nid, node in entities.items():
+        ts = node.get("@type")
+        if "Observation" not in (ts if isinstance(ts, list) else [ts]):
+            continue
+        period = node.get("observationPeriod")
+        if isinstance(period, str) and "/" in period:
+            start, end = period.split("/", 1)
+            pad = lambda d: (d.split("-") + ["00", "00"])[:3]
+            if end and pad(end) < pad(start):
+                errors.append(
+                    f"observation period ends before it starts: {nid}\n"
+                    f"    observationPeriod {period}")
 
     # --- boundaries and geometry -----------------------------------------------
     INLINE_VERTEX_WARN = 500

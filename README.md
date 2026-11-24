@@ -47,7 +47,7 @@ context/v1/       the @context every document imports
 vocabulary/       gs: terms, each mapped onto a schema.org term
 profiles/_core/   Jurisdiction · Organization · Person · Role · Identifier
 profiles/…        org · code · meetings · requests · budget · procurement ·
-                   catalog · alerts · permits · elections · services · projects · policy
+                   catalog · alerts · permits · elections · services · projects · policy · statistics
 examples/         a coherent, cross-linked fixture set, plus real-publisher pilots
 crosswalks/       mapping tables to the standards being profiled
 shapes/           SHACL, for semantic validation

@@ -54,9 +54,28 @@ FAULTS = {
     "policy/term-bad-set": "definition belongs to something that is not a term set",
     "policy/term-subject-org": "definition's source is an organization",
     "policy/term-no-name": "definition with no name",
+    "statistics/no-variable": "observation with no measured variable",
+    "statistics/no-value": "observation with no value",
+    "statistics/no-dataset": "observation with no source dataset",
+    "statistics/both-time": "both observationDate and observationPeriod",
+    "statistics/no-time": "neither observationDate nor observationPeriod",
+    "statistics/bad-period": "period not an ISO 8601 interval",
+    "statistics/backwards-period": "period ends before it starts",
+    "statistics/bad-moe": "negative margin of error",
+    "statistics/bad-confidence": "confidence level outside 0 to 1",
+    "statistics/bad-bounds": "lower bound above upper bound",
+    "statistics/dataset-is-org": "sourceDataset points at an organization",
+    "statistics/variable-is-place": "variableMeasured points at a place",
+    "statistics/var-no-name": "variable with no name",
+    "statistics/area-no-type": "statistical area with no areaType",
+    "statistics/area-bad-type": "areaType outside the code list",
+    "statistics/area-governed": "statistical area with a governing organization",
+    "statistics/area-in-org": "statistical area contained in an organization",
 }
 CLEAN = ["project/ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
-         "policy/clean-top", "policy/clean-part", "policy/term-ok"]
+         "policy/clean-top", "policy/clean-part", "policy/term-ok",
+         "statistics/ok", "statistics/ok-period", "statistics/ok-no-uncertainty", "statistics/area-ok",
+         "statistics/var-ok"]
 
 
 def run(tool):

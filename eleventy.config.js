@@ -83,6 +83,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ './profiles/projects/schema/': '/v1/projects/' })
   eleventyConfig.addPassthroughCopy({ './profiles/projects/codelists/': '/v1/codelists/' })
   eleventyConfig.addPassthroughCopy({ './profiles/policy/schema/': '/v1/policy/' })
+  eleventyConfig.addPassthroughCopy({ './profiles/statistics/schema/': '/v1/statistics/' })
+  eleventyConfig.addPassthroughCopy({ './profiles/statistics/codelists/': '/v1/codelists/' })
   eleventyConfig.addPassthroughCopy({ './examples/': '/examples/' })
 
   eleventyConfig.addWatchTarget('./profiles/')

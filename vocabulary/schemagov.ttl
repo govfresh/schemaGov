@@ -989,14 +989,14 @@ gs:Geometry a rdfs:Class ;
 gs:boundary a rdf:Property ;
     rdfs:label "boundary" ;
     rdfs:comment "A Boundary of this area, including superseded ones." ;
-    schema:domainIncludes schema:AdministrativeArea ;
+    schema:domainIncludes schema:AdministrativeArea, schema:Place ;
     schema:rangeIncludes gs:Boundary .
 
 gs:boundaryOf a rdf:Property ;
     rdfs:label "boundary of" ;
-    rdfs:comment "The jurisdiction a Boundary is the extent of." ;
+    rdfs:comment "The area a Boundary is the extent of: a jurisdiction, or a statistical or community area (schema:Place) that has no governing authority." ;
     schema:domainIncludes gs:Boundary ;
-    schema:rangeIncludes schema:AdministrativeArea .
+    schema:rangeIncludes schema:AdministrativeArea, schema:Place .
 
 gs:geometry a rdf:Property ;
     rdfs:label "geometry" ;
@@ -1188,3 +1188,16 @@ gs:MilestoneStatus a schema:DefinedTermSet ; schema:name "Milestone status" ;
     rdfs:comment "Whether a milestone has been reached. The values are those of the Open Contracting Data Standard." .
 gs:DigitalServicePhase a schema:DefinedTermSet ; schema:name "Digital service phase" ;
     rdfs:comment "The lifecycle of a digital government service, after the GOV.UK Service Manual. For digital services only." .
+
+#################  Statistics  #################
+
+gs:areaType a rdf:Property ;
+    rdfs:label "area type" ;
+    rdfs:comment "What kind of area a schema:Place is when it has no governing authority of its own, as a gs:StatisticalAreaType term. Not a jurisdiction: those use gs:governmentLevel." ;
+    schema:domainIncludes schema:Place ;
+    schema:rangeIncludes schema:DefinedTerm ;
+    rdfs:subPropertyOf schema:additionalType .
+
+gs:StatisticalAreaType a schema:DefinedTermSet ;
+    schema:name "Statistical area type" ;
+    rdfs:comment "Extensible. A national agency's own name for a tier goes in an identifier or alternateName, not a new term." .

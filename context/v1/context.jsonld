@@ -1055,6 +1055,38 @@
       "@type": "@id",
       "@container": "@set"
     },
+    "observationAbout": {
+      "@id": "schema:observationAbout",
+      "@type": "@id"
+    },
+    "variableMeasured": {
+      "@id": "schema:variableMeasured",
+      "@type": "@id"
+    },
+    "measurementDenominator": {
+      "@id": "schema:measurementDenominator",
+      "@type": "@id"
+    },
+    "measuredProperty": {
+      "@id": "schema:measuredProperty",
+      "@type": "@id"
+    },
+    "populationType": {
+      "@id": "schema:populationType",
+      "@type": "@vocab"
+    },
+    "geoOverlaps": {
+      "@id": "schema:geoOverlaps",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "areaType": {
+      "@id": "gs:areaType",
+      "@type": "@vocab",
+      "@context": {
+        "@vocab": "https://schema.govfresh.com/v1/areatype/"
+      }
+    },
     "boundaryOf": {
       "@id": "gs:boundaryOf",
       "@type": "@id"

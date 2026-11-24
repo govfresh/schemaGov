@@ -1,0 +1,316 @@
+{
+  "@context": "https://schema.govfresh.com/v1/context.jsonld",
+  "@graph": [
+    {
+      "@id": "https://example.gov/id/dataset/population-estimates",
+      "@type": "Dataset",
+      "name": "Annual population estimates",
+      "description": "Resident population estimates by year, 2020 onward.",
+      "publisher": {
+        "@id": "https://example.gov/id/organization/city-government",
+        "name": "Example City Government"
+      },
+      "includedInDataCatalog": {
+        "@id": "https://example.gov/id/catalog/open-data",
+        "name": "Example City open data catalogue"
+      },
+      "spatialCoverage": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "dateModified": "2024-03-15",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "CSV",
+          "contentUrl": "https://example.gov/data/population-estimates.csv",
+          "encodingFormat": "text/csv"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/dataset/community-survey-2024",
+      "@type": "Dataset",
+      "name": "Community survey, 2020-2024 estimates",
+      "description": "Five-year estimates of population, income and housing for the city and its statistical areas.",
+      "publisher": {
+        "@id": "https://example.gov/id/organization/city-government",
+        "name": "Example City Government"
+      },
+      "includedInDataCatalog": {
+        "@id": "https://example.gov/id/catalog/open-data",
+        "name": "Example City open data catalogue"
+      },
+      "spatialCoverage": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "dateModified": "2025-12-01",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "CSV",
+          "contentUrl": "https://example.gov/data/community-survey-2024.csv",
+          "encodingFormat": "text/csv"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/area/statistical-area-0101",
+      "@type": "Place",
+      "name": "Statistical area 0101",
+      "areaType": "statistical-area",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "sa-0101"
+        }
+      ],
+      "containedInPlace": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      }
+    },
+    {
+      "@id": "https://example.gov/id/area/harbor-community",
+      "@type": "Place",
+      "name": "Harbor community area",
+      "areaType": "community-area",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "harbor"
+        }
+      ],
+      "containedInPlace": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      },
+      "geoOverlaps": [
+        {
+          "@id": "https://example.gov/id/area/statistical-area-0101",
+          "name": "Statistical area 0101"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/statistical-variable/population-total",
+      "@type": "StatisticalVariable",
+      "name": "Total population",
+      "description": "Residents counted at their usual place of residence.",
+      "populationType": "Person",
+      "statType": "count"
+    },
+    {
+      "@id": "https://example.gov/id/statistical-variable/population-65-plus",
+      "@type": "StatisticalVariable",
+      "name": "Population age 65 and over",
+      "description": "Residents aged 65 or older.",
+      "populationType": "Person",
+      "statType": "count",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "age",
+          "minValue": 65,
+          "unitText": "year"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.gov/id/statistical-variable/median-household-income",
+      "@type": "StatisticalVariable",
+      "name": "Median household income",
+      "description": "Median of annual household income, in current dollars. Households are the universe, not people.",
+      "statType": "median"
+    },
+    {
+      "@id": "https://example.gov/id/statistical-variable/households-total",
+      "@type": "StatisticalVariable",
+      "name": "Total households",
+      "description": "Occupied housing units.",
+      "statType": "count"
+    },
+    {
+      "@id": "https://example.gov/id/statistical-variable/housing-cost-burden-rate",
+      "@type": "StatisticalVariable",
+      "name": "Housing cost burden rate",
+      "description": "Share of households paying 30 percent or more of income on housing.",
+      "statType": "percent",
+      "measurementDenominator": {
+        "@id": "https://example.gov/id/statistical-variable/households-total",
+        "name": "Total households"
+      }
+    },
+    {
+      "@id": "https://example.gov/id/observation/example-city/population/2020",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      },
+      "variableMeasured": {
+        "@id": "https://example.gov/id/statistical-variable/population-total",
+        "name": "Total population"
+      },
+      "value": 75000,
+      "unitText": "persons",
+      "observationDate": "2020-04-01",
+      "sourceDataset": "https://example.gov/id/dataset/population-estimates"
+    },
+    {
+      "@id": "https://example.gov/id/observation/example-city/population/2021",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      },
+      "variableMeasured": {
+        "@id": "https://example.gov/id/statistical-variable/population-total",
+        "name": "Total population"
+      },
+      "value": 76100,
+      "unitText": "persons",
+      "observationDate": "2021-07-01",
+      "sourceDataset": "https://example.gov/id/dataset/population-estimates"
+    },
+    {
+      "@id": "https://example.gov/id/observation/example-city/population/2022",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      },
+      "variableMeasured": {
+        "@id": "https://example.gov/id/statistical-variable/population-total",
+        "name": "Total population"
+      },
+      "value": 76900,
+      "unitText": "persons",
+      "observationDate": "2022-07-01",
+      "sourceDataset": "https://example.gov/id/dataset/population-estimates"
+    },
+    {
+      "@id": "https://example.gov/id/observation/example-city/population/2023",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      },
+      "variableMeasured": {
+        "@id": "https://example.gov/id/statistical-variable/population-total",
+        "name": "Total population"
+      },
+      "value": 77800,
+      "unitText": "persons",
+      "observationDate": "2023-07-01",
+      "sourceDataset": "https://example.gov/id/dataset/population-estimates"
+    },
+    {
+      "@id": "https://example.gov/id/observation/example-city/population-65-plus/2020-2024",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      },
+      "variableMeasured": {
+        "@id": "https://example.gov/id/statistical-variable/population-65-plus",
+        "name": "Population age 65 and over"
+      },
+      "value": 11250,
+      "unitText": "persons",
+      "observationPeriod": "2020/2024",
+      "sourceDataset": "https://example.gov/id/dataset/community-survey-2024",
+      "marginOfError": {
+        "@type": "QuantitativeValue",
+        "value": 650,
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "confidenceLevel",
+            "value": 0.9
+          }
+        ]
+      },
+      "minValue": 10600,
+      "maxValue": 11900,
+      "measurementMethod": "survey estimate"
+    },
+    {
+      "@id": "https://example.gov/id/observation/example-city/median-household-income/2020-2024",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      },
+      "variableMeasured": {
+        "@id": "https://example.gov/id/statistical-variable/median-household-income",
+        "name": "Median household income"
+      },
+      "value": 98500,
+      "unitText": "USD",
+      "observationPeriod": "2020/2024",
+      "sourceDataset": "https://example.gov/id/dataset/community-survey-2024",
+      "marginOfError": {
+        "@type": "QuantitativeValue",
+        "value": 2100,
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "confidenceLevel",
+            "value": 0.9
+          }
+        ]
+      },
+      "measurementMethod": "survey estimate"
+    },
+    {
+      "@id": "https://example.gov/id/observation/statistical-area-0101/housing-cost-burden-rate/2020-2024",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://example.gov/id/area/statistical-area-0101",
+        "name": "Statistical area 0101"
+      },
+      "variableMeasured": {
+        "@id": "https://example.gov/id/statistical-variable/housing-cost-burden-rate",
+        "name": "Housing cost burden rate"
+      },
+      "value": 38.4,
+      "unitText": "percent",
+      "observationPeriod": "2020/2024",
+      "sourceDataset": "https://example.gov/id/dataset/community-survey-2024",
+      "marginOfError": {
+        "@type": "QuantitativeValue",
+        "value": 4.1,
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "confidenceLevel",
+            "value": 0.9
+          }
+        ]
+      },
+      "measurementMethod": "survey estimate"
+    },
+    {
+      "@id": "https://example.gov/id/observation/harbor-community/population/2023",
+      "@type": "Observation",
+      "observationAbout": {
+        "@id": "https://example.gov/id/area/harbor-community",
+        "name": "Harbor community area"
+      },
+      "variableMeasured": {
+        "@id": "https://example.gov/id/statistical-variable/population-total",
+        "name": "Total population"
+      },
+      "value": 8200,
+      "unitText": "persons",
+      "observationDate": "2023-07-01",
+      "sourceDataset": "https://example.gov/id/dataset/population-estimates"
+    }
+  ]
+}
