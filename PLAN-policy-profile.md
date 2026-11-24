@@ -1,6 +1,6 @@
 # Plan: policy and regulation support (reviewed against `main`, 2026-11-23)
 
-Status: steps 0-5 implemented on branch `policy-profile` (2026-11-23); `npm run check` passes. Steps 6-7 (Marin pilot, full-manual stress test, findings) are not started.
+Status: steps 0-5 implemented on branch `policy-profile` (2026-11-23); `npm run check` passes. Steps 6-7: structure-only Marin pilot added 2026-11-24 (`examples/pilot-marin-pmr/`, no regulation text); findings are in its README. Open decision: accept partial ISO dates on the legislation date properties.
 
 Decisions taken: definition link is `subjectOf` (no `gs:definedIn`); `legislationJurisdiction` is required only on top-level works; citations are a mixed `{@id}`/string array with no `Citation` node. No `gs:` terms were added.
 

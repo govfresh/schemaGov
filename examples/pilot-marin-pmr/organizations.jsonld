@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.govfresh.com/v1/context.jsonld",
+  "@graph": [
+    {
+      "@id": "https://www.marincounty.gov/id/organization/human-resources",
+      "@type": "GovernmentOrganization",
+      "name": "County of Marin Human Resources",
+      "organizationClassification": "department",
+      "governmentLevel": "subregional",
+      "areaServed": {
+        "@id": "https://www.marincounty.gov/id/jurisdiction/county-of-marin",
+        "name": "County of Marin"
+      },
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "human-resources"
+        }
+      ]
+    }
+  ]
+}
