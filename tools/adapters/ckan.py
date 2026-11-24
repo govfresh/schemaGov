@@ -200,8 +200,14 @@ def convert(pkgs, base, portal_url, gaps, notes):
         if pkg.get("provenance"):
             d["provenanceStatement"] = str(pkg["provenance"])[:500]
 
+        # collection_name is the portal's harvest-source key (data.gov.ie: 15 values across
+        # 23,103 datasets, such as "cso_jsonrpc"), not a dataset series. It names where the
+        # record was harvested from, so it is reported as ignored, not as a modelling gap.
+        if pkg.get("collection_name"):
+            notes["collection_name ignored: harvest source key, not a dataset series"] += 1
+
         # Still unmapped.
-        for f in ("spatial_uri", "spatial_resolution", "rights", "collection_name"):
+        for f in ("spatial_uri", "spatial_resolution", "rights"):
             if pkg.get(f) not in (None, "", [], {}):
                 gaps[f"field:{f}"] += 1
 

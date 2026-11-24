@@ -80,8 +80,15 @@ But it is not evidenced as urgent by this publisher, and the earlier claim overs
 
 | Field | Count | Note |
 |---|---|---|
-| `collection_name` | 55 | CKAN dataset series grouping — the clearest candidate next |
 | `rights` | 1 | Free-text rights statement beyond the licence |
+
+`collection_name` is **not** a gap. It was first read as a dataset-series grouping (55 of 60
+datasets). The whole portal shows otherwise: 23,103 datasets carry one of 15 values
+(`cso_jsonrpc` alone is 14,159), and the values line up with the portal's `harvest_source_title`
+(`tusla-ckan`, `isde`, `dublinked-ckan`). It is the key of the feed a record was harvested from.
+A dataset series would have a title and members that belong together; these have neither. The
+adapter now reports it as ignored. If a publisher ever has real series (DCAT `inSeries`, schema.org
+`isPartOf`), that is a separate question, to be answered from that publisher's data.
 
 ## Mapping confidence
 
