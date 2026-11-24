@@ -33,6 +33,14 @@
       "containedInPlace": {"@id": "https://example.gov/id/facility/city-hall", "name": "Example City Hall"},
       "publicAccess": true,
       "maximumAttendeeCapacity": 120
+    },
+    {
+      "@id": "https://example.gov/id/facility/creekside-park",
+      "@type": "Place",
+      "name": "Creekside Park",
+      "description": "A public park and creek. Typed Place because no more specific schema.org type fits. It has no areaType because it is a facility, not a statistical area.",
+      "identifier": [{"@type": "PropertyValue", "propertyID": "gs:local", "value": "creekside-park"}],
+      "containedInPlace": {"@id": "https://example.gov/id/jurisdiction/example-city", "name": "Example City"}
     }
   ]
 }
