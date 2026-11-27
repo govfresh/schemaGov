@@ -1,6 +1,6 @@
 # Roadmap
 
-All seven domain profiles are implemented and validating. This records what comes next, and
+All fourteen domain profiles are implemented and validating. This records what comes next, and
 the open questions that need deciding before parts of it can be built.
 
 Nothing here is committed to a date. Order reflects dependency and leverage, not enthusiasm.
@@ -20,19 +20,42 @@ claim against the level it asserts, and rejects unknown levels.
 
 ---
 
-## Open work (as of 2026-11-03)
+## Open work (as of 2026-11-27)
 
-- **A pilot for the org model.** Run the organization structure against a real county's data
-  (County of Marin) once the export is available. Needs an adapter and committed source data.
+- **Format checks that do not run.** Schemas declare `iri`, `uri` and `date-time` formats, but
+  `tools/validate.py` checks them only if extra packages are installed, and CI does not install
+  them. A malformed value in one of those fields passes. Add the packages, then fix what fails.
+- **Invalid fixtures can be rejected for the wrong reason.** `tools/check-invalid.py` passes a
+  fixture that fails for any reason. This hid `fund` and `program` checks attached to the wrong
+  class. It should assert the expected message.
+- **A pilot for the org model.** County of Marin publishes its organizations, budgets, programs
+  and statistics as schemaGov data and checks them with these validators. Committing a sample
+  here needs its source licence checked first.
 - **`catalog` leftovers from the Irish portal pilot:** `rights` (1 of 60). `collection_name` was
   checked and is a harvest-source key, not a dataset series, so it is closed. Real dataset
   series (DCAT `inSeries`) stay unmodelled until a publisher has them.
 - **Multilingual titles.** One `name` plus `inLanguage` today. Wait for a publisher that has them.
-- **Readability backlog.** `python3 scripts/readability.py` lists 111 vocabulary descriptions above
+- **Readability backlog.** `python3 scripts/readability.py` lists 120 vocabulary descriptions above
   grade 9. It is not part of `npm run check`. Many are one-line definitions that score high because
   they use words like "legislature", so treat the list as a prompt, not a target.
 - **`gs:fee`** ("Fee charged for a permit") needs reconciling with any fees profile.
 - **Tier two profiles** below, each after a real pilot.
+
+### Waiting for a second need
+
+Found in the County of Marin data and left out on purpose.
+
+| Item | Add it when |
+|---|---|
+| A schema for public events that are not meetings | a publisher has more than a name and identifier |
+| Facility operator (government or not) | someone needs to name which organization runs a facility |
+| Prior approvals and unfunded amounts on capital projects | a second capital plan states them |
+| Staffing counts, net cost, source page numbers | a second publisher needs them |
+| Why a statistic was suppressed, and quality flags | a second source needs them |
+
+Engage Marin's campaigns and questions are candidate input for the `consultations` profile.
+
+---
 
 ## 1. Tier one
 
