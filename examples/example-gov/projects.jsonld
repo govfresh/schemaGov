@@ -245,6 +245,11 @@
       "parentOrganization": {
         "@id": "https://example.gov/id/organization/public-works"
       },
+      "member": [
+        {
+          "@id": "https://example.gov/id/organization/friends-of-the-river"
+        }
+      ],
       "funder": [
         {
           "@id": "https://example.gov/id/organization/city-government"
