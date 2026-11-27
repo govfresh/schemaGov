@@ -22,12 +22,6 @@ claim against the level it asserts, and rejects unknown levels.
 
 ## Open work (as of 2026-11-27)
 
-- **Properties with no context mapping.** `validate.py` now warns about them. Some that the
-  schemas use are not mapped, so they resolve to schema.org terms that do not exist. Procurement:
-  `procuringEntity`, `submissionMethodDetails`, `tenderPeriodStart`, `tenderPeriodEnd`,
-  `enquiryPeriodEnd`, `date`, `contractPeriodStart`, `contractPeriodEnd`, `periodStart`,
-  `periodEnd`. Alerts: `web`, `contact`, `note`. Meetings: `attachment`. Map each one, which adds
-  terms to the context.
 - **Release `1.0.0`.** Decide what must be true first. From then on SPEC section 6 applies in full.
 - **A pilot for the org model.** County of Marin publishes its organizations, budgets, programs
   and statistics as schemaGov data and checks them with these validators. Committing a sample

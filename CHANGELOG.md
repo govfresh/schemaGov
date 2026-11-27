@@ -32,3 +32,8 @@ the git history.
 
 - `project`, `projectCategory`, `estimatedCost` and `geoWithin` are now mapped in the context. A
   document that already used one of these names now expands it to the mapped term.
+- Fourteen procurement, alert and meeting properties that the schemas already used are now
+  mapped to `gs:` terms: `procuringEntity`, `submissionMethodDetails`, `tenderPeriodStart`,
+  `tenderPeriodEnd`, `enquiryPeriodEnd`, `date`, `contractPeriodStart`, `contractPeriodEnd`,
+  `periodStart`, `periodEnd`, `web`, `contact`, `note`, `attachment`. They used to expand to
+  schema.org terms that do not exist.

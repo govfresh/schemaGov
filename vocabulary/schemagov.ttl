@@ -407,6 +407,98 @@ gs:project a rdf:Property ;
     schema:domainIncludes gs:BudgetLine ;
     schema:rangeIncludes gs:Project .
 
+gs:procuringEntity a rdf:Property ;
+    rdfs:label "procuring entity" ;
+    rdfs:comment "The government organization running a tender, where it differs from the buyer." ;
+    schema:domainIncludes gs:Tender ;
+    schema:rangeIncludes schema:GovernmentOrganization .
+
+gs:submissionMethodDetails a rdf:Property ;
+    rdfs:label "submission method details" ;
+    rdfs:comment "How and where to submit a bid, in the publisher's own words." ;
+    schema:domainIncludes gs:Tender ;
+    schema:rangeIncludes schema:Text .
+
+gs:tenderPeriodStart a rdf:Property ;
+    rdfs:label "tender period start" ;
+    rdfs:comment "When bids may first be submitted." ;
+    rdfs:subPropertyOf schema:startDate ;
+    schema:domainIncludes gs:Tender ;
+    schema:rangeIncludes schema:Date, schema:DateTime .
+
+gs:tenderPeriodEnd a rdf:Property ;
+    rdfs:label "tender period end" ;
+    rdfs:comment "The deadline for submitting bids." ;
+    rdfs:subPropertyOf schema:endDate ;
+    schema:domainIncludes gs:Tender ;
+    schema:rangeIncludes schema:Date, schema:DateTime .
+
+gs:enquiryPeriodEnd a rdf:Property ;
+    rdfs:label "enquiry period end" ;
+    rdfs:comment "The deadline for bidders to ask questions." ;
+    rdfs:subPropertyOf schema:endDate ;
+    schema:domainIncludes gs:Tender ;
+    schema:rangeIncludes schema:Date, schema:DateTime .
+
+gs:date a rdf:Property ;
+    rdfs:label "date" ;
+    rdfs:comment "When the recorded event happened: when an award was made, or when a status changed." ;
+    schema:domainIncludes gs:Award, gs:StatusChange ;
+    schema:rangeIncludes schema:Date, schema:DateTime .
+
+gs:contractPeriodStart a rdf:Property ;
+    rdfs:label "contract period start" ;
+    rdfs:comment "When the contract resulting from an award is expected to begin." ;
+    rdfs:subPropertyOf schema:startDate ;
+    schema:domainIncludes gs:Award ;
+    schema:rangeIncludes schema:Date .
+
+gs:contractPeriodEnd a rdf:Property ;
+    rdfs:label "contract period end" ;
+    rdfs:comment "When the contract resulting from an award is expected to end." ;
+    rdfs:subPropertyOf schema:endDate ;
+    schema:domainIncludes gs:Award ;
+    schema:rangeIncludes schema:Date .
+
+gs:periodStart a rdf:Property ;
+    rdfs:label "period start" ;
+    rdfs:comment "When a contract takes effect." ;
+    rdfs:subPropertyOf schema:startDate ;
+    schema:domainIncludes gs:Contract ;
+    schema:rangeIncludes schema:Date .
+
+gs:periodEnd a rdf:Property ;
+    rdfs:label "period end" ;
+    rdfs:comment "When a contract ends." ;
+    rdfs:subPropertyOf schema:endDate ;
+    schema:domainIncludes gs:Contract ;
+    schema:rangeIncludes schema:Date .
+
+gs:web a rdf:Property ;
+    rdfs:label "web" ;
+    rdfs:comment "A page with more information about an alert. CAP web." ;
+    rdfs:subPropertyOf schema:url ;
+    schema:domainIncludes gs:AlertInfo ;
+    schema:rangeIncludes schema:URL .
+
+gs:contact a rdf:Property ;
+    rdfs:label "contact" ;
+    rdfs:comment "Who to contact about an alert, as text. CAP contact." ;
+    schema:domainIncludes gs:AlertInfo ;
+    schema:rangeIncludes schema:Text .
+
+gs:note a rdf:Property ;
+    rdfs:label "note" ;
+    rdfs:comment "Context about an alert that has no other field. CAP note." ;
+    schema:domainIncludes gs:Alert ;
+    schema:rangeIncludes schema:Text .
+
+gs:attachment a rdf:Property ;
+    rdfs:label "attachment" ;
+    rdfs:comment "A supporting document for an agenda item, such as a staff report." ;
+    schema:domainIncludes gs:AgendaItem ;
+    schema:rangeIncludes schema:URL .
+
 gs:budgetPhase a rdf:Property ;
     rdfs:label "budget phase" ;
     rdfs:comment "Where in the budget cycle a figure comes from: proposed, approved, adjusted, executed or planned. The field publishers most often omit and the one that matters most, since a figure without its phase is not comparable to any other figure." ;
