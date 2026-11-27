@@ -36,6 +36,18 @@ gs:JurisdictionShape a sh:NodeShape ;
                 [ sh:class schema:State ] [ sh:class schema:City ] ) ;
         sh:message "containedInPlace must point at another jurisdiction, not at an organization or a facility." ] ;
 
+    sh:property [
+        sh:path schema:geoWithin ;
+        sh:or ( [ sh:class schema:AdministrativeArea ] [ sh:class schema:Country ]
+                [ sh:class schema:State ] [ sh:class schema:City ] [ sh:class schema:Place ] ) ;
+        sh:message "geoWithin must point at a place or jurisdiction." ] ;
+
+    sh:property [
+        sh:path schema:geoOverlaps ;
+        sh:or ( [ sh:class schema:AdministrativeArea ] [ sh:class schema:Country ]
+                [ sh:class schema:State ] [ sh:class schema:City ] [ sh:class schema:Place ] ) ;
+        sh:message "geoOverlaps must point at a place or jurisdiction." ] ;
+
     sh:sparql [
         sh:message "The jurisdiction hierarchy must not contain a cycle." ;
         sh:prefixes schema: ;
@@ -118,16 +130,6 @@ gs:PostShape a sh:NodeShape ;
 
 gs:LegislationShape a sh:NodeShape ;
     sh:targetClass schema:Legislation ;
-
-    sh:property [
-        sh:path gs:program ;
-        sh:class gs:Program ;
-        sh:message "program must point at a Program. Use programClassification for program codes that are only text." ] ;
-
-    sh:property [
-        sh:path gs:fund ;
-        sh:class gs:Fund ;
-        sh:message "fund must point at a Fund. Use fundSource for fund names that are only text." ] ;
 
     sh:property [
         sh:path schema:isPartOf ;
@@ -224,6 +226,21 @@ gs:BudgetLineShape a sh:NodeShape ;
         sh:path gs:administrativeClassification ;
         sh:class schema:GovernmentOrganization ;
         sh:message "administrativeClassification must point at the organization that spends the money, not carry a department name as text." ] ;
+
+    sh:property [
+        sh:path gs:program ;
+        sh:class gs:Program ;
+        sh:message "program must point at a Program. Use programClassification for program codes that are only text." ] ;
+
+    sh:property [
+        sh:path gs:fund ;
+        sh:class gs:Fund ;
+        sh:message "fund must point at a Fund. Use fundSource for fund names that are only text." ] ;
+
+    sh:property [
+        sh:path gs:project ;
+        sh:class gs:Project ;
+        sh:message "project must point at a Project." ] ;
 
     sh:property [
         sh:path schema:isPartOf ;

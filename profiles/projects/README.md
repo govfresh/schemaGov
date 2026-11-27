@@ -184,7 +184,8 @@ caught.
   change to this profile. A published scheme should carry `position` on each term.
 - **Another output:** `produces` takes any typed thing.
 - **Health, risk, tasks:** out of scope. If health is added it will be a separate property.
-- **Budget and spend:** use the `budget` profile, linked from the project.
+- **Budget and spend:** use the `budget` profile. A `BudgetLine` points at the project with
+  `project`; the project itself holds no amounts.
 
 ## Known limits
 

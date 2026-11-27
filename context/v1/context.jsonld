@@ -452,6 +452,10 @@
       "@id": "gs:fund",
       "@type": "@id"
     },
+    "project": {
+      "@id": "gs:project",
+      "@type": "@id"
+    },
     "budgetPhase": {
       "@id": "gs:budgetPhase",
       "@type": "@vocab",
@@ -1074,6 +1078,10 @@
     "populationType": {
       "@id": "schema:populationType",
       "@type": "@vocab"
+    },
+    "geoWithin": {
+      "@id": "schema:geoWithin",
+      "@type": "@id"
     },
     "geoOverlaps": {
       "@id": "schema:geoOverlaps",

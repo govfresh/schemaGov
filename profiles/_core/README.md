@@ -50,6 +50,14 @@ district's identity does not, so records about it stay attached to the same `@id
 elected from a district points at it with `representsJurisdiction`. See
 `examples/example-gov/jurisdictions.jsonld` and `boundaries.jsonld`.
 
+A town often sits inside a district that is not its parent in the hierarchy. Say so on the town:
+`geoWithin` when the whole town is in one district, `geoOverlaps` when it is split between several.
+`containedInPlace` stays the hierarchy (town, county, state).
+
+```json
+{"@type": "City", "containedInPlace": {"@id": ".../county"}, "geoWithin": {"@id": ".../district-3"}}
+```
+
 ## Contact details and buildings
 
 Use the schema.org properties already on the organization: `address` (a `PostalAddress`),
