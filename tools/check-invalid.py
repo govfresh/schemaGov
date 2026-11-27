@@ -172,7 +172,12 @@ FAULTS = {
     "statistics/area-in-org": ("statistical area contained in an organization",
         "A statistical area lies within a jurisdiction or another area"),
 }
-CLEAN = ["project/ok", "format/ok", "ngo/ok", "project/cost-ok", "budget-line/line-ok", "jurisdiction/within-ok", "organization/unit-census-geoid-ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
+# node -> part of the warning it must raise
+WARNINGS = {
+    "warning/misspelled": "unrecognised property 'descripton'",
+    "warning/unknown-gs": "unrecognised property 'gs:notATerm'",
+}
+CLEAN = ["warning/ok", "project/ok", "format/ok", "ngo/ok", "project/cost-ok", "budget-line/line-ok", "jurisdiction/within-ok", "organization/unit-census-geoid-ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
          "policy/clean-top", "policy/clean-part", "policy/term-ok", "policy/partial-date-ok",
          "statistics/ok", "statistics/ok-period", "statistics/ok-no-uncertainty", "statistics/area-ok",
          "statistics/var-ok", "statistics/facility-place-ok", "statistics/bound-only-ok",
@@ -180,18 +185,18 @@ CLEAN = ["project/ok", "format/ok", "ngo/ok", "project/cost-ok", "budget-line/li
 
 
 def run(tool):
-    """The tool's exit code and its errors, one string per error. Warnings are left out."""
+    """The tool's exit code, its errors and its warnings, one string for each."""
     r = subprocess.run([sys.executable, str(ROOT / "tools" / tool), "examples/_invalid"],
                        cwd=ROOT, capture_output=True, text=True)
-    errors, inside = [], False
+    errors, warnings, inside = [], [], None
     for line in r.stdout.splitlines():
         if re.match(r"\d+ (error|violation|warning)\(s\):", line):
-            inside = "warning" not in line
-        elif inside and line.startswith("  - "):
-            errors.append(line[4:])
-        elif inside and line.startswith("    "):
-            errors[-1] += "\n" + line
-    return r.returncode, errors
+            inside = warnings if "warning" in line else errors
+        elif inside is not None and line.startswith("  - "):
+            inside.append(line[4:])
+        elif inside is not None and line.startswith("    "):
+            inside[-1] += "\n" + line
+    return r.returncode, errors, warnings
 
 
 def about(node, errors):
@@ -201,8 +206,8 @@ def about(node, errors):
 
 
 def main():
-    rc_v, err_v = run("validate.py")
-    rc_s, err_s = run("shacl.py")
+    rc_v, err_v, warn_v = run("validate.py")
+    rc_s, err_s, _ = run("shacl.py")
     problems = []
     if rc_v == 0:
         problems.append("validate.py accepted the invalid fixture")
@@ -218,8 +223,11 @@ def main():
                 f"not rejected for its own fault: {k} ({why})\n"
                 f"      expected a message containing: {message}\n"
                 f"      got: {'; '.join(' '.join(e.split()) for e in got) or 'nothing'}")
+    for k, message in WARNINGS.items():
+        if not any(message in w for w in about(k, warn_v)):
+            problems.append(f"no warning for {k}, expected: {message}")
     for k in CLEAN:
-        if about(k, err_v + err_s):
+        if about(k, err_v + err_s + warn_v):
             problems.append(f"clean node was flagged: {k}")
 
     print(f"check-invalid: {len(FAULTS)} faults; "

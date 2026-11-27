@@ -26,9 +26,12 @@ claim against the level it asserts, and rejects unknown levels.
   (identifier schemes, `iri` and `date-time` formats, budget line references) and terms were added
   to the `v1` context. [SPEC section 6](SPEC.md#6-versioning) makes narrowing a major change with
   a new context path. Decide whether these count, then start a changelog.
-- **Unrecognised properties pass silently.** A misspelled or undefined property raises nothing,
-  which is how `alternateUrl` and an undefined `BudgetLine.project` went unnoticed. Warn on a
-  property that neither schema.org nor schemaGov defines.
+- **Properties with no context mapping.** `validate.py` now warns about them. Some that the
+  schemas use are not mapped, so they resolve to schema.org terms that do not exist. Procurement:
+  `procuringEntity`, `submissionMethodDetails`, `tenderPeriodStart`, `tenderPeriodEnd`,
+  `enquiryPeriodEnd`, `date`, `contractPeriodStart`, `contractPeriodEnd`, `periodStart`,
+  `periodEnd`. Alerts: `web`, `contact`, `note`. Meetings: `attachment`. Map each one, which adds
+  terms to the context.
 - **A pilot for the org model.** County of Marin publishes its organizations, budgets, programs
   and statistics as schemaGov data and checks them with these validators. Committing a sample
   here needs its source licence checked first.
