@@ -32,8 +32,8 @@ claim against the level it asserts, and rejects unknown levels.
   3. **Untested parts are tested or marked provisional.** No real source has exercised the
      amendment relations in the `code` profile. Terms added on 2026-11-27 rest on one publisher.
   4. **Weak mappings are reviewed:** those the crosswalks call a stretch, and `gs:fee`.
-  5. **Stated rules are enforced.** Nothing checks that `procuringEntity` is a government
-     organization. Look for others, since adding a check after release narrows what passes.
+  5. **Stated rules are enforced.** Look for rules that a description states and nothing checks,
+     since adding a check after release narrows what passes.
   6. **The promise is written down:** whether schemas, code lists and validator behaviour are
      frozen along with the context, and how releases are tagged.
   7. **Licensing is settled** for `tools/schemaorg-properties.txt`, taken from schema.org's

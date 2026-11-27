@@ -404,6 +404,26 @@
       "parentOrganization": {
         "@id": "https://invalid.example/id/organization/unit-ok"
       }
+    },
+    {
+      "@id": "https://invalid.example/id/tender/ok",
+      "@type": "Tender",
+      "procuringEntity": {
+        "@id": "https://invalid.example/id/organization/unit-ok"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/tender/procuring-is-place",
+      "@type": "Tender",
+      "procuringEntity": {
+        "@id": "https://invalid.example/id/jurisdiction/place"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/tender/untyped-procuring-is-ngo",
+      "procuringEntity": {
+        "@id": "https://invalid.example/id/ngo/ok"
+      }
     }
   ]
 }
