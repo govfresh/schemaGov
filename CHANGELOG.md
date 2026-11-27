@@ -17,6 +17,7 @@ the git history.
   against their schemas.
 - `fund`, `program` and `project` on a budget line must point at a record of that type.
 - `geoWithin` and `geoOverlaps` on a jurisdiction must point at a place.
+- A tender's `procuringEntity` must point at a government organization.
 - A validator whose Python packages are missing fails instead of reporting success.
 
 **Added**
