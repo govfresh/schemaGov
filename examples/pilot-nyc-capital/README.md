@@ -89,8 +89,9 @@ failed validation, which is the profile's intent: real publishers have gaps.
 ## Not carried
 
 `category`, `borough`, budget forecast and budget and schedule changes. Category and borough
-are plausible additions if more pilots want them. Budget figures belong in the `budget`
-profile.
+are plausible additions if more pilots want them. The profile now has `projectCategory` and
+`estimatedCost`; the adapter has not been rerun to fill them. Budget figures belong in the
+`budget` profile.
 
 ## Agencies are mostly codes, and there is no register
 

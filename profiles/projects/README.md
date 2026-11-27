@@ -85,6 +85,23 @@ open data programme in the example do. New York's capital projects dataset has i
 [pilot](../../examples/pilot-nyc-capital/README.md). Terms carry `position`, so an
 application can order them.
 
+## Category and estimated cost
+
+`projectCategory` says what kind of project it is, in the publisher's own words. It is a list, so
+a publisher with categories and subcategories can give both. No code list is set: every capital
+plan groups projects its own way.
+
+`estimatedCost` is what the whole project is expected to cost, as a `MonetaryAmount` with a
+currency, true as of `dateModified`. It is an estimate, not money set aside. Allocations are
+budget lines that point at the project, and they may add up to less than the estimate.
+
+```json
+{
+  "projectCategory": ["Transportation", "Bridges"],
+  "estimatedCost": {"@type": "MonetaryAmount", "value": 4800000, "currency": "USD"}
+}
+```
+
 ## Dates
 
 `startDate`, `expectedEndDate`, `endDate` and `dateModified`. The end date is the **actual** end, and
@@ -185,10 +202,13 @@ caught.
 - **Another output:** `produces` takes any typed thing.
 - **Health, risk, tasks:** out of scope. If health is added it will be a separate property.
 - **Budget and spend:** use the `budget` profile. A `BudgetLine` points at the project with
-  `project`; the project itself holds no amounts.
+  `project`; the only amount on the project itself is `estimatedCost`.
 
 ## Known limits
 
+- Money already approved before the budget being published, and the gap still to be funded, have
+  no property. Neither is an estimate of cost, and neither is a line in one budget.
+- A category list does not say which entry is the subcategory of which.
 - Projects have no history. `dateModified` says when the record was last true, but a publisher
   who snapshots a project every quarter has changing phases and forecast dates, and this profile
   carries only the latest. The NYC pilot shows

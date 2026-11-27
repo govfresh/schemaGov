@@ -23,6 +23,8 @@ stated domain · **mint** = new `gs:` term · **defer** = deliberately not in v1
 | `startDate` | `schema:startDate` | OC4IDS `period.startDate` | **stretch.** `startDate` is defined on Event, Role, Schedule and a few others, not on Organization. The alternative, `foundingDate`, means an organization was founded. |
 | `endDate` | `schema:endDate` | OC4IDS `completion.endDate` | **stretch**, same reason. Means the **actual** end. |
 | `expectedEndDate` | none | OC4IDS `period.endDate` (planned) | **mint** `gs:expectedEndDate` |
+| `projectCategory` | none (`category` is already the alert category) | OC4IDS `sector`, a closed list | **mint** `gs:projectCategory` as open text. Capital plans group projects their own way. |
+| `estimatedCost` | `schema:estimatedCost` (defined on HowTo) | OC4IDS `budget.amount` is the approved budget, not an estimate | **stretch.** Same meaning, outside its stated domain. |
 
 ## Status and phase
 

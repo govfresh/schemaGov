@@ -240,6 +240,8 @@
       },
       "startDate": "2024-03-01",
       "expectedEndDate": "2027-05-31",
+      "projectCategory": ["Transportation", "Bridges"],
+      "estimatedCost": {"@type": "MonetaryAmount", "value": 4800000, "currency": "USD"},
       "parentOrganization": {
         "@id": "https://example.gov/id/organization/public-works"
       },

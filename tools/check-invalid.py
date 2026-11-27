@@ -16,6 +16,8 @@ BASE = "https://invalid.example/id/"
 
 # fault node -> what is wrong with it
 FAULTS = {
+    "project/cost-no-currency": "estimated cost with no currency",
+    "project/category-not-list": "project category that is not a list",
     "project/bad-status": "status outside the code list",
     "project/bad-date": "malformed date",
     "project/bad-phase-shape": "phase given as free text",
@@ -82,7 +84,7 @@ FAULTS = {
     "statistics/area-governed": "statistical area with a governing organization",
     "statistics/area-in-org": "statistical area contained in an organization",
 }
-CLEAN = ["project/ok", "budget-line/line-ok", "jurisdiction/within-ok", "organization/unit-census-geoid-ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
+CLEAN = ["project/ok", "project/cost-ok", "budget-line/line-ok", "jurisdiction/within-ok", "organization/unit-census-geoid-ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
          "policy/clean-top", "policy/clean-part", "policy/term-ok", "policy/partial-date-ok",
          "statistics/ok", "statistics/ok-period", "statistics/ok-no-uncertainty", "statistics/area-ok",
          "statistics/var-ok", "statistics/facility-place-ok", "statistics/bound-only-ok",
