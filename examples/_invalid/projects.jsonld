@@ -144,6 +144,78 @@
       "@type": "Project",
       "name": "Category not a list",
       "projectCategory": "Drainage"
+    },
+    {
+      "@id": "https://invalid.example/id/format/url-with-space",
+      "@type": "Project",
+      "name": "URL with a space",
+      "url": "https://example.org/a page"
+    },
+    {
+      "@id": "https://invalid.example/id/format/url-relative",
+      "@type": "Project",
+      "name": "Relative URL",
+      "url": "/projects/one"
+    },
+    {
+      "@id": "https://invalid.example/id/format/url-no-host",
+      "@type": "Project",
+      "name": "URL with no host",
+      "url": "https://"
+    },
+    {
+      "@id": "https://invalid.example/id/format/ok",
+      "@type": "Dataset",
+      "name": "Zoned and plain dates",
+      "publisher": {
+        "@id": "https://invalid.example/id/organization/o"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "contentUrl": "https://example.org/a.csv",
+          "encodingFormat": "text/csv",
+          "dateModified": "2026-01-02"
+        }
+      ],
+      "dateModified": "2026-01-02T03:04:05+05:30"
+    },
+    {
+      "@id": "https://invalid.example/id/format/time-no-zone",
+      "@type": "Dataset",
+      "name": "Time with no zone",
+      "publisher": {
+        "@id": "https://invalid.example/id/organization/o"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "contentUrl": "https://example.org/a.csv",
+          "encodingFormat": "text/csv"
+        }
+      ],
+      "dateModified": "2026-01-02T03:04:05"
+    },
+    {
+      "@id": "https://invalid.example/id/format/time-impossible",
+      "@type": "Dataset",
+      "name": "Impossible time",
+      "publisher": {
+        "@id": "https://invalid.example/id/organization/o"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "contentUrl": "https://example.org/a.csv",
+          "encodingFormat": "text/csv"
+        }
+      ],
+      "dateModified": "2026-02-30T03:04:05Z"
+    },
+    {
+      "@id": "https://invalid.example/id/term/orphan",
+      "@type": "DefinedTerm",
+      "name": "Orphan"
     }
   ]
 }

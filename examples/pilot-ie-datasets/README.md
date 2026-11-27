@@ -90,6 +90,11 @@ A dataset series would have a title and members that belong together; these have
 adapter now reports it as ignored. If a publisher ever has real series (DCAT `inSeries`, schema.org
 `isPartOf`), that is a separate question, to be answered from that publisher's data.
 
+## Timestamps carry no time zone
+
+The portal gives `metadata_modified` with a time and no zone. schemaGov's date-time needs a zone,
+so the adapter keeps the date only rather than assume one.
+
 ## Mapping confidence
 
 Portal themes are local labels (`Government`, `Health`, `Housing`), not EU codes. The adapter

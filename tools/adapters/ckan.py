@@ -151,7 +151,7 @@ def convert(pkgs, base, portal_url, gaps, notes):
             if res.get("size"):
                 dl["contentSize"] = str(res["size"])
             if res.get("last_modified") or res.get("metadata_modified"):
-                dl["dateModified"] = (res.get("last_modified") or res["metadata_modified"])[:19]
+                dl["dateModified"] = (res.get("last_modified") or res["metadata_modified"])[:10]
             if dl.get("contentUrl") or dl.get("accessUrl"):
                 distributions.append(dl)
         if not distributions:
@@ -171,7 +171,7 @@ def convert(pkgs, base, portal_url, gaps, notes):
             "dataTheme": themes or None,
             "updateFrequency": freq,
             "accessRights": "public" if pkg.get("isopen") else "restricted",
-            "dateModified": (pkg.get("metadata_modified") or "")[:19] or None,
+            "dateModified": (pkg.get("metadata_modified") or "")[:10] or None,
             "datePublished": (pkg.get("metadata_created") or "")[:10] or None,
             "license": pkg.get("license_url") or None,
             "inLanguage": [pkg["language"]] if pkg.get("language") else None,

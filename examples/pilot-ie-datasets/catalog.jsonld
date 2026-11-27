@@ -224,7 +224,7 @@
       ],
       "updateFrequency": "continuous",
       "accessRights": "public",
-      "dateModified": "2025-10-20T12:58:58",
+      "dateModified": "2025-10-20",
       "datePublished": "2025-10-20",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -236,7 +236,7 @@
           "name": "Valuation Office API ",
           "contentUrl": "https://tailte.ie/home/api/",
           "encodingFormat": "api",
-          "dateModified": "2025-10-20T12:58:58"
+          "dateModified": "2025-10-20"
         }
       ],
       "description": "The REST Web Services API provides a REST interface to retrieve Valuation Division data in real-time in relation to post-Revaluation Rating Authority areas. The post-Revaluation Rating Authority areas are Carlow, Cavan, Dun Laoghaire-Rathdown, Fingal, Kildare, Kilkenny, Laois, Leitrim, Longford, Louth, Meath, Monaghan, Offaly, Roscommon, Sligo, South Dublin, Tipperary, Westmeath, Wexford and Wicklow County Councils and Dublin City Council, Waterford City and County Council and Limerick City and County Council.\r\n",
@@ -277,7 +277,7 @@
       ],
       "updateFrequency": "continuous",
       "accessRights": "public",
-      "dateModified": "2026-03-26T10:02:01",
+      "dateModified": "2026-03-26",
       "datePublished": "2019-03-12",
       "license": "https://www.met.ie/cms/assets/uploads/2018/05/Met-%C3%89ireann-Open-Data-Custom-Licence_Final.odt",
       "inLanguage": [
@@ -289,189 +289,189 @@
           "name": "National Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/xml/xNational.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "National Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/json/National.json",
           "encodingFormat": "application/json",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "National Outlook",
           "contentUrl": "https://www.met.ie/Open_Data/xml/xOutlook.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "National Outlook",
           "contentUrl": "https://www.met.ie/Open_Data/json/Outlook.json",
           "encodingFormat": "application/json",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Sea Area Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/xml/Met-Sea-area.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Coastal Reports",
           "contentUrl": "https://www.met.ie/Open_Data/xml/xcoastal.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Sea Crossings Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/xml/xsea_crossings.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Farming Commentary",
           "contentUrl": "https://www.met.ie/Open_Data/xml/fcom.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "County Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/xml/county_forecast.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Three-day Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/xml/web-3Dayforecast.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Inland Lakes Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/xml/xInland_Lake_Forecast.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Web Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/xml/web-forecast.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Connacht Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/xml/xConnacht.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Connacht Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/json/Connacht.json",
           "encodingFormat": "application/json",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Leinster Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/xml/xLeinster.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Leinster forecast",
           "contentUrl": "https://www.met.ie/Open_Data/json/Leinster.json",
           "encodingFormat": "application/json",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Munster Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/xml/xMunster.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Munster forecast",
           "contentUrl": "https://www.met.ie/Open_Data/json/Munster.json",
           "encodingFormat": "application/json",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Ulster Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/xml/xUlster.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Ulster forecast",
           "contentUrl": "https://www.met.ie/Open_Data/json/Ulster.json",
           "encodingFormat": "application/json",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Dublin Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/xml/xDublin.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Dublin Forecast",
           "contentUrl": "https://www.met.ie/Open_Data/json/Dublin.json",
           "encodingFormat": "application/json",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Latest Observations",
           "contentUrl": "https://www.met.ie/Open_Data/xml/obs_present.xml",
           "encodingFormat": "application/xml",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Met Éireann XML Data feed - description of dataset",
           "contentUrl": "https://www.met.ie/Open_Data/xml/readme_XML-Data-feed.odt",
           "encodingFormat": "application/vnd.oasis.opendocument.text",
-          "dateModified": "2026-03-26T10:01:08"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Inland lakes forecast.",
           "contentUrl": "https://www.met.ie/Open_Data/json/Inland_Lake_Forecast.json",
           "encodingFormat": "application/json",
-          "dateModified": "2026-03-26T10:01:34"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Sea area forecast",
           "contentUrl": "https://www.met.ie/Open_Data/json/Met-Sea-area.json",
           "encodingFormat": "application/json",
-          "dateModified": "2026-03-26T10:02:01"
+          "dateModified": "2026-03-26"
         },
         {
           "@type": "DataDownload",
           "name": "Coastal reports",
           "contentUrl": "https://www.met.ie/Open_Data/json/coastal.json",
           "encodingFormat": "application/json",
-          "dateModified": "2026-03-26T10:02:01"
+          "dateModified": "2026-03-26"
         }
       ],
       "description": "This data consists of live text forecasts including, National, regional, sea area, inland lakes and county forecasts.",
@@ -513,7 +513,7 @@
       ],
       "updateFrequency": "continuous",
       "accessRights": "public",
-      "dateModified": "2026-03-02T10:28:55",
+      "dateModified": "2026-03-02",
       "datePublished": "2017-10-23",
       "license": "https://beta.oireachtas.ie/en/open-data/license/",
       "inLanguage": [
@@ -525,56 +525,56 @@
           "name": "Debates",
           "contentUrl": "https://api.oireachtas.ie/v1/debates",
           "encodingFormat": "JSON",
-          "dateModified": "2017-10-23T09:31:05"
+          "dateModified": "2017-10-23"
         },
         {
           "@type": "DataDownload",
           "name": "Legislation",
           "contentUrl": "https://api.oireachtas.ie/v1/legislation",
           "encodingFormat": "JSON",
-          "dateModified": "2017-10-23T09:31:05"
+          "dateModified": "2017-10-23"
         },
         {
           "@type": "DataDownload",
           "name": "Questions",
           "contentUrl": "https://api.oireachtas.ie/v1/questions",
           "encodingFormat": "JSON",
-          "dateModified": "2017-10-23T09:31:05"
+          "dateModified": "2017-10-23"
         },
         {
           "@type": "DataDownload",
           "name": "Votes",
           "contentUrl": "https://api.oireachtas.ie/v1/divisions",
           "encodingFormat": "JSON",
-          "dateModified": "2017-10-23T09:31:05"
+          "dateModified": "2017-10-23"
         },
         {
           "@type": "DataDownload",
           "name": "Constituencies",
           "contentUrl": "https://api.oireachtas.ie/v1/constituencies",
           "encodingFormat": "JSON",
-          "dateModified": "2017-10-23T09:31:05"
+          "dateModified": "2017-10-23"
         },
         {
           "@type": "DataDownload",
           "name": "Parties",
           "contentUrl": "https://api.oireachtas.ie/v1/parties",
           "encodingFormat": "JSON",
-          "dateModified": "2017-10-23T09:31:05"
+          "dateModified": "2017-10-23"
         },
         {
           "@type": "DataDownload",
           "name": "Houses",
           "contentUrl": "https://api.oireachtas.ie/v1/houses",
           "encodingFormat": "JSON",
-          "dateModified": "2017-10-23T09:31:05"
+          "dateModified": "2017-10-23"
         },
         {
           "@type": "DataDownload",
           "name": "Members",
           "contentUrl": "https://api.oireachtas.ie/v1/members",
           "encodingFormat": "JSON",
-          "dateModified": "2018-06-20T16:07:00"
+          "dateModified": "2018-06-20"
         }
       ],
       "description": "The Houses of the Oireachtas are providing these APIs to allow our datasets to be retrieved and reused as widely as possible. They are intended to be used in conjunction with https://data.oireachtas.ie, from where our datasets can be accessed directly. By using the APIs, users can make metadata queries to identify the specific data they require. New data are available through the API as soon as they are published.\r\n\r\nCurrently, https://data.oireachtas.ie contains data in XML format from the Official Report of the Houses of the Oireachtas (the “debates”) and replies to Parliamentary Questions in XML files complying with the Akoma Ntoso schema, as well data in PDF format for Bills, Acts and other documents published by the Houses of the Oireachtas.\r\n\r\nFiles can be retrieved from https://data.oireachtas.ie by adding the URI fragment contained in the “formats” fields of the JSON documents returned by these APIs. At the moment only PDF and XML files are available directly from https://data.oireachtas.ie, but this will become the endpoint for direct access of all “uri” fields in the data queried through https://api.oireachtas.ie. We will also be making bulk downloads available through ht",
@@ -616,7 +616,7 @@
       ],
       "updateFrequency": "P1W",
       "accessRights": "public",
-      "dateModified": "2021-02-16T12:00:57",
+      "dateModified": "2021-02-16",
       "datePublished": "2017-10-06",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -628,35 +628,35 @@
           "name": "National Planning Applications",
           "contentUrl": "https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer",
           "encodingFormat": "Esri REST",
-          "dateModified": "2017-10-06T12:07:10"
+          "dateModified": "2017-10-06"
         },
         {
           "@type": "DataDownload",
           "name": "National Planning Application Points",
           "contentUrl": "https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer/0/query?outFields=*&where=1%3D1",
           "encodingFormat": "restservice",
-          "dateModified": "2017-10-06T14:37:45"
+          "dateModified": "2017-10-06"
         },
         {
           "@type": "DataDownload",
           "name": "National Planning Application Points",
           "contentUrl": "https://opendata.arcgis.com/datasets/8f69dffe26324ba3acc653cf6cb5cf8b_0.geojson",
           "encodingFormat": "GeoJSON",
-          "dateModified": "2017-10-06T14:37:45"
+          "dateModified": "2017-10-06"
         },
         {
           "@type": "DataDownload",
           "name": "National Planning Application Polygons",
           "contentUrl": "https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer/1/query?outFields=*&where=1%3D1",
           "encodingFormat": "restservice",
-          "dateModified": "2017-10-06T15:00:27"
+          "dateModified": "2017-10-06"
         },
         {
           "@type": "DataDownload",
           "name": "National Planning Application Polygons",
           "contentUrl": "https://opendata.arcgis.com/datasets/8f69dffe26324ba3acc653cf6cb5cf8b_1.geojson",
           "encodingFormat": "GeoJSON",
-          "dateModified": "2017-10-06T15:00:27"
+          "dateModified": "2017-10-06"
         }
       ],
       "description": "The National Planning Application Database provides spatial and tabular data on planning applications in Ireland.\r\n\r\nThis data can also be viewed at\r\nhttps://data-housinggovie.opendata.arcgis.com/\r\n",
@@ -692,7 +692,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:55",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -704,28 +704,28 @@
           "name": "Number of service users registered on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD34/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:55"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of service users registered on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD34/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:55"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of service users registered on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD34/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:55"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of service users registered on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD34/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:55"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Number of service users registered on NASS",
@@ -760,7 +760,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:53",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -772,28 +772,28 @@
           "name": "Level of intellectual disability (ID) of adults registered on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD50/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:53"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Level of intellectual disability (ID) of adults registered on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD50/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:53"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Level of intellectual disability (ID) of adults registered on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD50/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:53"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Level of intellectual disability (ID) of adults registered on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD50/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:53"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Level of intellectual disability (ID) of adults registered on NASS",
@@ -828,7 +828,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:52",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -840,28 +840,28 @@
           "name": "Number of adults with an intellectual disability (ID) on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD49/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:52"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of adults with an intellectual disability (ID) on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD49/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:52"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of adults with an intellectual disability (ID) on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD49/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:52"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of adults with an intellectual disability (ID) on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD49/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:52"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Number of adults with an intellectual disability (ID) on NASS",
@@ -896,7 +896,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:52",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -908,28 +908,28 @@
           "name": "Number of adults in disability services in HSE Health Regions on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD48/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:52"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of adults in disability services in HSE Health Regions on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD48/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:52"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of adults in disability services in HSE Health Regions on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD48/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:52"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of adults in disability services in HSE Health Regions on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD48/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:52"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Number of adults in disability services in HSE Health Regions on NASS",
@@ -964,7 +964,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:52",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -976,28 +976,28 @@
           "name": "Number of adults in disability services in HSE Health Regions on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD47/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:52"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of adults in disability services in HSE Health Regions on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD47/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:52"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of adults in disability services in HSE Health Regions on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD47/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:52"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of adults in disability services in HSE Health Regions on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD47/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:52"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Number of adults in disability services in HSE Health Regions on NASS",
@@ -1032,7 +1032,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:51",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1044,28 +1044,28 @@
           "name": "Current supports for daily living services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD41/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current supports for daily living services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD41/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current supports for daily living services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD41/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current supports for daily living services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD41/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:51"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Current supports for daily living services recorded on NASS",
@@ -1100,7 +1100,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:51",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1112,28 +1112,28 @@
           "name": "Current overnight respite services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD40/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current overnight respite services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD40/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current overnight respite services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD40/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current overnight respite services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD40/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:51"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Current overnight respite services recorded on NASS",
@@ -1168,7 +1168,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:50",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1180,28 +1180,28 @@
           "name": "Current day respite services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD39/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:50"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current day respite services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD39/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:50"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current day respite services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD39/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:50"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current day respite services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD39/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:50"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Current day respite services recorded on NASS",
@@ -1236,7 +1236,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:50",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1248,28 +1248,28 @@
           "name": "Current residential services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD38/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:50"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current residential services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD38/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:50"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current residential services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD38/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:50"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current residential services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD38/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:50"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Current residential services recorded on NASS",
@@ -1304,7 +1304,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:48",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1316,28 +1316,28 @@
           "name": "Specialist supports identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD51/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:48"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Specialist supports identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD51/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:48"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Specialist supports identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD51/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:48"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Specialist supports identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD51/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:48"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Specialist supports identified as required on NASS",
@@ -1372,7 +1372,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:48",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1384,28 +1384,28 @@
           "name": "Supports for daily living services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD46/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:48"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Supports for daily living services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD46/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:48"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Supports for daily living services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD46/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:48"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Supports for daily living services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD46/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:48"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Supports for daily living services identified as required on NASS",
@@ -1440,7 +1440,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:47",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1452,28 +1452,28 @@
           "name": "Overnight respite services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD45/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:47"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Overnight respite services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD45/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:47"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Overnight respite services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD45/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:47"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Overnight respite services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD45/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:47"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Overnight respite services identified as required on NASS",
@@ -1508,7 +1508,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:46",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1520,28 +1520,28 @@
           "name": "Day respite services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD44/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:46"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Day respite services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD44/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:46"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Day respite services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD44/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:46"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Day respite services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD44/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:46"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Day respite services identified as required on NASS",
@@ -1576,7 +1576,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:46",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1588,28 +1588,28 @@
           "name": "Residential services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD43/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:46"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Residential services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD43/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:46"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Residential services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD43/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:46"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Residential services identified as required on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD43/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:46"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Residential services identified as required on NASS",
@@ -1644,7 +1644,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:45",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1656,28 +1656,28 @@
           "name": "Current supports for daily living services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD42/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:45"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current supports for daily living services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD42/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:45"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current supports for daily living services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD42/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:45"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Current supports for daily living services recorded on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD42/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:45"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Current supports for daily living services recorded on NASS",
@@ -1712,7 +1712,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:10",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1724,28 +1724,28 @@
           "name": "Number of service users registered on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD37/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:10"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of service users registered on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD37/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:10"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of service users registered on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD37/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:10"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Number of service users registered on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD37/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:10"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Number of service users registered on NASS",
@@ -1780,7 +1780,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:09",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1792,28 +1792,28 @@
           "name": "Proportion of adults accessing disability services per 1,000 of the general population aged 18 years and over on NASS ",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD36/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:09"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Proportion of adults accessing disability services per 1,000 of the general population aged 18 years and over on NASS ",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD36/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:09"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Proportion of adults accessing disability services per 1,000 of the general population aged 18 years and over on NASS ",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD36/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:09"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Proportion of adults accessing disability services per 1,000 of the general population aged 18 years and over on NASS ",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD36/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:09"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Proportion of adults accessing disability services per 1,000 of the general population aged 18 years and over on NASS ",
@@ -1848,7 +1848,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:09",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-09-03",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -1860,28 +1860,28 @@
           "name": "Proportion of adults accessing disability services per 1,000 of the general population aged 18 years and over on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD35/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:09"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Proportion of adults accessing disability services per 1,000 of the general population aged 18 years and over on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD35/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:09"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Proportion of adults accessing disability services per 1,000 of the general population aged 18 years and over on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD35/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:09"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Proportion of adults accessing disability services per 1,000 of the general population aged 18 years and over on NASS",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/HRD35/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:09"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Proportion of adults accessing disability services per 1,000 of the general population aged 18 years and over on NASS",
@@ -1920,7 +1920,7 @@
       ],
       "updateFrequency": "P1Y",
       "accessRights": "public",
-      "dateModified": "2026-09-01T15:42:47",
+      "dateModified": "2026-09-01",
       "datePublished": "2026-09-01",
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
       "inLanguage": [
@@ -1933,7 +1933,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/0a5f2ed2-de66-4222-b684-7c368faa845f/download/2015-budget-publication-final.xls",
           "encodingFormat": "application/vnd.ms-excel",
           "contentSize": "500224",
-          "dateModified": "2026-09-01T15:26:28"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -1941,7 +1941,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/a11d851b-9653-4d27-a1c6-e2268126976f/download/budget-2014-final-budget-publication-v1.1.xls",
           "encodingFormat": "application/vnd.ms-excel",
           "contentSize": "842752",
-          "dateModified": "2026-09-01T15:26:44"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -1949,7 +1949,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/d560ff07-976e-4b1c-a7c3-dfef41551c21/download/budget-2017-final-budget-publication.xls",
           "encodingFormat": "application/vnd.ms-excel",
           "contentSize": "410624",
-          "dateModified": "2026-09-01T15:27:00"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -1957,7 +1957,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/dd0c194a-8435-48b9-83fe-7da5cf80ad48/download/budget-2018-budget-publication-v1.4.xlsx",
           "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "contentSize": "257944",
-          "dateModified": "2026-09-01T15:27:23"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -1965,7 +1965,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/2ffc25f5-31ea-46e1-a8b7-4345f2027391/download/budget-2020-budget-publication-v1.2.xlsx",
           "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "contentSize": "236510",
-          "dateModified": "2026-09-01T15:27:38"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -1973,7 +1973,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/9f884823-f2bc-4c73-a43d-440a2ed6cead/download/budget-2021-budget-publication-v1.0.xlsx",
           "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "contentSize": "233341",
-          "dateModified": "2026-09-01T15:28:00"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -1981,7 +1981,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/d05dabee-9f83-4af1-b4dd-346d61a91d2d/download/budget-2022-budget-publication-v1.0.xlsx",
           "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "contentSize": "231591",
-          "dateModified": "2026-09-01T15:28:17"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -1989,7 +1989,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/0f46b08b-888f-47a9-9b8e-6e1303d502cd/download/budget-2023-budget-publication-v1.0.xlsx",
           "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "contentSize": "232701",
-          "dateModified": "2026-09-01T15:28:30"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -1997,7 +1997,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/ebb5c52e-3504-48f7-929a-ec917f381ef9/download/budget-2024-budget-publication-v1.0.xlsx",
           "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "contentSize": "226236",
-          "dateModified": "2026-09-01T15:28:55"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -2005,7 +2005,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/18d03f3e-43ab-40c9-ad89-bc64a014bc93/download/budget-2026-budget-publication-v1.2.xlsx",
           "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "contentSize": "228729",
-          "dateModified": "2026-09-01T15:29:11"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -2013,7 +2013,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/72e0a82d-5a60-4ee8-9e26-bcb4c9d2f043/download/budget-publication-2016.xls",
           "encodingFormat": "application/vnd.ms-excel",
           "contentSize": "498176",
-          "dateModified": "2026-09-01T15:29:27"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -2021,7 +2021,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/f41a22a6-69b4-4886-8515-3224416a4117/download/budget-publication-doc-2019-v1.1.xlsx",
           "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "contentSize": "247706",
-          "dateModified": "2026-09-01T15:29:41"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -2029,7 +2029,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/69cb7558-f0d8-45f7-a08f-f1ab3b564d80/download/budget-publication-document-2025.xlsx",
           "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
           "contentSize": "227169",
-          "dateModified": "2026-09-01T15:29:54"
+          "dateModified": "2026-09-01"
         },
         {
           "@type": "DataDownload",
@@ -2037,7 +2037,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/e55a1d32-c225-48e0-bb6f-43c86071841b/resource/ef302385-8927-42bd-abd9-a8fc654d3354/download/final-2013-budget-publication.xls",
           "encodingFormat": "application/vnd.ms-excel",
           "contentSize": "847872",
-          "dateModified": "2026-09-01T15:30:09"
+          "dateModified": "2026-09-01"
         }
       ],
       "description": "Local authorities are multi-purpose bodies responsible for delivering a broad range of services in relation to roads; traffic; planning; housing; economic and community development; environment, recreation and amenity services; fire services and maintaining the register of electors. There are 31 local authorities in Ireland and 3 regional assemblies representing the Northern & Western, Eastern & Midlands, and the Southern regions. Statutory revenue budgets are adopted annually by each local authority and regional assembly and returned to the Department of Housing, Local Government and Heritage.\r\n\r\nEach local authority is divided into local electoral areas and members of local authorities are elected in these. Policy decisions are made by majority resolutions passed by the elected councillors during council meetings. These are reserved for the elected council and are ‘reserved functions’. The passing or adoption of the annual budget is a reserved function of a local authority. The membership of a regional assembly consists of members of the local authorities within the region. The aim of these assemblies is to co-ordinate, promote or support strategic planning and sustainable develo",
@@ -2072,7 +2072,7 @@
         "TRAN"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:39",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-29",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2084,28 +2084,28 @@
           "name": "Public electric vehicle charging points (EVSEs) and fast charging points",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/PCIEV02/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:39"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Public electric vehicle charging points (EVSEs) and fast charging points",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/PCIEV02/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:39"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Public electric vehicle charging points (EVSEs) and fast charging points",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/PCIEV02/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:39"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Public electric vehicle charging points (EVSEs) and fast charging points",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/PCIEV02/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:39"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Public electric vehicle charging points (EVSEs) and fast charging points",
@@ -2140,7 +2140,7 @@
         "TRAN"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:39",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-29",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2152,28 +2152,28 @@
           "name": "Public electric vehicle charging points and fast charging points",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/PCIEV03/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:39"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Public electric vehicle charging points and fast charging points",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/PCIEV03/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:39"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Public electric vehicle charging points and fast charging points",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/PCIEV03/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:39"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Public electric vehicle charging points and fast charging points",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/PCIEV03/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:39"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Public electric vehicle charging points and fast charging points",
@@ -2208,7 +2208,7 @@
         "TRAN"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:15",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-29",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2220,28 +2220,28 @@
           "name": "Public electric vehicle charging points (EVSEs) and fast charging points",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/PCIEV01/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:15"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Public electric vehicle charging points (EVSEs) and fast charging points",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/PCIEV01/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:15"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Public electric vehicle charging points (EVSEs) and fast charging points",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/PCIEV01/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:15"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Public electric vehicle charging points (EVSEs) and fast charging points",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/PCIEV01/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:15"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Public electric vehicle charging points (EVSEs) and fast charging points",
@@ -2276,7 +2276,7 @@
       ],
       "updateFrequency": "P1M",
       "accessRights": "public",
-      "dateModified": "2026-08-28T13:21:43",
+      "dateModified": "2026-08-28",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
       "inLanguage": [
@@ -2289,7 +2289,7 @@
           "contentUrl": "https://opendata.housing.gov.ie/dataset/96612b1e-3db5-4393-a428-87aa4d41f6cf/resource/e9ee82af-fa6b-4e62-864f-3459a6b83521/download/homelessness-report-july-2026.csv",
           "encodingFormat": "text/csv",
           "contentSize": "1263",
-          "dateModified": "2026-08-28T13:15:49"
+          "dateModified": "2026-08-28"
         }
       ],
       "description": "Homelessness data Official homelessness data is produced by local authorities through the Pathway Accommodation and Support System (PASS). PASS was rolled-out nationally during the course of 2013. The Department’s official homelessness statistics are published on a monthly basis and refer to the number of homeless persons accommodated in emergency accommodation funded and overseen by housing authorities during a specific count week, typically the last full week of the month. The reports are produced through the Pathway Accommodation & Support System (PASS), collated on a regional basis and compiled and published by the Department. Homelessness reporting commenced in this format in 2014. The format of the data may change or vary over time due to administrative and/or technology changes and improvements. The administration of homeless services is organised across nine administrative regions, with one local authority in each of the regions, “the lead authority”, having overall responsibility for the disbursement of Exchequer funding. In each region a Joint Homelessness Consultative Forum exists which includes representation from the relevant State and non-governmental organisations in",
@@ -2325,7 +2325,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:51",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2337,28 +2337,28 @@
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP30/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP30/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP30/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP30/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:51"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Total count of recipient programmes",
@@ -2393,7 +2393,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:51",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2405,28 +2405,28 @@
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP29/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP29/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP29/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP29/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:51"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Total count of recipient programmes",
@@ -2461,7 +2461,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:51",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2473,28 +2473,28 @@
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP28/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP28/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP28/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP28/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:51"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Total count of recipient programmes",
@@ -2529,7 +2529,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:36",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2541,28 +2541,28 @@
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP27/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:36"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP27/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:36"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP27/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:36"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP27/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:36"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Total count of recipient programmes",
@@ -2597,7 +2597,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:36",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2609,28 +2609,28 @@
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP26/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:36"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP26/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:36"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP26/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:36"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP26/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:36"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Total count of recipient programmes",
@@ -2665,7 +2665,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:27",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2677,28 +2677,28 @@
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP25/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:27"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP25/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:27"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP25/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:27"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Total count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP25/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:27"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Total count of recipient programmes",
@@ -2733,7 +2733,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:24",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2745,28 +2745,28 @@
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP24/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:24"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP24/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:24"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP24/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:24"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP24/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:24"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipient programmes",
@@ -2801,7 +2801,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:23",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2813,28 +2813,28 @@
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP23/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:23"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP23/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:23"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP23/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:23"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP23/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:23"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipient programmes",
@@ -2869,7 +2869,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:23",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2881,28 +2881,28 @@
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP22/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:23"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP22/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:23"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP22/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:23"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP22/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:23"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipient programmes",
@@ -2937,7 +2937,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:22",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -2949,28 +2949,28 @@
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP21/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:22"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP21/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:22"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP21/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:22"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP21/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:22"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipient programmes",
@@ -3005,7 +3005,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:21",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3017,28 +3017,28 @@
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP20/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:21"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP20/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:21"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP20/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:21"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP20/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:21"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipient programmes",
@@ -3073,7 +3073,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:21",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3085,28 +3085,28 @@
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP19/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:21"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP19/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:21"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP19/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:21"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP19/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:21"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipient programmes",
@@ -3141,7 +3141,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:21",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3153,28 +3153,28 @@
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP18/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:21"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP18/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:21"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP18/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:21"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP18/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:21"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipient programmes",
@@ -3209,7 +3209,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:20",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3221,28 +3221,28 @@
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP17/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:20"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP17/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:20"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP17/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:20"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP17/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:20"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipient programmes",
@@ -3277,7 +3277,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:20",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3289,28 +3289,28 @@
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP16/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:20"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP16/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:20"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP16/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:20"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP16/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:20"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipient programmes",
@@ -3345,7 +3345,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:17",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3357,28 +3357,28 @@
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP15/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:17"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP15/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:17"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP15/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:17"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP15/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:17"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipient programmes",
@@ -3413,7 +3413,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:17",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3425,28 +3425,28 @@
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP14/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:17"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP14/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:17"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP14/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:17"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP14/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:17"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipient programmes",
@@ -3481,7 +3481,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:17:16",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3493,28 +3493,28 @@
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP13/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:17:16"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP13/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:17:16"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP13/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:17:16"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipient programmes",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP13/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:17:16"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipient programmes",
@@ -3549,7 +3549,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:16:59",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3561,28 +3561,28 @@
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP12/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:16:59"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP12/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:16:59"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP12/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:16:59"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP12/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:16:59"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipients",
@@ -3617,7 +3617,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:16:56",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3629,28 +3629,28 @@
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP11/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:16:56"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP11/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:16:56"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP11/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:16:56"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP11/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:16:56"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipients",
@@ -3685,7 +3685,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:16:55",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3697,28 +3697,28 @@
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP10/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:16:55"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP10/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:16:55"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP10/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:16:55"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP10/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:16:55"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipients",
@@ -3753,7 +3753,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:16:52",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3765,28 +3765,28 @@
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP09/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:16:52"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP09/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:16:52"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP09/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:16:52"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP09/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:16:52"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipients",
@@ -3821,7 +3821,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:16:51",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3833,28 +3833,28 @@
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP08/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:16:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP08/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:16:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP08/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:16:51"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP08/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:16:51"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipients",
@@ -3889,7 +3889,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:16:50",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3901,28 +3901,28 @@
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP07/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:16:50"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP07/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:16:50"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP07/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:16:50"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP07/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:16:50"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipients",
@@ -3957,7 +3957,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:15:40",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -3969,28 +3969,28 @@
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP06/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:15:40"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP06/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:15:40"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP06/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:15:40"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP06/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:15:40"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipients",
@@ -4025,7 +4025,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:12:43",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -4037,28 +4037,28 @@
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP05/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:12:43"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP05/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:12:43"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP05/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:12:43"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP05/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:12:43"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipients",
@@ -4093,7 +4093,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:18:38",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -4105,28 +4105,28 @@
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP04/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:18:38"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP04/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:18:38"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP04/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:18:38"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP04/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:18:38"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipients",
@@ -4161,7 +4161,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:12:43",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -4173,28 +4173,28 @@
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP03/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:12:43"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP03/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:12:43"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP03/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:12:43"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP03/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:12:43"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipients",
@@ -4229,7 +4229,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:12:42",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -4241,28 +4241,28 @@
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP02/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:12:42"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP02/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:12:42"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP02/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:12:42"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP02/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:12:42"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipients",
@@ -4297,7 +4297,7 @@
         "GOVE"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:12:42",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-28",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -4309,28 +4309,28 @@
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP01/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:12:42"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP01/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:12:42"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP01/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:12:42"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Quarterly count of recipients",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/DSP01/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:12:42"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Quarterly count of recipients",
@@ -4366,7 +4366,7 @@
       ],
       "updateFrequency": "never",
       "accessRights": "public",
-      "dateModified": "2026-08-27T15:00:16",
+      "dateModified": "2026-08-27",
       "datePublished": "2026-08-27",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -4378,7 +4378,7 @@
           "name": "2026 Q2 FOI Disclosure Log - Department of Culture, Communications and Sport ",
           "contentUrl": "https://assets.gov.ie/static/documents/a4e85f97/20260818-FOI-Disclosure-Log-Q2-2026-CSV_1.csv",
           "encodingFormat": "text/csv",
-          "dateModified": "2026-08-27T08:27:53"
+          "dateModified": "2026-08-27"
         }
       ],
       "description": "Freedom of Information cases from April 2026 to June 2026. These logs provide the following information in relation to each request received: the reference Number assigned to the request by the department the date on which the request was received in the Freedom of Information Unit of the department the category of the person making the request, for example: whether they are a journalist, interest group or company or an individual. This includes non-personal FOI requests only a summary of the information or records requested the date on which the department’s decision was issued to the applicant a summary of that decision, for example; whether the request was granted in full, part granted or refused. All records released in relation to requests as set out in the FOI logs are deemed by the Department to be in the public domain and are available to anyone on request. For access to these records, please contact the Department’s FOI Unit at foi@ccs.gov.ie with the Request Number and details of the specific records being sought. Records will be provided outside of the FOI process for such requests.",
@@ -4417,7 +4417,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:16:47",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-26",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -4429,28 +4429,28 @@
           "name": "Hours of screen time for children aged 3 to 14 years",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/IHSC37/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:16:47"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Hours of screen time for children aged 3 to 14 years",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/IHSC37/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:16:47"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Hours of screen time for children aged 3 to 14 years",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/IHSC37/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:16:47"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Hours of screen time for children aged 3 to 14 years",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/IHSC37/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:16:47"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Hours of screen time for children aged 3 to 14 years",
@@ -4485,7 +4485,7 @@
         "HEAL"
       ],
       "accessRights": "public",
-      "dateModified": "2026-09-06T01:16:47",
+      "dateModified": "2026-09-06",
       "datePublished": "2026-08-26",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": [
@@ -4497,28 +4497,28 @@
           "name": "Hours of screen time for children aged 3 to 14 years",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/IHSC36/CSV/1.0/en",
           "encodingFormat": "CSV",
-          "dateModified": "2026-09-06T01:16:47"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Hours of screen time for children aged 3 to 14 years",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/IHSC36/JSON-stat/1.0/en",
           "encodingFormat": "json-stat",
-          "dateModified": "2026-09-06T01:16:47"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Hours of screen time for children aged 3 to 14 years",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/IHSC36/PX/2013/en",
           "encodingFormat": "px",
-          "dateModified": "2026-09-06T01:16:47"
+          "dateModified": "2026-09-06"
         },
         {
           "@type": "DataDownload",
           "name": "Hours of screen time for children aged 3 to 14 years",
           "contentUrl": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/IHSC36/XLSX/2007/en",
           "encodingFormat": "XLSX",
-          "dateModified": "2026-09-06T01:16:47"
+          "dateModified": "2026-09-06"
         }
       ],
       "description": "Hours of screen time for children aged 3 to 14 years",
