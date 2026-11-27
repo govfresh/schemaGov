@@ -77,6 +77,18 @@
       "$ref": "reference.schema.json",
       "description": "The next jurisdiction up. Chaining these yields the full territorial hierarchy without any country-specific nesting rules."
     },
+    "geoWithin": {
+      "anyOf": [
+        {"$ref": "reference.schema.json"},
+        {"type": "array", "items": {"$ref": "reference.schema.json"}}
+      ],
+      "description": "An area this lies wholly inside but is not part of in the hierarchy, such as the electoral district a town sits in. Use `containedInPlace` for the hierarchy."
+    },
+    "geoOverlaps": {
+      "type": "array",
+      "items": {"$ref": "reference.schema.json"},
+      "description": "Areas that partly overlap this one without either containing the other, such as the districts a town is split between."
+    },
     "containsPlace": {
       "type": "array",
       "items": {

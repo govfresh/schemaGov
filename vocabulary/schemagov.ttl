@@ -401,6 +401,12 @@ gs:fund a rdf:Property ;
     schema:domainIncludes gs:BudgetLine ;
     schema:rangeIncludes gs:Fund .
 
+gs:project a rdf:Property ;
+    rdfs:label "project" ;
+    rdfs:comment "The Project a budget line pays for, as a reference. A project is bounded work that may be funded over several budgets." ;
+    schema:domainIncludes gs:BudgetLine ;
+    schema:rangeIncludes gs:Project .
+
 gs:budgetPhase a rdf:Property ;
     rdfs:label "budget phase" ;
     rdfs:comment "Where in the budget cycle a figure comes from: proposed, approved, adjusted, executed or planned. The field publishers most often omit and the one that matters most, since a figure without its phase is not comparable to any other figure." ;

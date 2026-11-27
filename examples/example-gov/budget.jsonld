@@ -493,6 +493,40 @@
         "@id": "https://example.gov/id/fund/1000",
         "name": "General Fund"
       }
+    },
+    {
+      "@id": "https://example.gov/id/budget/fy2026-capital",
+      "@type": "Budget",
+      "name": "Example City FY2026 capital budget",
+      "publisher": {
+        "@id": "https://example.gov/id/organization/city-government"
+      },
+      "about": {
+        "@id": "https://example.gov/id/jurisdiction/example-city"
+      },
+      "budgetPhase": "approved",
+      "fiscalYear": "FY2026",
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currency": "USD"
+    },
+    {
+      "@id": "https://example.gov/id/budget-line/fy2026-capital/riverside-bridge",
+      "@type": "BudgetLine",
+      "name": "Riverside Bridge replacement",
+      "budget": {
+        "@id": "https://example.gov/id/budget/fy2026-capital"
+      },
+      "amount": {
+        "@type": "MonetaryAmount",
+        "value": 1200000,
+        "currency": "USD"
+      },
+      "direction": "expenditure",
+      "project": {
+        "@id": "https://example.gov/id/project/riverside-bridge",
+        "name": "Riverside Bridge replacement"
+      }
     }
   ]
 }

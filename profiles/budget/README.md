@@ -99,11 +99,14 @@ Budget                                (one period)
   └── BudgetLine                      (one amount, in one budget)
         ├── administrativeClassification → GovernmentOrganization   (durable)
         ├── program                  → Program                      (durable)
-        └── fund                     → Fund                         (durable)
+        ├── fund                     → Fund                         (durable)
+        └── project                  → Project                      (bounded)
 ```
 
 The organization, the program and the fund last across budgets. A `BudgetLine` belongs to a single budget and
-points at them. See `examples/example-gov/budget.jsonld`.
+points at them. A capital line may also point at the `Project` it pays for with `project`. The
+project is described by the [projects profile](../projects/README.md), and lines in several
+budgets can point at the same one. See `examples/example-gov/budget.jsonld`.
 
 ## Programs: the activity a budget pays for
 

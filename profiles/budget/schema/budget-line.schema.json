@@ -83,6 +83,10 @@
       "$ref": "../_core/reference.schema.json",
       "description": "The persistent `Program` this line funds. A program is a durable activity that appears in many budgets; this line belongs to one. `programClassification` stays valid for datasets that have no Program entity."
     },
+    "project": {
+      "$ref": "../_core/reference.schema.json",
+      "description": "The `Project` this line pays for. A project is bounded work that may be funded over several budgets; this line belongs to one."
+    },
     "fundSource": {
       "type": "string",
       "description": "The fund or financing source as text from the source system, where there is no `Fund` entity to point at. Use `fund` for a reference to a persistent fund. Both may be present."

@@ -169,6 +169,9 @@
     {
       "@id": "https://invalid.example/id/budget-line/line-part-of-org",
       "@type": "BudgetLine",
+      "budget": {"@id": "https://invalid.example/id/budget/ok"},
+      "amount": {"@type": "MonetaryAmount", "value": 1, "currency": "USD"},
+      "direction": "expenditure",
       "name": "Line whose parent is an organization",
       "isPartOf": {
         "@id": "https://invalid.example/id/organization/unit-ok"
@@ -191,6 +194,9 @@
     {
       "@id": "https://invalid.example/id/budget-line/line-fund-is-org",
       "@type": "BudgetLine",
+      "budget": {"@id": "https://invalid.example/id/budget/ok"},
+      "amount": {"@type": "MonetaryAmount", "value": 1, "currency": "USD"},
+      "direction": "expenditure",
       "name": "Line whose fund is an organization",
       "fund": {
         "@id": "https://invalid.example/id/organization/unit-ok"
@@ -211,6 +217,9 @@
     {
       "@id": "https://invalid.example/id/budget-line/line-program-is-fund",
       "@type": "BudgetLine",
+      "budget": {"@id": "https://invalid.example/id/budget/ok"},
+      "amount": {"@type": "MonetaryAmount", "value": 1, "currency": "USD"},
+      "direction": "expenditure",
       "name": "Line whose program is a fund",
       "program": {
         "@id": "https://invalid.example/id/fund/no-name"
@@ -258,6 +267,117 @@
       "@id": "https://invalid.example/id/role/no-member",
       "@type": "OrganizationRole",
       "roleName": "Chair"
+    },
+    {
+      "@id": "https://invalid.example/id/budget/ok",
+      "@type": "Budget",
+      "name": "ok",
+      "publisher": {
+        "@id": "https://invalid.example/id/organization/unit-ok"
+      },
+      "budgetPhase": "approved",
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currency": "USD"
+    },
+    {
+      "@id": "https://invalid.example/id/budget-line/line-ok",
+      "@type": "BudgetLine",
+      "name": "Complete line with no fault",
+      "budget": {
+        "@id": "https://invalid.example/id/budget/ok"
+      },
+      "amount": {
+        "@type": "MonetaryAmount",
+        "value": 1,
+        "currency": "USD"
+      },
+      "direction": "expenditure"
+    },
+    {
+      "@id": "https://invalid.example/id/budget-line/line-project-is-org",
+      "@type": "BudgetLine",
+      "name": "Line whose project is an organization",
+      "budget": {
+        "@id": "https://invalid.example/id/budget/ok"
+      },
+      "amount": {
+        "@type": "MonetaryAmount",
+        "value": 1,
+        "currency": "USD"
+      },
+      "direction": "expenditure",
+      "project": {
+        "@id": "https://invalid.example/id/organization/unit-ok"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/jurisdiction/district",
+      "@type": "AdministrativeArea",
+      "name": "District",
+      "governmentLevel": "submunicipal",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "district"
+        }
+      ]
+    },
+    {
+      "@id": "https://invalid.example/id/jurisdiction/within-ok",
+      "@type": "City",
+      "name": "Within and overlapping",
+      "governmentLevel": "municipal",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "within-ok"
+        }
+      ],
+      "geoWithin": {
+        "@id": "https://invalid.example/id/jurisdiction/district"
+      },
+      "geoOverlaps": [
+        {
+          "@id": "https://invalid.example/id/jurisdiction/district"
+        }
+      ]
+    },
+    {
+      "@id": "https://invalid.example/id/jurisdiction/within-org",
+      "@type": "City",
+      "name": "Within an organization",
+      "governmentLevel": "municipal",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "within-org"
+        }
+      ],
+      "geoWithin": {
+        "@id": "https://invalid.example/id/organization/unit-ok"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/jurisdiction/overlaps-org",
+      "@type": "City",
+      "name": "Overlaps an organization",
+      "governmentLevel": "municipal",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "overlaps-org"
+        }
+      ],
+      "geoOverlaps": [
+        {
+          "@id": "https://invalid.example/id/organization/unit-ok"
+        }
+      ]
     }
   ]
 }
