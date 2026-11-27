@@ -452,6 +452,42 @@
       "@id": "gs:fund",
       "@type": "@id"
     },
+    "procuringEntity": {
+      "@id": "gs:procuringEntity",
+      "@type": "@id"
+    },
+    "submissionMethodDetails": "gs:submissionMethodDetails",
+    "tenderPeriodStart": "gs:tenderPeriodStart",
+    "tenderPeriodEnd": "gs:tenderPeriodEnd",
+    "enquiryPeriodEnd": "gs:enquiryPeriodEnd",
+    "date": "gs:date",
+    "contractPeriodStart": {
+      "@id": "gs:contractPeriodStart",
+      "@type": "schema:Date"
+    },
+    "contractPeriodEnd": {
+      "@id": "gs:contractPeriodEnd",
+      "@type": "schema:Date"
+    },
+    "periodStart": {
+      "@id": "gs:periodStart",
+      "@type": "schema:Date"
+    },
+    "periodEnd": {
+      "@id": "gs:periodEnd",
+      "@type": "schema:Date"
+    },
+    "web": {
+      "@id": "gs:web",
+      "@type": "@id"
+    },
+    "contact": "gs:contact",
+    "note": "gs:note",
+    "attachment": {
+      "@id": "gs:attachment",
+      "@type": "@id",
+      "@container": "@set"
+    },
     "project": {
       "@id": "gs:project",
       "@type": "@id"
