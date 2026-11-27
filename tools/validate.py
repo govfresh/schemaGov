@@ -16,6 +16,7 @@ import json
 import pathlib
 import re
 import sys
+from datetime import datetime as _datetime
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CORE = ROOT / "profiles" / "_core" / "schema"
@@ -78,6 +79,46 @@ SCHEMA_FOR = {
     "StatisticalVariable": "statistical-variable.schema.json",
     "Place": "place.schema.json",
 }
+
+
+IRI = re.compile(r'[A-Za-z][A-Za-z0-9+.-]*:[^\s<>"{}|\\^`]+')
+DATE_TIME = re.compile(r"(\d{4}-\d\d-\d\d)[Tt](\d\d:\d\d:\d\d)(\.\d+)?([Zz]|[+-]([01]\d|2[0-3]):[0-5]\d)")
+
+
+def is_iri(value):
+    """An absolute IRI. An http or https IRI must also name a host."""
+    if not isinstance(value, str):
+        return True
+    if not IRI.fullmatch(value):
+        return False
+    scheme, rest = value.split(":", 1)
+    return scheme.lower() not in ("http", "https") or bool(re.match(r"//[^/?#]+", rest))
+
+
+def is_date_time(value):
+    """An RFC 3339 date-time: a real date and time, with a time zone."""
+    if not isinstance(value, str):
+        return True
+    m = DATE_TIME.fullmatch(value)
+    if not m:
+        return False
+    try:
+        _datetime.strptime(f"{m[1]} {m[2]}", "%Y-%m-%d %H:%M:%S")
+    except ValueError:
+        return False
+    return True
+
+
+def format_checker():
+    """jsonschema checks `iri` and `date-time` only when extra packages are installed, and
+    says nothing when they are not. They are checked here so that they always run."""
+    from jsonschema import Draft202012Validator, FormatChecker
+
+    checker = FormatChecker(formats=())
+    checker.checkers = dict(Draft202012Validator.FORMAT_CHECKER.checkers)
+    checker.checks("iri")(is_iri)
+    checker.checks("date-time")(is_date_time)
+    return checker
 
 
 def load_graph(paths):
@@ -339,6 +380,7 @@ def main(argv):
                             project_orgs.add(ref["@id"])
 
         checked = 0
+        formats = format_checker()
         for nid, node in entities.items():
             types = node.get("@type")
             types = types if isinstance(types, list) else [types]
@@ -377,7 +419,7 @@ def main(argv):
             v = Draft202012Validator(
                 schema,
                 registry=registry,
-                format_checker=Draft202012Validator.FORMAT_CHECKER,
+                format_checker=formats,
             )
             for e in sorted(v.iter_errors(node), key=lambda e: list(e.path)):
                 loc = "/".join(str(x) for x in e.path) or "(root)"

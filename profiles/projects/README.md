@@ -193,7 +193,7 @@ so this is a stretch; it is the weakest mapping in the profile.
   and dangling references.
 
 `npm run validate:invalid` runs a deliberately broken fixture and fails unless every fault is
-caught.
+caught for its own reason.
 
 ## Extending
 

@@ -22,12 +22,6 @@ claim against the level it asserts, and rejects unknown levels.
 
 ## Open work (as of 2026-11-27)
 
-- **Format checks that do not run.** Schemas declare `iri`, `uri` and `date-time` formats, but
-  `tools/validate.py` checks them only if extra packages are installed, and CI does not install
-  them. A malformed value in one of those fields passes. Add the packages, then fix what fails.
-- **Invalid fixtures can be rejected for the wrong reason.** `tools/check-invalid.py` passes a
-  fixture that fails for any reason. This hid `fund` and `program` checks attached to the wrong
-  class. It should assert the expected message.
 - **A pilot for the org model.** County of Marin publishes its organizations, budgets, programs
   and statistics as schemaGov data and checks them with these validators. Committing a sample
   here needs its source licence checked first.

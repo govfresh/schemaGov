@@ -6,7 +6,7 @@ nodes are clean, to show that valid data is not rejected. The faults and the cle
 listed in `tools/check-invalid.py`.
 
 `python3 tools/check-invalid.py` (`npm run validate:invalid`) runs the validators over it and
-fails unless every fault is flagged and no clean node is. Passing data proves
+fails unless every fault is rejected with its own expected message and no clean node is. Passing data proves
 nothing if a validator accepts everything.
 
 Nothing here is published, and the JSON-LD audit skips it.
