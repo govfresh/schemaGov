@@ -121,6 +121,54 @@ def format_checker():
     return checker
 
 
+def defined_terms(paths):
+    """Every property name that means something: the shared context's terms (including the
+    ones scoped to a type), schema.org's properties, and any term a document defines itself."""
+    names = set()
+
+    def from_context(context):
+        for part in context if isinstance(context, list) else [context]:
+            if not isinstance(part, dict):
+                continue
+            for key, value in part.items():
+                if not key.startswith("@"):
+                    names.add(key)
+                if isinstance(value, dict) and "@context" in value:
+                    from_context(value["@context"])
+
+    from_context(json.loads((ROOT / "context" / "v1" / "context.jsonld").read_text())["@context"])
+    for path in paths:
+        from_context(json.loads(path.read_text()).get("@context"))
+    listed = (ROOT / "tools" / "schemaorg-properties.txt").read_text().splitlines()
+    names.update(line for line in listed if line and not line.startswith("#"))
+    vocabulary = (ROOT / "vocabulary" / "schemagov.ttl").read_text()
+    names.update(re.findall(r"^(gs:[A-Za-z0-9_]+)", vocabulary, re.MULTILINE))
+    return names
+
+
+def unrecognised_properties(entities, defined):
+    """{property: [@id of each entity using it]}. A name with another prefix, or a full IRI,
+    belongs to someone else's vocabulary and is left alone."""
+    found = {}
+
+    def walk(node, owner):
+        if isinstance(node, list):
+            for item in node:
+                walk(item, owner)
+        elif isinstance(node, dict):
+            for key, value in node.items():
+                if key == "@context":
+                    continue
+                ours = ":" not in key or key.startswith("gs:")
+                if not key.startswith("@") and ours and key not in defined:
+                    found.setdefault(key, []).append(owner)
+                walk(value, owner)
+
+    for nid, node in entities.items():
+        walk(node, nid)
+    return found
+
+
 def load_graph(paths):
     """Return (entities, sources) for every top-level node across the given files."""
     entities, sources = {}, {}
@@ -194,6 +242,14 @@ def main(argv):
     for target, where in refs:
         if target not in entities and target not in published_terms:
             errors.append(f"dangling reference -> {target}\n    from {where}")
+
+    # --- unrecognised properties ---------------------------------------------
+    # The schemas allow extra properties, so a misspelled or invented one raises nothing
+    # on its own. It is a warning, not an error: the document is still usable.
+    for name, owners in sorted(unrecognised_properties(entities, defined_terms(paths)).items()):
+        warnings.append(
+            f"unrecognised property '{name}': neither schema.org nor schemaGov defines it\n"
+            f"    used {len(owners)} time(s), first on {owners[0]}")
 
     # --- reporter privacy ----------------------------------------------------
     # Open311's POST payload carries the reporter's name, email, phone, device id

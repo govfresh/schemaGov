@@ -216,6 +216,30 @@
       "@id": "https://invalid.example/id/term/orphan",
       "@type": "DefinedTerm",
       "name": "Orphan"
+    },
+    {
+      "@id": "https://invalid.example/id/warning/misspelled",
+      "@type": "Project",
+      "name": "Misspelled property",
+      "descripton": "text"
+    },
+    {
+      "@id": "https://invalid.example/id/warning/unknown-gs",
+      "@type": "Project",
+      "name": "Undefined gs term",
+      "gs:notATerm": "text"
+    },
+    {
+      "@id": "https://invalid.example/id/warning/ok",
+      "@type": "Project",
+      "name": "Known and foreign properties",
+      "keywords": [
+        "a"
+      ],
+      "gs:projectCategory": [
+        "a"
+      ],
+      "dct:title": "a"
     }
   ]
 }

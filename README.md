@@ -91,6 +91,9 @@ npm run check                              # all of the above, as CI runs it
 A validator whose packages are missing says `SKIPPED` and fails. It never reports success for a
 check it did not run.
 
+`validate.py` also warns about a property that neither schema.org nor schemaGov defines, such as a
+misspelling. The list of schema.org names is `tools/schemaorg-properties.txt`.
+
 ## Licensing
 
 The specification, vocabulary, schemas, code lists and examples are dedicated to the public
