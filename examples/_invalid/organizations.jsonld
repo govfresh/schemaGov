@@ -227,6 +227,37 @@
       "administeredBy": {
         "@id": "https://invalid.example/id/jurisdiction/place"
       }
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-census-geoid-ok",
+      "@type": "GovernmentOrganization",
+      "name": "unit-census-geoid-ok",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "census-geoid",
+          "value": "06041"
+        }
+      ],
+      "organizationClassification": "government"
+    },
+    {
+      "@id": "https://invalid.example/id/organization/unit-bad-scheme",
+      "@type": "GovernmentOrganization",
+      "name": "unit-bad-scheme",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "erp-org-unit",
+          "value": "1"
+        }
+      ],
+      "organizationClassification": "government"
+    },
+    {
+      "@id": "https://invalid.example/id/role/no-member",
+      "@type": "OrganizationRole",
+      "roleName": "Chair"
     }
   ]
 }

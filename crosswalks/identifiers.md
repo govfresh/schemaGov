@@ -19,9 +19,15 @@ across countries without privileging one nation's registry.
 | `lei` | legal entities | global | ISO 17442. Relevant mainly to procurement vendors. |
 | `org-id:<prefix>` | organizations | national registers | Any prefix from the [org-id.guide](https://org-id.guide) register, e.g. `org-id:GB-COH`, `org-id:US-EIN`. Same convention OCDS uses, so procurement data crosswalks without transformation. |
 | `ocd-division` | US divisions | US, partial elsewhere | Open Civic Data division IDs. Excellent where available; **not** a global system, so never required. |
+| `census-geoid` | US statistical and legal areas | US only | Census Bureau GEOID: states, counties, places, tracts. The join key to Census data. |
+| `cpv` | what is being bought | EU and UK | Common Procurement Vocabulary. A classification, used on tenders. |
+| `unspsc` | what is being bought | global | UN Standard Products and Services Code. Used on tenders. |
+| `nigp` | what is being bought | much of the US | NIGP commodity codes. Used on tenders. |
+| `local:<scheme>` | any | publisher-local | A named register of the publisher's own, such as `local:erp-org-unit`. |
 | `gs:local` | any | publisher-local | The publisher's own key. Always available, never a join key across publishers. |
 
-Any absolute IRI is also valid as a `propertyID`, naming a scheme of your own.
+An absolute `http`, `https` or `urn` IRI is also valid as a `propertyID`, naming a scheme of your own.
+Any other value is an error: an unregistered scheme of your own is written `local:<scheme>`.
 
 ## Below the ISO 3166-2 floor
 

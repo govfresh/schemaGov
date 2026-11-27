@@ -83,7 +83,7 @@ is removed.
   "@id": "https://example.gov/id/fund/2080",
   "@type": "Fund",
   "name": "Building Inspection Fund",
-  "identifier": [{"@type": "PropertyValue", "propertyID": "erp-fund-code", "value": "2080"}],
+  "identifier": [{"@type": "PropertyValue", "propertyID": "local:erp-fund-code", "value": "2080"}],
   "description": "A special revenue fund. Building permit fees pay into it, and it pays for inspections.",
   "administeredBy": {"@id": "https://example.gov/id/organization/community-development"}
 }

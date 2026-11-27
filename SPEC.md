@@ -127,8 +127,10 @@ This is the mechanism that makes the model work internationally. It is the same 
 transformation.
 
 **Registered scheme tokens:** `wikidata`, `iso3166-1-alpha2`, `iso3166-1-alpha3`,
-`iso3166-2`, `geonames`, `lei`, `ocd-division`, `gs:local`; any `org-id:<prefix>` token from
-the [org-id.guide](https://org-id.guide) register; or an absolute IRI naming your own scheme.
+`iso3166-2`, `geonames`, `lei`, `ocd-division`, `census-geoid`, `cpv`, `unspsc`, `nigp`,
+`gs:local`; any `org-id:<prefix>` token from the [org-id.guide](https://org-id.guide) register;
+`local:<scheme>` for a publisher's own register; or an `http`, `https` or `urn` IRI naming your
+own scheme. Any other value is an error.
 
 A **[Wikidata QID](/standards/wikidata/) is strongly recommended** on every jurisdiction. It is the only identifier
 system with global coverage across all tiers, which makes it the practical join key between

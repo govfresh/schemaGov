@@ -16,7 +16,7 @@
     },
     "propertyID": {
       "type": "string",
-      "description": "The identifier scheme. Use a registered token below, an 'org-id:<prefix>' token from the org-id.guide register, 'local:<scheme>' for a publisher's own internal register (distinct from org-id: so that provenance is never overstated), or an absolute IRI.",
+      "description": "The identifier scheme. Use a registered token below, an 'org-id:<prefix>' token from the org-id.guide register, 'local:<scheme>' for a publisher's own internal register (distinct from org-id: so that provenance is never overstated), or an absolute `http`, `https` or `urn` IRI.",
       "anyOf": [
         {
           "enum": [
@@ -27,6 +27,10 @@
             "geonames",
             "lei",
             "ocd-division",
+            "census-geoid",
+            "cpv",
+            "unspsc",
+            "nigp",
             "gs:local"
           ]
         },
@@ -37,7 +41,7 @@
           "pattern": "^org-id:[A-Z]{2}-[A-Z0-9]+$"
         },
         {
-          "format": "iri"
+          "pattern": "^(https?://|urn:)\\S+$"
         }
       ]
     },

@@ -91,6 +91,12 @@ def party_identifiers(party):
     return out
 
 
+def classification_scheme(scheme):
+    """Registered classification schemes keep their token; any other is the publisher's own."""
+    token = re.sub(r"[^a-z0-9._-]+", "-", (scheme or "unknown").lower())
+    return token if token in {"cpv", "unspsc", "nigp"} else f"local:{token}"
+
+
 def amount(v):
     if not v or v.get("amount") is None or not v.get("currency"):
         return None
@@ -197,7 +203,7 @@ def convert(releases, base, gaps):
             if cls and cls.get("id"):
                 tender["classification"] = [{
                     "@type": "PropertyValue",
-                    "propertyID": (cls.get("scheme") or "unknown").lower(),
+                    "propertyID": classification_scheme(cls.get("scheme")),
                     "value": str(cls["id"]),
                     **({"name": cls["description"]} if cls.get("description") else {})}]
             tp = t.get("tenderPeriod") or {}

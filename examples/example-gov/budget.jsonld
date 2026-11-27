@@ -398,7 +398,7 @@
       "identifier": [
         {
           "@type": "PropertyValue",
-          "propertyID": "erp-fund-code",
+          "propertyID": "local:erp-fund-code",
           "value": "1000"
         }
       ],
@@ -415,7 +415,7 @@
       "identifier": [
         {
           "@type": "PropertyValue",
-          "propertyID": "erp-fund-code",
+          "propertyID": "local:erp-fund-code",
           "value": "2080"
         }
       ],
@@ -432,7 +432,7 @@
       "identifier": [
         {
           "@type": "PropertyValue",
-          "propertyID": "erp-program-code",
+          "propertyID": "local:erp-program-code",
           "value": "PW-STREETS"
         }
       ],

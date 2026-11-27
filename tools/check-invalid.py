@@ -41,6 +41,9 @@ FAULTS = {
     "organization/unit-cycle-a": "parentOrganization cycle",
     "organization/unit-lists-wrong-parent": "lists a child that names a different parent",
     "organization/unit-government-with-parent": "a government (root) that has a parent",
+    "organization/unit-bad-scheme": "identifier scheme that is neither registered nor prefixed",
+    "role/no-member": "role that names no person",
+    "policy/file-no-content-url": "legislation file with no contentUrl",
     "policy/no-label": "provision with neither a name nor an identifier",
     "policy/no-jurisdiction": "top-level work with no jurisdiction",
     "policy/part-of-org": "isPartOf points at an organization",
@@ -76,7 +79,7 @@ FAULTS = {
     "statistics/area-governed": "statistical area with a governing organization",
     "statistics/area-in-org": "statistical area contained in an organization",
 }
-CLEAN = ["project/ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
+CLEAN = ["project/ok", "organization/unit-census-geoid-ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
          "policy/clean-top", "policy/clean-part", "policy/term-ok", "policy/partial-date-ok",
          "statistics/ok", "statistics/ok-period", "statistics/ok-no-uncertainty", "statistics/area-ok",
          "statistics/var-ok", "statistics/facility-place-ok", "statistics/bound-only-ok",
