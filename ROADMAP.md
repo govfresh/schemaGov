@@ -22,16 +22,13 @@ claim against the level it asserts, and rejects unknown levels.
 
 ## Open work (as of 2026-11-27)
 
-- **Record what changed, and decide the version.** On 2026-11-27 validation became stricter
-  (identifier schemes, `iri` and `date-time` formats, budget line references) and terms were added
-  to the `v1` context. [SPEC section 6](SPEC.md#6-versioning) makes narrowing a major change with
-  a new context path. Decide whether these count, then start a changelog.
 - **Properties with no context mapping.** `validate.py` now warns about them. Some that the
   schemas use are not mapped, so they resolve to schema.org terms that do not exist. Procurement:
   `procuringEntity`, `submissionMethodDetails`, `tenderPeriodStart`, `tenderPeriodEnd`,
   `enquiryPeriodEnd`, `date`, `contractPeriodStart`, `contractPeriodEnd`, `periodStart`,
   `periodEnd`. Alerts: `web`, `contact`, `note`. Meetings: `attachment`. Map each one, which adds
   terms to the context.
+- **Release `1.0.0`.** Decide what must be true first. From then on SPEC section 6 applies in full.
 - **A pilot for the org model.** County of Marin publishes its organizations, budgets, programs
   and statistics as schemaGov data and checks them with these validators. Committing a sample
   here needs its source licence checked first.

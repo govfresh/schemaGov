@@ -234,3 +234,9 @@ authorities already have 311 data flowing.
 SemVer on the profile. Context URLs are versioned and **immutable once published** — a
 document pinned to `v1` must expand identically forever. Additive term changes are minor;
 removing or renarrowing a term is major and requires a new context path.
+
+**schemaGov is currently `1.0.0-draft`, and the rules above start at the `1.0.0` release.** Until
+then `v1` can change, including in ways that make validation stricter or change how a document
+expands. Every such change is recorded in the
+[changelog](https://github.com/govfresh/schemaGov/blob/main/CHANGELOG.md). Anyone relying on
+`v1` before the release should expect this.

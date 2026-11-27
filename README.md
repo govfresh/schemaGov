@@ -94,6 +94,10 @@ check it did not run.
 `validate.py` also warns about a property that neither schema.org nor schemaGov defines, such as a
 misspelling. The list of schema.org names is `tools/schemaorg-properties.txt`.
 
+## Status
+
+`1.0.0-draft`. `v1` can still change. See the [changelog](CHANGELOG.md).
+
 ## Licensing
 
 The specification, vocabulary, schemas, code lists and examples are dedicated to the public
