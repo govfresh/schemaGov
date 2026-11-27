@@ -26,8 +26,6 @@ claim against the level it asserts, and rejects unknown levels.
   (identifier schemes, `iri` and `date-time` formats, budget line references) and terms were added
   to the `v1` context. [SPEC section 6](SPEC.md#6-versioning) makes narrowing a major change with
   a new context path. Decide whether these count, then start a changelog.
-- **Validators pass when they have not run.** If a Python package is missing, `validate.py` and
-  `shacl.py` print `SKIPPED` and still succeed. They should fail.
 - **Unrecognised properties pass silently.** A misspelled or undefined property raises nothing,
   which is how `alternateUrl` and an undefined `BudgetLine.project` went unnoticed. Warn on a
   property that neither schema.org nor schemaGov defines.

@@ -89,7 +89,7 @@ def main():
         from rdflib.compare import isomorphic
     except ImportError:
         print("audit-jsonld: SKIPPED - pip install PyLD rdflib")
-        return 0
+        return 1
 
     ctx = load_ctx()
     # _invalid is wrong on purpose (tools/check-invalid.py); auditing it would only report

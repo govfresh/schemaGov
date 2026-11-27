@@ -50,7 +50,7 @@ def main(argv):
         from pyshacl import validate
     except ImportError:
         print("shacl: SKIPPED - pip install pyshacl rdflib")
-        return 0
+        return 1
 
     targets = argv[1:] or ["examples/example-gov"]
     paths = []

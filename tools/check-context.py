@@ -63,7 +63,7 @@ def main():
         from rdflib import Graph
     except ImportError:
         print("check-context: SKIPPED - pip install rdflib")
-        return 0
+        return 1
 
     with socketserver.TCPServer(("127.0.0.1", 0), Handler) as httpd:
         port = httpd.server_address[1]

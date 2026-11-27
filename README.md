@@ -81,13 +81,15 @@ npm run check      # build + namespace check + example validation
 ## Validate
 
 ```bash
-python3 tools/validate.py                  # reference integrity, no dependencies
-pip install jsonschema referencing         # adds JSON Schema shape checking
-pip install pyshacl rdflib                 # adds SHACL semantic checking
+pip install jsonschema referencing         # for JSON Schema shape and reference checking
+pip install pyshacl rdflib                 # for SHACL semantic checking
 python3 tools/validate.py examples/example-gov
 python3 tools/shacl.py examples/example-gov
 npm run check                              # all of the above, as CI runs it
 ```
+
+A validator whose packages are missing says `SKIPPED` and fails. It never reports success for a
+check it did not run.
 
 ## Licensing
 
