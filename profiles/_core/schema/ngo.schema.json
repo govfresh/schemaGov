@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.govfresh.com/v1/_core/ngo.schema.json",
+  "title": "NGO",
+  "description": "A non-government organization that government data names: an employee association, a community group, a nonprofit partner. It exercises no public authority, so it has no organizationClassification or governmentLevel. A public body, including a special district or joint authority, is a GovernmentOrganization. A company that only appears in a contracting process is a procurement Party.",
+  "type": "object",
+  "properties": {
+    "@context": {},
+    "@id": {
+      "type": "string",
+      "format": "iri",
+      "description": "This organization's stable identifier."
+    },
+    "@type": {
+      "const": "NGO",
+      "description": "Always `NGO`, a real schema.org type."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The organization's name."
+    },
+    "alternateName": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Other names this organization is known by."
+    },
+    "description": {
+      "type": "string",
+      "description": "A plain-language description."
+    },
+    "url": {
+      "type": "string",
+      "format": "iri",
+      "description": "Where more information can be found."
+    },
+    "identifier": {
+      "type": "array",
+      "items": {
+        "$ref": "identifier.schema.json"
+      },
+      "minItems": 1,
+      "description": "At least one scheme-qualified identifier for this organization."
+    },
+    "sameAs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      },
+      "description": "Links to authoritative external records for this organization."
+    },
+    "areaServed": {
+      "$ref": "reference.schema.json",
+      "description": "The `Jurisdiction` this body governs. Optional at Core conformance, because an organization referenced from another profile (a buyer in a procurement record, an issuing body on a permit) is legitimately known by identity without its territory being restated. Required at Standard conformance for organizations a publisher describes in their own org chart."
+    },
+    "parentOrganization": {
+      "$ref": "reference.schema.json",
+      "description": "The larger organization this belongs to, such as the national body of a local chapter."
+    },
+    "address": {
+      "type": "object",
+      "description": "schema.org `PostalAddress`."
+    },
+    "contactPoint": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Ways to contact this organization."
+    },
+    "sourceDataset": {
+      "type": "string",
+      "format": "iri",
+      "description": "The `Dataset` this record was published as part of."
+    },
+    "organizationClassification": false,
+    "governmentLevel": false
+  },
+  "required": [
+    "@id",
+    "@type",
+    "name"
+  ],
+  "additionalProperties": true
+}

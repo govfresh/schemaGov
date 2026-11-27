@@ -219,6 +219,7 @@ caught.
   or the private and public beta terms.
 - A milestone has a scheduled date and a date met. Something that is held on a date with a
   verdict, such as an assessment, fills both with the same date.
-- A non-government organization in `member` or `funder` is typed `Organization`. The validator
+- A non-government organization in `member` or `funder` is typed `NGO`
+  ([core](../_core/README.md)) or `Organization`. For an `Organization`, the validator
   does not hold it to the procurement `Party` schema unless it carries a `role`, and checks only
   that it has an `@id` and a `name`.

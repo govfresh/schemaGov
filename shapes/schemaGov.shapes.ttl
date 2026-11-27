@@ -89,6 +89,20 @@ gs:GovernmentOrganizationShape a sh:NodeShape ;
     sh:not [ sh:class schema:AdministrativeArea ] ;
     sh:message "An entity must not be typed as both a GovernmentOrganization and a Jurisdiction. A territory and the body governing it are separate entities (SPEC 1.1)." .
 
+gs:NGOShape a sh:NodeShape ;
+    sh:targetClass schema:NGO ;
+
+    sh:property [
+        sh:path schema:parentOrganization ;
+        sh:or ( [ sh:class schema:NGO ] [ sh:class schema:Organization ] ) ;
+        sh:message "An NGO's parentOrganization must be another non-government organization." ] ;
+
+    sh:property [
+        sh:path schema:areaServed ;
+        sh:or ( [ sh:class schema:AdministrativeArea ] [ sh:class schema:Country ]
+                [ sh:class schema:State ] [ sh:class schema:City ] ) ;
+        sh:message "areaServed must point at a Jurisdiction." ] .
+
 #############################  Roles and posts  #############################
 
 gs:RoleShape a sh:NodeShape ;
@@ -477,17 +491,17 @@ gs:ProjectShape a sh:NodeShape ;
     sh:property [
         sh:path schema:parentOrganization ;
         sh:maxCount 1 ;
-        sh:or ( [ sh:class schema:GovernmentOrganization ] [ sh:class schema:Organization ] ) ;
+        sh:or ( [ sh:class schema:GovernmentOrganization ] [ sh:class schema:Organization ] [ sh:class schema:NGO ] ) ;
         sh:message "The responsible organization must be an organization, not a place or a person." ] ;
 
     sh:property [
         sh:path schema:member ;
-        sh:or ( [ sh:class schema:GovernmentOrganization ] [ sh:class schema:Organization ] ) ;
+        sh:or ( [ sh:class schema:GovernmentOrganization ] [ sh:class schema:Organization ] [ sh:class schema:NGO ] ) ;
         sh:message "A participating organization must be an organization." ] ;
 
     sh:property [
         sh:path schema:funder ;
-        sh:or ( [ sh:class schema:GovernmentOrganization ] [ sh:class schema:Organization ] ) ;
+        sh:or ( [ sh:class schema:GovernmentOrganization ] [ sh:class schema:Organization ] [ sh:class schema:NGO ] ) ;
         sh:message "A funder must be an organization." ] ;
 
     sh:property [

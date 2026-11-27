@@ -378,6 +378,32 @@
           "@id": "https://invalid.example/id/organization/unit-ok"
         }
       ]
+    },
+    {
+      "@id": "https://invalid.example/id/ngo/ok",
+      "@type": "NGO",
+      "name": "Association",
+      "areaServed": {
+        "@id": "https://invalid.example/id/jurisdiction/district"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/ngo/no-name",
+      "@type": "NGO"
+    },
+    {
+      "@id": "https://invalid.example/id/ngo/classified",
+      "@type": "NGO",
+      "name": "NGO with a government classification",
+      "organizationClassification": "authority"
+    },
+    {
+      "@id": "https://invalid.example/id/ngo/parent-is-government",
+      "@type": "NGO",
+      "name": "NGO under a government body",
+      "parentOrganization": {
+        "@id": "https://invalid.example/id/organization/unit-ok"
+      }
     }
   ]
 }

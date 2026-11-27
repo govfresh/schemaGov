@@ -39,6 +39,9 @@ FAULTS = {
     "budget-line/line-project-is-org": "budget line whose project is an organization",
     "jurisdiction/within-org": "jurisdiction within an organization",
     "jurisdiction/overlaps-org": "jurisdiction overlapping an organization",
+    "ngo/no-name": "non-government organization with no name",
+    "ngo/classified": "non-government organization with a government classification",
+    "ngo/parent-is-government": "non-government organization under a government body",
     "program/no-name": "program with no name",
     "program/administered-by-place": "program administered by a jurisdiction",
     "organization/unit-bad-class": "classification outside the code list",
@@ -84,7 +87,7 @@ FAULTS = {
     "statistics/area-governed": "statistical area with a governing organization",
     "statistics/area-in-org": "statistical area contained in an organization",
 }
-CLEAN = ["project/ok", "project/cost-ok", "budget-line/line-ok", "jurisdiction/within-ok", "organization/unit-census-geoid-ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
+CLEAN = ["project/ok", "ngo/ok", "project/cost-ok", "budget-line/line-ok", "jurisdiction/within-ok", "organization/unit-census-geoid-ok", "organization/o", "organization/unit-ok", "organization/unit-child-ok",
          "policy/clean-top", "policy/clean-part", "policy/term-ok", "policy/partial-date-ok",
          "statistics/ok", "statistics/ok-period", "statistics/ok-no-uncertainty", "statistics/area-ok",
          "statistics/var-ok", "statistics/facility-place-ok", "statistics/bound-only-ok",

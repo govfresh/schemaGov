@@ -383,6 +383,22 @@
       "parentOrganization": {
         "@id": "https://example.gov/id/organization/community-development"
       }
+    },
+    {
+      "@id": "https://example.gov/id/organization/friends-of-the-river",
+      "@type": "NGO",
+      "name": "Friends of the River",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gs:local",
+          "value": "friends-of-the-river"
+        }
+      ],
+      "areaServed": {
+        "@id": "https://example.gov/id/jurisdiction/example-city",
+        "name": "Example City"
+      }
     }
   ]
 }

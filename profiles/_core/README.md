@@ -66,6 +66,21 @@ occupies. The organization points at the building; the building never points bac
 organization property. Do not add per-organization contact fields. See
 `examples/example-gov/organizations.jsonld` and `facilities.jsonld`.
 
+## Non-government organizations
+
+Government data names bodies that are not government: employee associations, community groups,
+nonprofit partners. Type them `NGO`. `@id`, `@type` and `name` are required; give an
+`identifier` where there is one.
+
+| The body | Type |
+|---|---|
+| Exercises public authority, including a special district or joint authority | `GovernmentOrganization` |
+| Does not, and government data names it | `NGO` |
+| Appears as a bidder or supplier in a contracting process | `Organization` (the [procurement](../procurement/README.md) party) |
+
+An `NGO` has no `organizationClassification` or `governmentLevel`, which describe public bodies.
+It can be a project's `member` or `funder`. See `examples/example-gov/organizations.jsonld`.
+
 ## `subOrganization` vs `department`
 
 Use `subOrganization` for bodies with their own constitution — councils, committees,

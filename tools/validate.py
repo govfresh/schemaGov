@@ -33,6 +33,7 @@ SCHEMA_FOR = {
     "City": "jurisdiction.schema.json",
     "GovernmentOrganization": "organization.schema.json",
     "Person": "person.schema.json",
+    "NGO": "ngo.schema.json",
     "OrganizationRole": "role.schema.json",
     "EmployeeRole": "role.schema.json",
     "Role": "role.schema.json",
