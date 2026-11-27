@@ -3,8 +3,8 @@
 
 Two independent checks:
 
-  1. Shape      - each entity against its JSON Schema. Needs `pip install jsonschema`;
-                  skipped with a notice if absent.
+  1. Shape      - each entity against its JSON Schema. Needs
+                  `pip install jsonschema referencing`; fails if they are absent.
   2. References - every {"@id": ...} points at an entity that actually exists in the
                   document set, and no entity is declared twice. This is the check that
                   matters most here: the profile forbids inlining copies of entities, so
@@ -427,7 +427,8 @@ def main(argv):
             checked += 1
         notes.append(f"shape-checked {checked} entities against {len(SCHEMA_FOR)} schemas")
     except ImportError:
-        notes.append("shape check SKIPPED - pip install jsonschema referencing")
+        # A check that did not run must not look like one that passed.
+        errors.append("shape check SKIPPED - pip install jsonschema referencing")
 
     # --- alerts ---------------------------------------------------------------
     # A malformed warning is worse than no warning: it either fails to reach people
