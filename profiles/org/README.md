@@ -177,7 +177,7 @@ control or does not intend to keep resolving. If you cannot publish a stable URL
 `urn:` URI you control. Do not drop `@id`, because every reference to the body depends on it.
 
 An `identifier` value is only unique inside its own scheme. The same code can appear under
-several branches of a source system, so always set `propertyID` (for example `erp-org-unit`) and
+several branches of a source system, so always set `propertyID` (for example `local:erp-org-unit`) and
 never treat a bare code as the body's identity.
 
 ### Public and administrative structure

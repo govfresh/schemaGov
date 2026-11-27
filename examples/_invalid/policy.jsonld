@@ -236,6 +236,12 @@
       "legislationJurisdiction": {
         "@id": "https://invalid.example/id/jurisdiction/place"
       }
+    },
+    {
+      "@id": "https://invalid.example/id/policy/file-no-content-url",
+      "@type": "LegislationObject",
+      "encodingFormat": "text/html",
+      "legislationLegalValue": "OfficialLegalValue"
     }
   ]
 }

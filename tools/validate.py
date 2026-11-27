@@ -25,7 +25,7 @@ PROFILE_DIRS = [ROOT / "profiles" / d / "schema" for d in ("_core", "org", "code
 # without an areaType is a statistical area missing its areaType, not a facility.
 AREA_ONLY_PROPERTIES = ("boundary", "geoOverlaps", "containsPlace", "jurisdictionOf", "governmentLevel")
 
-# @type -> schema file. Roles are validated where they are nested, not standalone.
+# @type -> schema file.
 SCHEMA_FOR = {
     "AdministrativeArea": "jurisdiction.schema.json",
     "Country": "jurisdiction.schema.json",
@@ -33,6 +33,9 @@ SCHEMA_FOR = {
     "City": "jurisdiction.schema.json",
     "GovernmentOrganization": "organization.schema.json",
     "Person": "person.schema.json",
+    "OrganizationRole": "role.schema.json",
+    "EmployeeRole": "role.schema.json",
+    "Role": "role.schema.json",
     "Boundary": "boundary.schema.json",
     "GovernmentBuilding": "facility.schema.json",
     "CityHall": "facility.schema.json",
@@ -45,6 +48,7 @@ SCHEMA_FOR = {
     "Post": "post.schema.json",
     "DataFeed": "directory.schema.json",
     "Legislation": "legislation.schema.json",
+    "LegislationObject": "legislation-object.schema.json",
     "DefinedTerm": "definition.schema.json",
     "DefinedTermSet": "definition.schema.json",
     "Meeting": "meeting.schema.json",
