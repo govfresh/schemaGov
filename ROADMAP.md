@@ -22,7 +22,24 @@ claim against the level it asserts, and rejects unknown levels.
 
 ## Open work (as of 2026-11-27)
 
-- **Release `1.0.0`.** Decide what must be true first. From then on SPEC section 6 applies in full.
+- **Release `1.0.0`.** From then on [SPEC section 6](SPEC.md#6-versioning) applies in full, so
+  release once nothing in `v1` is likely to need removing or narrowing. Before then:
+  1. **An independent publisher has published with it**, making and checking their own data,
+     ideally outside the US. The pilots here are conversions made for this repo, and the County of
+     Marin data has been developed alongside schemaGov. This will probably set the timing.
+  2. **The County of Marin data passes cleanly** on the exact release candidate, with no tolerated
+     errors.
+  3. **Untested parts are tested or marked provisional.** No real source has exercised the
+     amendment relations in the `code` profile. Terms added on 2026-11-27 rest on one publisher.
+  4. **Weak mappings are reviewed:** those the crosswalks call a stretch, and `gs:fee`.
+  5. **Stated rules are enforced.** Nothing checks that `procuringEntity` is a government
+     organization. Look for others, since adding a check after release narrows what passes.
+  6. **The promise is written down:** whether schemas, code lists and validator behaviour are
+     frozen along with the context, and how releases are tagged.
+  7. **Licensing is settled** for `tools/schemaorg-properties.txt`, taken from schema.org's
+     CC BY-SA 3.0 vocabulary.
+
+  Not needed first: new profiles, multilingual titles and the readability backlog.
 - **A pilot for the org model.** County of Marin publishes its organizations, budgets, programs
   and statistics as schemaGov data and checks them with these validators. Committing a sample
   here needs its source licence checked first.
