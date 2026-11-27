@@ -1,6 +1,6 @@
 {
   "name": "schema-gov",
-  "version": "1.0.0",
+  "version": "1.0.0-draft",
   "description": "A shared vocabulary for government operations, built as a profile of schema.org and established open standards.",
   "type": "module",
   "scripts": {
