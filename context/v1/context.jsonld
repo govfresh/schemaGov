@@ -531,6 +531,11 @@
       "@id": "gs:legislation",
       "@type": "@id"
     },
+    "projectCategory": {
+      "@id": "gs:projectCategory",
+      "@container": "@set"
+    },
+    "estimatedCost": "schema:estimatedCost",
     "Project": {
       "@id": "gs:Project",
       "@context": {

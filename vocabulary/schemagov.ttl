@@ -1164,6 +1164,12 @@ gs:expectedEndDate a rdf:Property ;
     schema:domainIncludes gs:Project ;
     schema:rangeIncludes schema:Date .
 
+gs:projectCategory a rdf:Property ;
+    rdfs:label "project category" ;
+    rdfs:comment "What kind of project this is, in the publisher's own words. gs:category is the alert category code list, so it is not reused." ;
+    schema:domainIncludes gs:Project ;
+    schema:rangeIncludes schema:Text .
+
 gs:produces a rdf:Property ;
     rdfs:label "produces" ;
     rdfs:comment "Something the project delivers or is delivering: a service, dataset, application, facility or document. Kept apart from the project because the project can finish while its output stays in operation. schema:serviceOutput points from a Service to what it generates, which is the wrong direction, and schema:result applies only to Action. No schema.org superproperty exists." ;

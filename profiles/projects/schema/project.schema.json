@@ -117,6 +117,18 @@
         "$ref": "../_core/reference.schema.json"
       }
     },
+    "projectCategory": {
+      "type": "array",
+      "description": "What kind of project this is, in the publisher's own words, such as `Transportation` or `Drainage`. Not its lifecycle (see phase) or its state (see status).",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "estimatedCost": {
+      "$ref": "../budget/amount.schema.json",
+      "description": "The estimated total cost of the whole project, as of `dateModified`. An estimate, not an allocation: money set aside for the project is a budget line that points at it."
+    },
     "produces": {
       "type": "array",
       "description": "What the project delivers: a service, dataset, application, facility or document. Separate from the project, which can complete while its output stays in operation.",

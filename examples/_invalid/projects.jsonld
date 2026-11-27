@@ -116,6 +116,34 @@
       "about": {
         "@id": "https://invalid.example/id/organization/o"
       }
+    },
+    {
+      "@id": "https://invalid.example/id/project/cost-ok",
+      "@type": "Project",
+      "name": "Category and cost",
+      "projectCategory": [
+        "Drainage"
+      ],
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "value": 1,
+        "currency": "USD"
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/project/cost-no-currency",
+      "@type": "Project",
+      "name": "Cost with no currency",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "value": 1
+      }
+    },
+    {
+      "@id": "https://invalid.example/id/project/category-not-list",
+      "@type": "Project",
+      "name": "Category not a list",
+      "projectCategory": "Drainage"
     }
   ]
 }
