@@ -110,8 +110,9 @@ adapt or fork the vocabulary with no attribution obligation and no licence revie
 Every profile listed above is specified, implemented, and validating, and each has been
 converted from at least one real government publisher — see [SPEC.md §5](SPEC.md#5-domain-profiles).
 
-The `lf-ui` theme layer in `public/assets/lf-ui/` is vendored from `lukefretwell/lf-ui` and is
-expected to move to a GovFresh-owned package; when it does, only that folder changes.
+The `lf-ui` theme layer in `public/assets/lf-ui/` is vendored from
+[`govfresh/lf-ui`](https://github.com/govfresh/lf-ui). Don't edit it here; make changes in `lf-ui`
+and copy them over.
 
 Contributions and crosswalk corrections are welcome, particularly from publishers outside
 the US who can tell us where the model makes an assumption it shouldn't.
