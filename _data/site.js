@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 
 // `site` is shaped like Jekyll's `site` object (site.baseurl,
-// site.data.site, site.data.nav, site.data.icon_presets) so lf-ui's shared
+// site.data.site, site.data.nav, site.data.icon_presets) so govfresh-ui's shared
 // Liquid includes (nav.html, footer.html, cta-banner.html, footer-nav.html)
 // render here unmodified instead of being hand-ported. Existing templates'
 // `site.title`, `site.url`, etc. keep working. The config itself lives in

@@ -13,7 +13,7 @@ const md = new MarkdownIt({ html: true, linkify: false })
 
 // markdown-it's default table renderer emits a bare <table> with no class
 // at all, so a markdown table in SPEC.md would never pick up the shared
-// .table styling (lf-components.css) that every hand-authored <table> in
+// .table styling (gf-components.css) that every hand-authored <table> in
 // the njk templates already uses — wrap it the same way those are.
 md.renderer.rules.table_open = () => '<div class="table-responsive"><table class="table align-middle">\n'
 md.renderer.rules.table_close = () => '</table></div>\n'
