@@ -1,5 +1,5 @@
-/* lf-ui theme layer — Bootstrap 5.3 custom-property overrides.
-   Canonical here: https://github.com/govfresh/lf-standards/blob/main/brand
+/* govfresh-ui theme layer — Bootstrap 5.3 custom-property overrides.
+   Canonical here: https://github.com/govfresh/govfresh-standards/blob/main/brand
    Structure follows scangov/components' public/css/scangov.css. */
 
 /* Fonts */
@@ -75,10 +75,9 @@
     font-display: swap;
 }
 
-/* Base font families — real Bootstrap variable names, not invented --lf-*
-   ones, so any Bootstrap component (not just body/code) picks these up
-   automatically. See lf-design-system-plan.md's CSS custom-property
-   naming decision. */
+/* Base font families — real Bootstrap variable names, not custom ones,
+   so any Bootstrap component (not just body/code) picks these up
+   automatically. */
 
 :root {
     --bs-font-sans-serif: "Public Sans", system-ui, sans-serif;
@@ -108,7 +107,7 @@
 
     /* Code block palette — ported from scangov/components' code.css,
        tokenized so the Rouge (Jekyll) and Prism (Eleventy) rule sets in
-       lf-components.css can both point at the same named colors despite
+       gf-components.css can both point at the same named colors despite
        using completely different class names for the same token kinds.
        Fixed dark background regardless of site theme — a code block that
        flips light/dark with the page isn't what the source theme does,
@@ -150,10 +149,10 @@
        line-height declaration always wins over an inherited value. */
     --bs-body-line-height: 1.6;
 
-    /* Spacing token for .lf-grid (lf-components.css) — the only layout
-       primitive left; .lf-cluster/.lf-stack/.lf-flank were all converted
+    /* Spacing token for .gf-grid (gf-components.css) — the only layout
+       primitive left; .gf-cluster/.gf-stack/.gf-flank were all converted
        to real Bootstrap utilities/grid. */
-    --lf-space-m: 1rem;
+    --gf-space-m: 1rem;
 }
 
 /* Root type scale — every rem-based measurement site-wide (component

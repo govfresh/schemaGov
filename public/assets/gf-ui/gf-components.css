@@ -1,5 +1,5 @@
-/* lf-ui component layer — shared rules for elements that should render
-   identically across consumers. Depends on lf-theme.css's tokens (fonts,
+/* govfresh-ui component layer — shared rules for elements that should render
+   identically across consumers. Depends on gf-theme.css's tokens (fonts,
    --bs-border-color, --bs-box-shadow(-lg), --site-transition/--site-transform-*).
    Rules with real per-site differences (card border-hover retargeting tied
    to site-specific link classes) stay local to each consumer instead of
@@ -129,7 +129,7 @@ strong {
 /* Secondary font alone, no color change — for identifiers, file paths,
    and other monospace-styled text that isn't muted/secondary-colored
    prose. Real <code>/<kbd>/<pre>/<samp> already get the monospace family
-   for free (lf-theme.css); this is for everything else — a <dd>, <a>,
+   for free (gf-theme.css); this is for everything else — a <dd>, <a>,
    <li>, <td> — that wants the same typeface without also picking up
    .text-body-secondary's color change. */
 .font-secondary {
@@ -439,7 +439,7 @@ strong {
 
 /* Small/secondary text — each role below is a semantic class (what the
    text IS, not how it's sized/colored/set), and each references
-   --site-small-font-size, --site-font-secondary (lf-theme.css) and
+   --site-small-font-size, --site-font-secondary (gf-theme.css) and
    --bs-secondary-color directly rather than generic
    "small"/"text-body-secondary" utilities. No small/.small or
    text-body-secondary fallback: nothing in this theme's markup pairs a
@@ -617,7 +617,7 @@ strong {
 }
 
 /* On-page table of contents (toc.html + toc-active.js, both real vendored
-   lf-ui files now — previously separately-maintained copies on each site
+   govfresh-ui files now — previously separately-maintained copies on each site
    that stayed byte-identical only by hand, and their supporting CSS
    wasn't shared at all, which is how lukefretwell ended up missing the
    scroll-margin-top rule below and got a visibly different scroll
@@ -809,7 +809,7 @@ strong {
    does nothing. */
 .card:has(.stretched-link):hover {
     --bs-card-border-color: color-mix(in srgb, var(--bs-border-color) 85%, black 15%);
-    /* Same tight blur radii as --bs-box-shadow (lf-theme.css), just darker
+    /* Same tight blur radii as --bs-box-shadow (gf-theme.css), just darker
        — hardcoded rather than the variable since this is specifically a
        darker-than-resting hover state, not reusable elsewhere. */
     box-shadow: 0 0.0625rem 0.125rem rgba(0,0,0,0.11), 0 0.0625rem 0.1875rem rgba(0,0,0,0.07);
@@ -931,7 +931,7 @@ h2:hover a.heading-hashtag, h3:hover a.heading-hashtag, h4:hover a.heading-hasht
    `.card-link:hover` (0,2,0) — lukefretwell's own base rule
    `.card a.card-link { color: ... }` is (0,2,1), which would otherwise
    keep beating a lower-specificity hover rule regardless of source
-   order, since lf-components.css loads before each consumer's own
+   order, since gf-components.css loads before each consumer's own
    css/style.css. A second, plain `.card-link:hover` (0,2,0) covers
    .card-link used outside a .card (e.g. the homepage feature section) —
    lukefretwell's higher-specificity base rule only matches inside .card,
@@ -963,7 +963,7 @@ h2:hover a.heading-hashtag, h3:hover a.heading-hashtag, h4:hover a.heading-hasht
        Bold" (that family renders bold glyphs regardless of requested
        weight, same reasoning as the h1-h6 rule above). But unlike that
        bold-only family, "Public Sans" itself has real 400 and 700 faces
-       registered (see lf-theme.css), so Bootstrap's own .badge
+       registered (see gf-theme.css), so Bootstrap's own .badge
        font-weight: 700 still resolves to genuine bold glyphs within this
        family — the font-family override alone does not neutralize it.
        font-weight: 400 is needed too: a status badge is a label, not
@@ -984,7 +984,7 @@ a:has(> .badge) {
    the old bare `text-uppercase small fw-semibold text-body-secondary`
    utility-class combo so the no-caps rule lives in one place instead of
    depending on every consumer remembering to drop `text-uppercase`. */
-.lf-eyebrow {
+.gf-eyebrow {
     font-size: .875rem;
     font-weight: 600;
     color: var(--bs-secondary-color, var(--bs-body-color));
@@ -1076,7 +1076,7 @@ a:has(> .badge) {
    markup being identical — that's exactly the kind of drift that's easy
    to miss because nothing tracks per-site CSS the way check-sync.js
    tracks shared files. Moving it here closes that gap: any future edit
-   has to go through lf-ui, so both consumers move together. */
+   has to go through govfresh-ui, so both consumers move together. */
 
 footer {
     font-family: var(--site-font-secondary);
@@ -1125,28 +1125,28 @@ footer {
     text-decoration: underline;
 }
 
-/* Layout primitives — .lf-cluster, .lf-stack, and .lf-flank are gone;
-   .lf-cluster/.lf-stack were nothing but display:flex + a fixed gap,
+/* Layout primitives — .gf-cluster, .gf-stack, and .gf-flank are gone;
+   .gf-cluster/.gf-stack were nothing but display:flex + a fixed gap,
    exactly what Bootstrap's own .d-flex.flex-wrap.align-items-center.gap-*
    (cluster) and .d-flex.flex-column.gap-* (stack, align-items:stretch is
-   flex's own default) already do; .lf-flank (the "sidebar" pattern —
+   flex's own default) already do; .gf-flank (the "sidebar" pattern —
    content-sized first child, growing second child) was converted to real
    .row + .col-auto/.col at all 6 usages. Every former usage of all three
-   now uses those directly. .lf-grid stays: a container-relative auto-fit
+   now uses those directly. .gf-grid stays: a container-relative auto-fit
    grid, no real Bootstrap equivalent since row-cols-* is
    viewport-breakpoint-based, not container-relative. */
 
-.lf-grid {
+.gf-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(var(--min-column-size, 20ch), 100%), 1fr));
     --min-column-size: initial;
     margin-block: 0;
     margin-inline: 0;
-    gap: var(--lf-space-m);
+    gap: var(--gf-space-m);
 }
 
 @media (max-width: 768px) {
-    .lf-grid {
+    .gf-grid {
         --min-column-size: 100%;
     }
 }
@@ -1211,7 +1211,7 @@ img.xxl { max-width: 50rem; }
 }
 
 /* Code blocks — ported from scangov/components/public/css/code.css.
-   Two rule sets, one shared palette (--code-* tokens, lf-theme.css):
+   Two rule sets, one shared palette (--code-* tokens, gf-theme.css):
    Rouge/Pygments classes for the Jekyll consumers (kramdown's fenced code
    blocks tokenize this way) and Prism.js classes for schemaGov (Eleventy
    + @11ty/eleventy-plugin-syntaxhighlight). Different tokenizers, same
@@ -1221,7 +1221,7 @@ img.xxl { max-width: 50rem; }
    other. font-family is --bs-font-monospace directly, not
    --site-font-secondary — code should stay genuinely monospace even if
    the site's secondary/UI font is ever changed to something else (same
-   reasoning as the code/kbd/pre/samp rule in lf-theme.css). */
+   reasoning as the code/kbd/pre/samp rule in gf-theme.css). */
 
 .highlight pre,
 pre.highlight,

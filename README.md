@@ -62,7 +62,7 @@ namespace resolution endpoint. Every published schemaGov document pins URLs unde
 every such URL resolves in the built site, and CI fails the build if one does not.
 
 Built with [Eleventy](https://www.11ty.dev), following the ScanGov 11ty conventions, themed
-with the `lf-ui` layer (Bootstrap 5.3.2). Reference pages are generated from the JSON Schemas
+with the `govfresh-ui` layer (Bootstrap 5.3.2). Reference pages are generated from the JSON Schemas
 and code lists themselves, so the documentation cannot drift from what the validator enforces.
 
 Beyond the profiles, the site documents every external standard schemaGov profiles against
@@ -110,8 +110,8 @@ adapt or fork the vocabulary with no attribution obligation and no licence revie
 Every profile listed above is specified, implemented, and validating, and each has been
 converted from at least one real government publisher — see [SPEC.md §5](SPEC.md#5-domain-profiles).
 
-The `lf-ui` theme layer in `public/assets/lf-ui/` is vendored from
-[`govfresh/lf-ui`](https://github.com/govfresh/lf-ui). Don't edit it here; make changes in `lf-ui`
+The `govfresh-ui` theme layer in `public/assets/gf-ui/` is vendored from
+[`govfresh/govfresh-ui`](https://github.com/govfresh/govfresh-ui). Don't edit it here; make changes in `govfresh-ui`
 and copy them over.
 
 Contributions and crosswalk corrections are welcome, particularly from publishers outside

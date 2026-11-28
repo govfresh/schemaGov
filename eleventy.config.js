@@ -30,7 +30,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginNavigation)
   eleventyConfig.addPlugin(IdAttributePlugin)
 
-  // lf-ui's shared includes are Jekyll-flavored Liquid ({% include x.html a=b %},
+  // govfresh-ui's shared includes are Jekyll-flavored Liquid ({% include x.html a=b %},
   // include.a). The layout is Liquid so they render here unmodified.
   eleventyConfig.setLiquidOptions({ jekyllInclude: true, dynamicPartials: false })
 
@@ -39,7 +39,7 @@ export default async function (eleventyConfig) {
   // index.njk's f.raw, read from disk in _data/examples.js) — this filter
   // calls the same underlying Prism.js the plugin uses, directly, so that
   // content can be tokenized too. Matches the Prism token classes the
-  // shared lf-components.css code-block theme is written against.
+  // shared gf-components.css code-block theme is written against.
   eleventyConfig.addFilter('highlight', (content, language) => {
     if (!content) return ''
     const grammar = Prism.languages[language]
@@ -227,7 +227,7 @@ export default async function (eleventyConfig) {
       const anchor = `<a class="heading-hashtag" href="#${id}"><span style="display:none">${id.replace(/-/g, ' ')} link</span>${LINK_ICON}</a>`
       const idAttr = existingId ? '' : ` id="${id}"`
       // Plain-text title, not the original inner HTML — a heading must
-      // never contain a link (lf-ui/README.md's content conventions).
+      // never contain a link (govfresh-ui/README.md's content conventions).
       // markdown-it's linkify:true auto-links bare domain-like text
       // (e.g. "schema.org") anywhere it appears, headings included, so
       // this can't be prevented at the markdown-authoring level; strip it
